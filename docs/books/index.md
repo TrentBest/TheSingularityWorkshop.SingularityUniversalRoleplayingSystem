@@ -4,6 +4,20 @@
 
 SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
+## Available core books
+
+### Singularity Universal Roleplaying System - Core - LOD 0 - Spying
+
+![SURPS Rulebook LOD 0](../assets/rulebook-lod-0.svg)
+
+![CORE Spying cover](covers/core-spying.svg)
+
+Descriptor: [core-spying.book.json](core-spying.book.json)
+
+A first playable tabletop module for setting-neutral espionage. Includes a character approach record, 2d6 uncertainty procedure, evidence ledger, time and pressure clocks, counterintelligence, and a worked mission.
+
+[Read CORE Spying](core-spying.md)
+
 ## Available domain books
 
 ### Singularity Universal Roleplaying System - Domain - LOD 1 - Dungeons and Underground
