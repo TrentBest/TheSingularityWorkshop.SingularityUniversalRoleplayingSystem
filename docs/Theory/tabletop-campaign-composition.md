@@ -28,6 +28,8 @@ Imagine the group wants an espionage campaign. The subject exists in CORE, but t
 
 ### CORE / LOD 0 — Spying
 
+The first runnable version is [CORE Spying](../books/core-spying.md), with [printable character, referee, and campaign sheets](../books/core-spying-play-sheets.md). It is a first tabletop playtest draft, not a finalized universal character engine.
+
 CORE provides the common vocabulary and a playable baseline: secrecy, observation, concealment, information, sources, evidence, detection, suspicion, exposure, trust, risk, intent, preparation, access, action, opposition, and consequence. It distinguishes what a character knows, suspects, claims, and can prove.
 
 A referee can run a simple spying scene using only these concepts and the general CORE resolution procedure.
