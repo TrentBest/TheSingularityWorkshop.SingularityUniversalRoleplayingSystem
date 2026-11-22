@@ -324,3 +324,15 @@ Each extension should identify its LOD, scope, assumptions, dependencies, proven
 ---
 
 *This is a living sourcebook. As the authoritative Dungeon domain evolves, its concepts, examples, diagrams, and implementation references should evolve with it. The book explains the world; the domain implementation remains the authority for executable environmental behavior.*
+
+
+## Worked LOD progression: dwarves and strongholds
+
+The underground environment book remains general-purpose: it explains natural and constructed underground spaces whether dwarves inhabit them or not. For a dwarven setting, compose it with the following distinct levels:
+
+- **Dwarves — LOD 0 core concept:** the world records that dwarves exist; no encounter or stronghold detail is required.
+- **Dwarves — LOD 1:** use when dwarves participate in scenes, markets, travel, trade, relationships, and wider society. Their stronghold may remain offstage.
+- **Dwarven Strongholds — LOD 2:** use when entering or meaningfully exploring a stronghold and its districts, institutions, access, infrastructure, and underground topology.
+- **Specific dwarven city — LOD 3+:** a selected or authored settlement instance with its own persistent geography, history, institutions, and inhabitants.
+
+See the [SURPS sourcebook catalogue](index.md), [Dwarves, LOD 1](dwarves.md), and [Dwarven Strongholds, LOD 2](dwarven-mountain-fortress.md). Singularity City owns market and resident-place relationships; FSM_Dungeon owns underground topology; Physics owns the mountain substrate.
