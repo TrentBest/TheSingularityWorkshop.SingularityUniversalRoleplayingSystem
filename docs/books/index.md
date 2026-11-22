@@ -16,7 +16,7 @@ Descriptor: [core-spying.book.json](core-spying.book.json)
 
 A first playable tabletop module for setting-neutral espionage. Includes a character approach record, 2d6 uncertainty procedure, evidence ledger, time and pressure clocks, counterintelligence, and a worked mission.
 
-[Read CORE Spying](core-spying.md)
+[Read CORE Spying](core-spying.md) · [Printable play sheets](core-spying-play-sheets.md)
 
 ## Available domain books
 
