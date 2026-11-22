@@ -23,7 +23,9 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 - **FSM_COS / FSM_Foundry** — composition and execution of experiences.
 - **DataWarehouse** — structured world and entity data.
 
-See [Architecture](architecture.md) for the initial responsibility boundaries.
+See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
+
+Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). CiAi is used as a read-only CI evidence and admission capability; it does not own SURPS ontology or authorize changes.
 
 ## 3. Source Books
 
