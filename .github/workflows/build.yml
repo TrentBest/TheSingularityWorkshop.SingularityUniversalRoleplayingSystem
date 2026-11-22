@@ -24,7 +24,7 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore
-        run: dotnet restore SURPS.sln
+        run: dotnet restore SURPS.sln --source "$GITHUB_WORKSPACE/_dependencies/nuget" --source https://api.nuget.org/v3/index.json
       - name: Build
         run: dotnet build SURPS.sln --configuration Release --no-restore
       - name: Test
