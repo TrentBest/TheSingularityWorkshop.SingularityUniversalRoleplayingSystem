@@ -22,6 +22,14 @@ The underground as a causal world: formation, construction, topology, geology, m
 
 [Read Dungeons and Underground](dungeons-and-underground.md)
 
+### Nonplayer Characters
+
+![LOD 1](../assets/rulebook-lod-1.svg)
+
+The people who make worlds function: identity, capabilities, knowledge, motivation, relationships, agency, institutional positions, staffing, schedules, and population-scale representation.
+
+[Read Nonplayer Characters](nonplayer-characters.md) · [Book descriptor](nonplayer-characters.book.json)
+
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
   <figcaption>A place has layers of formation, use, and change.</figcaption>
