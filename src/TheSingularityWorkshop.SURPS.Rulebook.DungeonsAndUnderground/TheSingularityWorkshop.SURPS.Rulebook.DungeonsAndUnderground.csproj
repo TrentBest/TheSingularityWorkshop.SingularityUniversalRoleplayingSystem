@@ -9,8 +9,8 @@
     <Version>0.1.0-alpha.1</Version>
     <Authors>Trent Best</Authors>
     <Company>The Singularity Workshop</Company>
-    <Description>SURPS rulebook MicroBundle that composes the FSM_Dungeon underground-environment capability.</Description>
-    <PackageTags>SURPS;Rulebook;Dungeon;Underground;MicroBundle;TheSingularityWorkshop</PackageTags>
+    <Description>SURPS Dungeons and Underground sourcebook and composition MicroBundle for the FSM_Dungeon underground-environment capability.</Description>
+    <PackageTags>SURPS;Rulebook;Dungeon;Underground;Sourcebook;LivingWorld;MicroBundle;TheSingularityWorkshop</PackageTags>
     <PackageProjectUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -19,5 +19,16 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="TheSingularityWorkshop.MicroBundleDomain" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../docs/books/dungeons-and-underground.md"
+          Pack="true"
+          PackagePath="contentFiles/any/any/books/dungeons-and-underground.md" />
+    <None Include="../../docs/books/assets/*.svg"
+          Pack="true"
+          PackagePath="contentFiles/any/any/books/assets/%(Filename)%(Extension)" />
+    <None Include="../../docs/assets/rulebook-lod-1.svg"
+          Pack="true"
+          PackagePath="contentFiles/any/any/assets/rulebook-lod-1.svg" />
   </ItemGroup>
 </Project>
