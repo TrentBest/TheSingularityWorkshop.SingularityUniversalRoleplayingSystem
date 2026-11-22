@@ -103,3 +103,73 @@ This slice should expose what is genuinely implemented. In particular, do not la
 ## Contract maturity
 
 This document extends the current minimal ISurpsRulebook marker/composition seam. The registry, descriptors, typed mathematical binding, and resolver described here are design targets to be validated against real provider implementations. Do not freeze public CLR signatures or publish a package until the Physics, Gestures, Dungeon, Laboratories, and City seams have been reviewed together.
+
+
+## SURPS as an opt-in experience setting
+
+SURPS is not a mandatory runtime layer. An experience declares whether SURPS is enabled in its settings/composition manifest. When disabled, the experience continues to use FSM_API, FSM_COS, and FSM_Foundry without acquiring a SURPS dependency or SURPS behavior. When enabled, the SURPS master system discovers the rulebooks and behavior providers included by that experience.
+
+The setting is a composition choice, not a global switch that changes every experience on the machine. A host may expose it as a simple enabled/disabled checkbox while retaining detailed editor controls for rulebook selection, precedence, LOD, and diagnostics.
+
+## Behavior comes from the interaction provider
+
+An agent should not need a built-in catalogue of every possible behavior. The interacting object, environment, tool, or other participant can offer a gesture/interaction provider describing ways an interaction may be attempted. The agent contributes its own anatomy, capabilities, training, condition, intent, and available time. The provider evaluates the compatibility of those contributions and offers the applicable behavior paths.
+
+### Example: approaching and climbing a ladder
+
+1. The world identifies a ladder and a desired interaction.
+2. The ladder's provider declares approach requirements, a target position, orientation, initial pose, and the subsequent climbing interaction.
+3. The agent moves to the approach position and adopts the required initial pose, subject to its movement capabilities and physical constraints.
+4. At the interaction boundary, the agent is assigned to the ladder's climbing provider for the attempt.
+5. The provider evaluates the agent's anatomy and condition: available limbs, reach, grip, balance, mobility, and any other declared requirements.
+6. A compatible agent receives the climbing behavior sequence. An incompatible agent receives a meaningful failure or alternative attempt path.
+
+A dog is not simply told "you cannot climb." The ladder may offer exploratory attempts that expose why climbing fails: inability to establish the required grip, insufficient reach, loss of balance, or another grounded constraint. Those attempts are still subject to the provider's actual declared capabilities and Physics evaluation; they are not fabricated outcomes.
+
+The provider belongs to the interaction being attempted, not to a hard-coded species behavior table. Other objects can offer other ways to interact with the same agent.
+
+## Example: trained and untrained sword use
+
+The sword offers a sword-use interaction provider. The agent with sword training registers its relevant capability/training evidence and receives the trained behavior set: controlled guards, parries, cuts, thrusts, feints, recoveries, and disarms where supported by the model.
+
+An untrained agent can still ask the sword provider how it might attempt to use the object. It receives an untrained behavior set: poorly controlled swings, exposed openings, clumsy thrusts, weak or mistimed parries, and recovery/balance problems. The agent is not granted expertise merely because the provider can describe expert technique.
+
+During a duel, both agents' attempts are evaluated against timing, pose, reach, weapon geometry, intent, training, current condition, and physical constraints. A trained fighter may exploit an untrained attack with a controlled parry, bind, displacement, or disarm. The outcome must emerge from declared capabilities and evaluated state, not from a scripted narrative guarantee.
+
+If an agent is injured, the injury is a state/context change. The next behavior resolution can select an injured movement/gesture provider or a constrained variant of the existing provider. The injury changes what the agent can attempt, how quickly it can do so, and what consequences it risks.
+
+## Time is part of behavior
+
+Behavior is evaluated over delta time, not as a timeless list of animations. Providers should declare timing semantics and the FSM/API execution path should advance them through explicit state transitions.
+
+Relevant time concepts include:
+- decision window and response deadline;
+- initiative or priority when a decision is late;
+- preparation, commitment, execution, and recovery phases;
+- interruption windows and reaction opportunities;
+- action duration, cooldown, fatigue, and injury-related timing changes;
+- time scale and pause/step behavior for the experience.
+
+A turn-based encounter may pause at a decision boundary, collect player choices, then advance the simulation. A real-time or reaction-time encounter may keep advancing while a decision window expires, allowing an opponent to gain initiative. These are different rulebook policies over shared state/time primitives, not separate assumptions embedded in every gesture.
+
+The source-book model must explain these concepts in tabletop terms as well as their digital delta-time expression.
+
+## Core and rulebook LOD
+
+SURPS CORE is the lowest common rules layer: shared terms, entity/capability descriptions, interaction structure, time/state vocabulary, and deterministic resolution principles. Domain and experience rulebooks may add higher-detail behavior.
+
+LOD is explicit and selectable. It is not merely visual polygon detail. It describes the fidelity and cost of a behavior model: for example, a coarse opposed-skill resolution, a detailed sequence of guards and attacks, or a fine-grained pose/contact/timing simulation. Each higher-LOD rulebook must declare its relationship to CORE and the capabilities it requires.
+
+An editor must be able to choose which rulebook/LOD supplies behavior for a given experience, entity class, interaction, or subsystem. Resolution should expose the selected source and precedence. A higher LOD must not silently replace CORE or another rulebook. If no higher-LOD rulebook is selected or available, the experience falls back to CORE behavior.
+
+## Registration and offline equivalence
+
+The master registry should register rulebooks and behavior providers, not require the world to be online. The same rulebook definitions must support:
+- digital experiences, where providers are resolved and executed through the composed runtime;
+- tabletop/offline play, where players and game masters use the printed or readable sourcebooks, character sheets, dice/tables, clocks, and written procedures.
+
+The manual must define enough information to play without any digital service, application, or runtime. Digital automation is an implementation of the documented rules, not the only place where the rules exist.
+
+## Next vertical slice
+
+The first behavior-provider demonstration should be ladder approach/climb, followed by trained versus untrained sword interaction and injury transition. These cases test provider ownership, capability matching, failure alternatives, time, and LOD more effectively than a generic animation demo.
