@@ -2,6 +2,10 @@
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
 
+![Living conceptual cutaway of the Dwarven Mountain Fortress](assets/dwarven-mountain-fortress-concept.svg)
+
+*Concept illustration only: the cutaway is not a generated Physics mountain volume and is not to scale.*
+
 **Status:** LOD 1 scenario framework. This is a worked world-building case study, not a finalized universal dwarven biology or culture system and not a claim that the fortress is already generated or playable.
 
 The Dwarven Mountain Fortress is the first large-scale composition of the Dungeons and Underground sourcebook. It demonstrates how a society, a mountain, and an underground environment can share one persistent world without one domain taking ownership of another.
