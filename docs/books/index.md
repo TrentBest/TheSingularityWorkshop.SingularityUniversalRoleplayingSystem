@@ -1,5 +1,7 @@
 # Singularity Universal Roleplaying System - Source Books
 
+![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
+
 SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
 ## Available domain books
