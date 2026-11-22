@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Dungeons and Underground — rulebook cover</title>
+  <desc id="desc">A cutaway view into a vast underground cavern, with layered rock, a winding passage, underground water, and a small explorer for scale.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#24354a"/></linearGradient>
+    <linearGradient id="depth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#536477"/><stop offset=".48" stop-color="#26394b"/><stop offset="1" stop-color="#101923"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67d7e8"/><stop offset="1" stop-color="#176a8d"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#f7c873" stop-opacity=".95"/><stop offset="1" stop-color="#f7c873" stop-opacity="0"/></radialGradient>
+    <pattern id="strata" width="180" height="90" patternUnits="userSpaceOnUse"><path d="M0 24 Q45 8 90 24 T180 24 M0 62 Q50 48 100 64 T180 60" fill="none" stroke="#a8b7c4" stroke-opacity=".22" stroke-width="3"/></pattern>
+  </defs>
+  <rect width="900" height="1200" fill="url(#sky)"/>
+  <path d="M0 270 L95 230 165 255 240 205 330 245 410 185 500 220 590 165 680 205 770 155 900 205 V1200 H0Z" fill="#35485b"/>
+  <path d="M0 270 L95 230 165 255 240 205 330 245 410 185 500 220 590 165 680 205 770 155 900 205 V1200 H0Z" fill="url(#strata)"/>
+  <path d="M0 395 Q130 330 235 400 Q310 450 390 390 Q480 315 560 390 Q655 465 735 385 Q810 325 900 390 V1200 H0Z" fill="url(#depth)"/>
+  <path d="M0 395 Q130 330 235 400 Q310 450 390 390 Q480 315 560 390 Q655 465 735 385 Q810 325 900 390 V1200 H0Z" fill="url(#strata)" opacity=".9"/>
+  <path d="M0 735 Q140 680 265 760 T520 750 T900 720 V1200 H0Z" fill="#182737"/>
+  <path d="M0 920 Q150 850 290 925 T570 900 T900 940 V1200 H0Z" fill="#111d2a"/>
+  <path d="M70 840 Q210 780 330 850 Q440 915 565 850 Q700 780 830 850 L900 900 V1010 Q760 955 630 1010 Q470 1080 320 1000 Q170 925 0 1010 V900Z" fill="url(#water)" opacity=".85"/>
+  <path d="M85 875 Q220 825 340 875 T585 875 T820 875" fill="none" stroke="#b8f3f4" stroke-opacity=".7" stroke-width="5"/>
+  <path d="M360 390 Q420 470 405 555 Q390 640 470 690 Q540 730 620 690" fill="none" stroke="#c7d0d8" stroke-width="30" stroke-linecap="round" opacity=".22"/>
+  <path d="M360 390 Q420 470 405 555 Q390 640 470 690 Q540 730 620 690" fill="none" stroke="#91a3b5" stroke-width="7" stroke-linecap="round" opacity=".6"/>
+  <circle cx="505" cy="690" r="105" fill="url(#glow)"/>
+  <path d="M493 755 l-10 -42 14 -28 13 28 -4 42Z" fill="#d7e1e8"/>
+  <circle cx="500" cy="672" r="10" fill="#f7c873"/>
+  <path d="M500 682 l-13 34 25 0Z" fill="#d9e4ed"/>
+  <path d="M490 710 l-18 35 M507 710 l18 32" stroke="#d9e4ed" stroke-width="8" stroke-linecap="round"/>
+  <path d="M470 745 l-10 18 M520 742 l12 20" stroke="#d9e4ed" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#7e91a4" opacity=".75"><path d="M105 590l35-85 28 85Z"/><path d="M720 600l42-115 38 115Z"/><path d="M230 780l25-65 25 65Z"/></g>
+  <path d="M60 90 H840" stroke="#55c7df" stroke-width="4"/>
+  <text x="70" y="150" fill="#a9e8f1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="6">THE SINGULARITY WORKSHOP</text>
+  <text x="70" y="220" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="800">SINGULARITY UNIVERSAL</text>
+  <text x="70" y="274" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="800">ROLEPLAYING SYSTEM</text>
+  <text x="70" y="335" fill="#8be1ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="4">DOMAIN · LOD 1</text>
+  <text x="70" y="1065" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800">DUNGEONS AND</text>
+  <text x="70" y="1125" fill="#ffffff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800">UNDERGROUND</text>
+  <text x="72" y="1168" fill="#a9b8c7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="2">A LIVING DOMAIN SOURCEBOOK</text>
+</svg>
