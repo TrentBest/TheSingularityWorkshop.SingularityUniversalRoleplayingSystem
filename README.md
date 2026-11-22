@@ -8,7 +8,11 @@
 
 The Singularity Universal Roleplaying System (SURPS) is the shared foundation for describing and experiencing worlds. It is not tied to one genre, game, ruleset, setting, or medium. It aims to make entities, attributes, capabilities, behavior, interactions, environments, and narrative consequences composable and reusable.
 
+**SURPS is fully playable as a tabletop roleplaying system.** Its sourcebooks must explain complete human procedures that work with paper, pencil, character sheets, dice or another agreed resolution method, and conversation. No application, internet connection, registry, or digital runtime is required. Digital experiences may automate and visualize those same rules, but the tabletop rules remain understandable and usable on their own.
+
 The source books are human-readable expressions of that system. They should explain the underlying concepts while demonstrating them through living diagrams, interactive examples, and simulations.
+
+Start with the [Player and Editor Manual](docs/player-and-editor-manual.md), [Theory: tabletop campaign composition](docs/Theory/tabletop-campaign-composition.md), and [Theory: roleplaying history](docs/Theory/history-of-roleplaying-games.md).
 
 ## 2. Architecture
 
@@ -21,7 +25,6 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 - **StoryBuilder** — narrative construction.
 - **FSM_Dungeon** — dungeon environments and their environmental behavior.
 - **FSM_COS / FSM_Foundry** — composition and execution of experiences.
-- **DataWarehouse** — structured world and entity data.
 
 See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
 
@@ -29,9 +32,9 @@ Repository-specific agent work is governed by the root [AgentOnboarding.md](Agen
 
 ## 3. Source Books
 
-Books will be authored as modular, versionable source material rather than isolated documents. The initial publishing structure is intentionally small; book titles, scope, and chapter plans will be established as the ontology matures.
+Books are modular, versionable source material rather than isolated documents. Each book declares its scope, LOD, assumptions, and relationship to CORE and other books. **LOD communicates detail; campaign selection and declared scope determine which books apply.** A higher number does not silently override another book.
 
-See [Source Books](books/README.md) and [SURPS Rulebooks](rulebooks.md). The first executable composition is `SurpsRulebookDungeonsAndUnderground`, which wraps the authoritative FSM_Dungeon environment MicroBundle.
+See [Source Books](books/README.md), [SURPS Rulebooks](rulebooks.md), and [Tabletop Campaign Composition](docs/Theory/tabletop-campaign-composition.md). The first executable composition is `SurpsRulebookDungeonsAndUnderground`, which wraps the authoritative FSM_Dungeon environment MicroBundle.
 
 ## 4. Living Documentation
 
