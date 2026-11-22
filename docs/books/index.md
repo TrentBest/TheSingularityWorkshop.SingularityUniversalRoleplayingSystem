@@ -1,12 +1,12 @@
-# SURPS Source Books
+# Singularity Universal Roleplaying System - Source Books
 
 SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
 ## Available domain books
 
-### Dungeons and Underground
+### Singularity Universal Roleplaying System - Domain - LOD 1 - Dungeons and Underground
 
-![LOD 1](../assets/rulebook-lod-1.svg)
+![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)\n\n![Dungeons and Underground cover](covers/dungeons-and-underground.svg)\n\nDescriptor: [dungeons-and-underground.book.json](dungeons-and-underground.book.json)
 
 The underground as a causal world: formation, construction, topology, geology, materials, environmental conditions, hazards, inhabitants, traversal, observation, and world authoring.
 
@@ -50,3 +50,7 @@ These remain working titles and scopes, not finalized commitments:
 6. **The Living Atlas** — worked examples, bestiary entries, locations, factions, and world-building patterns.
 
 The books should emerge from a validated shared ontology. We should not prematurely write a large rule system and then force the ecosystem to conform to it.
+
+## Identity and cover standard
+
+New books must follow the [canonical identity and cover contract](../rulebook-identity-and-covers.md). The descriptor is authoritative; the catalogue title and cover must agree with it.
