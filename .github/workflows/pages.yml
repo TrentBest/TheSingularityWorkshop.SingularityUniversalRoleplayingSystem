@@ -8,6 +8,7 @@ on:
       - 'README.md'
       - 'AgentOnboarding.md'
       - '.github/workflows/pages.yml'
+      - '.github/workflows/ciai-evidence.yml'
   workflow_dispatch:
 
 permissions:
