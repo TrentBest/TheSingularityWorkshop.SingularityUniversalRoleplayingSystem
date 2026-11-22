@@ -83,3 +83,8 @@ This lets a world contain laboratories as places and experiences, while laborato
 - **Physics:** identify the smallest useful physics microbundle surface, the concepts/units/rules that should be discoverable, and the correct boundary for requesting physical calculations.
 - **SingularityLaboratories:** identify a representative laboratory/experiment microbundle, its apparatus and safety constraints, and how it should be presented as a rulebook without duplicating lab execution.
 - **SURPS:** compare both responses, draft the minimal `ISurpsRulebook` contract, and validate it against a shared world containing physical entities and a laboratory experience.
+
+
+## Registration and behavior resolution
+
+Rulebooks are registered with the SURPS master system so their rules and domain capabilities can be discovered, inspected, and resolved in context. See [Rulebook Registration and Behavioral Resolution](registration-and-behavior.md) for the registration lifecycle, editor-visible rule descriptors, typed mathematical binding, provenance, and the SURPS–Gestures–Physics interaction model.
