@@ -28,7 +28,7 @@ jobs:
           path: _dependencies/MicroBundleDomain
       - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 10.0.x
       - name: Build and pack MicroBundleDomain development dependency
         run: |
           dotnet restore _dependencies/MicroBundleDomain/TheSingularityWorkshop.MicroBundleDomain.csproj
