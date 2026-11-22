@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.core.spying",
+  "category": "Core",
+  "lod": 0,
+  "title": "Spying",
+  "version": "0.1.0",
+  "cover": "docs/books/covers/core-spying.svg",
+  "lodBadge": "docs/assets/rulebook-lod-0.svg",
+  "publisher": "The Singularity Workshop",
+  "publisherMoniker": "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg"
+}
