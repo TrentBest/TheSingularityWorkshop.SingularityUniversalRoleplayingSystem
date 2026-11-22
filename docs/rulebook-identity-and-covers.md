@@ -51,6 +51,17 @@ Every published or CI-admissible rulebook must have a cover image. A title page 
 
 Use the shared SVG badge family at `docs/assets/rulebook-lod-{N}.svg`. The numeric LOD in the descriptor must match the badge filename and visible badge text. Extend the family as needed; do not substitute a badge from another level.
 
+## Applying the presentation to Markdown
+
+The presentation is not a README feature. Any authored Markdown file may carry the same document identity, LOD badge, and cover/title presentation when that document represents the rulebook or a deliberate excerpt/entry for it.
+
+- The book descriptor remains the source of truth; do not copy editable title/category/LOD values into each Markdown file.
+- Keep the LOD badge and cover artwork as separate image roles with meaningful alt text.
+- Place the canonical moniker/creator identity above the canonical book title, then the LOD badge and cover artwork.
+- A Markdown generator must receive the target Markdown path as well as the descriptor. It must calculate each relative asset URL from the target file's directory; it must never assume the target is `README.md` or that all Markdown lives at the repository root.
+- GitHub-flavored Markdown has no portable native include mechanism. Until the shared GUI badge composition/Markdown adapter is available, author the small Markdown fragment explicitly or generate it in the consuming repository's build. Do not invent a `WithBadge` API or claim a shared renderer exists before GUI implements and tests it.
+- The shared GUI presentation contract is tracked in [GUI issue #86](https://github.com/TrentBest/TheSingularityWorkshop.GUI/issues/86); SURPS adoption is tracked in [SURPS issue #3](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/3).
+
 ## Validation requirements
 
 The SURPS authoring/build checks should fail closed when any of these conditions is true:
