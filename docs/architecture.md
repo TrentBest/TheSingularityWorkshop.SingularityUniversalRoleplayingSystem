@@ -35,6 +35,10 @@ These are initial working definitions, not a frozen schema. We will refine them 
 
 SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation. CiAi is an engineering-governance capability around the repository's build and evidence lifecycle; it is not an in-world ontology provider and must not define inhabitant behavior.
 
+## Rulebook composition
+
+SURPS exposes domain knowledge through a common `ISurpsRulebook` contract. Domain microbundles are wrapped by SURPS-enabled containers and presented as rulebooks such as `SurpsRulebookPhysics` and `SurpsRulebookLaboratories`. The domain repository remains authoritative for its implementation and execution; SURPS owns the shared contract and composition conventions. See [SURPS Rulebooks and Domain Microbundles](rulebooks.html).
+
 ## First integration case: dungeon inhabitants
 
 A dungeon owns its underground environment: spatial structure, environmental conditions, and domain-specific phenomena. It should not own a bespoke intelligence system for every inhabitant.
