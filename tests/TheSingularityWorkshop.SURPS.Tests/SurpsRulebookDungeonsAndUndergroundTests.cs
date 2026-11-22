@@ -1,3 +1,4 @@
+using Xunit;
 using TheSingularityWorkshop.MicroBundleDomain;
 using TheSingularityWorkshop.SingularityUniversalRoleplayingSystem;
 using TheSingularityWorkshop.SingularityUniversalRoleplayingSystem.Rulebooks;
