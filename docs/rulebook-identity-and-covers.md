@@ -32,7 +32,7 @@ Each book has a machine-readable descriptor beside its sourcebook:
 
 `docs/books/{slug}.book.json`
 
-The descriptor contains stable identity, category, numeric LOD, human-facing rulebook title, version, cover path, and LOD badge path. The canonical title is derived from category, LOD, and rulebook title using the exact pattern above. Do not store a separately editable canonical-title string.
+The descriptor contains stable identity, publisher identity and moniker reference, category, numeric LOD, human-facing rulebook title, version, cover path, and LOD badge path. The canonical title is derived from category, LOD, and rulebook title using the exact pattern above. Do not store a separately editable canonical-title string.
 
 The Markdown sourcebook's first H1 must match the descriptor's canonical title. The catalogue must use the same descriptor values. A future build/authoring tool should render the title and cover page directly from the descriptor rather than ask authors to re-enter them.
 
@@ -44,7 +44,7 @@ Every published or CI-admissible rulebook must have a cover image. A title page 
 - The descriptor's `cover` value is a repository-relative path and must resolve to a non-empty file.
 - SVG covers must be valid, accessible, and self-contained; raster covers must use a supported, documented format.
 - A generic placeholder is not a finished cover. The book must have a deliberate image that communicates its subject.
-- The cover page presents, in order: Workshop moniker/creator identity, canonical rulebook title, LOD badge, and cover artwork. The moniker is the publisher identity, not an extra title segment.
+- The cover page presents, in order: the Workshop's canonical animated moniker/creator identity, canonical rulebook title, LOD badge, and cover artwork. The moniker reference is recorded in the descriptor so the presentation does not depend on authors finding or retyping an asset URL. The moniker is the publisher identity, not an extra title segment.
 - The cover artwork is distinct from the small LOD badge. The badge communicates classification and level; the cover image communicates the book's subject and visual identity.
 
 ## LOD badge
@@ -56,7 +56,7 @@ Use the shared SVG badge family at `docs/assets/rulebook-lod-{N}.svg`. The numer
 The SURPS authoring/build checks should fail closed when any of these conditions is true:
 
 1. A descriptor is missing, malformed, or has an unsupported schema version.
-2. Stable ID, category, LOD, title, or version is missing or invalid.
+2. Stable ID, publisher identity/moniker reference, category, LOD, title, or version is missing or invalid.
 3. Category is not in the controlled category list.
 4. LOD is not a non-negative integer.
 5. The canonical title computed from the descriptor does not match the sourcebook H1.
