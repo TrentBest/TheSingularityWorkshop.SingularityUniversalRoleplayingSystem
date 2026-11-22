@@ -2,51 +2,84 @@
 
 ## Purpose
 
-A SURPS rulebook is a discoverable, composable description of a domain's rules, concepts, constraints, and supported interactions. It is not required to own the domain implementation. The domain repository remains authoritative for its simulation, experiments, data, or services.
+A SURPS rulebook is a discoverable, composable description of a domain's rules, concepts, constraints, supported interactions, and setting assumptions. It is not required to own the domain implementation. The domain repository remains authoritative for its simulation, experiments, data, or services.
 
-The initial `ISurpsRulebook` contract now exists as a deliberately minimal marker over `IMicroBundle`. It identifies a composable capability as a SURPS rulebook without prematurely fixing the full ontology, rule serialization, or source-book metadata schema. This first shape is validated against the Dungeons and Underground composition; it must be exercised by Physics and SingularityLaboratories before the contract grows.
+**A SURPS rulebook must be a real, usable tabletop sourcebook first.** Players and referees must be able to use it with paper, pencil, character sheets, dice or another agreed resolution method, and conversation. Digital registration, lookup, visualization, and execution are optional ways to organize or automate the same rules; they are not prerequisites for playing.
+
+The initial `ISurpsRulebook` contract is deliberately minimal over `IMicroBundle`. It identifies a composable capability as a SURPS rulebook without prematurely fixing the full ontology, rule serialization, or source-book metadata schema. It must be validated against multiple domain rulebooks before the contract grows.
 
 ## Composition pattern
 
 ```text
-Domain microbundle
-    ├── domain implementation (owned by its repository)
-    ├── domain knowledge and assets
-    └── SURPS-enabled container
-            └── ISurpsRulebook
-                    └── SurpsRulebookPhysics
+Experience / campaign
+    ├── SURPS enabled? (per-experience opt-in)
+    ├── CORE rulebook (LOD 0)
+    └── explicitly selected rulebooks for declared scopes
+            ├── subject/domain
+            ├── setting / era
+            ├── optional detail / fidelity
+            └── tabletop procedures + digital mappings
+                    └── domain-owned capabilities where needed
 ```
 
-The same pattern can produce `SurpsRulebookLaboratories`, `SurpsRulebookCities`, and other domain rulebooks. A container adapts and presents a domain microbundle through SURPS; it must not fork or duplicate the domain's implementation.
+A domain microbundle may be wrapped by a SURPS-enabled container and presented as a rulebook such as `SurpsRulebookPhysics`. The container adapts and presents domain knowledge; it must not fork or duplicate the domain implementation.
 
-## Rulebook levels of detail (LOD)
+## LOD, scope, and selection
 
-Every SURPS rulebook declares a non-negative integer **level of detail (LOD)**. LOD is part of the rulebook's identity and must be visible wherever the rulebook is presented.
+Every SURPS rulebook declares a non-negative integer **level of detail (LOD)**. LOD is a declared level of rules detail/fidelity and is visible wherever the rulebook is presented. It is not a universal automatic priority number, a graphics-quality setting, or permission for one book to overwrite every lower-numbered book.
 
-- **LOD 0 — CORE** is the shared baseline rulebook. It defines the foundational concepts and default rules that make a SURPS world coherent.
-- **LOD 1 and above** add increasingly specific or detailed rules for a domain, setting, experience, or other declared scope.
-- **Higher LOD supersedes lower LOD by default** when both provide rules for the same applicable scope or decision. The highest applicable LOD is authoritative for that scope.
-- Lower-LOD rules remain available as inherited defaults wherever a higher LOD does not provide a replacement. A higher LOD does not erase unrelated lower-LOD rules.
-- Any deliberate departure from the default precedence must be declared explicitly in the composition/resolution policy; it must never be an accidental or hidden ordering effect.
-- When two applicable rulebooks at the same LOD conflict, SURPS must report or resolve the ambiguity through an explicit policy rather than inventing an arbitrary winner.
+- **LOD 0 — CORE** defines the shared baseline ontology and foundational rules. It is the common fallback for any scope without a selected specialization.
+- **LOD 1 and above** provide additional detail, specialization, historical or fictional context, domain depth, or a more demanding model for a declared scope.
+- **Selection is explicit.** A campaign, experience, or tabletop group chooses which rulebooks apply to which scopes. A higher LOD does not silently activate, replace, or override another rulebook merely because its number is higher.
+- **Scope matters.** Two rulebooks at different LODs may describe different eras, genres, domains, or alternative models. They are not necessarily successive revisions of the same rules.
+- **Composition is declared.** A selected rulebook may extend CORE, specialize a named rule, replace a named procedure, or provide an independent alternative. Its relationship to other books must be stated.
+- **CORE remains the baseline.** Where a selected rulebook does not define a relevant rule, the table falls back to CORE unless the book explicitly declares a different fallback.
+- **Conflicts are visible.** If selected rulebooks define incompatible procedures for the same scope, the group/editor must choose a resolution policy. SURPS must not invent a winner based on load order or numeric LOD alone.
 
-Each rulebook must display its LOD badge in its README/source-book entry and carry the same numeric LOD in its machine-readable metadata when that schema is introduced. The starter SVG badge family lives in `docs/assets/rulebook-lod-N.svg` (currently LOD 0–5); extend the family when higher levels are authored.
+### Example: the subject of spying
 
-![SURPS Rulebook LOD 0 badge](assets/rulebook-lod-0.svg)
+This is an example of a family of books, not a requirement that every campaign use every level.
+
+| Book | LOD | Scope and contribution | Tabletop use |
+|---|---:|---|---|
+| SURPS CORE — Spying | 0 | Baseline concepts: secrecy, observation, concealment, information, detection, exposure, risk, and consequences | A complete generic spying procedure usable in any setting |
+| Spying Through History | 1 | Broad tradecraft, intelligence organizations, historical methods, and changing technology across eras | Add historical context and more detailed methods when useful |
+| Cold War Espionage | 2 | US–Soviet rivalry, period agencies, counterintelligence, proxy operations, equipment, and historical constraints | Select for a campaign set in the Cold War; it specializes only its declared scope |
+| Cyberpunk Espionage | 3 | Corporate intelligence, digital intrusion, pervasive surveillance, identity manipulation, autonomous systems, and speculative countermeasures | Select for a cyberpunk campaign; it is a different setting specialization, not an automatic upgrade to Cold War rules |
+
+A table can play CORE alone. It can add the historical book for richer tradecraft, select Cold War rules for one campaign, and select cyberpunk rules for another. The campaign sheet records those choices. A referee can also select only particular chapters or procedures where the book allows it.
+
+The example deliberately demonstrates that **LOD and campaign selection are related but distinct**: LOD communicates depth; scope and explicit selection determine applicability.
 
 ## Contract responsibilities
 
-An `ISurpsRulebook` should eventually provide a stable way to:
+A future rulebook descriptor should provide a stable way to:
 
-- identify the rulebook (stable identity, name, version, and domain);
-- describe its scope, assumptions, and boundaries;
-- expose the concepts and terminology it contributes to the shared ontology;
-- publish rules and constraints in a structured, inspectable form;
+- identify the rulebook (stable identity, title, version, LOD, and publisher/domain);
+- describe scope, genre, era, assumptions, exclusions, and intended audience;
+- declare whether it extends, specializes, replaces, or offers an alternative to a named CORE rule or another source;
+- expose concepts and terminology contributed to the shared ontology;
+- publish human-readable procedures and, where appropriate, structured rule definitions;
 - declare capabilities, dependencies, and supported interactions;
-- expose examples, source-book material, and living visual explanations;
-- state compatibility and provenance for the underlying domain implementation.
+- provide examples, tables, worksheets, player aids, referee guidance, and living visual explanations;
+- state compatibility and provenance for underlying domain implementations.
 
-The contract should distinguish descriptive knowledge from executable behavior. A rulebook may reference domain capabilities, but it should not silently become the engine that executes them.
+These are documentation and design requirements, not a claim that the current C# marker already exposes all these fields. Do not freeze public CLR signatures until multiple domain providers have been reviewed.
+
+## Tabletop and digital parity
+
+Every foundational rule must be independently understandable and playable without a device. Each rule should explain:
+
+1. What the player declares.
+2. What the referee establishes or checks.
+3. What character, equipment, environment, and situation records matter.
+4. How uncertainty is resolved (including any dice, tables, or agreed procedure).
+5. How time passes and what consequences are recorded.
+6. What happens on success, partial success, failure, interruption, or an invalid attempt.
+
+The digital mapping may automate calculations, track state, offer prompts, coordinate participants, or visualize outcomes. It must not hide essential rules in code or make a network service necessary for ordinary tabletop play.
+
+See [Tabletop Campaign Composition and Rulebook Selection](Theory/tabletop-campaign-composition.md) for the full player/referee/editor procedure and the spying example.
 
 ## Ownership boundaries
 
@@ -55,7 +88,8 @@ The contract should distinguish descriptive knowledge from executable behavior. 
 | Common rulebook contract, composition conventions, cross-domain ontology | SURPS |
 | Physical laws, physical quantities, simulation and consequences | Physics |
 | Laboratory domains, experiments, apparatus and educational experiences | SingularityLaboratories |
-| City-specific entities, infrastructure, services and civic rules | A future Cities domain |
+| City-specific entities, infrastructure, services and civic rules | SingularityCity |
+| Posture, gesture, motion and embodied interaction | Gestures |
 | Microbundle composition | FSM_COS |
 | State and transition primitives | FSM_API |
 | Execution and stepping | FSM_Foundry |
@@ -69,7 +103,7 @@ The first SURPS rulebook container is `SurpsRulebookDungeonsAndUnderground` in t
 
 The underlying bundle is authored in FSM_Dungeon as `TheSingularityWorkshop.FSM_Dungeon.MicroBundle`, exposing `fsm-dungeon.underground-environment`. The SURPS wrapper refers to that bundle by its stable MicroBundle identity; it does not copy the Dungeon implementation or add a project dependency on Dungeon source. The composition host resolves the dependency from the MicroBundle repository.
 
-The first implementation established the ownership and dependency direction. The sourcebook now supplies the human-readable domain knowledge layer:
+The sourcebook supplies the human-readable domain knowledge layer:
 
 - [Dungeons and Underground — LOD 1 sourcebook](books/dungeons-and-underground.md)
 - [Sourcebook catalogue and living illustrations](books/index.md)
@@ -78,42 +112,30 @@ The first implementation established the ownership and dependency direction. The
 - [World simulation model](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/WORLD_SIMULATION.md)
 - [Underground rendering and observation](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/UNDERGROUND_RENDERING.md)
 
-The sourcebook describes formation, construction, topology, geology, materials, environmental conditions, hazards, traversal, observation, and authoring. It explicitly distinguishes implemented behavior from design targets and keeps the ownership of inhabitants, physical calculations, perception, communication, movement, rendering, and execution with their respective capabilities.
+The sourcebook describes formation, construction, topology, geology, materials, environmental conditions, hazards, traversal, observation, and authoring. It distinguishes implemented behavior from design targets and keeps ownership of inhabitants, physical calculations, perception, communication, movement, rendering, and execution with their respective capabilities.
 
-The SURPS MicroBundle project now packs the sourcebook and its three living SVG diagrams, plus the LOD 1 badge, into the NuGet package under `contentFiles/any/any/`. This makes the human-readable rulebook travel with the composition artifact; it does not make the prose executable or transfer domain ownership.
+The SURPS MicroBundle project packs the sourcebook and its living SVG diagrams, plus the LOD 1 badge, into the NuGet package under `contentFiles/any/any/`. This makes the human-readable rulebook travel with the composition artifact; it does not make prose executable or transfer domain ownership.
 
-The current C# `ISurpsRulebook` remains a minimal marker. The sourcebook is editorial knowledge, not yet a machine-readable rule catalogue or executable rule resolver. The bundle's composition shell still establishes identity and dependency direction.
+The current C# `ISurpsRulebook` remains a minimal marker. The sourcebook is editorial knowledge, not yet a machine-readable rule catalogue or executable rule resolver.
 
-## Example: Physics
+## Examples: Physics and Laboratories
 
-The Physics repository supplies its authoritative physics microbundle. A SURPS-enabled container presents that bundle as `SurpsRulebookPhysics`.
+Physics supplies its authoritative physics microbundles. A SURPS-enabled container presents those capabilities as a rulebook. The book describes physical concepts, units, constraints, assumptions, and supported calculations; Physics remains responsible for calculating physical results. It must not claim a world-step loop, gravity integration, friction, or a general rigid-body solver unless those capabilities are actually implemented.
 
-The rulebook should make physical concepts, laws, units, constraints, and available simulations discoverable to a SURPS world. When an entity falls, collides, heats, or otherwise interacts physically, the rulebook identifies the applicable domain capability; Physics remains responsible for calculating the physical result.
-
-## Example: Laboratories
-
-SingularityLaboratories supplies its laboratory and experiment microbundles. A SURPS-enabled container presents the relevant content as `SurpsRulebookLaboratories`.
-
-This lets a world contain laboratories as places and experiences, while laboratory apparatus, experiment procedures, safety constraints, observations, and educational material remain grounded in the Laboratories domain.
+SingularityLaboratories supplies laboratory and experiment microbundles. A SURPS-enabled container presents apparatus, procedures, safety constraints, observations, and educational material while the Laboratories domain remains responsible for its execution.
 
 ## Design constraints
 
-1. Keep the initial marker contract minimal until multiple domain microbundles validate its next responsibilities.
-2. Keep rulebook metadata and ontology distinct from domain execution.
+1. Keep the marker contract minimal until multiple domain microbundles validate its next responsibilities.
+2. Keep ontology and sourcebook rules distinct from domain execution.
 3. Prefer references/adapters over copied domain implementations.
-4. Make dependencies and compatibility explicit.
+4. Make dependencies, scope, compatibility, provenance, and selection explicit.
 5. Support multiple rulebooks in one world without assuming one global setting.
-6. Keep authored source-book content and machine-readable rule definitions traceable to each other.
-7. Treat a SURPS-enabled container as a composition boundary, not a new domain owner.
+6. Keep authored source-book content and machine-readable descriptors traceable to the same rule identity/version.
+7. Keep human-readable sourcebooks useful independently of a particular UI or host.
 8. Never describe an aspirational capability as implemented without evidence from its owning repository.
-9. Keep human-readable sourcebooks useful independently of a particular UI or host.
-
-## First collaboration requests
-
-- **Physics:** identify the smallest useful physics microbundle surface, the concepts/units/rules that should be discoverable, and the correct boundary for requesting physical calculations.
-- **SingularityLaboratories:** identify a representative laboratory/experiment microbundle, its apparatus and safety constraints, and how it should be presented as a rulebook without duplicating lab execution.
-- **SURPS:** compare both responses, draft the minimal `ISurpsRulebook` contract, and validate it against a shared world containing physical entities and a laboratory experience.
+9. Do not infer precedence from numeric LOD alone.
 
 ## Registration and behavior resolution
 
-Rulebooks are registered with the SURPS master system so their rules and domain capabilities can be discovered, inspected, and resolved in context. See [Rulebook Registration and Behavioral Resolution](registration-and-behavior.md) for the registration lifecycle, editor-visible rule descriptors, typed mathematical binding, provenance, and the SURPS–Gestures–Physics interaction model.
+Rulebooks may be registered with the SURPS master system so their rules and domain capabilities can be discovered, inspected, and resolved in context. Registration is a digital convenience; the same selected sourcebooks can be placed on a tabletop and used manually. See [Rulebook Registration and Behavioral Resolution](registration-and-behavior.md) for the current design boundary and provider examples.
