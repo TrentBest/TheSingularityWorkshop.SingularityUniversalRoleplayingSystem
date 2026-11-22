@@ -1,7 +1,11 @@
 ![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
 
 # Singularity Universal Roleplaying System - Domain - LOD 1 - Dungeons and Underground
-![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)\n\n![Dungeons and Underground cover](covers/dungeons-and-underground.svg)\n\n[Book identity descriptor](dungeons-and-underground.book.json) · [Identity and cover standard](../rulebook-identity-and-covers.md)
+![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
+
+![Dungeons and Underground cover](covers/dungeons-and-underground.svg)
+
+[Book identity descriptor](dungeons-and-underground.book.json) · [Identity and cover standard](../rulebook-identity-and-covers.md)
 
 **A SURPS domain sourcebook · LOD 1 · Status: living draft grounded in FSM_Dungeon**
 
