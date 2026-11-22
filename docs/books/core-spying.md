@@ -243,4 +243,5 @@ The next revision should be based on actual table evidence. This module is a fir
 - [Rulebook composition and LOD](../rulebooks.md)
 - [Tabletop campaign composition](../Theory/tabletop-campaign-composition.md)
 - [Player and Editor Manual](../player-and-editor-manual.md)
+- [Printable character, referee, and campaign sheets](core-spying-play-sheets.md)
 - [Rulebook identity, titles, and covers](../rulebook-identity-and-covers.md)
