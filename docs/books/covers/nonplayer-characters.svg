@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Nonplayer Characters — SURPS sourcebook cover</title>
+  <desc id="desc">A group of distinct people stand together in a layered city and institutional setting, suggesting a shared world of relationships, work, and agency.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111827"/><stop offset="1" stop-color="#253c50"/></linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#496174"/><stop offset="1" stop-color="#1b2b3b"/></linearGradient>
+    <radialGradient id="halo"><stop offset="0" stop-color="#65d3d0" stop-opacity=".4"/><stop offset="1" stop-color="#65d3d0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <circle cx="455" cy="620" r="350" fill="url(#halo)"/>
+  <path d="M0 540 L100 460 190 500 275 390 365 470 450 360 545 455 640 380 730 455 820 400 900 475 V1200 H0Z" fill="#30485c"/>
+  <path d="M0 690 L140 600 250 660 370 555 490 655 610 565 760 650 900 570 V1200 H0Z" fill="url(#ground)"/>
+  <g fill="#182a3a" stroke="#6f91a6" stroke-width="5" opacity=".95">
+    <path d="M65 700V570H185V700Z"/><path d="M90 570V510H160V570Z"/>
+    <path d="M710 675V545H835V675Z"/><path d="M735 545V485H810V545Z"/>
+    <path d="M345 640V500H555V640Z"/><path d="M385 500V445H515V500Z"/>
+  </g>
+  <g fill="#9ad9d9" opacity=".8"><rect x="95" y="600" width="22" height="34"/><rect x="135" y="600" width="22" height="34"/><rect x="745" y="575" width="22" height="34"/><rect x="785" y="575" width="22" height="34"/><rect x="395" y="535" width="28" height="38"/><rect x="475" y="535" width="28" height="38"/></g>
+  <path d="M0 820 Q200 770 450 825 T900 815 V1200 H0Z" fill="#152638"/>
+  <g stroke="#101c2a" stroke-width="9" stroke-linejoin="round">
+    <g transform="translate(170 0)">
+      <circle cx="0" cy="675" r="43" fill="#bd8969"/><path d="M-42 666Q-38 610 5 620Q45 625 43 670Q10 645 -42 666Z" fill="#302a2c"/>
+      <path d="M-70 850L-55 730Q0 690 55 730L72 850Z" fill="#477e8b"/><path d="M-35 850L-25 960H-2L8 850Z" fill="#202e40"/><path d="M18 850L24 960H50L45 850Z" fill="#202e40"/>
+    </g>
+    <g transform="translate(330 0)">
+      <circle cx="0" cy="650" r="42" fill="#80583f"/><path d="M-43 652Q-35 595 5 610Q45 615 43 650L30 640Q0 630 -43 652Z" fill="#20212a"/>
+      <path d="M-68 840L-58 715Q0 685 58 715L70 840Z" fill="#9a6c48"/><path d="M-34 840L-38 960H-10L0 840Z" fill="#29384a"/><path d="M18 840L28 960H54L45 840Z" fill="#29384a"/>
+    </g>
+    <g transform="translate(500 0)">
+      <circle cx="0" cy="655" r="42" fill="#e0b58e"/><path d="M-42 655Q-35 600 5 610Q42 615 42 655Q12 630 -42 655Z" fill="#a7b9c4"/>
+      <path d="M-70 840L-58 720Q0 690 58 720L70 840Z" fill="#596b9a"/><path d="M-34 840L-30 960H-5L0 840Z" fill="#202f43"/><path d="M18 840L28 960H53L45 840Z" fill="#202f43"/>
+    </g>
+    <g transform="translate(675 0)">
+      <circle cx="0" cy="680" r="42" fill="#a96f51"/><path d="M-43 676Q-30 615 10 630Q45 640 40 680Q5 650 -43 676Z" fill="#25232b"/>
+      <path d="M-68 850L-56 735Q0 700 58 735L68 850Z" fill="#557d67"/><path d="M-32 850L-30 960H-5L0 850Z" fill="#263548"/><path d="M18 850L26 960H50L44 850Z" fill="#263548"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#75d6d3" stroke-width="3" opacity=".7"><path d="M215 710Q250 650 290 690T410 680T550 700T630 690"/><circle cx="290" cy="690" r="8" fill="#75d6d3"/><circle cx="410" cy="680" r="8" fill="#75d6d3"/><circle cx="550" cy="700" r="8" fill="#75d6d3"/></g>
+  <path d="M60 90H840" stroke="#65d3d0" stroke-width="4"/>
+  <text x="70" y="150" fill="#a9e8f1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="6">THE SINGULARITY WORKSHOP</text>
+  <text x="70" y="220" fill="#fff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="43" font-weight="800">SINGULARITY UNIVERSAL</text>
+  <text x="70" y="274" fill="#fff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="43" font-weight="800">ROLEPLAYING SYSTEM</text>
+  <text x="70" y="335" fill="#8be1ee" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="4">DOMAIN · LOD 1</text>
+  <text x="70" y="1065" fill="#fff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">NONPLAYER</text>
+  <text x="70" y="1125" fill="#fff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="800">CHARACTERS</text>
+  <text x="72" y="1168" fill="#a9b8c7" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" letter-spacing="2">PEOPLE, AGENCY, AND INSTITUTIONS</text>
+</svg>
