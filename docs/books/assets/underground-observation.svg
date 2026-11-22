@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-labelledby="title desc">
+<title id="title">Living underground illumination and perception model</title>
+<desc id="desc">A torch illuminates nearby rock and a corridor. A wall blocks direct light and line of sight around a bend. Sound waves travel around the corner to an observer, illustrating that illumination, visibility, perception, and rendering are separate.</desc>
+<style>
+ text{font-family:system-ui,sans-serif;fill:#eef3f6}.h{font-size:17px;font-weight:700}.s{font-size:12px;fill:#b8c8d1}.light{fill:#f3c66f;opacity:.17;animation:glow 3s ease-in-out infinite}.ray{stroke:#f2c66c;stroke-width:2;stroke-dasharray:7 9;animation:ray 5s linear infinite}.sound{stroke:#82d6d0;stroke-width:3;fill:none;stroke-dasharray:6 7;animation:ray 4s linear infinite}@keyframes glow{50%{opacity:.32}}@keyframes ray{to{stroke-dashoffset:-80}}@media(prefers-reduced-motion:reduce){.light,.ray,.sound{animation:none}}
+</style>
+<rect width="900" height="400" rx="20" fill="#111c26"/>
+<!-- cave floor and ceiling -->
+<path d="M30 110 Q110 75 210 105 L355 105 L355 145 L250 145 L250 295 L355 295 L355 335 L30 335Z" fill="#354752" stroke="#82979c" stroke-width="3"/>
+<path d="M355 105 L570 105 L570 145 L420 145 L420 295 L570 295 L570 335 L355 335Z" fill="#354752" stroke="#82979c" stroke-width="3"/>
+<path d="M570 105 L870 105 L870 145 L620 145 L620 295 L870 295 L870 335 L570 335Z" fill="#354752" stroke="#82979c" stroke-width="3"/>
+<!-- light cone -->
+<path d="M115 220 L375 120 L375 310Z" class="light"/>
+<path d="M115 220 L375 120 M115 220 L375 310" class="ray" fill="none"/>
+<circle cx="115" cy="220" r="19" fill="#f2bd55"/><circle cx="115" cy="220" r="35" fill="#f2bd55" opacity=".12"/>
+<path d="M103 239 L127 239 L123 268 L107 268Z" fill="#b87a3b"/>
+<!-- wall occlusion -->
+<rect x="355" y="145" width="65" height="150" rx="5" fill="#1b2932" stroke="#8fa3a8" stroke-width="3"/>
+<path d="M420 220 L535 220" stroke="#e9a95c" stroke-width="2" stroke-dasharray="5 8" opacity=".25"/>
+<!-- sound wave around bend -->
+<path d="M180 286 Q300 375 420 340 Q530 308 585 245 Q625 200 690 220" class="sound"/>
+<path d="M195 302 Q320 390 445 352 Q560 318 605 255" class="sound" opacity=".5"/>
+<!-- observer -->
+<circle cx="735" cy="220" r="20" fill="#83d6c4"/><path d="M735 244 V290 M735 260 L710 280 M735 260 L760 280" stroke="#83d6c4" stroke-width="7" stroke-linecap="round"/>
+<path d="M710 215 Q680 190 650 215" fill="none" stroke="#83d6c4" stroke-width="3" stroke-dasharray="4 7"/>
+<text x="58" y="55" class="h">Illumination</text><text x="58" y="76" class="s">torch lights only surfaces reached by its light</text>
+<text x="355" y="55" class="h">Occlusion</text><text x="355" y="76" class="s">wall blocks direct light and line of sight</text>
+<text x="650" y="55" class="h">Perception</text><text x="650" y="76" class="s">observer may detect sound around the bend</text>
+<text x="60" y="365" class="s">Light ≠ visibility ≠ perception ≠ rendering. The observer's knowledge is not the same as world truth.</text>
+</svg>
