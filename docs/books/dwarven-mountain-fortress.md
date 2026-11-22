@@ -1,14 +1,14 @@
-# Dwarven Mountain Fortress — a living settlement case study
+# Singularity Universal Roleplaying System - Domain - LOD 2 - Dwarven Strongholds
 
-![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
+![SURPS Rulebook LOD 2](../assets/rulebook-lod-2.svg)
 
-![Living conceptual cutaway of the Dwarven Mountain Fortress](assets/dwarven-mountain-fortress-concept.svg)
+![Living conceptual cutaway of a Dwarven Stronghold](assets/dwarven-mountain-fortress-concept.svg)
 
 *Concept illustration only: the cutaway is not a generated Physics mountain volume and is not to scale.*
 
-**Status:** LOD 1 scenario framework. This is a worked world-building case study, not a finalized universal dwarven biology or culture system and not a claim that the fortress is already generated or playable.
+**Status:** LOD 2 stronghold-domain case study. This book assumes the [Dwarves, LOD 1](dwarves.md) sourcebook. This is a worked world-building case study, not a finalized universal dwarven biology or culture system and not a claim that the fortress is already generated or playable.
 
-The Dwarven Mountain Fortress is the first large-scale composition of the Dungeons and Underground sourcebook. It demonstrates how a society, a mountain, and an underground environment can share one persistent world without one domain taking ownership of another.
+A Dwarven Stronghold is a higher-detail composition of the Dwarves and Dungeons and Underground sourcebooks. The general Dwarves book covers dwarves encountered in the wider world; this book is required when entering or meaningfully exploring a stronghold. It demonstrates how a society, a mountain, and an underground environment can share one persistent world without one domain taking ownership of another.
 
 ## 1. The mountain comes first
 
@@ -125,7 +125,15 @@ The initial journey should be understandable without combat:
 
 This is the first proof that the world is a living, coherent place—not merely a sequence of encounter rooms.
 
+## Premade dwarven cities
+
+This book defines reusable stronghold vocabulary and composition rules; it is not itself a specific city. A selected premade dwarven city should have a separate stable settlement identity, coordinate frame, districts, history, inhabitants, institutions, trade relationships, and persistent state. It composes the Dwarves and Dwarven Strongholds books rather than replacing them.
+
+The progression is **Core concept → Dwarves (LOD 1) → Dwarven Strongholds (LOD 2) → selected dwarven city instance (LOD 3+)**.
+
 ## References
+
+- [Dwarves — LOD 1](dwarves.md)
 
 - [Dungeons and Underground, LOD 1](dungeons-and-underground.md)
 - [FSM_Dungeon fortress scenario and integration contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md)
