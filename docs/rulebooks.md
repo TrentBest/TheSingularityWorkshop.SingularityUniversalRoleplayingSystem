@@ -19,11 +19,21 @@ Domain microbundle
 
 The same pattern can produce `SurpsRulebookLaboratories`, `SurpsRulebookCities`, and other domain rulebooks. A container adapts and presents a domain microbundle through SURPS; it must not fork or duplicate the domain's implementation.
 
-## Core and optional rulebooks
+## Rulebook levels of detail (LOD)
 
-SURPS CORE defines the shared baseline. Domain and experience rulebooks add explicitly declared higher levels of behavioral detail (LOD). An editor chooses which rulebook supplies behavior for a scope; higher LOD never silently overrides CORE. If no higher-level rulebook is selected or available, CORE remains the fallback. Rulebooks must declare their required capabilities, scope, compatibility, timing model, and relationship to CORE.
+Every SURPS rulebook declares a non-negative integer **level of detail (LOD)**. LOD is part of the rulebook's identity and must be visible wherever the rulebook is presented.
 
-SURPS itself is opt-in per experience. A disabled experience does not need to discover or load SURPS rulebooks.
+- **LOD 0 — CORE** is the shared baseline rulebook. It defines the foundational concepts and default rules that make a SURPS world coherent.
+- **LOD 1 and above** add increasingly specific or detailed rules for a domain, setting, experience, or other declared scope.
+- **Higher LOD supersedes lower LOD by default** when both provide rules for the same applicable scope or decision. The highest applicable LOD is authoritative for that scope.
+- Lower-LOD rules remain available as inherited defaults wherever a higher LOD does not provide a replacement. A higher LOD does not erase unrelated lower-LOD rules.
+- Any deliberate departure from the default precedence must be declared explicitly in the composition/resolution policy; it must never be an accidental or hidden ordering effect.
+- When two applicable rulebooks at the same LOD conflict, SURPS must report or resolve the ambiguity through an explicit policy rather than inventing an arbitrary winner.
+
+Each rulebook must display its LOD badge in its README/source-book entry and carry the same numeric LOD in its machine-readable metadata when that schema is introduced. The starter SVG badge family lives in `docs/assets/rulebook-lod-N.svg` (currently LOD 0–5); extend the family when higher levels are authored.
+
+![SURPS Rulebook LOD 0 badge](assets/rulebook-lod-0.svg)
+
 
 ## Contract responsibilities
 
