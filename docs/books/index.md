@@ -4,9 +4,21 @@
 
 SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
-## Available core books
+## Core concepts — LOD 0
 
-### Singularity Universal Roleplaying System - Core - LOD 0 - Spying
+### Dwarves
+
+![SURPS Rulebook LOD 0](../assets/rulebook-lod-0.svg)
+
+![Dwarves core concept cover](covers/dwarves-core.svg)
+
+Descriptor: [dwarves-core-concept.book.json](dwarves-core-concept.book.json)
+
+Dwarves are known to exist in the world, but their population, culture, stronghold, and individual inhabitants may remain undefined or undisclosed.
+
+[Read Dwarves — Core Concept](dwarves-core-concept.md)
+
+### Spying
 
 ![SURPS Rulebook LOD 0](../assets/rulebook-lod-0.svg)
 
@@ -18,9 +30,9 @@ A first playable tabletop module for setting-neutral espionage. Includes a chara
 
 [Read CORE Spying](core-spying.md) · [Printable play sheets](core-spying-play-sheets.md)
 
-## Available domain books
+## Domain books — LOD 1
 
-### Singularity Universal Roleplaying System - Domain - LOD 1 - Dungeons and Underground
+### Dungeons and Underground
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
 
@@ -32,17 +44,37 @@ The underground as a causal world: formation, construction, topology, geology, m
 
 [Read Dungeons and Underground](dungeons-and-underground.md)
 
-### Dwarven Mountain Fortress — LOD 1 scenario case study
+### Dwarves
 
-A mountain-first civilization: exterior terrain, geological constraints, fortress districts, construction history, dwarven daily life, material logistics, water infrastructure, exploration, and cross-domain ownership.
+![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
 
-[Read Dwarven Mountain Fortress](dwarven-mountain-fortress.md) · [FSM_Dungeon scenario contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md) · [Physics mountain-volume brief](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md)
+![Dwarves domain cover](covers/dwarves.svg)
 
-## NPC domain ownership
+Descriptor: [dwarves.book.json](dwarves.book.json)
 
-The general people, residents, and NPC ontology is owned by [Singularity City — Nonplayer Characters, LOD 1](https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/nonplayer-characters.md). SURPS consumes that domain for tabletop character portrayal, encounters, campaigns, and play procedures; it does not own the general NPC/resident ontology.
+A general people-and-culture sourcebook: variation, families, crafts, organizations, trade, visitors, encounters, and dwarves participating in wider communities. This is the correct level for a town-market encounter where dwarves are present but their stronghold remains offstage.
 
-Specialist domains extend the shared model at higher LOD. For example, [Singularity Laboratories — Laboratory NPCs, LOD 2](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md) defines laboratory-specific staffing and participants.
+[Read Dwarves](dwarves.md)
+
+## Stronghold books — LOD 2
+
+### Dwarven Strongholds
+
+![SURPS Rulebook LOD 2](../assets/rulebook-lod-2.svg)
+
+![Dwarven Strongholds cover](covers/dwarven-mountain-fortress.svg)
+
+Descriptor: [dwarven-mountain-fortress.book.json](dwarven-mountain-fortress.book.json)
+
+The internal anatomy and life of a stronghold: districts, access, governance, infrastructure, underground topology, material logistics, construction history, and observer knowledge.
+
+[Read Dwarven Strongholds](dwarven-mountain-fortress.md) · [FSM_Dungeon scenario contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md) · [Physics mountain-volume brief](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md)
+
+## Cross-domain ownership
+
+The general people/resident/NPC ontology is owned by [Singularity City — Nonplayer Characters, LOD 1](https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/nonplayer-characters.md). SURPS consumes that domain for tabletop portrayal, encounters, campaigns, and play procedures. Dwarven culture and setting-specific portrayal belong to the Dwarves book; stronghold environments compose FSM_Dungeon and Physics rather than duplicating their authoritative models.
+
+Specialist domains extend shared models at higher LOD. For example, [Singularity Laboratories — Laboratory NPCs, LOD 2](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md) defines laboratory-specific staffing and participants.
 
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
