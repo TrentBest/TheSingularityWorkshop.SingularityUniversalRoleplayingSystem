@@ -19,7 +19,7 @@ Domain microbundle
 
 The same pattern can produce `SurpsRulebookLaboratories`, `SurpsRulebookCities`, and other domain rulebooks. A container adapts and presents a domain microbundle through SURPS; it must not fork or duplicate the domain's implementation.
 
-## Contract responsibilities
+## Core and optional rulebooks\n\nSURPS CORE defines the shared baseline. Domain and experience rulebooks add explicitly declared higher levels of behavioral detail (LOD). An editor chooses which rulebook supplies behavior for a scope; higher LOD never silently overrides CORE. If no higher-level rulebook is selected or available, CORE remains the fallback. Rulebooks must declare their required capabilities, scope, compatibility, timing model, and relationship to CORE.\n\nSURPS itself is opt-in per experience. A disabled experience does not need to discover or load SURPS rulebooks.\n\n## Contract responsibilities
 
 An `ISurpsRulebook` should eventually provide a stable way to:
 
