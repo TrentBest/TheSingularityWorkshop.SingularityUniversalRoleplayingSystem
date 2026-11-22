@@ -4,7 +4,7 @@
 
 A SURPS rulebook is a discoverable, composable description of a domain's rules, concepts, constraints, and supported interactions. It is not required to own the domain implementation. The domain repository remains authoritative for its simulation, experiments, data, or services.
 
-The intended contract name is `ISurpsRulebook`. This is a design target, not yet a committed public API or NuGet contract. We should validate the shape against at least Physics and SingularityLaboratories before fixing signatures.
+The initial `ISurpsRulebook` contract now exists as a deliberately minimal marker over `IMicroBundle`. It identifies a composable capability as a SURPS rulebook without prematurely fixing the full ontology, rule serialization, or source-book metadata schema. This first shape is validated against the Dungeons and Underground composition; it must be exercised by Physics and SingularityLaboratories before the contract grows.
 
 ## Composition pattern
 
@@ -48,6 +48,14 @@ The contract should distinguish descriptive knowledge from executable behavior. 
 
 SURPS defines how domain knowledge is packaged and understood. It does not take ownership of domain truth.
 
+## First implementation: Dungeons and Underground
+
+The first SURPS rulebook container is `SurpsRulebookDungeonsAndUnderground` in the SURPS repository. It declares the FSM_Dungeon environment MicroBundle as its required dependency and exposes the provider `surps.rulebook.dungeons-and-underground`.
+
+The underlying bundle is authored in FSM_Dungeon as `TheSingularityWorkshop.FSM_Dungeon.MicroBundle`, exposing `fsm-dungeon.underground-environment`. The SURPS wrapper refers to that bundle by its stable MicroBundle identity; it does not copy the Dungeon implementation or add a project dependency on Dungeon source. The composition host resolves the dependency from the MicroBundle repository.
+
+The first implementation is intentionally a composition shell. It establishes the ownership and dependency direction; it does not yet claim that Dungeon provides inhabitant ontology, behavior, communication, or a finalized machine-readable rule catalogue. Those remain separate capabilities and future contract work.
+
 ## Example: Physics
 
 The Physics repository supplies its authoritative physics microbundle. A SURPS-enabled container presents that bundle as `SurpsRulebookPhysics`.
@@ -62,7 +70,7 @@ This lets a world contain laboratories as places and experiences, while laborato
 
 ## Design constraints
 
-1. Do not freeze an interface signature before reviewing real domain microbundles.
+1. Keep the initial marker contract minimal until multiple domain microbundles validate its next responsibilities.
 2. Keep rulebook metadata and ontology distinct from domain execution.
 3. Prefer references/adapters over copied domain implementations.
 4. Make dependencies and compatibility explicit.
