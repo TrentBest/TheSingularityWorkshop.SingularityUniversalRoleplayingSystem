@@ -14,6 +14,12 @@ The underground as a causal world: formation, construction, topology, geology, m
 
 [Read Dungeons and Underground](dungeons-and-underground.md)
 
+### Dwarven Mountain Fortress — LOD 1 scenario case study
+
+A mountain-first civilization: exterior terrain, geological constraints, fortress districts, construction history, dwarven daily life, material logistics, water infrastructure, exploration, and cross-domain ownership.
+
+[Read Dwarven Mountain Fortress](dwarven-mountain-fortress.md) · [FSM_Dungeon scenario contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md) · [Physics mountain-volume brief](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md)
+
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
   <figcaption>A place has layers of formation, use, and change.</figcaption>
