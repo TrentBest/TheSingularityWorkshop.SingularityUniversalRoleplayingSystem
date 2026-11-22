@@ -22,13 +22,11 @@ The underground as a causal world: formation, construction, topology, geology, m
 
 [Read Dungeons and Underground](dungeons-and-underground.md)
 
-### Nonplayer Characters
+## NPC domain ownership
 
-![LOD 1](../assets/rulebook-lod-1.svg)
+The general people, residents, and NPC ontology is owned by [Singularity City — Nonplayer Characters, LOD 1](https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/nonplayer-characters.md). SURPS consumes that domain for tabletop character portrayal, encounters, campaigns, and play procedures; it does not own the general NPC/resident ontology.
 
-The people who make worlds function: identity, capabilities, knowledge, motivation, relationships, agency, institutional positions, staffing, schedules, and population-scale representation.
-
-[Read Nonplayer Characters](nonplayer-characters.md) · [Book descriptor](nonplayer-characters.book.json)
+Specialist domains extend the shared model at higher LOD. For example, [Singularity Laboratories — Laboratory NPCs, LOD 2](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md) defines laboratory-specific staffing and participants.
 
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
