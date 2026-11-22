@@ -25,7 +25,7 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 
 See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
 
-Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). CiAi is used as a read-only CI evidence and admission capability; it does not own SURPS ontology or authorize changes.
+Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). CiAi is used as a read-only CI evidence and admission capability; it does not own SURPS ontology or authorize changes. The [CiAi evidence workflow](.github/workflows/ciai-evidence.yml) observes exact-commit Pages evidence.
 
 ## 3. Source Books
 
