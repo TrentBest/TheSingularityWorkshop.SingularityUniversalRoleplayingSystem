@@ -86,6 +86,8 @@ See [Tabletop Campaign Composition and Rulebook Selection](Theory/tabletop-campa
 | Concern | Owner |
 |---|---|
 | Common rulebook contract, composition conventions, cross-domain ontology | SURPS |
+| Shared NPC/person identity, capabilities, knowledge, motivation, relationships, and agency concepts | SURPS — Nonplayer Characters |
+| Institutional positions, staffing requirements, and local operating policies | Owning domain (Laboratories, City, military installation, school, etc.) |
 | Physical laws, physical quantities, simulation and consequences | Physics |
 | Laboratory domains, experiments, apparatus and educational experiences | SingularityLaboratories |
 | City-specific entities, infrastructure, services and civic rules | SingularityCity |
@@ -96,6 +98,12 @@ See [Tabletop Campaign Composition and Rulebook Selection](Theory/tabletop-campa
 | Visual rendering and SVG presentation | GUI / GUI.SVG |
 
 SURPS defines how domain knowledge is packaged and understood. It does not take ownership of domain truth.
+
+## People, positions, and institutional staffing
+
+The [Nonplayer Characters sourcebook](books/nonplayer-characters.md) defines the shared person-and-agency concepts. An institution defines the positions it needs and the responsibilities attached to them; an NPC may be assigned to one or more positions. The institution still owns its qualification requirements, policies, and operating procedures. The trusted host/security domain owns authentication, authorization, and enforcement.
+
+For example, Singularity Laboratories can define a Safety Officer position and record a staff assignment. The NPC sourcebook describes the person, their capabilities, knowledge, motivations, and relationships. Laboratory policy determines what qualifications and evidence the position requires. A trusted host decides whether the authenticated principal may access a restricted instrument or dataset. Assignment, qualification, authority, and digital authorization remain distinct.
 
 ## First playable CORE tabletop module: Spying
 
