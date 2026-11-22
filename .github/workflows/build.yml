@@ -41,3 +41,11 @@ jobs:
         run: dotnet build SURPS.sln --configuration Release --no-restore
       - name: Test
         run: dotnet test SURPS.sln --configuration Release --no-build --logger "trx;LogFileName=surps-tests.trx"
+      - name: Pack MicroBundle artifact (no publication)
+        run: dotnet pack src/TheSingularityWorkshop.SURPS.Rulebook.DungeonsAndUnderground/TheSingularityWorkshop.SURPS.Rulebook.DungeonsAndUnderground.csproj --configuration Release --no-build --output ./artifacts
+      - name: Upload MicroBundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: surps-rulebook-dungeons-and-underground
+          path: ./artifacts/*.nupkg
+          if-no-files-found: error
