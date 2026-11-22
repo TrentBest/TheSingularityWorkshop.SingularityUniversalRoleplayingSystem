@@ -42,6 +42,10 @@ Illustrations should teach, not merely decorate. SVGs can expose anatomy, state 
 
 The first site is a lightweight static publication surface. The SVG examples are authored assets, not screenshots or video substitutes.
 
+For cross-repository contributors, SURPS now publishes the proposed [Repository Publication and Graphics Standard](docs/repository-publication-and-graphics-standard.md). It defines common documentation locations, book placement, publisher identity, badge roles, SVG accessibility, visual provenance, and an incremental adoption process without overriding domain ownership.
+
+The book-specific [Rulebook Identity, Titles, and Covers standard](docs/rulebook-identity-and-covers.md) remains authoritative for descriptors, title pages, covers, and LOD badges.
+
 ## 5. Development
 
 - `master` represents the last released, published state.
