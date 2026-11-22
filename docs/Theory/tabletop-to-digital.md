@@ -1,6 +1,6 @@
 # From Tabletop Procedure to Digital Systems
 
-This page complements [A History of Roleplaying Games](history-of-roleplaying-games.md). It focuses on the transformation itself: what changes when a group moves from a human-refereed tabletop session to a computer-mediated experience?
+This page complements [A History of Roleplaying Games](history-of-roleplaying-games.md) and [Tabletop Campaign Composition and Rulebook Selection](tabletop-campaign-composition.md). It focuses on the transformation itself: what changes when a group moves from a human-refereed tabletop session to a computer-mediated experience?
 
 ## The tabletop loop
 
@@ -8,7 +8,7 @@ A tabletop roleplaying exchange can be described without reference to a particul
 
 1. A participant states an intent for a character.
 2. The group establishes the relevant situation and target.
-3. The referee and rules identify applicable capabilities, constraints, and uncertainty.
+3. The referee and selected rules identify applicable capabilities, constraints, and uncertainty.
 4. The group resolves uncertainty using the agreed procedure.
 5. The referee describes the outcome.
 6. The character, world, and shared record are updated.
@@ -55,7 +55,7 @@ A title can expose interacting world systems, continuous time, networked authori
 
 **Trade-off:** systemic complexity requires careful ownership of state, synchronization, performance, and rule precedence.
 
-These strategies can coexist in one title.
+These strategies can coexist in one title. None is a replacement for the tabletop rules; each is a different way of presenting, automating, or extending play.
 
 ## The boundary between presentation and simulation
 
@@ -73,10 +73,10 @@ A robust system keeps the underlying event and its presentation connected but di
 
 ## The SURPS mapping
 
-SURPS is intended to describe the shared roleplaying model independently of any one client or runtime.
+SURPS describes the shared roleplaying model independently of any one client or runtime.
 
 - **Experience settings:** SURPS is opt-in per experience. Disabled means the experience does not require SURPS rulebook discovery. Enabled means it composes the master system and explicitly selected rulebooks/providers.
-- **CORE:** the common baseline. Higher behavioral LOD rulebooks are selected explicitly for a scope; they do not silently replace CORE.
+- **CORE:** the common baseline. Optional sourcebooks are selected explicitly for declared campaign scopes. LOD communicates detail/specialization; it does not silently replace another book.
 - **Rulebooks/providers:** discoverable, versioned sources of rules or interaction behavior with inspectable inputs, outputs, assumptions, and provenance.
 - **Gestures:** embodied posture, pose, movement, temporal phases, and interaction behavior. The interacted-with object/environment can supply a provider.
 - **Physics:** physical quantities, constraints, and consequences. A provider must not claim physical behavior it does not implement.
