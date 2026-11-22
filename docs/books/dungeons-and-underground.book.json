@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.domain.dungeons-and-underground",
+  "category": "Domain",
+  "lod": 1,
+  "title": "Dungeons and Underground",
+  "version": "0.1.0",
+  "cover": "docs/books/covers/dungeons-and-underground.svg",
+  "lodBadge": "docs/assets/rulebook-lod-1.svg"
+}
