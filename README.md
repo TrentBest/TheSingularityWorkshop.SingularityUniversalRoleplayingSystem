@@ -31,7 +31,7 @@ Repository-specific agent work is governed by the root [AgentOnboarding.md](Agen
 
 Books will be authored as modular, versionable source material rather than isolated documents. The initial publishing structure is intentionally small; book titles, scope, and chapter plans will be established as the ontology matures.
 
-See [Source Books](books/README.md).
+See [Source Books](books/README.md) and [SURPS Rulebooks](rulebooks.md). The first executable composition is `SurpsRulebookDungeonsAndUnderground`, which wraps the authoritative FSM_Dungeon environment MicroBundle.
 
 ## 4. Living Documentation
 
