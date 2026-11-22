@@ -2,6 +2,16 @@
 
 SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
+## Available core books
+
+### Spying — LOD 0
+
+![LOD 0](../assets/rulebook-lod-0.svg)
+
+A setting-neutral, tabletop-playable foundation for secrecy, observation, evidence, infiltration, influence, counterintelligence, exposure, and consequences. First playtest draft; two six-sided dice and paper are sufficient.
+
+[Read CORE Spying](core-spying.md) · [Book descriptor](core-spying.book.json)
+
 ## Available domain books
 
 ### Dungeons and Underground
