@@ -6,5 +6,7 @@
   "title": "Dungeons and Underground",
   "version": "0.1.0",
   "cover": "docs/books/covers/dungeons-and-underground.svg",
-  "lodBadge": "docs/assets/rulebook-lod-1.svg"
+  "lodBadge": "docs/assets/rulebook-lod-1.svg",
+  "publisher": "The Singularity Workshop",
+  "publisherMoniker": "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg"
 }
