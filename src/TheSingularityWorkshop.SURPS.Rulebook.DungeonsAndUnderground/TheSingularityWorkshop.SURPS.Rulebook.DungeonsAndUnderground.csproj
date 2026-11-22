@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>true</IsPackable>
+    <PackageId>TheSingularityWorkshop.SURPS.Rulebook.DungeonsAndUnderground</PackageId>
+    <Version>0.1.0-alpha.1</Version>
+    <Authors>Trent Best</Authors>
+    <Company>The Singularity Workshop</Company>
+    <Description>SURPS rulebook MicroBundle that composes the FSM_Dungeon underground-environment capability.</Description>
+    <PackageTags>SURPS;Rulebook;Dungeon;Underground;MicroBundle;TheSingularityWorkshop</PackageTags>
+    <PackageProjectUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="TheSingularityWorkshop.MicroBundleDomain" Version="1.0.0" />
+  </ItemGroup>
+</Project>
