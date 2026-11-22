@@ -1,6 +1,12 @@
-# Singularity Universal Roleplaying System - CORE - LOD 0 - Spying
+![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
+
+# Singularity Universal Roleplaying System - Core - LOD 0 - Spying
 
 ![SURPS Rulebook LOD 0](../assets/rulebook-lod-0.svg)
+
+![CORE Spying cover](covers/core-spying.svg)
+
+[Book identity descriptor](core-spying.book.json) · [Identity and cover standard](../rulebook-identity-and-covers.md)
 
 **CORE sourcebook module · LOD 0 · Status: first tabletop playtest draft**
 
