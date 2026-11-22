@@ -288,7 +288,11 @@ Useful implementation references:
 
 A claim becomes “implemented” only when the owning repository contains the capability and evidence appropriate to the claim. A diagram may explain a target model, but it is not proof that the runtime already implements it.
 
-## 15. Further volumes and extensions
+## 15. Worked world: the Dwarven Mountain Fortress
+
+The [Dwarven Mountain Fortress case study](dwarven-mountain-fortress.md) composes this book into a continuous mountain settlement. It demonstrates why the mountain must be generated before the fortress is authored, how a three-dimensional underground world differs from stacked floors, and how dwarven daily life, production, infrastructure, exploration, and observer knowledge fit the domain boundaries. The cross-repository implementation contract lives in [FSM_Dungeon](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md), while [Physics defines the required mountain-volume capability](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md).
+
+## 16. Further volumes and extensions
 
 This LOD 1 book establishes the domain-wide reference. More specific sourcebooks can deepen a declared scope without rewriting the baseline:
 
