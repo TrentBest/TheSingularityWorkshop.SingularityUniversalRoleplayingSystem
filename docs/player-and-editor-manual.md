@@ -42,7 +42,9 @@ Explain the shared baseline, declared scope, optional detail, specialization, al
 
 ### 9. Worked campaign: spying across settings
 
-Use the same core concept—spying—to show four compatible ways to prepare a campaign:
+Start by playing the [CORE Spying tabletop module](books/core-spying.md), using its [printable play sheets](books/core-spying-play-sheets.md). This is the first runnable playtest slice: it supplies a character record, uncertainty procedure, evidence ledger, time and pressure clocks, opposition, consequences, and a worked mission. It is intentionally a small draft to test at a real table, not a finalized universal engine.
+
+Then use the same core concept—spying—to show four compatible ways to prepare a campaign:
 
 - CORE spying: universal concepts and a playable baseline procedure.
 - LOD 1 Spying Through History: historical tradecraft and broad changes across eras.
