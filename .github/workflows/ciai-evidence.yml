@@ -164,7 +164,10 @@ jobs:
           EOF
           dotnet run --project "$admission_dir/SurpsAdmission.csproj" --configuration Release -- "$TARGET_SHA" "$SURPS_ONBOARDING" | tee "$RUNNER_TEMP/surps-admission-result.json"
           jq -e '.IsEligible == true and .Outcome == "ELIGIBLE" and .RequestedCommitSha == "'"$TARGET_SHA"'" and .ContentSha256 != null' "$RUNNER_TEMP/surps-admission-result.json" >/dev/null
-          echo "CiAi AgentOnboarding v1 admission: ELIGIBLE at exact commit $TARGET_SHA." >> "$GITHUB_STEP_SUMMARY"
+          mkdir -p "$GITHUB_WORKSPACE/_tools/CiAi/artifacts"
+          cp "$RUNNER_TEMP/surps-admission-result.json" "$GITHUB_WORKSPACE/_tools/CiAi/artifacts/ciai-surps-onboarding-admission.json"
+          digest="$(jq -r '.ContentSha256' "$RUNNER_TEMP/surps-admission-result.json")"
+          echo "CiAi AgentOnboarding v1 admission: ELIGIBLE at exact commit $TARGET_SHA (SHA-256: $digest)." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Observe exact SURPS commit with CiAi
         id: observe
@@ -247,5 +250,6 @@ jobs:
           path: |
             _tools/CiAi/artifacts/ciai-surps-evidence.json
             _tools/CiAi/artifacts/ciai-surps-evidence.md
+            _tools/CiAi/artifacts/ciai-surps-onboarding-admission.json
           if-no-files-found: warn
           retention-days: 30
