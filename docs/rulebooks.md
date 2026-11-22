@@ -80,7 +80,9 @@ The first implementation established the ownership and dependency direction. The
 
 The sourcebook describes formation, construction, topology, geology, materials, environmental conditions, hazards, traversal, observation, and authoring. It explicitly distinguishes implemented behavior from design targets and keeps the ownership of inhabitants, physical calculations, perception, communication, movement, rendering, and execution with their respective capabilities.
 
-The current C# `ISurpsRulebook` remains a minimal marker. The sourcebook is editorial knowledge, not yet a machine-readable rule catalogue or executable rule resolver. The bundle's existing composition shell still establishes identity and dependency direction; packaging sourcebook assets into a distributable MicroBundle artifact is a separate integration step.
+The SURPS MicroBundle project now packs the sourcebook and its three living SVG diagrams, plus the LOD 1 badge, into the NuGet package under `contentFiles/any/any/`. This makes the human-readable rulebook travel with the composition artifact; it does not make the prose executable or transfer domain ownership.
+
+The current C# `ISurpsRulebook` remains a minimal marker. The sourcebook is editorial knowledge, not yet a machine-readable rule catalogue or executable rule resolver. The bundle's composition shell still establishes identity and dependency direction.
 
 ## Example: Physics
 
