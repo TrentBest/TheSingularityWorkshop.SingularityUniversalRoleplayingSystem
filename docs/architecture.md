@@ -1,0 +1,59 @@
+# SURPS Architecture
+
+## Responsibility boundary
+
+SURPS defines the roleplaying domain model: the concepts used to describe worlds, entities, capabilities, attributes, behavior, interactions, and narrative state. It should compose ecosystem capabilities rather than reimplement them.
+
+### Domain concepts
+
+- **World** — a coherent collection of environments, entities, rules, and histories.
+- **Entity** — anything that can be described as participating in a world: a character, creature, object, organization, location, or abstract actor.
+- **Capability** — something an entity can do or make possible.
+- **Attribute** — a typed, meaningful property of an entity or environment.
+- **Behavior** — a model of how an entity responds to state, perception, goals, rules, and context.
+- **Interaction** — a relationship or event involving two or more entities or an entity and its environment.
+- **Environment** — the circumstances and constraints in which entities exist and interact.
+- **Narrative** — the interpretation and organization of events, intentions, consequences, and change.
+
+These are initial working definitions, not a frozen schema. We will refine them against concrete use cases before committing to implementation contracts.
+
+## Ecosystem boundaries
+
+| Concern | Owning ecosystem |
+|---|---|
+| State and transitions | FSM_API |
+| Physical laws and simulation | Physics |
+| Grammar and structured terminology | GrammarAi |
+| Communication protocols | ProtocolAi |
+| Visual presentation and SVG | GUI / GUI.SVG |
+| Narrative construction | StoryBuilder |
+| Underground environment | FSM_Dungeon |
+| Experience composition | FSM_COS |
+| Runtime execution | FSM_Foundry |
+| Structured world data | DataWarehouse |
+
+SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation.
+
+## First integration case: dungeon inhabitants
+
+A dungeon owns its underground environment: spatial structure, environmental conditions, and domain-specific phenomena. It should not own a bespoke intelligence system for every inhabitant.
+
+SURPS supplies the shared ontology through which inhabitants can be described. Their behavior can be authored from reusable roles, capabilities, motivations, states, and interactions. Physics governs physical consequences; the runtime executes the composed experience.
+
+## Design principles
+
+1. Keep ontology separate from implementation.
+2. Prefer reusable descriptions over setting-specific hardcoding.
+3. Make rules explicit, inspectable, and testable.
+4. Preserve provenance: books, diagrams, examples, and implementations should agree.
+5. Treat living illustrations as executable explanations, not decoration.
+6. Establish contracts from real use cases before proliferating abstractions.
+
+## Initial development sequence
+
+1. Define the domain vocabulary and boundaries.
+2. Model a small set of representative entities and interactions.
+3. Validate the model against the dungeon inhabitant use case.
+4. Create the first source-book chapters from the validated vocabulary.
+5. Add living SVG explanations tied to those chapters.
+6. Introduce code and package boundaries only when the domain model warrants them.
