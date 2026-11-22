@@ -31,8 +31,9 @@ These are initial working definitions, not a frozen schema. We will refine them 
 | Experience composition | FSM_COS |
 | Runtime execution | FSM_Foundry |
 | Structured world data | DataWarehouse |
+| CI workflow contracts and exact-commit evidence | CiAi |
 
-SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation.
+SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation. CiAi is an engineering-governance capability around the repository's build and evidence lifecycle; it is not an in-world ontology provider and must not define inhabitant behavior.
 
 ## First integration case: dungeon inhabitants
 
@@ -57,3 +58,7 @@ SURPS supplies the shared ontology through which inhabitants can be described. T
 4. Create the first source-book chapters from the validated vocabulary.
 5. Add living SVG explanations tied to those chapters.
 6. Introduce code and package boundaries only when the domain model warrants them.
+
+## Development evidence and CiAi
+
+GitHub Actions remains the authoritative build and documentation execution environment. CiAi observes exact-commit workflow runs and normalizes their evidence; it does not execute the build, authorize repository writes, or replace human approval. SURPS onboarding must be evaluated from the exact target commit using the root `AgentOnboarding.md`. A successful admission result is only one prerequisite for bounded agent work, not a grant of authority. The first CiAi integration should be read-only and report completeness, terminality, and success separately.
