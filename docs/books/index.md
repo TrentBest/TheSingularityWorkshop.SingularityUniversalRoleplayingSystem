@@ -22,7 +22,11 @@ A first playable tabletop module for setting-neutral espionage. Includes a chara
 
 ### Singularity Universal Roleplaying System - Domain - LOD 1 - Dungeons and Underground
 
-![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)\n\n![Dungeons and Underground cover](covers/dungeons-and-underground.svg)\n\nDescriptor: [dungeons-and-underground.book.json](dungeons-and-underground.book.json)
+![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
+
+![Dungeons and Underground cover](covers/dungeons-and-underground.svg)
+
+Descriptor: [dungeons-and-underground.book.json](dungeons-and-underground.book.json)
 
 The underground as a causal world: formation, construction, topology, geology, materials, environmental conditions, hazards, inhabitants, traversal, observation, and world authoring.
 
