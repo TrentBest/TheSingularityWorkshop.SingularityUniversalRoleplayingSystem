@@ -38,17 +38,11 @@ A mountain-first civilization: exterior terrain, geological constraints, fortres
 
 [Read Dwarven Mountain Fortress](dwarven-mountain-fortress.md) · [FSM_Dungeon scenario contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md) · [Physics mountain-volume brief](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md)
 
-### Singularity Universal Roleplaying System - Domain - LOD 1 - Nonplayer Characters
+## NPC domain ownership
 
-![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
+The general people, residents, and NPC ontology is owned by [Singularity City — Nonplayer Characters, LOD 1](https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/nonplayer-characters.md). SURPS consumes that domain for tabletop character portrayal, encounters, campaigns, and play procedures; it does not own the general NPC/resident ontology.
 
-![Nonplayer Characters cover](covers/nonplayer-characters.svg)
-
-Descriptor: [nonplayer-characters.book.json](nonplayer-characters.book.json)
-
-The shared people-and-agency domain: identity, capabilities, knowledge, motivation, relationships, behavior, institutional positions, staffing, schedules, and population-scale representation. Designed to serve laboratories, military installations, cities, villages, starships, schools, shops, and other institutions without taking ownership of their local policies or security systems.
-
-[Read Nonplayer Characters](nonplayer-characters.md)
+Specialist domains extend the shared model at higher LOD. For example, [Singularity Laboratories — Laboratory NPCs, LOD 2](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md) defines laboratory-specific staffing and participants.
 
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
