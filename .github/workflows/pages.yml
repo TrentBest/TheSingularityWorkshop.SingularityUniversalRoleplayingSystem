@@ -5,6 +5,8 @@ on:
     branches: [master, development]
     paths:
       - 'docs/**'
+      - 'README.md'
+      - 'AgentOnboarding.md'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
