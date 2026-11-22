@@ -97,6 +97,10 @@ See [Tabletop Campaign Composition and Rulebook Selection](Theory/tabletop-campa
 
 SURPS defines how domain knowledge is packaged and understood. It does not take ownership of domain truth.
 
+## First playable CORE tabletop module: Spying
+
+[CORE Spying — LOD 0](books/core-spying.md) is the first setting-neutral, runnable tabletop module. It defines a small playtest character record, 2d6 uncertainty procedure, evidence distinctions, action intervals, pressure clocks, opposition, consequences, and a worked village-ledger mission. [Printable character, referee, and campaign sheets](books/core-spying-play-sheets.md) accompany it. This is an explicitly labeled first playtest slice, not a finalized universal CORE engine or a claim of digital implementation.
+
 ## First implementation: Dungeons and Underground
 
 The first SURPS rulebook container is `SurpsRulebookDungeonsAndUnderground` in the SURPS repository. It declares the FSM_Dungeon environment MicroBundle as its required dependency and exposes the provider `surps.rulebook.dungeons-and-underground`.
