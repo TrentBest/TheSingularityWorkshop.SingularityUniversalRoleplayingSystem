@@ -38,6 +38,14 @@ jobs:
           fi
           echo "sha=${target,,}" >> "$GITHUB_OUTPUT"
 
+      - name: Check out exact SURPS target commit
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+        with:
+          repository: TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem
+          ref: ${{ steps.target.outputs.sha }}
+          path: _target/SURPS
+          persist-credentials: false
+
       - name: Resolve exact authoritative Pages workflow run
         id: source-run
         env:
@@ -114,6 +122,49 @@ jobs:
       - name: Build pinned CiAi observer
         working-directory: _tools/CiAi
         run: dotnet build samples/TheSingularityWorkshop.CiAi.ObserveRun/TheSingularityWorkshop.CiAi.ObserveRun.csproj --configuration Release --no-restore
+
+      - name: Validate exact-commit SURPS onboarding with CiAi v1
+        id: admission
+        working-directory: _tools/CiAi
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+          SURPS_ONBOARDING: ${{ github.workspace }}/_target/SURPS/AgentOnboarding.md
+        shell: bash
+        run: |
+          set -euo pipefail
+          admission_dir="$RUNNER_TEMP/surps-admission"
+          mkdir -p "$admission_dir"
+          cat > "$admission_dir/SurpsAdmission.csproj" <<EOF
+          <Project Sdk="Microsoft.NET.Sdk">
+            <PropertyGroup>
+              <OutputType>Exe</OutputType>
+              <TargetFramework>net10.0</TargetFramework>
+              <ImplicitUsings>enable</ImplicitUsings>
+              <Nullable>enable</Nullable>
+            </PropertyGroup>
+            <ItemGroup>
+              <ProjectReference Include="$GITHUB_WORKSPACE/_tools/CiAi/src/TheSingularityWorkshop.CiAi/TheSingularityWorkshop.CiAi.csproj" />
+            </ItemGroup>
+          </Project>
+          EOF
+          cat > "$admission_dir/Program.cs" <<'EOF'
+          using System.Text;
+          using System.Text.Json;
+          using TheSingularityWorkshop.CiAi;
+
+          var repository = "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem";
+          var sha = args[0];
+          var content = new UTF8Encoding(false, true).GetString(File.ReadAllBytes(args[1]));
+          var observation = new AgentOnboardingSourceObservation(
+              repository, sha, sha, AgentOnboardingValidator.RequiredPath,
+              AgentOnboardingReadStatus.Available, content);
+          var result = AgentOnboardingValidator.Evaluate(observation);
+          Console.WriteLine(JsonSerializer.Serialize(result, new JsonSerializerOptions { WriteIndented = true }));
+          return result.IsEligible ? 0 : 1;
+          EOF
+          dotnet run --project "$admission_dir/SurpsAdmission.csproj" --configuration Release -- "$TARGET_SHA" "$SURPS_ONBOARDING" | tee "$RUNNER_TEMP/surps-admission-result.json"
+          jq -e '.IsEligible == true and .Outcome == "ELIGIBLE" and .RequestedCommitSha == "'"$TARGET_SHA"'" and .ContentSha256 != null' "$RUNNER_TEMP/surps-admission-result.json" >/dev/null
+          echo "CiAi AgentOnboarding v1 admission: ELIGIBLE at exact commit $TARGET_SHA." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Observe exact SURPS commit with CiAi
         id: observe
