@@ -139,3 +139,8 @@ SingularityLaboratories supplies laboratory and experiment microbundles. A SURPS
 ## Registration and behavior resolution
 
 Rulebooks may be registered with the SURPS master system so their rules and domain capabilities can be discovered, inspected, and resolved in context. Registration is a digital convenience; the same selected sourcebooks can be placed on a tabletop and used manually. See [Rulebook Registration and Behavioral Resolution](registration-and-behavior.md) for the current design boundary and provider examples.
+
+
+## Identity, titles, and cover requirements
+
+Every rulebook uses one descriptor as the source of truth for its stable ID, controlled category, LOD, title, version, cover image, and LOD badge. Its canonical title is derived as **Singularity Universal Roleplaying System - {Category} - LOD {N} - {Rulebook Title}**. The Workshop moniker remains the creator/publisher identity above the book, not part of the book title. Every book requires a real, checked-in cover image distinct from its LOD badge. See [Rulebook Identity, Titles, and Covers](rulebook-identity-and-covers.md) for the descriptor contract, required cover-page composition, controlled categories, and fail-closed validation requirements.
