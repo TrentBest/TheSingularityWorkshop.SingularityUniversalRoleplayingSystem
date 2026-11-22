@@ -38,6 +38,18 @@ A mountain-first civilization: exterior terrain, geological constraints, fortres
 
 [Read Dwarven Mountain Fortress](dwarven-mountain-fortress.md) · [FSM_Dungeon scenario contract](https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/DWARVEN_MOUNTAIN_FORTRESS.md) · [Physics mountain-volume brief](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/GEOLOGY_MOUNTAIN_VOLUME_AND_FORTRESS.md)
 
+### Singularity Universal Roleplaying System - Domain - LOD 1 - Nonplayer Characters
+
+![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
+
+![Nonplayer Characters cover](covers/nonplayer-characters.svg)
+
+Descriptor: [nonplayer-characters.book.json](nonplayer-characters.book.json)
+
+The shared people-and-agency domain: identity, capabilities, knowledge, motivation, relationships, behavior, institutional positions, staffing, schedules, and population-scale representation. Designed to serve laboratories, military installations, cities, villages, starships, schools, shops, and other institutions without taking ownership of their local policies or security systems.
+
+[Read Nonplayer Characters](nonplayer-characters.md)
+
 <figure>
   <img src="assets/underground-strata.svg" alt="Animated cross-section showing natural chambers, a water-bearing fracture, a constructed passage, and a mineral seam." />
   <figcaption>A place has layers of formation, use, and change.</figcaption>
@@ -49,7 +61,7 @@ A mountain-first civilization: exterior terrain, geological constraints, fortres
 - Include concrete examples from multiple genres and settings.
 - Distinguish universal mechanics from optional setting conventions.
 - Link every important concept to its canonical definition.
-- Use living SVGs when motion or interaction teaches more effectively than a static image.
+- Use living SVGs when motion or interaction teaches more effectively than a static illustration.
 - Keep accessible text descriptions and reduced-motion behavior available.
 - Label design targets honestly; a diagram is not proof of implementation.
 - Keep every sourcebook aligned with its domain owner and cross-domain contracts.
