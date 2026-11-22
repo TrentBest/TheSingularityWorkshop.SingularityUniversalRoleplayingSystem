@@ -5,7 +5,7 @@ This directory explains the ideas behind roleplaying before prescribing a SURPS 
 ## Reading path
 
 1. [A history of roleplaying games](history-of-roleplaying-games.md) — from referee-mediated wargames and tabletop campaigns through computer, console, networked, and modern hybrid roleplaying.
-2. [The tabletop-to-digital translation](tabletop-to-digital.md) — a conceptual map of what software automated, what it constrained, and what it made newly possible.
+2. [Tabletop campaign composition](tabletop-campaign-composition.md) — how groups select CORE and optional rulebooks, using spying across eras and genres as a worked example.\n3. [The tabletop-to-digital translation](tabletop-to-digital.md) — a conceptual map of what software automated, what it constrained, and what it made newly possible.
 
 ## Editorial position
 
