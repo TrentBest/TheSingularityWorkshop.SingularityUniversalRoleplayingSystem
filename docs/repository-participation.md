@@ -24,6 +24,7 @@ Each participating repository maintains:
 - `docs/books/index.md` — local human-readable catalogue.
 - One Markdown sourcebook per distinct work.
 - One `.book.json` descriptor per sourcebook, with stable identity and canonical paths.
+- The descriptor's `lodBadge` may use a repository-local SVG path or the canonical shared SURPS LOD badge URL; the badge level must match the book's declared LOD.
 - One distinct cover asset per sourcebook; shared SURPS identity and LOD badges remain separate from cover artwork.
 - Links to authoritative implementation, validation, worked examples, assumptions, and limitations.
 
