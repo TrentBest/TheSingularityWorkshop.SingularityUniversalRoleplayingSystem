@@ -2,7 +2,7 @@
 
 ![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
 
-SURPS sourcebooks are living, human-readable knowledge collections. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
+SURPS sourcebooks are living, human-readable knowledge collections. The cross-repository [SURPS Master Rulebook Map](../rulebook-backlog/index.md) is the canonical inventory, ownership sign-in, and participating-repository directory. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
 ## Core concepts — LOD 0
 
