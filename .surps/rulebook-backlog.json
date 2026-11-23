@@ -508,6 +508,1568 @@
         "agent": "Physics domain ownership",
         "claimedAt": null
       }
+    },
+    {
+      "id": "physics.domain.classical-mechanics",
+      "familyId": "classical-mechanics",
+      "title": "Classical Mechanics",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Motion, forces, work, energy, contact, mechanisms, and worked physical examples.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.forces-energy-momentum",
+      "familyId": "forces-energy-momentum",
+      "title": "Forces, Energy, and Momentum",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Force models, impulse, momentum transfer, energy accounting, and conservation.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.materials",
+      "familyId": "materials",
+      "title": "Materials and Material Properties",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Material identity, mechanical and thermal properties, failure modes, processing, and selection.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.geology",
+      "familyId": "geology",
+      "title": "Geology and Planet Formation",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Minerals, rocks, strata, tectonics, erosion, planetary formation, and geological time.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.weather-atmosphere",
+      "familyId": "weather-atmosphere",
+      "title": "Weather and Atmospheric Systems",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Atmospheric layers, pressure, temperature, wind, clouds, precipitation, storms, and climate context.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.hydrology",
+      "familyId": "hydrology",
+      "title": "Oceans, Rivers, and Hydrology",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Water cycles, watersheds, rivers, lakes, ocean systems, currents, tides, and freshwater availability.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.ecology",
+      "familyId": "ecology",
+      "title": "Ecology and Natural Environments",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Habitats, food webs, population dynamics, environmental pressures, and ecosystem change.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.electricity-grids",
+      "familyId": "electricity-grids",
+      "title": "Electricity and Electrical Grids",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Circuits, loads, networks, generation interfaces, protection concepts, and grid dispatch.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.thermodynamics",
+      "familyId": "thermodynamics",
+      "title": "Thermodynamics and Heat Transfer",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Thermal state, heat transfer, phase change, engines, cycles, and energy efficiency.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.power-generation",
+      "familyId": "power-generation",
+      "title": "Power Generation and Distribution",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Generation technologies, conversion, transmission, distribution, dispatch, and resilience.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.industrial-manufacturing",
+      "familyId": "industrial-manufacturing",
+      "title": "Industrial Manufacturing",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Process energy, machines, material transformation, throughput, automation, and production constraints.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.machines-mechanisms",
+      "familyId": "machines-mechanisms",
+      "title": "Tools, Machines, and Mechanisms",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Levers, gears, linkages, fasteners, simple machines, tools, and mechanical advantage.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.vehicles",
+      "familyId": "vehicles",
+      "title": "Vehicles and Transportation",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Shared vehicle concepts, mobility, propulsion, handling, capacity, maintenance, and infrastructure interfaces.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.aircraft",
+      "familyId": "aircraft",
+      "title": "Aircraft and Flight",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Aerodynamics, flight envelopes, propulsion, navigation, aircraft systems, and operating context.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.maritime-vessels",
+      "familyId": "maritime-vessels",
+      "title": "Maritime Vessels",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Hull forms, buoyancy, propulsion, stability, cargo, vessel classes, and maritime operations.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.spacecraft",
+      "familyId": "spacecraft",
+      "title": "Spacecraft and Orbital Systems",
+      "category": "Physical",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Orbital motion, spacecraft subsystems, propulsion, communications, thermal control, and mission constraints.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.architecture",
+      "familyId": "architecture",
+      "title": "Architecture and Building Systems",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Building types, spatial organization, occupancy, circulation, accessibility, and services.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.construction",
+      "familyId": "construction",
+      "title": "Construction Materials and Methods",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Construction processes, structural materials, assemblies, tools, labor, and inspection concepts.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.transport-networks",
+      "familyId": "transport-networks",
+      "title": "Roads, Bridges, and Transportation Networks",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Street hierarchies, crossings, bridges, traffic, freight, transit, and network capacity.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.public-utilities",
+      "familyId": "public-utilities",
+      "title": "Water, Waste, and Public Utilities",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Water supply, wastewater, drainage, solid waste, energy services, maintenance, and resilience.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.residential-buildings",
+      "familyId": "residential-buildings",
+      "title": "Residential Buildings",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Housing forms, household spaces, construction, utilities, tenancy, and neighborhood context.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.commercial-buildings",
+      "familyId": "commercial-buildings",
+      "title": "Commercial Buildings",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Retail, offices, hospitality, public access, services, staffing, and commercial operations.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.industrial-facilities",
+      "familyId": "industrial-facilities",
+      "title": "Industrial Facilities",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Factories, workshops, warehouses, process layouts, utilities, safety zones, and logistics.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.urban-planning",
+      "familyId": "urban-planning",
+      "title": "Cities and Urban Planning",
+      "category": "Built World",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Land use, zoning concepts, density, neighborhoods, public spaces, growth, and urban services.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "city.domain.government",
+      "familyId": "government",
+      "title": "Government and Civic Institutions",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Civic roles, public institutions, services, decision processes, budgets, and accountability.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.law-justice",
+      "familyId": "law-justice",
+      "title": "Law, Justice, and Social Order",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Norms, legal systems, jurisdiction, adjudication, enforcement, rights, obligations, and consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "city.domain.population",
+      "familyId": "population",
+      "title": "Population and Demographics",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "singularity-city",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Population structure, migration, households, demographics, public needs, and uncertainty.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "economy.domain.markets-trade",
+      "familyId": "markets-trade",
+      "title": "Trade, Markets, and Currency",
+      "category": "Economy",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "economy",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Exchange, prices, currency, market structure, trade, contracts, and economic consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "economy.domain.labor-professions",
+      "familyId": "labor-professions",
+      "title": "Labor, Professions, and Occupations",
+      "category": "Economy",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "economy",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Skills, occupations, employment, compensation, labor markets, professions, and career progression.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "economy.domain.supply-chains",
+      "familyId": "supply-chains",
+      "title": "Supply Chains and Logistics",
+      "category": "Economy",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "economy",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Sourcing, inventory, transport, warehousing, distribution, bottlenecks, and resilience.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "economy.domain.property-land-use",
+      "familyId": "property-land-use",
+      "title": "Property, Ownership, and Land Use",
+      "category": "Economy",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "economy",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Property rights, possession, tenancy, land valuation, transfer, inheritance, and use constraints.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.biology",
+      "familyId": "biology",
+      "title": "Biology and Living Organisms",
+      "category": "Life",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Organism structure, life processes, classification, variation, adaptation, and environmental relationships.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.anatomy-physiology",
+      "familyId": "anatomy-physiology",
+      "title": "Anatomy and Physiology",
+      "category": "Life",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Body systems, structure, function, health states, injury concepts, and species variation.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.animal-behavior",
+      "familyId": "animal-behavior",
+      "title": "Animal Behavior and Ecology",
+      "category": "Life",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Sensing, communication, social behavior, territory, feeding, reproduction, and ecological niches.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.reference.bestiary",
+      "familyId": "bestiary",
+      "title": "Bestiary Compendium",
+      "category": "Life",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "A cross-setting reference for creatures, habitats, behavior, capabilities, evidence, and encounter use.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.reference.plants-fungi",
+      "familyId": "plants-fungi",
+      "title": "Plants, Fungi, and Natural Resources",
+      "category": "Life",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Plant and fungal forms, growth, habitats, resources, toxicity concepts, and ecological roles.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.species-peoples",
+      "familyId": "species-peoples",
+      "title": "Species and Peoples",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Species identity, variation, culture, communities, adaptation, and cross-society interaction.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.factions-guilds",
+      "familyId": "factions-guilds",
+      "title": "Factions, Guilds, and Organizations",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Membership, roles, authority, resources, incentives, rivalries, alliances, and organizational change.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.belief-philosophy",
+      "familyId": "belief-philosophy",
+      "title": "Religion, Belief, and Philosophy",
+      "category": "Society",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Belief systems, practices, institutions, ethics, worldviews, and cultural variation.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.domain.languages-scripts",
+      "familyId": "languages-scripts",
+      "title": "Languages, Scripts, and Communication",
+      "category": "Knowledge",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "ontology",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Language structures, writing systems, translation, literacy, signals, and communication constraints.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.play.combat-conflict",
+      "familyId": "combat-conflict",
+      "title": "Combat and Conflict",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Declarations, initiative alternatives, positioning, uncertainty, consequences, retreat, and recovery.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.reference.weapons-equipment",
+      "familyId": "weapons-equipment",
+      "title": "Weapons and Equipment",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Equipment categories, physical properties, handling, maintenance, historical context, and tabletop procedures.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.reference.armor-protection",
+      "familyId": "armor-protection",
+      "title": "Armor and Protection",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Protective materials, coverage, mobility trade-offs, damage interaction, and repair.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "rawwar.domain.military-organization",
+      "familyId": "military-organization",
+      "title": "Military Organization",
+      "category": "Warfare",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Units, command roles, organization, readiness, recruitment, training, and institutional structures.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "raWWar"
+    },
+    {
+      "id": "rawwar.domain.tactical-doctrine",
+      "familyId": "tactical-doctrine",
+      "title": "Tactical Doctrine",
+      "category": "Warfare",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Maneuver, terrain, formations, reconnaissance, coordination, objectives, and tactical trade-offs.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "raWWar"
+    },
+    {
+      "id": "rawwar.domain.campaign-logistics",
+      "familyId": "campaign-logistics",
+      "title": "Strategy and Campaign Logistics",
+      "category": "Warfare",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Supply, movement, sustainment, intelligence, command, operational tempo, and campaign constraints.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "raWWar"
+    },
+    {
+      "id": "surps.play.stealth-espionage",
+      "familyId": "stealth-espionage",
+      "title": "Stealth, Espionage, and Intelligence",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Concealment, observation, information gathering, counterintelligence, exposure, and consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.play.diplomacy",
+      "familyId": "diplomacy",
+      "title": "Diplomacy and Negotiation",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Interests, leverage, bargaining, agreements, trust, protocol, and relationship consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.play.exploration",
+      "familyId": "exploration",
+      "title": "Exploration and Discovery",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Navigation, observation, uncertainty, discovery, mapping, expedition planning, and return.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.play.wilderness-survival",
+      "familyId": "wilderness-survival",
+      "title": "Wilderness Survival",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Shelter, exposure, water, food, navigation, hazards, resource depletion, and rescue.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "storybuilder.play.quests-adventures",
+      "familyId": "quests-adventures",
+      "title": "Quests and Adventures",
+      "category": "Narrative",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Objectives, hooks, scenes, challenges, branching outcomes, rewards, and persistent consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "StoryBuilder"
+    },
+    {
+      "id": "storybuilder.play.campaign-construction",
+      "familyId": "campaign-construction",
+      "title": "Campaign Construction",
+      "category": "Narrative",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Campaign premises, arcs, factions, pacing, continuity, player agency, and long-running state.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "StoryBuilder"
+    },
+    {
+      "id": "storybuilder.play.encounter-construction",
+      "familyId": "encounter-construction",
+      "title": "Encounter Construction",
+      "category": "Narrative",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Encounter goals, environments, participants, tension, challenge composition, and resolution paths.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "StoryBuilder"
+    },
+    {
+      "id": "surps.play.character-progression",
+      "familyId": "character-progression",
+      "title": "Character Progression",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Advancement, learning, capability change, reputation, milestones, and campaign continuity.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.play.reputation-relationships",
+      "familyId": "reputation-relationships",
+      "title": "Reputation and Relationships",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Trust, status, social memory, networks, obligations, rivalry, and relationship change.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "surps.play.social-political-consequences",
+      "familyId": "social-political-consequences",
+      "title": "Social and Political Consequences",
+      "category": "Play",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "candidateOwnerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Public response, institutional change, faction reactions, legitimacy, and long-term consequences.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "candidateOwnerDomain": "surps"
+    },
+    {
+      "id": "physics.domain.technology-eras",
+      "familyId": "technology-eras",
+      "title": "Technology and Historical Eras",
+      "category": "Technology",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "candidateOwnerRepository": "physics",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [],
+      "scope": "Materials, energy, manufacturing, communications, transport, and capability constraints by era.",
+      "priority": "high",
+      "acceptanceCriteria": [
+        "Clear scope, exclusions, and cross-references",
+        "Usable tabletop procedures with worked examples",
+        "Evidence-backed implementation status and limitations",
+        "Descriptor, cover, and validation tests when promoted to a published book"
+      ],
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
     }
   ]
 }
