@@ -104,7 +104,7 @@ If no selected book covers the situation, CORE is the fallback. If CORE does not
 
 A digital campaign editor should not decide the rules by silently sorting books by LOD. It should let the editor enable or disable SURPS for this experience; select CORE and optional rulebooks; see each book's LOD, version, scope, assumptions, and declared relationships; assign books to campaign scopes; see explicit replacements, variants, and conflicts; select a conflict policy or require a human ruling; and export or print a campaign sheet and player-facing references.
 
-When SURPS is disabled, the experience does not need SURPS rulebook discovery. FSM_API, FSM_COS, and FSM_Foundry remain independently usable.
+When SURPS is disabled, the experience does not need SURPS rulebook discovery. FSM_API, FSM_COS, and FSM_Execution remain independently usable.
 
 ## 7. Offline equivalence
 
