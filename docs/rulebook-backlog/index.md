@@ -36,6 +36,7 @@ Only repositories with a verified active SURPS participation declaration are mar
 | [SingularityLaboratories](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories) | Scientific inquiry, laboratories, experiments, apparatus, facilities, staffing, and research workflows | Integrated / not enrolled; three structured draft books declared, all ownership claims pending independent review |
 | [Gauntlet](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet) | Selected-book enrollment and conformance evidence | Planned integration |
 | [Economy](https://github.com/TrentBest/TheSingularityWorkshop.Economy) | Economic ontology, currency, exchange, production, project finance, logistics, and organized play | Integrated / not enrolled; six structured books declared (four draft, two proposed), all ownership claims pending independent review |
+| [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures) | Gesture procedures, deterministic motion evaluation, provider offers, embodied interaction, and coordination | Integrated / not enrolled; two structured draft books declared, both ownership claims pending independent review |
 
 
 ### Domain repositories available for future sign-in
@@ -45,7 +46,7 @@ These repositories are known in the Workshop ecosystem, but their active SURPS p
 | Repository | Domain | Registry status |
 |---|---|---|
 
-| [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures) | Posture, gesture, locomotion, embodied interaction | Candidate — not enrolled |
+
 | [Ontology](https://github.com/TrentBest/TheSingularityWorkshop.Ontology) | Shared ontological structures and concepts | Candidate — not enrolled |
 | StoryBuilder | Campaign and narrative construction | Candidate repository identity needs confirmation |
 | raWWar | Warfare and military systems | Candidate repository identity needs confirmation |
@@ -84,6 +85,8 @@ Repositories become Active by adding a valid .surps/participation.json declarati
 | [Project Finance and Capital Planning](https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/PROJECT_FINANCE_AND_CAPITAL_PLANNING.md) | Project Finance and Capital Planning | 2 | [Economy](https://github.com/TrentBest/TheSingularityWorkshop.Economy) | Draft — ownership pending SURPS review | ChatGPT GitHub agent (pending SURPS review) |
 | [Markets and Economic Playgrounds](https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/MARKETS_AND_PLAYGROUNDS.md) | Markets and Economic Playgrounds | 2 | [Economy](https://github.com/TrentBest/TheSingularityWorkshop.Economy) | Proposed — ownership pending SURPS review | ChatGPT GitHub agent (pending SURPS review) |
 | [Simulated Economies, Creator Shops, and Adoption](https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/SIMULATED_ECONOMIES_AND_CREATOR_COMMERCE.md) | Simulated Economies, Creator Shops, and Adoption | 2 | [Economy](https://github.com/TrentBest/TheSingularityWorkshop.Economy) | Proposed — ownership pending SURPS review | ChatGPT GitHub agent (pending SURPS review) |
+| [Procedural Gesture and Motion Evaluation](https://github.com/TrentBest/TheSingularityWorkshop.Gestures/blob/development/docs/books/procedural-gesture-and-motion-evaluation.md) | Procedural Gesture and Motion Evaluation | 1 | [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures) | Draft — ownership pending SURPS review | ChatGPT GitHub agent (pending SURPS review) |
+| [Embodied Interaction and Provider Selection](https://github.com/TrentBest/TheSingularityWorkshop.Gestures/blob/development/docs/books/embodied-interaction-and-provider-selection.md) | Embodied Interaction and Provider Selection | 2 | [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures) | Draft — ownership pending SURPS review | ChatGPT GitHub agent (pending SURPS review) |
 | [Dwarves](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dwarves.md) | Dwarves | 1 | [SURPS](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem) | Draft | SURPS editorial ownership |
 | [Dwarven Strongholds](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dwarven-mountain-fortress.md) | Dwarven Strongholds | 2 | [SURPS](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem) | Draft | SURPS editorial ownership |
 | [NPCs in Play — SURPS ownership note](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/nonplayer-characters.md) | Nonplayer Characters | 1 | [SURPS](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem) | Draft | SURPS editorial ownership |
