@@ -1,0 +1,480 @@
+{
+  "schemaVersion": 1,
+  "registryId": "surps.rulebook.master-backlog",
+  "title": "SURPS Master Rulebook Backlog",
+  "authority": {
+    "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+    "branch": "development",
+    "documentPath": "docs/rulebook-backlog/index.md"
+  },
+  "ownershipPolicy": {
+    "description": "Each book has one accountable owning repository. Multiple repositories may contribute authoritative domain material. Similar books in different settings, eras, or traditions remain distinct records linked by a shared familyId.",
+    "claimMethod": "Agent submits a pull request to SURPS development updating the book ownership claim with repository, agent identity, canonical book URL, source path, and evidence. Claims remain pending until reviewed and accepted.",
+    "agentMayClaim": true,
+    "agentMayApproveOwnClaim": false,
+    "uniqueBookIdRequired": true
+  },
+  "repositories": [
+    {
+      "id": "surps",
+      "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+      "domain": "Universal roleplaying ontology and composition",
+      "status": "active",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
+      "responsibilities": [
+        "CORE rules",
+        "shared ontology",
+        "rulebook identity and composition",
+        "cross-domain catalogue"
+      ]
+    },
+    {
+      "id": "physics",
+      "repository": "TrentBest/TheSingularityWorkshop.Physics",
+      "domain": "Physical laws, models, simulations, and evidence",
+      "status": "active",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
+      "responsibilities": [
+        "Physics domain truth",
+        "physical simulation",
+        "Physics-owned sourcebooks"
+      ],
+      "participationEvidence": "Active SURPS participation manifest and four registered sourcebooks"
+    },
+    {
+      "id": "fsm-dungeon",
+      "repository": "TrentBest/FSM_Dungeon",
+      "domain": "Dungeon environments and topology",
+      "status": "integrated-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Underground topology",
+        "dungeon environment and exploration"
+      ],
+      "notes": "Composed by a SURPS rulebook; no participation declaration verified."
+    },
+    {
+      "id": "singularity-city",
+      "repository": "TrentBest/TheSingularityWorkshop.SingularityCity",
+      "domain": "City systems and civic life",
+      "status": "referenced-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "City entities",
+        "infrastructure",
+        "services and civic rules"
+      ],
+      "notes": "Referenced by SURPS docs; participation declaration not verified."
+    },
+    {
+      "id": "singularity-laboratories",
+      "repository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories",
+      "domain": "Laboratories and educational experiences",
+      "status": "referenced-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Laboratory staffing",
+        "experiments",
+        "apparatus and educational experiences"
+      ],
+      "notes": "Referenced by SURPS docs; participation declaration not verified."
+    },
+    {
+      "id": "gauntlet",
+      "repository": "TrentBest/TheSingularityWorkshop.Gauntlet",
+      "domain": "Integrated proving ground and campaign harness",
+      "status": "planned",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Selected-book enrollment",
+        "experience conformance and evidence"
+      ],
+      "notes": "Integration planned; not a confirmed participant."
+    }
+  ],
+  "books": [
+    {
+      "id": "surps.core.dwarves",
+      "familyId": "dwarves",
+      "title": "Dwarves — Core Concept",
+      "category": "Core",
+      "lod": 0,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dwarves-core-concept.md",
+      "sourcePath": "docs/books/dwarves-core-concept.md",
+      "descriptorPath": "docs/books/dwarves-core-concept.book.json",
+      "contributors": [],
+      "scope": "Broad concept of dwarves without requiring a fully specified population, culture, stronghold, or inhabitants.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.spying",
+      "familyId": "spying",
+      "title": "CORE Spying",
+      "category": "Core",
+      "lod": 0,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/core-spying.md",
+      "sourcePath": "docs/books/core-spying.md",
+      "descriptorPath": "docs/books/core-spying.book.json",
+      "contributors": [],
+      "scope": "Setting-neutral tabletop procedures for secrecy, observation, concealment, evidence, detection, exposure, risk, and consequences.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.dungeons-and-underground",
+      "familyId": "dungeons-and-underground",
+      "title": "Dungeons and Underground",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dungeons-and-underground.md",
+      "sourcePath": "docs/books/dungeons-and-underground.md",
+      "descriptorPath": "docs/books/dungeons-and-underground.book.json",
+      "contributors": [
+        "fsm-dungeon",
+        "physics"
+      ],
+      "scope": "Underground formation, construction, topology, geology, materials, environment, hazards, inhabitants, traversal, and authoring.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.dwarves",
+      "familyId": "dwarves",
+      "title": "Dwarves",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dwarves.md",
+      "sourcePath": "docs/books/dwarves.md",
+      "descriptorPath": "docs/books/dwarves.book.json",
+      "contributors": [
+        "singularity-city",
+        "physics",
+        "fsm-dungeon"
+      ],
+      "scope": "Dwarven peoples, variation, families, crafts, organizations, trade, visitors, encounters, and wider communities.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.dwarven-strongholds",
+      "familyId": "dwarven-strongholds",
+      "title": "Dwarven Strongholds",
+      "category": "Setting",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/dwarven-mountain-fortress.md",
+      "sourcePath": "docs/books/dwarven-mountain-fortress.md",
+      "descriptorPath": "docs/books/dwarven-mountain-fortress.book.json",
+      "contributors": [
+        "fsm-dungeon",
+        "physics",
+        "economy"
+      ],
+      "scope": "Stronghold districts, access, governance, infrastructure, topology, material logistics, construction history, and observer knowledge.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.play.npcs-in-play",
+      "familyId": "nonplayer-characters",
+      "title": "NPCs in Play — SURPS ownership note",
+      "category": "Rules",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "surps",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/docs/books/nonplayer-characters.md",
+      "sourcePath": "docs/books/nonplayer-characters.md",
+      "descriptorPath": "docs/books/nonplayer-characters.book.json",
+      "contributors": [
+        "singularity-city"
+      ],
+      "scope": "How SURPS consumes shared person and agency concepts in portrayal, encounters, campaigns, and play.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "SURPS editorial ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.art-of-war",
+      "familyId": "art-of-war",
+      "title": "The Art of War",
+      "category": "Warfare",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "rawwar"
+      ],
+      "scope": "General strategic warfare sourcebook; exact cultural, historical, and operational scope to be established.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.domain.art-of-war.chinese-warfare-ii",
+      "familyId": "art-of-war",
+      "title": "The Art of War II — Chinese Warfare",
+      "category": "Warfare",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": null,
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "rawwar"
+      ],
+      "scope": "Distinct Chinese-warfare-focused companion or specialization, not a replacement for The Art of War.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      },
+      "relatedBooks": [
+        "surps.domain.art-of-war"
+      ]
+    },
+    {
+      "id": "surps.core.world-model",
+      "familyId": "world-model",
+      "title": "The World Model",
+      "category": "Core",
+      "lod": 0,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "physics"
+      ],
+      "scope": "Worlds, environments, time, space, history, and shared model of a playable reality.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.entity-compendium",
+      "familyId": "entity-compendium",
+      "title": "The Entity Compendium",
+      "category": "Core",
+      "lod": 0,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "ontology"
+      ],
+      "scope": "Identity, attributes, capabilities, composition, and relationships.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.behavior-agency",
+      "familyId": "behavior-agency",
+      "title": "Behavior and Agency",
+      "category": "Core",
+      "lod": 0,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "physics",
+        "gestures"
+      ],
+      "scope": "Perception, motivation, state, decision-making, and action.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.interaction-consequence",
+      "familyId": "interaction-consequence",
+      "title": "Interaction and Consequence",
+      "category": "Core",
+      "lod": 0,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "physics"
+      ],
+      "scope": "Events, conflict, cooperation, damage, change, and causality.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.game-masters-workshop",
+      "familyId": "game-masters-workshop",
+      "title": "The Game Master's Workshop",
+      "category": "Play",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": "storybuilder",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "storybuilder"
+      ],
+      "scope": "Composing encounters, scenarios, campaigns, and experiences.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "surps.core.living-atlas",
+      "familyId": "living-atlas",
+      "title": "The Living Atlas",
+      "category": "Reference",
+      "lod": 1,
+      "status": "proposed",
+      "ownerRepository": "surps",
+      "bookUrl": null,
+      "sourcePath": null,
+      "descriptorPath": null,
+      "contributors": [
+        "physics",
+        "fsm-dungeon",
+        "singularity-city"
+      ],
+      "scope": "Linked examples of locations, inhabitants, factions, environments, and world-building patterns.",
+      "ownership": {
+        "claimStatus": "unclaimed",
+        "agent": null,
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.power-and-industrial-systems",
+      "familyId": "power-and-industrial-systems",
+      "title": "Power and Industrial Systems",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/power-and-industrial-systems.md",
+      "sourcePath": "docs/books/power-and-industrial-systems.md",
+      "descriptorPath": "docs/books/power-and-industrial-systems.book.json",
+      "contributors": [],
+      "scope": "Energy conversion, generation, storage, grids, manufacturing, and industrial facilities.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "Physics domain ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.ocean-atmosphere-maritime-phenomena",
+      "familyId": "ocean-atmosphere-maritime-phenomena",
+      "title": "Ocean, Atmosphere, and Maritime Phenomena",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/ocean-atmosphere-maritime-phenomena.md",
+      "sourcePath": "docs/books/ocean-atmosphere-maritime-phenomena.md",
+      "descriptorPath": "docs/books/ocean-atmosphere-maritime-phenomena.book.json",
+      "contributors": [],
+      "scope": "Oceanography, atmospheric science, vessel physics, navigation, maritime hazards, and incident investigation.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "Physics domain ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.batteries-and-energy-storage",
+      "familyId": "batteries-and-energy-storage",
+      "title": "Batteries and Energy Storage",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/batteries-and-energy-storage.md",
+      "sourcePath": "docs/books/batteries-and-energy-storage.md",
+      "descriptorPath": "docs/books/batteries-and-energy-storage.book.json",
+      "contributors": [],
+      "scope": "Electrochemical and other energy storage, cell-to-pack composition, grid and factory integration, energy accounting, and safety boundaries.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "Physics domain ownership",
+        "claimedAt": null
+      }
+    },
+    {
+      "id": "physics.domain.nuclear-fission-facilities",
+      "familyId": "nuclear-fission-facilities",
+      "title": "Nuclear Fission Facilities",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/nuclear-fission-facilities.md",
+      "sourcePath": "docs/books/nuclear-fission-facilities.md",
+      "descriptorPath": "docs/books/nuclear-fission-facilities.book.json",
+      "contributors": [],
+      "scope": "Public-information educational outline for fission physics, heat removal, thermal conversion, residual heat, and generic protective concepts.",
+      "ownership": {
+        "claimStatus": "accepted",
+        "agent": "Physics domain ownership",
+        "claimedAt": null
+      }
+    }
+  ]
+}
