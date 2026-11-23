@@ -41,7 +41,8 @@
         "physical simulation",
         "Physics-owned sourcebooks"
       ],
-      "participationEvidence": "Active SURPS participation manifest and seven registered sourcebooks; three new geology/weather book ownership claims are pending SURPS review."
+      "participationEvidence": "Active SURPS participation manifest and seven registered sourcebooks; three new geology/weather book ownership claims are pending SURPS review.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/issues/61"
     },
     {
       "id": "fsm-dungeon",
@@ -54,7 +55,8 @@
         "Underground topology",
         "dungeon environment and exploration"
       ],
-      "notes": "Composed by a SURPS rulebook; no participation declaration verified."
+      "notes": "Composed by a SURPS rulebook; no participation declaration verified.",
+      "coordinationIssue": "https://github.com/TrentBest/FSM_Dungeon/issues/4"
     },
     {
       "id": "singularity-city",
@@ -68,7 +70,8 @@
         "infrastructure",
         "services and civic rules"
       ],
-      "notes": "Referenced by SURPS docs; participation declaration not verified."
+      "notes": "Referenced by SURPS docs; participation declaration not verified.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/issues/1"
     },
     {
       "id": "singularity-laboratories",
@@ -82,7 +85,8 @@
         "experiments",
         "apparatus and educational experiences"
       ],
-      "notes": "Referenced by SURPS docs; participation declaration not verified."
+      "notes": "Referenced by SURPS docs; participation declaration not verified.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/issues/3"
     },
     {
       "id": "gauntlet",
@@ -95,7 +99,8 @@
         "Selected-book enrollment",
         "experience conformance and evidence"
       ],
-      "notes": "Integration planned; not a confirmed participant."
+      "notes": "Integration planned; not a confirmed participant.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet/issues/6"
     },
     {
       "id": "economy",
@@ -107,7 +112,8 @@
       "responsibilities": [
         "Economic systems and simulation"
       ],
-      "notes": "Repository exists; no active SURPS participation declaration verified."
+      "notes": "Repository exists; no active SURPS participation declaration verified.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/issues/32"
     },
     {
       "id": "gestures",
@@ -119,7 +125,8 @@
       "responsibilities": [
         "Embodied behavior and movement"
       ],
-      "notes": "Repository exists; no active SURPS participation declaration verified."
+      "notes": "Repository exists; no active SURPS participation declaration verified.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Gestures/issues/36"
     },
     {
       "id": "ontology",
@@ -131,7 +138,8 @@
       "responsibilities": [
         "Ontology capabilities"
       ],
-      "notes": "Repository exists; no active SURPS participation declaration verified."
+      "notes": "Repository exists; no active SURPS participation declaration verified.",
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Ontology/issues/10"
     }
   ],
   "books": [
