@@ -124,13 +124,13 @@
       "id": "economy",
       "repository": "TrentBest/TheSingularityWorkshop.Economy",
       "domain": "Markets, currency, trade, production, labor, and logistics",
-      "status": "candidate-not-enrolled",
-      "participationManifest": null,
-      "catalogue": null,
+      "status": "integrated-not-enrolled",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
       "responsibilities": [
         "Economic systems and simulation"
       ],
-      "notes": "Repository exists; no active SURPS participation declaration verified.",
+      "notes": "Six Economy-owned domain books are declared in a structured participation manifest with canonical descriptors and distinct covers. Four are draft domain contracts; two remain proposed roadmaps and are explicitly not implementation claims. A repository-local validator and development-branch GitHub Actions gate check manifest/source/descriptor/asset consistency. All six ownership claims remain pending independent SURPS review. Admission remains blocked until independent ownership/domain review and final manifest/catalogue evidence verification.",
       "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/issues/32"
     },
     {
@@ -2737,6 +2737,180 @@
         "agent": "ChatGPT GitHub agent (pending SURPS review)",
         "claimedAt": "2026-11-23T21:20:25Z",
         "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories"
+      }
+    },
+    {
+      "id": "economy.domain.economic-ontology-and-composable-models",
+      "familyId": "economic-ontology-and-composable-models",
+      "title": "Economic Ontology and Composable Models",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/ECONOMIC_ONTOLOGY_AND_COMPOSABLE_MODELS.md",
+      "sourcePath": "docs/ECONOMIC_ONTOLOGY_AND_COMPOSABLE_MODELS.md",
+      "descriptorPath": "docs/books/economic-ontology-and-composable-models.book.json",
+      "contributors": [],
+      "scope": "Shared economic vocabulary, economic theory, composable model aspects, currency composition, and the boundary between ontology, policy, simulation, and execution.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "economy.domain.singularity-currency-and-casino",
+      "familyId": "singularity-currency-and-casino",
+      "title": "Singularity Currency and Casino Contract",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/SINGULARITY_CURRENCY_AND_CASINO.md",
+      "sourcePath": "docs/SINGULARITY_CURRENCY_AND_CASINO.md",
+      "descriptorPath": "docs/books/singularity-currency-and-casino.book.json",
+      "contributors": [],
+      "scope": "Non-redeemable fictional currency, process-local ledger accounting, casino cashier, wager escrow and settlement, and explicit persistence/provider limitations. Not a real-money service.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "economy.domain.organized-play",
+      "familyId": "organized-play",
+      "title": "Teams, Leagues, Tournaments, and Organized Play",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/THEORY/03-TEAMS-LEAGUES-AND-TOURNAMENTS.md",
+      "sourcePath": "docs/THEORY/03-TEAMS-LEAGUES-AND-TOURNAMENTS.md",
+      "descriptorPath": "docs/books/organized-play.book.json",
+      "contributors": [],
+      "scope": "Competitor and team registration, competition formats, deterministic brackets, round-robin schedules, standings, ratings, and host-owned match evidence; gameplay rules remain with activity providers.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "economy.domain.project-finance-and-capital-planning",
+      "familyId": "project-finance-and-capital-planning",
+      "title": "Project Finance and Capital Planning",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/PROJECT_FINANCE_AND_CAPITAL_PLANNING.md",
+      "sourcePath": "docs/PROJECT_FINANCE_AND_CAPITAL_PLANNING.md",
+      "descriptorPath": "docs/books/project-finance-and-capital-planning.book.json",
+      "contributors": [],
+      "scope": "Provider-neutral project funding, capital structure, budgets, commitments, procurement, cost recognition, cash flow, forecasting, risk, and closeout for simulated projects; not a bank or financial service.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "economy.domain.markets-and-economic-playgrounds",
+      "familyId": "markets-and-economic-playgrounds",
+      "title": "Markets and Economic Playgrounds",
+      "category": "Domain",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/MARKETS_AND_PLAYGROUNDS.md",
+      "sourcePath": "docs/MARKETS_AND_PLAYGROUNDS.md",
+      "descriptorPath": "docs/books/markets-and-economic-playgrounds.book.json",
+      "contributors": [],
+      "scope": "Proposed educational simulations for casinos, exchanges, businesses, auctions, jobs, and supply chains. Roadmap content is not represented as implemented experiences.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "economy.domain.simulated-economies-and-creator-commerce",
+      "familyId": "simulated-economies-and-creator-commerce",
+      "title": "Simulated Economies, Creator Shops, and Adoption",
+      "category": "Domain",
+      "lod": 2,
+      "status": "proposed",
+      "ownerRepository": "economy",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Economy/blob/development/docs/SIMULATED_ECONOMIES_AND_CREATOR_COMMERCE.md",
+      "sourcePath": "docs/SIMULATED_ECONOMIES_AND_CREATOR_COMMERCE.md",
+      "descriptorPath": "docs/books/simulated-economies-and-creator-commerce.book.json",
+      "contributors": [],
+      "scope": "Proposed persistent simulated economies, Digiten-scale activity, reusable creator shops, reskinning, adoption hypotheses, and measurable vertical-slice planning; not a production storefront or real-money integration.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Draft implementation evidence is separated from proposed roadmap content",
+        "Simulation, real-money execution, durable settlement, and provider integration remain distinct",
+        "Experience-owned policy, inventory meaning, and authorization are not absorbed by Economy",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
       }
     }
   ]
