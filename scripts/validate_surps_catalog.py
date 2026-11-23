@@ -74,6 +74,7 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
         repositories = []
     repo_ids: set[str] = set()
     repo_names: set[str] = set()
+    repositories_by_id: dict[str, dict] = {}
     for index, entry in enumerate(repositories):
         label = f"rulebook-backlog.json: repositories[{index}]"
         if not isinstance(entry, dict):
@@ -84,6 +85,7 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
             fail(errors, f"{label}.id must be a unique non-empty string")
         else:
             repo_ids.add(repo_id)
+            repositories_by_id[repo_id] = entry
         if full_name is not None and (not isinstance(full_name, str) or "/" not in full_name or full_name in repo_names):
             fail(errors, f"{label}.repository must be a unique owner/repository name or null")
         elif isinstance(full_name, str):
@@ -130,8 +132,12 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
             fail(errors, f"{label}.ownership.claimStatus must be unclaimed, pending, or accepted")
         elif ownership.get("claimStatus") == "accepted" and (owner is None or not ownership.get("agent") or not ownership.get("agentRepository")):
             fail(errors, f"{label}: accepted ownership requires ownerRepository, agentRepository, and agent identity")
+        elif ownership.get("claimStatus") == "accepted" and owner in repositories_by_id and ownership.get("agentRepository") != repositories_by_id[owner].get("repository"):
+            fail(errors, f"{label}: agentRepository must match the accepted owner repository")
         elif ownership.get("claimStatus") == "pending" and (owner is None or not ownership.get("agent") or not ownership.get("agentRepository") or not ownership.get("claimedAt")):
             fail(errors, f"{label}: pending ownership requires ownerRepository, agentRepository, agent, and claimedAt")
+        elif ownership.get("claimStatus") == "pending" and owner in repositories_by_id and ownership.get("agentRepository") != repositories_by_id[owner].get("repository"):
+            fail(errors, f"{label}: agentRepository must match the claimed owner repository")
     return len(repositories), len(books)
 
 
