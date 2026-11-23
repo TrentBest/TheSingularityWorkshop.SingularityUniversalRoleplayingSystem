@@ -163,6 +163,27 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
             fail(errors, f"{label}: pending ownership requires ownerRepository, agentRepository, agent, and claimedAt")
         elif ownership.get("claimStatus") == "pending" and owner in repositories_by_id and ownership.get("agentRepository") != repositories_by_id[owner].get("repository"):
             fail(errors, f"{label}: agentRepository must match the claimed owner repository")
+    book_owner_by_id = {
+        entry.get("id"): entry.get("ownerRepository")
+        for entry in books
+        if isinstance(entry, dict) and isinstance(entry.get("id"), str)
+    }
+    for index, entry in enumerate(repositories):
+        if not isinstance(entry, dict) or entry.get("status") != "active" or entry.get("id") == "surps":
+            continue
+        evidence = entry.get("admissionEvidence")
+        if not isinstance(evidence, dict):
+            continue
+        registered_ids = evidence.get("registeredBookIds")
+        label = f"rulebook-backlog.json: repositories[{index}].admissionEvidence"
+        if not isinstance(registered_ids, list) or not registered_ids:
+            fail(errors, f"{label}.registeredBookIds must be a non-empty array")
+            continue
+        if len(registered_ids) != len(set(registered_ids)):
+            fail(errors, f"{label}.registeredBookIds must not contain duplicates")
+        for book_id in registered_ids:
+            if not isinstance(book_id, str) or book_owner_by_id.get(book_id) != entry.get("id"):
+                fail(errors, f"{label}: book {book_id!r} must exist in the registry and be owned by {entry.get('id')!r}")
     return len(repositories), len(books)
 
 
@@ -178,6 +199,12 @@ def main() -> int:
     if manifest.get("repository") != "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem":
         fail(errors, "participation.json: repository identity does not match this repository")
 
+    backlog = load_json(ROOT / ".surps" / "rulebook-backlog.json", errors)
+    registry_owned_ids = {
+        entry.get("id")
+        for entry in (backlog or {}).get("books", [])
+        if isinstance(entry, dict) and entry.get("ownerRepository") == "surps"
+    }
     books = manifest.get("books")
     if not isinstance(books, list) or not books:
         fail(errors, "participation.json: books must be a non-empty array")
@@ -192,6 +219,8 @@ def main() -> int:
             continue
 
         book_id = entry.get("id")
+        if isinstance(book_id, str) and book_id not in registry_owned_ids:
+            fail(errors, f"{label}.id is not registered as SURPS-owned in the master backlog: {book_id}")
         if not isinstance(book_id, str) or not book_id.strip():
             fail(errors, f"{label}.id must be a non-empty string")
         elif book_id in seen_ids:
