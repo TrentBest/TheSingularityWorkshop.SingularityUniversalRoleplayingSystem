@@ -1,0 +1,59 @@
+name: SURPS repository participation
+description: Register a repository as a SURPS domain provider or contributor.
+title: "SURPS participation: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Participation is opt-in. A repository is shown as Active in the SURPS Master Rulebook Map only after its development branch contains a valid .surps/participation.json declaration and the registry update is reviewed.
+  - type: input
+    id: repository
+    attributes:
+      label: Exact GitHub repository
+      placeholder: TrentBest/TheSingularityWorkshop.Example
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: The authoritative subject matter this repository owns.
+    validations:
+      required: true
+  - type: textarea
+    id: responsibilities
+    attributes:
+      label: Domain responsibilities
+      description: State what this repository owns and what it explicitly does not own.
+    validations:
+      required: true
+  - type: input
+    id: manifest
+    attributes:
+      label: Participation manifest URL
+      description: Link to .surps/participation.json on development.
+    validations:
+      required: true
+  - type: input
+    id: catalogue
+    attributes:
+      label: Sourcebook catalogue URL
+      description: Link to the repository's book catalogue on development.
+    validations:
+      required: true
+  - type: textarea
+    id: books
+    attributes:
+      label: Owned books and contributions
+      description: List stable book IDs owned or domain material contributed. Contributor-only repositories may list no owned books.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Participation confirmations
+      options:
+        - label: The development branch contains the participation manifest and catalogue.
+          required: true
+        - label: The repository remains authoritative for its domain implementations and evidence.
+          required: true
+        - label: Participation does not authorize NuGet publication or release.
+          required: true
