@@ -73,7 +73,7 @@
         "Underground topology",
         "dungeon environment and exploration"
       ],
-      "notes": "A provisional development-branch participation declaration now exists. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds; it has not yet registered a Dungeon-owned book. Admission remains blocked pending canonical per-book descriptors, distinct covers for all catalogue sourcebooks, and central ownership reconciliation.",
+      "notes": "One Dungeon-owned sourcebook, Underground Environments, is now declared with a canonical .book.json descriptor and a pending ownership claim. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds. Admission remains blocked pending canonical descriptors and distinct covers for the five other catalogue works, plus independent review of ownership and contributor records.",
       "coordinationIssue": "https://github.com/TrentBest/FSM_Dungeon/issues/4"
     },
     {
@@ -2188,6 +2188,38 @@
         "agent": "ChatGPT GitHub agent",
         "claimedAt": "2026-11-23T04:44:08.425Z",
         "agentRepository": "TrentBest/TheSingularityWorkshop.Physics"
+      }
+    },
+    {
+      "id": "fsm-dungeon.domain.underground-environments",
+      "familyId": "underground-environments",
+      "title": "Underground Environments: Formation, Space, and Consequence",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/underground-environments.md",
+      "sourcePath": "docs/books/underground-environments.md",
+      "descriptorPath": "docs/books/underground-environments.book.json",
+      "contributors": [
+        "physics",
+        "surps"
+      ],
+      "scope": "Underground environment identity and formation; natural, biological, excavated, and constructed spaces; continuous 3D topology; voids, passages, barriers, vertical features; environmental state and provenance; resources, hazards, and authoritative substrate handoff. Does not own general solid terrain/physics, universal inhabitant ontology or behavior, campaign continuity, or presentation engines.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Dungeon spatial topology and environmental state remain distinct from Physics substrate and SURPS inhabitant behavior",
+        "Coordinate-frame and substrate handoff assumptions are explicit",
+        "Simulation fidelity, validation expectations, and known limitations are documented",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
       }
     }
   ]
