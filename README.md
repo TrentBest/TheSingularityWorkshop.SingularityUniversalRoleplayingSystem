@@ -3,6 +3,10 @@
 > A universal ontology and simulation framework for roleplaying worlds, entities, stories, and experiences.
 
 [![GitHub Pages](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/actions/workflows/pages.yml/badge.svg)](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/actions/workflows/pages.yml)
+<!-- SURPS:PARTICIPATION:START -->
+[![SURPS participation and sourcebooks](docs/assets/badges/surps-participation.svg)](docs/books/index.md)
+<!-- SURPS:PARTICIPATION:END -->
+
 
 ## 1. Overview
 
