@@ -67,13 +67,13 @@
       "repository": "TrentBest/FSM_Dungeon",
       "domain": "Dungeon environments and topology",
       "status": "integrated-not-enrolled",
-      "participationManifest": null,
-      "catalogue": null,
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
       "responsibilities": [
         "Underground topology",
         "dungeon environment and exploration"
       ],
-      "notes": "Composed by a SURPS rulebook; no participation declaration verified.",
+      "notes": "A provisional development-branch participation declaration now exists. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds; it has not yet registered a Dungeon-owned book. Admission remains blocked pending canonical per-book descriptors, distinct covers for all catalogue sourcebooks, and central ownership reconciliation.",
       "coordinationIssue": "https://github.com/TrentBest/FSM_Dungeon/issues/4"
     },
     {
