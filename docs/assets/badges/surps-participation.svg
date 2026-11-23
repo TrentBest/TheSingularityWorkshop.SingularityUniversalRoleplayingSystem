@@ -1,26 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 154" role="img" aria-labelledby="title desc">
-  <title id="title">SURPS participant — six sourcebook outputs</title>
-  <desc id="desc">The Singularity Workshop SURPS participant badge. Six draft sourcebooks are currently catalogued: Dwarves CORE level 0, Spying CORE level 0, Dungeons and Underground level 1, Dwarves level 1, Dwarven Strongholds level 2, and NPCs in Play level 1.</desc>
-  <defs>
-    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#182536"/>
-      <stop offset="1" stop-color="#101820"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#8bd5ca"/>
-      <stop offset="1" stop-color="#78a9d4"/>
-    </linearGradient>
-  </defs>
-  <rect x="2" y="2" width="1036" height="150" rx="18" fill="url(#panel)" stroke="#577082" stroke-width="2"/>
-  <rect x="18" y="18" width="8" height="118" rx="4" fill="url(#accent)"/>
-  <text x="48" y="55" fill="#f2f6f8" font-family="Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="1.5">SURPS PARTICIPANT</text>
-  <text x="48" y="83" fill="#a9c2d0" font-family="Segoe UI,Arial,sans-serif" font-size="15" letter-spacing="1.1">SOURCEBOOK CATALOGUE · ALL SIX OUTPUTS ARE DRAFT</text>
-  <g font-family="Segoe UI,Arial,sans-serif" font-size="17" fill="#f1f5f7">
-    <rect x="48" y="101" width="150" height="34" rx="8" fill="#294454"/><text x="61" y="124">Dwarves · CORE 0</text>
-    <rect x="208" y="101" width="132" height="34" rx="8" fill="#294454"/><text x="222" y="124">Spying · CORE 0</text>
-    <rect x="350" y="101" width="236" height="34" rx="8" fill="#294454"/><text x="364" y="124">Dungeons · LOD 1</text>
-    <rect x="596" y="101" width="144" height="34" rx="8" fill="#294454"/><text x="610" y="124">Dwarves · LOD 1</text>
-    <rect x="750" y="101" width="172" height="34" rx="8" fill="#294454"/><text x="764" y="124">Strongholds · LOD 2</text>
-    <rect x="932" y="101" width="92" height="34" rx="8" fill="#294454"/><text x="943" y="124">NPCs · 1</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 256" role="img" aria-labelledby="title desc">
+<title id="title">SURPS · SURPS PARTICIPANT</title>
+<desc id="desc">Owns the shared roleplaying ontology, CORE rules, rulebook identity and composition, LOD/campaign selection, and cross-domain sourcebook contract. 6 declared book outputs.</desc>
+<defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#182536"/><stop offset="1" stop-color="#101820"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8bd5ca"/><stop offset="1" stop-color="#78a9d4"/></linearGradient></defs>
+<rect x="2" y="2" width="1416" height="252" rx="18" fill="url(#panel)" stroke="#577082" stroke-width="2"/>
+<rect x="18" y="18" width="8" height="220" rx="4" fill="url(#accent)"/>
+<text x="48" y="51" fill="#f2f6f8" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700" letter-spacing="1.4">SURPS · SURPS PARTICIPANT</text>
+<text x="49" y="79" fill="#a9c2d0" font-family="Segoe UI,Arial,sans-serif" font-size="15" letter-spacing="1.1">6 BOOK OUTPUTS · ACTIVE</text>
+<rect x="42" y="96" width="435" height="58" rx="9" fill="#294454"/>
+<text x="56" y="121" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">Dwarves · LOD 0</text>
+<text x="56" y="141" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Core · DRAFT</text>
+<rect x="497" y="96" width="435" height="58" rx="9" fill="#294454"/>
+<text x="511" y="121" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">Spying · LOD 0</text>
+<text x="511" y="141" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Core · DRAFT</text>
+<rect x="952" y="96" width="435" height="58" rx="9" fill="#294454"/>
+<text x="966" y="121" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">Dungeons and Underground · LOD 1</text>
+<text x="966" y="141" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Domain · DRAFT</text>
+<rect x="42" y="168" width="435" height="58" rx="9" fill="#294454"/>
+<text x="56" y="193" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">Dwarves · LOD 1</text>
+<text x="56" y="213" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Domain · DRAFT</text>
+<rect x="497" y="168" width="435" height="58" rx="9" fill="#294454"/>
+<text x="511" y="193" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">Dwarven Strongholds · LOD 2</text>
+<text x="511" y="213" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Domain · DRAFT</text>
+<rect x="952" y="168" width="435" height="58" rx="9" fill="#294454"/>
+<text x="966" y="193" fill="#f1f5f7" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" textLength="405" lengthAdjust="spacingAndGlyphs">NPCs in Play — SURPS ownership note · LOD 1</text>
+<text x="966" y="213" fill="#b9d0dc" font-family="Segoe UI,Arial,sans-serif" font-size="11">Rules · DRAFT</text>
 </svg>
