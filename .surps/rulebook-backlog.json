@@ -73,7 +73,7 @@
         "Underground topology",
         "dungeon environment and exploration"
       ],
-      "notes": "Six Dungeon-owned sourcebooks are now declared with canonical .book.json descriptors and distinct cover assets. All six ownership claims are pending independent SURPS review. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds. Admission remains blocked until SURPS independently reviews ownership/contributor records and verifies the final development-branch manifest/catalogue snapshot.",
+      "notes": "Six Dungeon-owned sourcebooks are declared in a structured participation manifest, each with a canonical .book.json descriptor, distinct cover, and stable registry identity. A repository-local validator and development-branch GitHub Actions gate check manifest/source/descriptor/asset consistency. All six ownership claims remain pending independent SURPS review. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds. Admission remains blocked until SURPS independently reviews ownership/contributor records and verifies the final development-branch manifest/catalogue snapshot.",
       "coordinationIssue": "https://github.com/TrentBest/FSM_Dungeon/issues/4"
     },
     {
