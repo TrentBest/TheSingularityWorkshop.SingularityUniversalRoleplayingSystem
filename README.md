@@ -28,7 +28,7 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 - **GUI / GUI.SVG** — presentation, interfaces, and living illustrations.
 - **StoryBuilder** — narrative construction.
 - **FSM_Dungeon** — dungeon environments and their environmental behavior.
-- **FSM_COS / FSM_Foundry** — composition and execution of experiences.
+- **FSM_COS / FSM_Execution** — composition and execution of experiences.
 - **Gauntlet** — integrated adversarial proving ground and evidence-producing campaign harness for MicroBundles and SURPS-enabled experiences.
 
 See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
