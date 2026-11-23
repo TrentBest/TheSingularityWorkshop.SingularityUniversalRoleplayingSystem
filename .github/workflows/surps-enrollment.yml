@@ -34,9 +34,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate manifest and generated badge
+      - name: Generate and validate enrollment outputs
         if: github.event_name == 'pull_request'
-        run: python scripts/generate_surps_badge.py --check
+        run: |
+          python scripts/generate_surps_badge.py
+          python scripts/generate_surps_badge.py --check
       - name: Generate README badge and SVG
         if: github.event_name == 'push'
         run: python scripts/generate_surps_badge.py
