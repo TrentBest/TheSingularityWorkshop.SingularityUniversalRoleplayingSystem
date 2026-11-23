@@ -92,6 +92,28 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
             repo_names.add(full_name)
         if entry.get("status") == "active" and (not entry.get("participationManifest") or not entry.get("catalogue")):
             fail(errors, f"{label}: active repositories must declare participationManifest and catalogue")
+        if entry.get("status") == "active" and repo_id != "surps":
+            evidence = entry.get("admissionEvidence")
+            if not isinstance(evidence, dict):
+                fail(errors, f"{label}: external active repositories require admissionEvidence")
+            else:
+                expected_manifest = f"https://github.com/{full_name}/blob/development/{entry.get('participationManifest')}"
+                expected_catalogue = f"https://github.com/{full_name}/blob/development/{entry.get('catalogue')}"
+                if evidence.get("branch") != "development":
+                    fail(errors, f"{label}.admissionEvidence.branch must be development")
+                if evidence.get("manifestUrl") != expected_manifest:
+                    fail(errors, f"{label}.admissionEvidence.manifestUrl must point to the declared development manifest")
+                if evidence.get("catalogueUrl") != expected_catalogue:
+                    fail(errors, f"{label}.admissionEvidence.catalogueUrl must point to the declared development catalogue")
+                for field in ("manifestBlobSha", "catalogueBlobSha"):
+                    value = evidence.get(field)
+                    if not isinstance(value, str) or len(value) != 40 or any(char not in "0123456789abcdef" for char in value):
+                        fail(errors, f"{label}.admissionEvidence.{field} must be a 40-character lowercase Git blob SHA")
+                verified_at = evidence.get("verifiedAt")
+                if not isinstance(verified_at, str) or len(verified_at) != 10 or verified_at[4:5] != "-" or verified_at[7:8] != "-":
+                    fail(errors, f"{label}.admissionEvidence.verifiedAt must use YYYY-MM-DD")
+                if not isinstance(evidence.get("verifiedBy"), str) or not evidence.get("verifiedBy", "").strip():
+                    fail(errors, f"{label}.admissionEvidence.verifiedBy must identify the admission reviewer")
         coordination_issue = entry.get("coordinationIssue")
         if coordination_issue is not None and (not isinstance(coordination_issue, str) or not coordination_issue.startswith("https://github.com/")):
             fail(errors, f"{label}.coordinationIssue must be an absolute GitHub HTTPS URL or null")
