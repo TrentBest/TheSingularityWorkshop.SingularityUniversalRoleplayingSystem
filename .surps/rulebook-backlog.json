@@ -41,7 +41,7 @@
         "physical simulation",
         "Physics-owned sourcebooks"
       ],
-      "participationEvidence": "Active SURPS participation manifest and four registered sourcebooks"
+      "participationEvidence": "Active SURPS participation manifest and seven registered sourcebooks; three new geology/weather book ownership claims are pending SURPS review."
     },
     {
       "id": "fsm-dungeon",
@@ -614,17 +614,16 @@
     {
       "id": "physics.domain.geology",
       "familyId": "geology",
-      "title": "Geology and Planet Formation",
+      "title": "Geology and Planetary Evolution",
       "category": "Physical",
       "lod": 1,
-      "status": "proposed",
-      "ownerRepository": null,
-      "candidateOwnerRepository": "physics",
-      "bookUrl": null,
-      "sourcePath": null,
-      "descriptorPath": null,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geology-and-planetary-evolution.md",
+      "sourcePath": "docs/books/geology-and-planetary-evolution.md",
+      "descriptorPath": "docs/books/geology-and-planetary-evolution.book.json",
       "contributors": [],
-      "scope": "Minerals, rocks, strata, tectonics, erosion, planetary formation, and geological time.",
+      "scope": "Planetary interiors, heat, mantle and lithosphere behavior, tectonic plates, crustal deformation, fault systems, earthquakes, magmatism, rock cycles, stratigraphy, geological time, and evidence-based reconstruction of planetary history.",
       "priority": "normal",
       "acceptanceCriteria": [
         "Clear scope, exclusions, and cross-references",
@@ -633,26 +632,25 @@
         "Descriptor, cover, and validation tests when promoted to a published book"
       ],
       "ownership": {
-        "claimStatus": "unclaimed",
-        "agent": null,
-        "claimedAt": null,
-        "agentRepository": null
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent",
+        "claimedAt": "2026-11-23T04:44:08.425Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Physics"
       }
     },
     {
       "id": "physics.domain.weather-atmosphere",
       "familyId": "weather-atmosphere",
-      "title": "Weather and Atmospheric Systems",
+      "title": "Weather and Climate",
       "category": "Physical",
       "lod": 1,
-      "status": "proposed",
-      "ownerRepository": null,
-      "candidateOwnerRepository": "physics",
-      "bookUrl": null,
-      "sourcePath": null,
-      "descriptorPath": null,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/weather-and-climate.md",
+      "sourcePath": "docs/books/weather-and-climate.md",
+      "descriptorPath": "docs/books/weather-and-climate.book.json",
       "contributors": [],
-      "scope": "Atmospheric layers, pressure, temperature, wind, clouds, precipitation, storms, and climate context.",
+      "scope": "Atmospheric state, pressure, temperature, moisture, circulation, clouds, precipitation, storms, seasons, climate statistics, extremes, and weather/climate forcing for coupled surface systems.",
       "priority": "normal",
       "acceptanceCriteria": [
         "Clear scope, exclusions, and cross-references",
@@ -661,10 +659,10 @@
         "Descriptor, cover, and validation tests when promoted to a published book"
       ],
       "ownership": {
-        "claimStatus": "unclaimed",
-        "agent": null,
-        "claimedAt": null,
-        "agentRepository": null
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent",
+        "claimedAt": "2026-11-23T04:44:08.425Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Physics"
       }
     },
     {
@@ -2144,6 +2142,26 @@
         "agent": null,
         "claimedAt": null,
         "agentRepository": null
+      }
+    },
+    {
+      "id": "physics.domain.geomorphology-surface-processes",
+      "familyId": "geology",
+      "title": "Geomorphology and Surface Processes",
+      "category": "Physical",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "physics",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geomorphology-and-surface-processes.md",
+      "sourcePath": "docs/books/geomorphology-and-surface-processes.md",
+      "descriptorPath": "docs/books/geomorphology-and-surface-processes.book.json",
+      "contributors": [],
+      "scope": "Landform development and near-surface processes including weathering, hillslope transport, rivers, groundwater, karst, glaciers, wind, coasts, sediment budgets, soils, and landscape evolution.",
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent",
+        "claimedAt": "2026-11-23T04:44:08.425Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Physics"
       }
     }
   ]
