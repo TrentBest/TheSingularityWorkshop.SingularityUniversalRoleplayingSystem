@@ -46,16 +46,16 @@
       "admissionEvidence": {
         "branch": "development",
         "manifestUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/.surps/participation.json",
-        "manifestBlobSha": "4b4f485f9646c778e09595af707c1c85bd89cd1b",
+        "manifestBlobSha": "de675dfd618d7786d2367609d3ecc1f2cf8f0c0a",
         "catalogueUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md",
         "catalogueBlobSha": "b0baabd0ef02f607eba9de6733fc919a45f175dc",
         "verifiedAt": "2026-11-23",
         "verifiedBy": "SURPS admission review",
         "registeredBookIds": [
-          "surps.domain.power-and-industrial-systems",
-          "surps.domain.ocean-atmosphere-maritime-phenomena",
-          "surps.domain.batteries-and-energy-storage",
-          "surps.domain.nuclear-fission-facilities",
+          "physics.domain.power-and-industrial-systems",
+          "physics.domain.ocean-atmosphere-maritime-phenomena",
+          "physics.domain.batteries-and-energy-storage",
+          "physics.domain.nuclear-fission-facilities",
           "physics.domain.geology",
           "physics.domain.weather-atmosphere",
           "physics.domain.geomorphology-surface-processes"
