@@ -203,9 +203,12 @@ def main() -> int:
         fail(errors, "participation.json: repository identity does not match this repository")
 
     backlog = load_json(ROOT / ".surps" / "rulebook-backlog.json", errors)
+    registry_books = (backlog or {}).get("books", [])
+    if not isinstance(registry_books, list):
+        registry_books = []
     registry_owned_ids = {
         entry.get("id")
-        for entry in (backlog or {}).get("books", [])
+        for entry in registry_books
         if isinstance(entry, dict) and entry.get("ownerRepository") == "surps"
     }
     books = manifest.get("books")
