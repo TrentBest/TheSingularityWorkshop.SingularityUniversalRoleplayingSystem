@@ -44,6 +44,18 @@ The underground as a causal world: formation, construction, topology, geology, m
 
 [Read Dungeons and Underground](dungeons-and-underground.md)
 
+### Power and Industrial Systems
+
+![SURPS Rulebook LOD 1](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/development/docs/assets/rulebook-lod-1.svg)
+
+![Power and Industrial Systems cover](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Physics/development/docs/books/covers/power-and-industrial-systems.svg)
+
+Descriptor: [Physics-owned book descriptor](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/power-and-industrial-systems.book.json)
+
+A Physics-owned domain sourcebook mapping energy conversion, batteries, electrical grids, thermal and nuclear educational plants, renewable generation, hydroelectric systems, and industrial manufacturing. Its implementation status is explicit: the book outline and cover are authored; individual facility simulators remain planned unless linked to tested Physics capabilities.
+
+[Read Power and Industrial Systems](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/power-and-industrial-systems.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
+
 ### Dwarves
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
