@@ -68,6 +68,18 @@ An evidence-led Physics domain outline covering oceanography, atmospheric scienc
 
 [Read Ocean, Atmosphere, and Maritime Phenomena](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/ocean-atmosphere-maritime-phenomena.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
 
+### Batteries and Energy Storage
+
+![SURPS Rulebook LOD 1](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/development/docs/assets/rulebook-lod-1.svg)
+
+![Batteries and Energy Storage cover](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Physics/development/docs/books/covers/batteries-and-energy-storage.svg)
+
+Descriptor: [Physics-owned book descriptor](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/batteries-and-energy-storage.book.json)
+
+A Physics-owned domain outline for electrochemical and other energy storage, cell-to-pack composition, grid and factory integration, energy accounting, and evidence-led safety boundaries. The generic Physics storage ledger is implemented; chemistry-specific models remain planned.
+
+[Read Batteries and Energy Storage](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/batteries-and-energy-storage.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
+
 ### Dwarves
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
