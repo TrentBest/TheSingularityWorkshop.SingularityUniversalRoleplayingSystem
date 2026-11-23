@@ -95,15 +95,15 @@
       "id": "singularity-laboratories",
       "repository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories",
       "domain": "Laboratories and educational experiences",
-      "status": "referenced-not-enrolled",
-      "participationManifest": null,
-      "catalogue": null,
+      "status": "integrated-not-enrolled",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
       "responsibilities": [
         "Laboratory staffing",
         "experiments",
         "apparatus and educational experiences"
       ],
-      "notes": "Referenced by SURPS docs; participation declaration not verified.",
+      "notes": "Three Laboratory-owned draft sourcebooks are declared in a structured participation manifest, each with a stable ID, canonical .book.json descriptor, distinct cover, and shared SURPS LOD badge. A repository-local validator and development-branch GitHub Actions gate check manifest/source/descriptor/asset consistency. All three ownership claims remain pending independent SURPS review. The repository distinguishes descriptive laboratory knowledge from executable capabilities and does not claim a completed SURPS runtime adapter. Admission remains blocked pending independent review and final manifest/catalogue evidence.",
       "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/issues/3"
     },
     {
@@ -2650,6 +2650,93 @@
         "agent": "ChatGPT GitHub agent (pending SURPS review)",
         "claimedAt": "2026-11-23T21:20:25Z",
         "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-laboratories.domain.scientific-inquiry",
+      "familyId": "scientific-inquiry",
+      "title": "Scientific Inquiry",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "singularity-laboratories",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/scientific-inquiry.md",
+      "sourcePath": "docs/books/scientific-inquiry.md",
+      "descriptorPath": "docs/books/scientific-inquiry.book.json",
+      "contributors": [],
+      "scope": "Scientific methods, research history, evidence, uncertainty, criticism, correction, and reproducibility across experimental, observational, mathematical, computational, historical, and qualitative disciplines.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Scientific or institutional knowledge is separated from executable capability claims",
+        "Laboratory-specific people and staffing extend City-owned identity without duplicating it",
+        "Physics models, FSM_Execution lifecycle, trusted-host security, and SURPS ontology remain with their respective owners",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories"
+      }
+    },
+    {
+      "id": "singularity-laboratories.domain.laboratory-npcs",
+      "familyId": "laboratory-npcs",
+      "title": "Laboratory NPCs",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-laboratories",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md",
+      "sourcePath": "docs/books/laboratory-npcs.md",
+      "descriptorPath": "docs/books/laboratory-npcs.book.json",
+      "contributors": [],
+      "scope": "Laboratory-specific people, positions, qualifications, staffing, shifts, governance, safety roles, and operational relationships. Extends City-owned person identity without redefining universal character ontology or trusted-host permissions.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Scientific or institutional knowledge is separated from executable capability claims",
+        "Laboratory-specific people and staffing extend City-owned identity without duplicating it",
+        "Physics models, FSM_Execution lifecycle, trusted-host security, and SURPS ontology remain with their respective owners",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories"
+      }
+    },
+    {
+      "id": "singularity-laboratories.domain.flagship-facilities",
+      "familyId": "flagship-facilities",
+      "title": "Flagship Laboratory Facilities",
+      "category": "Domain",
+      "lod": 3,
+      "status": "draft",
+      "ownerRepository": "singularity-laboratories",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/flagship-laboratory-facilities.md",
+      "sourcePath": "docs/books/flagship-laboratory-facilities.md",
+      "descriptorPath": "docs/books/flagship-laboratory-facilities.book.json",
+      "contributors": [],
+      "scope": "Complete research and educational institutions, campuses, departments, infrastructure, instrument ecosystems, staffing, operations, facility composition, and high-fidelity laboratory experiences. Profiles distinguish documented facilities, literary fiction, and original speculative designs.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Scientific or institutional knowledge is separated from executable capability claims",
+        "Laboratory-specific people and staffing extend City-owned identity without duplicating it",
+        "Physics models, FSM_Execution lifecycle, trusted-host security, and SURPS ontology remain with their respective owners",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityLaboratories"
       }
     }
   ]
