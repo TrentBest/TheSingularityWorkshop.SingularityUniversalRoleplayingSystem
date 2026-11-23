@@ -96,6 +96,42 @@
         "experience conformance and evidence"
       ],
       "notes": "Integration planned; not a confirmed participant."
+    },
+    {
+      "id": "economy",
+      "repository": "TrentBest/TheSingularityWorkshop.Economy",
+      "domain": "Markets, currency, trade, production, labor, and logistics",
+      "status": "candidate-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Economic systems and simulation"
+      ],
+      "notes": "Repository exists; no active SURPS participation declaration verified."
+    },
+    {
+      "id": "gestures",
+      "repository": "TrentBest/TheSingularityWorkshop.Gestures",
+      "domain": "Posture, gesture, locomotion, and embodied interaction",
+      "status": "candidate-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Embodied behavior and movement"
+      ],
+      "notes": "Repository exists; no active SURPS participation declaration verified."
+    },
+    {
+      "id": "ontology",
+      "repository": "TrentBest/TheSingularityWorkshop.Ontology",
+      "domain": "Shared ontological structures and concepts",
+      "status": "candidate-not-enrolled",
+      "participationManifest": null,
+      "catalogue": null,
+      "responsibilities": [
+        "Ontology capabilities"
+      ],
+      "notes": "Repository exists; no active SURPS participation declaration verified."
     }
   ],
   "books": [
@@ -237,15 +273,14 @@
       "bookUrl": null,
       "sourcePath": null,
       "descriptorPath": null,
-      "contributors": [
-        "rawwar"
-      ],
+      "contributors": [],
       "scope": "General strategic warfare sourcebook; exact cultural, historical, and operational scope to be established.",
       "ownership": {
         "claimStatus": "unclaimed",
         "agent": null,
         "claimedAt": null
-      }
+      },
+      "candidateOwnerDomain": "raWWar"
     },
     {
       "id": "surps.domain.art-of-war.chinese-warfare-ii",
@@ -258,9 +293,7 @@
       "bookUrl": null,
       "sourcePath": null,
       "descriptorPath": null,
-      "contributors": [
-        "rawwar"
-      ],
+      "contributors": [],
       "scope": "Distinct Chinese-warfare-focused companion or specialization, not a replacement for The Art of War.",
       "ownership": {
         "claimStatus": "unclaimed",
@@ -269,7 +302,8 @@
       },
       "relatedBooks": [
         "surps.domain.art-of-war"
-      ]
+      ],
+      "candidateOwnerDomain": "Chinese Warfare domain"
     },
     {
       "id": "surps.core.world-model",
@@ -363,19 +397,18 @@
       "category": "Play",
       "lod": 1,
       "status": "proposed",
-      "ownerRepository": "storybuilder",
+      "ownerRepository": null,
       "bookUrl": null,
       "sourcePath": null,
       "descriptorPath": null,
-      "contributors": [
-        "storybuilder"
-      ],
+      "contributors": [],
       "scope": "Composing encounters, scenarios, campaigns, and experiences.",
       "ownership": {
         "claimStatus": "unclaimed",
         "agent": null,
         "claimedAt": null
-      }
+      },
+      "candidateOwnerDomain": "StoryBuilder"
     },
     {
       "id": "surps.core.living-atlas",
