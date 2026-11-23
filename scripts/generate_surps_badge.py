@@ -84,9 +84,9 @@ def badge_svg(data: dict) -> str:
     rows = max(1, (len(books) + 2) // 3)
     height = 112 + rows * 72
     width = 1420
-    title = html.escape(data["domain"].upper() + " · SURPS PARTICIPANT")
+    domain_label = data["domain"].upper()\n    title = html.escape("SURPS PARTICIPANT" if domain_label == "SURPS" else domain_label + " · SURPS PARTICIPANT")
     status = data["participationStatus"].upper()
-    summary = f"{len(books)} BOOK OUTPUTS · {status}" if books else f"PROVIDER / DOMAIN CONTRIBUTOR · {status}"
+    summary = f"{len(books)} DECLARED BOOKS · PARTICIPANT {status}" if books else f"PROVIDER / DOMAIN CONTRIBUTOR · PARTICIPANT {status}"
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
         f'<title id="title">{title}</title>',
