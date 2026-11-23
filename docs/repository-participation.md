@@ -69,7 +69,7 @@ The SURPS validator checks that active external records contain this evidence, t
 7. Validate through the owning repository's CI. Cross-repository composition must not imply a dependency the owner has not declared.
 8. Do not publish NuGet packages or perform a release without explicit release authorization.
 
-## 6. Avoid reinvention
+## 7. Avoid reinvention
 
 The central registry is the single cross-repository index. Local catalogues are useful navigation surfaces, not competing authorities. Reuse existing IDs, descriptors, LOD semantics, validation, badges, and documentation patterns. Link to the owner; do not fork its domain truth into a consumer repository.
 
