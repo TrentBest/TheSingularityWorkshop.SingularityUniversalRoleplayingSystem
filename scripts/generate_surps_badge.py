@@ -58,7 +58,12 @@ def load_and_validate() -> dict:
         if book["status"] not in BOOK_STATES:
             raise ValueError(f"Invalid status for {book['id']}: {book['status']}")
         repo_path(book["bookPath"], f"bookPath for {book['id']}")
-        repo_path(book["coverPath"], f"coverPath for {book['id']}")
+        cover_path = repo_path(book["coverPath"], f"coverPath for {book['id']}")
+        cover_source = cover_path.read_text(encoding="utf-8")
+        if "<svg" not in cover_source or "<title" not in cover_source or "<desc" not in cover_source:
+            raise ValueError(f"Cover must be an accessible SVG with title and description: {book['coverPath']}")
+        if "Asset role:" not in cover_source or "Provenance:" not in cover_source:
+            raise ValueError(f"Cover is missing its asset role/provenance record: {book['coverPath']}")
         descriptor_path = repo_path(book["descriptorPath"], f"descriptorPath for {book['id']}")
         descriptor = json.loads(descriptor_path.read_text(encoding="utf-8"))
         expected = {
