@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+  "domain": "SURPS",
+  "participationStatus": "active",
+  "contributionType": [
+    "shared-ontology",
+    "rulebook-composition",
+    "sourcebook-publication",
+    "lod-and-campaign-composition"
+  ],
+  "contributionSummary": "Owns the shared roleplaying ontology, CORE rules, rulebook identity and composition, LOD/campaign selection, and cross-domain sourcebook contract.",
+  "cataloguePath": "docs/books/index.md",
+  "books": [
+    {
+      "id": "surps.core.dwarves",
+      "title": "Dwarves",
+      "category": "Core",
+      "lod": 0,
+      "version": "0.1.0",
+      "status": "draft",
+      "bookPath": "docs/books/dwarves-core-concept.md",
+      "descriptorPath": "docs/books/dwarves-core-concept.book.json",
+      "coverPath": "docs/books/covers/dwarves-core.svg"
+    },
+    {
+      "id": "surps.core.spying",
+      "title": "Spying",
+      "category": "Core",
+      "lod": 0,
+      "version": "0.1.0",
+      "status": "draft",
+      "maturity": "tabletop-playtest-draft",
+      "bookPath": "docs/books/core-spying.md",
+      "descriptorPath": "docs/books/core-spying.book.json",
+      "coverPath": "docs/books/covers/core-spying.svg"
+    },
+    {
+      "id": "surps.domain.dungeons-and-underground",
+      "title": "Dungeons and Underground",
+      "category": "Domain",
+      "lod": 1,
+      "version": "0.1.0",
+      "status": "draft",
+      "bookPath": "docs/books/dungeons-and-underground.md",
+      "descriptorPath": "docs/books/dungeons-and-underground.book.json",
+      "coverPath": "docs/books/covers/dungeons-and-underground.svg"
+    },
+    {
+      "id": "surps.domain.dwarves",
+      "title": "Dwarves",
+      "category": "Domain",
+      "lod": 1,
+      "version": "0.1.0",
+      "status": "draft",
+      "bookPath": "docs/books/dwarves.md",
+      "descriptorPath": "docs/books/dwarves.book.json",
+      "coverPath": "docs/books/covers/dwarves.svg"
+    },
+    {
+      "id": "surps.domain.dwarven-strongholds",
+      "title": "Dwarven Strongholds",
+      "category": "Domain",
+      "lod": 2,
+      "version": "0.1.0",
+      "status": "draft",
+      "bookPath": "docs/books/dwarven-mountain-fortress.md",
+      "descriptorPath": "docs/books/dwarven-mountain-fortress.book.json",
+      "coverPath": "docs/books/covers/dwarven-mountain-fortress.svg"
+    },
+    {
+      "id": "surps.play.npcs-in-play",
+      "title": "NPCs in Play — SURPS ownership note",
+      "category": "Rules",
+      "lod": 1,
+      "version": "0.2.0",
+      "status": "draft",
+      "bookPath": "docs/books/nonplayer-characters.md",
+      "descriptorPath": "docs/books/nonplayer-characters.book.json",
+      "coverPath": "docs/books/covers/nonplayer-characters.svg"
+    }
+  ],
+  "gauntlet": {
+    "repository": "TrentBest/TheSingularityWorkshop.Gauntlet",
+    "integrationStatus": "planned",
+    "trackingIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet/issues/3"
+  }
+}
