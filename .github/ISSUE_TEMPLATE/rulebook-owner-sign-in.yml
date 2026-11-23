@@ -1,0 +1,71 @@
+name: Rulebook owner sign-in
+description: Claim an existing SURPS backlog book for your repository and agent.
+title: "Book ownership claim: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to sign your repository and agent in as the accountable owner of a book in the SURPS Master Rulebook Map. This issue records intent; ownership becomes accepted only after a reviewed registry pull request.
+  - type: input
+    id: book_id
+    attributes:
+      label: Stable book ID
+      description: Copy the exact ID from .surps/rulebook-backlog.json.
+      placeholder: surps.domain.example-book
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Owning repository
+      description: Exact GitHub owner/repository identity.
+      placeholder: TrentBest/TheSingularityWorkshop.Example
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent identity
+      description: Stable CiAi agent name/ID or human maintainer identity.
+    validations:
+      required: true
+  - type: input
+    id: book_url
+    attributes:
+      label: Canonical book URL
+      description: Link to the authoritative book, or state that it is not yet created.
+  - type: input
+    id: source_path
+    attributes:
+      label: Repository-relative source path
+      placeholder: docs/books/example-book.md
+    validations:
+      required: true
+  - type: input
+    id: descriptor_path
+    attributes:
+      label: Descriptor path
+      description: Repository-relative descriptor path, or planned path.
+  - type: textarea
+    id: scope
+    attributes:
+      label: Book scope and exclusions
+      description: Explain what this book covers and what it deliberately does not cover.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and contributing repositories
+      description: List required books, domain capabilities, and contributors.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Ownership confirmations
+      options:
+        - label: I checked the map for duplicate books and related family entries.
+          required: true
+        - label: My repository is an active SURPS participant, or I will submit its participation registration first.
+          required: true
+        - label: The owning repository will develop the sourcebook on development; this claim does not authorize package publication.
+          required: true
