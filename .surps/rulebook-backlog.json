@@ -73,7 +73,7 @@
         "Underground topology",
         "dungeon environment and exploration"
       ],
-      "notes": "One Dungeon-owned sourcebook, Underground Environments, is now declared with a canonical .book.json descriptor and a pending ownership claim. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds. Admission remains blocked pending canonical descriptors and distinct covers for the five other catalogue works, plus independent review of ownership and contributor records.",
+      "notes": "Six Dungeon-owned sourcebooks are now declared with canonical .book.json descriptors and distinct cover assets. All six ownership claims are pending independent SURPS review. The repository contributes to SURPS-owned Dungeons and Underground and Dwarven Strongholds. Admission remains blocked until SURPS independently reviews ownership/contributor records and verifies the final development-branch manifest/catalogue snapshot.",
       "coordinationIssue": "https://github.com/TrentBest/FSM_Dungeon/issues/4"
     },
     {
@@ -2213,6 +2213,146 @@
         "Dungeon spatial topology and environmental state remain distinct from Physics substrate and SURPS inhabitant behavior",
         "Coordinate-frame and substrate handoff assumptions are explicit",
         "Simulation fidelity, validation expectations, and known limitations are documented",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "fsm-dungeon.fantasy.fantasy-foundations",
+      "familyId": "fantasy-foundations",
+      "title": "Fantasy Foundations",
+      "category": "Setting",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/fantasy-foundations.md",
+      "sourcePath": "docs/books/fantasy-foundations.md",
+      "descriptorPath": "docs/books/fantasy-foundations.book.json",
+      "contributors": [],
+      "scope": "A system-neutral framework for constructing original fantasy worlds through geography, ecology, peoples, societies, history, extraordinary forces, observer knowledge, and causal consistency. It does not define a canonical world or implement rules, simulation, creature AI, combat, magic resolution, or campaign execution.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Original setting knowledge remains distinct from SURPS-owned universal ontology and resolution",
+        "Domain boundaries, assumptions, provenance, and known limitations are explicit",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "fsm-dungeon.fantasy.elves",
+      "familyId": "elves",
+      "title": "Elves: Peoples of the Long Memory",
+      "category": "Setting",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/elves.md",
+      "sourcePath": "docs/books/elves.md",
+      "descriptorPath": "docs/books/elves.book.json",
+      "contributors": [],
+      "scope": "An original, adaptable framework for distinct elf communities, self-identification, ancestry, cultural variation, institutions, environments, history, relationships, and campaign-facing story seeds. It is not universal fantasy canon and supplies no mechanical statistics or universal elf rules.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Original setting knowledge remains distinct from SURPS-owned universal ontology and resolution",
+        "Domain boundaries, assumptions, provenance, and known limitations are explicit",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "fsm-dungeon.fantasy.bestiary",
+      "familyId": "living-bestiary",
+      "title": "The Living Bestiary",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/bestiary.md",
+      "sourcePath": "docs/books/bestiary.md",
+      "descriptorPath": "docs/books/living-bestiary.book.json",
+      "contributors": [],
+      "scope": "A reusable creature and ecology framework covering identity, appearance, range, needs, lifecycle, social patterns, ecological roles, habitats, signs, populations, and observer-facing encounter context. SURPS owns creature ontology, capabilities, motivations, behavior, and rules-facing resolution.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Original setting knowledge remains distinct from SURPS-owned universal ontology and resolution",
+        "Domain boundaries, assumptions, provenance, and known limitations are explicit",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "fsm-dungeon.fantasy.dragons-and-wyrms",
+      "familyId": "dragons-and-wyrms",
+      "title": "Dragons and Wyrms: Ecology of the Elder Sky",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/dragons-and-wyrms.md",
+      "sourcePath": "docs/books/dragons-and-wyrms.md",
+      "descriptorPath": "docs/books/dragons-and-wyrms.book.json",
+      "contributors": [],
+      "scope": "An original draconic natural-history framework for diverse lineages, forms, life histories, intelligence, habitats, ecological roles, relationships, signs, and encounter contexts. It defines no universal dragon canon, combat statistics, spell effects, creature AI, or cosmology.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Original setting knowledge remains distinct from SURPS-owned universal ontology and resolution",
+        "Domain boundaries, assumptions, provenance, and known limitations are explicit",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T07:37:22Z",
+        "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "fsm-dungeon.fantasy.ruins-and-lost-places",
+      "familyId": "ruins-and-lost-places",
+      "title": "Ruins and Lost Places: Reading the Layers of a World",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "fsm-dungeon",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/FSM_Dungeon/blob/development/docs/books/ruins-and-lost-places.md",
+      "sourcePath": "docs/books/ruins-and-lost-places.md",
+      "descriptorPath": "docs/books/ruins-and-lost-places.book.json",
+      "contributors": [],
+      "scope": "A causal framework for authoring ruins, abandoned settlements, buried complexes, collapsed infrastructure, and places with uncertain purpose through origin, use, change, evidence, environmental history, and observer knowledge. It does not define universal traps, creature behavior, combat mechanics, or structural safety guarantees.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "Original setting knowledge remains distinct from SURPS-owned universal ontology and resolution",
+        "Domain boundaries, assumptions, provenance, and known limitations are explicit",
         "Ownership claim is independently reviewed by SURPS"
       ],
       "ownership": {
