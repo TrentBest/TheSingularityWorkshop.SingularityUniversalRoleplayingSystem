@@ -84,5 +84,8 @@
     "repository": "TrentBest/TheSingularityWorkshop.Gauntlet",
     "integrationStatus": "planned",
     "trackingIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet/issues/3"
-  }
+  },
+  "rulebookBacklogPath": ".surps/rulebook-backlog.json",
+  "masterRulebookMapPath": "docs/rulebook-backlog/index.md",
+  "participatingRepositoryRegistryPath": ".surps/rulebook-backlog.json"
 }
