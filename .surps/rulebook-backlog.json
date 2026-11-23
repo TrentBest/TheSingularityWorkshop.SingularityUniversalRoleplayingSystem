@@ -136,14 +136,16 @@
     {
       "id": "gestures",
       "repository": "TrentBest/TheSingularityWorkshop.Gestures",
-      "domain": "Posture, gesture, locomotion, and embodied interaction",
-      "status": "candidate-not-enrolled",
-      "participationManifest": null,
-      "catalogue": null,
+      "domain": "Posture, gesture, locomotion, procedural motion evaluation, provider-owned embodied interaction, and coordination",
+      "status": "integrated-not-enrolled",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
       "responsibilities": [
-        "Embodied behavior and movement"
+        "Gesture procedure representation and deterministic evaluation",
+        "Provider-offer filtering and embodied interaction",
+        "Gesture-specific temporal progression, observation, and coordination"
       ],
-      "notes": "Repository exists; no active SURPS participation declaration verified.",
+      "notes": "Two Gestures-owned draft sourcebooks are declared in a structured development-branch participation manifest, each with a stable global ID, canonical descriptor, distinct cover, and shared SURPS LOD badge. Both ownership claims remain pending independent SURPS review. The declaration distinguishes gesture evaluation from SURPS actor intent and roleplaying semantics, and from Physics-owned physical laws and outcomes. Admission remains blocked pending independent ownership review and final manifest/catalogue snapshot verification.",
       "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Gestures/issues/36"
     },
     {
@@ -2911,6 +2913,46 @@
         "agent": "ChatGPT GitHub agent (pending SURPS review)",
         "claimedAt": "2026-11-23T21:20:25Z",
         "agentRepository": "TrentBest/TheSingularityWorkshop.Economy"
+      }
+    },
+    {
+      "id": "gestures.domain.procedural-gesture-and-motion-evaluation",
+      "familyId": "procedural-gesture-and-motion-evaluation",
+      "title": "Procedural Gesture and Motion Evaluation",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "gestures",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Gestures/blob/development/docs/books/procedural-gesture-and-motion-evaluation.md",
+      "sourcePath": "docs/books/procedural-gesture-and-motion-evaluation.md",
+      "descriptorPath": "docs/books/procedural-gesture-and-motion-evaluation.book.json",
+      "contributors": [],
+      "scope": "Engine-neutral gesture procedure data, deterministic pose evaluation, bounded stable variation, caller-driven playback lifecycle, and evidence boundaries between intended motion and physical outcome.",
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent",
+        "claimedAt": "2026-11-23T21:57:57Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Gestures"
+      }
+    },
+    {
+      "id": "gestures.domain.embodied-interaction-and-provider-selection",
+      "familyId": "embodied-interaction-and-provider-selection",
+      "title": "Embodied Interaction and Provider Selection",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "gestures",
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Gestures/blob/development/docs/books/embodied-interaction-and-provider-selection.md",
+      "sourcePath": "docs/books/embodied-interaction-and-provider-selection.md",
+      "descriptorPath": "docs/books/embodied-interaction-and-provider-selection.book.json",
+      "contributors": [],
+      "scope": "Provider-owned physical procedure offers, actor-relative capability and anchor filtering, temporal phases, alternate attempts, observations, and SURPS/Physics/consumer responsibility boundaries.",
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent",
+        "claimedAt": "2026-11-23T21:57:57Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.Gestures"
       }
     }
   ]
