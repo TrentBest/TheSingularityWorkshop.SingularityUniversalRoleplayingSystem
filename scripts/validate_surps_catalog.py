@@ -55,8 +55,86 @@ def local_file(value: object, owner: Path, field: str, errors: list[str]) -> Non
         fail(errors, f"{owner.relative_to(ROOT)}: {field} does not exist: {value}")
 
 
+def validate_backlog(errors: list[str]) -> tuple[int, int]:
+    path = ROOT / ".surps" / "rulebook-backlog.json"
+    backlog = load_json(path, errors)
+    if backlog is None:
+        return 0, 0
+    if backlog.get("schemaVersion") != 1:
+        fail(errors, "rulebook-backlog.json: unsupported schemaVersion (expected 1)")
+    if backlog.get("registryId") != "surps.rulebook.master-backlog":
+        fail(errors, "rulebook-backlog.json: unexpected registryId")
+    authority = backlog.get("authority")
+    if not isinstance(authority, dict) or authority.get("repository") != "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem" or authority.get("branch") != "development":
+        fail(errors, "rulebook-backlog.json: authority must point to this repository's development branch")
+
+    repositories = backlog.get("repositories")
+    if not isinstance(repositories, list) or not repositories:
+        fail(errors, "rulebook-backlog.json: repositories must be a non-empty array")
+        repositories = []
+    repo_ids: set[str] = set()
+    repo_names: set[str] = set()
+    for index, entry in enumerate(repositories):
+        label = f"rulebook-backlog.json: repositories[{index}]"
+        if not isinstance(entry, dict):
+            fail(errors, f"{label} must be an object")
+            continue
+        repo_id, full_name = entry.get("id"), entry.get("repository")
+        if not isinstance(repo_id, str) or not repo_id.strip() or repo_id in repo_ids:
+            fail(errors, f"{label}.id must be a unique non-empty string")
+        else:
+            repo_ids.add(repo_id)
+        if full_name is not None and (not isinstance(full_name, str) or "/" not in full_name or full_name in repo_names):
+            fail(errors, f"{label}.repository must be a unique owner/repository name or null")
+        elif isinstance(full_name, str):
+            repo_names.add(full_name)
+        if entry.get("status") == "active" and (not entry.get("participationManifest") or not entry.get("catalogue")):
+            fail(errors, f"{label}: active repositories must declare participationManifest and catalogue")
+
+    books = backlog.get("books")
+    if not isinstance(books, list) or not books:
+        fail(errors, "rulebook-backlog.json: books must be a non-empty array")
+        books = []
+    book_ids: set[str] = set()
+    for index, entry in enumerate(books):
+        label = f"rulebook-backlog.json: books[{index}]"
+        if not isinstance(entry, dict):
+            fail(errors, f"{label} must be an object")
+            continue
+        book_id, family_id, title = entry.get("id"), entry.get("familyId"), entry.get("title")
+        if not isinstance(book_id, str) or not book_id.strip() or book_id in book_ids:
+            fail(errors, f"{label}.id must be a unique non-empty string")
+        else:
+            book_ids.add(book_id)
+        if not isinstance(family_id, str) or not family_id.strip():
+            fail(errors, f"{label}.familyId must be a non-empty string")
+        if not isinstance(title, str) or not title.strip():
+            fail(errors, f"{label}.title must be a non-empty string")
+        lod = entry.get("lod")
+        if not isinstance(lod, int) or isinstance(lod, bool) or lod < 0:
+            fail(errors, f"{label}.lod must be a non-negative integer")
+        owner = entry.get("ownerRepository")
+        if owner is not None and owner not in repo_ids:
+            fail(errors, f"{label}.ownerRepository references unknown repository id: {owner}")
+        contributors = entry.get("contributors", [])
+        if not isinstance(contributors, list) or any(item not in repo_ids for item in contributors):
+            fail(errors, f"{label}.contributors must reference registered repository ids")
+        url = entry.get("bookUrl")
+        if url is not None and (not isinstance(url, str) or not url.startswith("https://")):
+            fail(errors, f"{label}.bookUrl must be an absolute HTTPS URL or null")
+        ownership = entry.get("ownership")
+        if not isinstance(ownership, dict) or ownership.get("claimStatus") not in {"unclaimed", "pending", "accepted"}:
+            fail(errors, f"{label}.ownership.claimStatus must be unclaimed, pending, or accepted")
+        elif ownership.get("claimStatus") == "accepted" and (owner is None or not ownership.get("agent")):
+            fail(errors, f"{label}: accepted ownership requires ownerRepository and agent identity")
+        elif ownership.get("claimStatus") == "pending" and (owner is None or not ownership.get("agent") or not ownership.get("claimedAt")):
+            fail(errors, f"{label}: pending ownership requires ownerRepository, agent, and claimedAt")
+    return len(repositories), len(books)
+
+
 def main() -> int:
     errors: list[str] = []
+    repository_count, backlog_count = validate_backlog(errors)
     manifest = load_json(MANIFEST_PATH, errors)
     if manifest is None:
         return 1
@@ -132,6 +210,7 @@ def main() -> int:
         return 1
 
     print(f"SURPS catalogue validation passed: {len(books)} manifest entries, {checked} descriptors.")
+    print(f"SURPS master backlog validation passed: {backlog_count} books and {repository_count} repositories.")
     print("Identity, version, LOD, sourcebook, cover, and LOD badge references are consistent.")
     return 0
 
