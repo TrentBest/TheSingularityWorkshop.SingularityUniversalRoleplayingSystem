@@ -50,7 +50,16 @@
         "catalogueUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md",
         "catalogueBlobSha": "b0baabd0ef02f607eba9de6733fc919a45f175dc",
         "verifiedAt": "2026-11-23",
-        "verifiedBy": "SURPS admission review"
+        "verifiedBy": "SURPS admission review",
+        "registeredBookIds": [
+          "surps.domain.power-and-industrial-systems",
+          "surps.domain.ocean-atmosphere-maritime-phenomena",
+          "surps.domain.batteries-and-energy-storage",
+          "surps.domain.nuclear-fission-facilities",
+          "physics.domain.geology",
+          "physics.domain.weather-atmosphere",
+          "physics.domain.geomorphology-surface-processes"
+        ]
       }
     },
     {
