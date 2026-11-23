@@ -32,6 +32,19 @@ Only repositories with a verified active SURPS participation declaration are mar
 | [SingularityLaboratories](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories) | Laboratory staffing, experiments, apparatus, educational experiences | Referenced domain; participation declaration not yet verified |
 | [Gauntlet](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet) | Selected-book enrollment and conformance evidence | Planned integration |
 
+
+### Domain repositories available for future sign-in
+
+These repositories are known in the Workshop ecosystem, but their active SURPS participation has not yet been verified. They are eligible to submit their own participation declaration and agent sign-in when ready.
+
+| Repository | Domain | Registry status |
+|---|---|---|
+| [Economy](https://github.com/TrentBest/TheSingularityWorkshop.Economy) | Markets, currency, trade, production, labor, logistics | Candidate — not enrolled |
+| [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures) | Posture, gesture, locomotion, embodied interaction | Candidate — not enrolled |
+| [Ontology](https://github.com/TrentBest/TheSingularityWorkshop.Ontology) | Shared ontological structures and concepts | Candidate — not enrolled |
+| StoryBuilder | Campaign and narrative construction | Candidate repository identity needs confirmation |
+| raWWar | Warfare and military systems | Candidate repository identity needs confirmation |
+
 Repositories become Active by adding a valid .surps/participation.json declaration in their own development branch and submitting a registration PR to this map. SURPS must not claim a repository has signed in before that evidence exists.
 
 ## Existing books — authoritative links
