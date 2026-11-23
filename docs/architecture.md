@@ -29,7 +29,7 @@ These are initial working definitions, not a frozen schema. We will refine them 
 | Narrative construction | StoryBuilder |
 | Underground environment | FSM_Dungeon |
 | Experience composition | FSM_COS |
-| Runtime execution | FSM_Foundry |
+| Runtime execution | FSM_Execution |
 | Structured world data | DataWarehouse |
 | CI workflow contracts and exact-commit evidence | CiAi |
 
@@ -37,7 +37,7 @@ SURPS consumes and composes these capabilities. It must not become a second phys
 
 ## SURPS activation
 
-SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Foundry remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
+SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Execution remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
 
 ## Rulebook composition
 
