@@ -110,6 +110,12 @@ These views must not be collapsed. A hidden passage can exist without the explor
 
 The SURPS core contract remains outside this case study's scope. This book composes domain knowledge; it does not redefine the core.
 
+## Warfare crossover: the reason this stronghold must survive
+
+The fortress's defensive doctrine, threat model, siege endurance, military engineering, and recovery planning are a raWWar-owned domain. The companion [Fortifications and Strongholds, LOD 2](https://github.com/TrentBest/raWWar/blob/development/docs/books/fortifications-and-strongholds.md) manual defines those warfare questions without taking ownership of dwarven culture, city population, underground topology, or mountain physics.
+
+This distinction is essential to the scenario: the fortress may be extreme because the world makes ordinary defenses insufficient. Its design should show what it protects, what it costs to maintain, and how the people continue living inside it.
+
 ## 9. First explorable journey
 
 The initial journey should be understandable without combat:
