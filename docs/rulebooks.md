@@ -94,7 +94,7 @@ See [Tabletop Campaign Composition and Rulebook Selection](Theory/tabletop-campa
 | Posture, gesture, motion and embodied interaction | Gestures |
 | Microbundle composition | FSM_COS |
 | State and transition primitives | FSM_API |
-| Execution and stepping | FSM_Foundry |
+| Execution and stepping | FSM_Execution |
 | Visual rendering and SVG presentation | GUI / GUI.SVG |
 
 SURPS defines how domain knowledge is packaged and understood. It does not take ownership of domain truth.
