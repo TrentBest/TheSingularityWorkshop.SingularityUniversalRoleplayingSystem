@@ -179,10 +179,13 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
         if not isinstance(registered_ids, list) or not registered_ids:
             fail(errors, f"{label}.registeredBookIds must be a non-empty array")
             continue
+        if any(not isinstance(book_id, str) or not book_id.strip() for book_id in registered_ids):
+            fail(errors, f"{label}.registeredBookIds entries must be non-empty strings")
+            continue
         if len(registered_ids) != len(set(registered_ids)):
             fail(errors, f"{label}.registeredBookIds must not contain duplicates")
         for book_id in registered_ids:
-            if not isinstance(book_id, str) or book_owner_by_id.get(book_id) != entry.get("id"):
+            if book_owner_by_id.get(book_id) != entry.get("id"):
                 fail(errors, f"{label}: book {book_id!r} must exist in the registry and be owned by {entry.get('id')!r}")
     return len(repositories), len(books)
 
