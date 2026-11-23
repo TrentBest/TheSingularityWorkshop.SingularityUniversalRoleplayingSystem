@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout MicroBundleDomain development dependency
+      - name: Validate SURPS book catalogue and descriptors\n        run: python3 scripts/validate_surps_catalog.py\n      - name: Checkout MicroBundleDomain development dependency
         uses: actions/checkout@v4
         with:
           repository: TrentBest/TheSingularityWorkshop.MicroBundleDomain
