@@ -56,6 +56,18 @@ A Physics-owned domain sourcebook mapping energy conversion, batteries, electric
 
 [Read Power and Industrial Systems](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/power-and-industrial-systems.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
 
+### Ocean, Atmosphere, and Maritime Phenomena
+
+![SURPS Rulebook LOD 1](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/development/docs/assets/rulebook-lod-1.svg)
+
+![Ocean, Atmosphere, and Maritime Phenomena cover](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Physics/development/docs/books/covers/ocean-atmosphere-maritime-phenomena.svg)
+
+Descriptor: [Physics-owned book descriptor](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/ocean-atmosphere-maritime-phenomena.book.json)
+
+An evidence-led Physics domain outline covering oceanography, atmospheric science, vessel physics, navigation, maritime hazards, and historical incident investigation. The Bermuda Triangle is treated as a case study in documented evidence, uncertainty, interpretation, and fiction—not as an assumed physical anomaly.
+
+[Read Ocean, Atmosphere, and Maritime Phenomena](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/ocean-atmosphere-maritime-phenomena.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
+
 ### Dwarves
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
