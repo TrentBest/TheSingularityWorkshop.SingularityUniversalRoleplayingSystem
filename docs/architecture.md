@@ -35,7 +35,11 @@ These are initial working definitions, not a frozen schema. We will refine them 
 
 SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation. CiAi is an engineering-governance capability around the repository's build and evidence lifecycle; it is not an in-world ontology provider and must not define inhabitant behavior.
 
-## SURPS activation\n\nSURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Foundry remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.\n\n## Rulebook composition
+## SURPS activation
+
+SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Foundry remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
+
+## Rulebook composition
 
 SURPS exposes domain knowledge through a common `ISurpsRulebook` contract. Domain microbundles are wrapped by SURPS-enabled containers and presented as rulebooks such as `SurpsRulebookPhysics` and `SurpsRulebookLaboratories`. The domain repository remains authoritative for its implementation and execution; SURPS owns the shared contract and composition conventions. See [SURPS Rulebooks and Domain Microbundles](rulebooks.html).
 
@@ -66,4 +70,11 @@ SURPS supplies the shared ontology through which inhabitants can be described. T
 ## Development evidence and CiAi
 
 GitHub Actions remains the authoritative build and documentation execution environment. CiAi observes exact-commit workflow runs and normalizes their evidence; it does not execute the build, authorize repository writes, or replace human approval. SURPS onboarding must be evaluated from the exact target commit using the root `AgentOnboarding.md`. A successful admission result is only one prerequisite for bounded agent work, not a grant of authority. The first CiAi integration is the read-only [exact-commit evidence workflow](../.github/workflows/ciai-evidence.yml). It observes the Pages workflow and reports completeness, terminality, and success separately.
-\n\n## Gauntlet integration\n\n[Gauntlet](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet) is the evidence-producing proving ground for integrated SURPS experiences. Gauntlet owns campaigns, probes, invariant checks, findings, deterministic evaluation, and provenance-bound reports. SURPS supplies explicit rulebook/profile/LOD composition; participating domains supply their own rules and providers; FSM_COS composes the runtime; CiAi remains authoritative for exact-CI evidence correlation and gate policy. The first SURPS integration is tracked in [Gauntlet issue #6](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet/issues/6).\n
+
+
+## Gauntlet integration
+
+[Gauntlet](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet) is the evidence-producing proving ground for integrated SURPS experiences. Gauntlet owns campaigns, probes, invariant checks, findings, deterministic evaluation, and provenance-bound reports. SURPS supplies explicit rulebook/profile/LOD composition; participating domains supply their own rules and providers; FSM_COS composes the runtime; CiAi remains authoritative for exact-CI evidence correlation and gate policy. The first SURPS integration is tracked in [Gauntlet issue #6](https://github.com/TrentBest/TheSingularityWorkshop.Gauntlet/issues/6).
+
+<!-- THE SINGULARITY WORKSHOP FOOTER -->
+<p align="center"><img src="https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png" alt="The Singularity Workshop avatar" width="200" /></p>
