@@ -47,7 +47,18 @@ Reuse existing repository build, validation, and documentation conventions. This
 - Do not claim that planned models, simulators, or procedures are implemented.
 - Keep paper-and-pencil play possible where applicable; deterministic time and state semantics must remain explicit.
 
-## 5. Cross-repository contribution workflow
+## 5. Admission evidence and revalidation
+
+An external repository may be marked `active` in the central registry only after a SURPS reviewer has inspected its `development` branch and recorded:
+
+- The exact manifest URL and catalogue URL, both targeting `development`.
+- The Git blob SHA of each inspected file, so the reviewed snapshot is identifiable.
+- The verification date and reviewer identity.
+- The declared manifest and catalogue paths in the repository record.
+
+The SURPS validator checks that active external records contain this evidence, that URLs resolve to the declared repository paths and branch, and that both blob identifiers have valid Git SHA-1 syntax. This is an auditable admission record, not a live remote fetch: a changed remote file must be fetched and reviewed again, then its blob SHA and verification date refreshed before the registry can continue to represent that snapshot as verified. Invitations, issue comments, repository existence, and candidate book titles are not admission evidence.
+
+## 6. Cross-repository contribution workflow
 
 1. Find the relevant book and owning repository in the [master map](rulebook-backlog/index.md).
 2. Contact the owner before creating overlapping material. Extend the authoritative source where appropriate.
