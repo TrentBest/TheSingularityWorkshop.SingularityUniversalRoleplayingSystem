@@ -266,7 +266,14 @@ def main() -> int:
         if descriptor.get("cover") != cover_value:
             fail(errors, f"{descriptor_value}: cover does not match participation manifest")
         local_file(descriptor.get("cover"), descriptor_path, "cover", errors)
-        local_file(descriptor.get("lodBadge"), descriptor_path, "lodBadge", errors)
+        lod_badge = descriptor.get("lodBadge")
+        shared_lod_badge = (
+            "https://raw.githubusercontent.com/TrentBest/"
+            "TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/"
+            f"development/docs/assets/rulebook-lod-{lod}.svg"
+        )
+        if lod_badge != shared_lod_badge:
+            local_file(lod_badge, descriptor_path, "lodBadge", errors)
 
         moniker = descriptor.get("publisherMoniker")
         if not isinstance(moniker, str) or not moniker.startswith(("https://", "http://")):
