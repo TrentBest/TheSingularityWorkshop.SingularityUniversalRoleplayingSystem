@@ -116,6 +116,9 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
         owner = entry.get("ownerRepository")
         if owner is not None and owner not in repo_ids:
             fail(errors, f"{label}.ownerRepository references unknown repository id: {owner}")
+        candidate_owner = entry.get("candidateOwnerRepository")
+        if candidate_owner is not None and candidate_owner not in repo_ids:
+            fail(errors, f"{label}.candidateOwnerRepository references unknown repository id: {candidate_owner}")
         contributors = entry.get("contributors", [])
         if not isinstance(contributors, list) or any(item not in repo_ids for item in contributors):
             fail(errors, f"{label}.contributors must reference registered repository ids")
@@ -125,10 +128,10 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
         ownership = entry.get("ownership")
         if not isinstance(ownership, dict) or ownership.get("claimStatus") not in {"unclaimed", "pending", "accepted"}:
             fail(errors, f"{label}.ownership.claimStatus must be unclaimed, pending, or accepted")
-        elif ownership.get("claimStatus") == "accepted" and (owner is None or not ownership.get("agent")):
-            fail(errors, f"{label}: accepted ownership requires ownerRepository and agent identity")
-        elif ownership.get("claimStatus") == "pending" and (owner is None or not ownership.get("agent") or not ownership.get("claimedAt")):
-            fail(errors, f"{label}: pending ownership requires ownerRepository, agent, and claimedAt")
+        elif ownership.get("claimStatus") == "accepted" and (owner is None or not ownership.get("agent") or not ownership.get("agentRepository")):
+            fail(errors, f"{label}: accepted ownership requires ownerRepository, agentRepository, and agent identity")
+        elif ownership.get("claimStatus") == "pending" and (owner is None or not ownership.get("agent") or not ownership.get("agentRepository") or not ownership.get("claimedAt")):
+            fail(errors, f"{label}: pending ownership requires ownerRepository, agentRepository, agent, and claimedAt")
     return len(repositories), len(books)
 
 
