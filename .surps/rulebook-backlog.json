@@ -42,7 +42,16 @@
         "Physics-owned sourcebooks"
       ],
       "participationEvidence": "Active SURPS participation manifest and seven registered sourcebooks; three new geology/weather book ownership claims are pending SURPS review.",
-      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/issues/61"
+      "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/issues/61",
+      "admissionEvidence": {
+        "branch": "development",
+        "manifestUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/.surps/participation.json",
+        "manifestBlobSha": "4b4f485f9646c778e09595af707c1c85bd89cd1b",
+        "catalogueUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md",
+        "catalogueBlobSha": "b0baabd0ef02f607eba9de6733fc919a45f175dc",
+        "verifiedAt": "2026-11-23",
+        "verifiedBy": "SURPS admission review"
+      }
     },
     {
       "id": "fsm-dungeon",
