@@ -80,6 +80,18 @@ A Physics-owned domain outline for electrochemical and other energy storage, cel
 
 [Read Batteries and Energy Storage](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/batteries-and-energy-storage.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
 
+### Nuclear Fission Facilities
+
+![SURPS Rulebook LOD 1](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/development/docs/assets/rulebook-lod-1.svg)
+
+![Nuclear Fission Facilities cover](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Physics/development/docs/books/covers/nuclear-fission-facilities.svg)
+
+Descriptor: [Physics-owned book descriptor](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/nuclear-fission-facilities.book.json)
+
+A public-information educational outline for fission physics, delayed response, heat removal, thermal conversion, residual heat, and generic protective concepts. It explicitly excludes plant-specific operating procedures, setpoints, security details, and safety-critical training. No reactor simulator is claimed implemented.
+
+[Read Nuclear Fission Facilities](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/nuclear-fission-facilities.md) · [Physics sourcebook catalogue](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md)
+
 ### Dwarves
 
 ![SURPS Rulebook LOD 1](../assets/rulebook-lod-1.svg)
