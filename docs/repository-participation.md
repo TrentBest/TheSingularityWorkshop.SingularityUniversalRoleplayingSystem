@@ -56,7 +56,7 @@ An external repository may be marked `active` in the central registry only after
 - The verification date and reviewer identity.
 - The declared manifest and catalogue paths in the repository record.
 
-The SURPS validator checks that active external records contain this evidence, that URLs resolve to the declared repository paths and branch, and that both blob identifiers have valid Git SHA-1 syntax. This is an auditable admission record, not a live remote fetch: a changed remote file must be fetched and reviewed again, then its blob SHA and verification date refreshed before the registry can continue to represent that snapshot as verified. Invitations, issue comments, repository existence, and candidate book titles are not admission evidence.
+The SURPS validator checks that active external records contain this evidence, that URLs exactly match the declared repository paths and branch, and that both blob identifiers have valid Git SHA-1 syntax. This is an auditable admission record, not a live remote fetch: a changed remote file must be fetched and reviewed again, then its blob SHA and verification date refreshed before the registry can continue to represent that snapshot as verified. Invitations, issue comments, repository existence, and candidate book titles are not admission evidence.
 
 ## 6. Cross-repository contribution workflow
 
