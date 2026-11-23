@@ -61,6 +61,9 @@ Repositories become Active by adding a valid .surps/participation.json declarati
 | [Ocean, Atmosphere, and Maritime Phenomena](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/ocean-atmosphere-maritime-phenomena.md) | Maritime and Atmosphere | 1 | [Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft | Physics domain ownership |
 | [Batteries and Energy Storage](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/batteries-and-energy-storage.md) | Energy Storage | 1 | [Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft | Physics domain ownership |
 | [Nuclear Fission Facilities](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/nuclear-fission-facilities.md) | Nuclear Energy | 1 | [Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft | Physics domain ownership |
+| [Geology and Planetary Evolution](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geology-and-planetary-evolution.md) | Geology | 1 | [Physics] (https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft — ownership pending | ChatGPT GitHub agent (pending SURPS review) |
+| [Weather and Climate](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/weather-and-climate.md) | Weather and Atmosphere | 1 | [Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft — ownership pending | ChatGPT GitHub agent (pending SURPS review) |
+| [Geomorphology and Surface Processes](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geomorphology-and-surface-processes.md) | Geology | 2 | [Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics) | Draft — ownership pending | ChatGPT GitHub agent (pending SURPS review) |
 
 ## Planned and unclaimed books
 
@@ -338,30 +341,32 @@ The master backlog currently contains 65 proposed books. Each title below jumps 
 - **Acceptance:** Clear scope, exclusions, and cross-references; Usable tabletop procedures with worked examples; Evidence-backed implementation status and limitations; Descriptor, cover, and validation tests when promoted to a published book
 
 <a id="book-physics-domain-geology"></a>
-### Geology and Planet Formation
+### Geology and Planetary Evolution
 
 - **Stable ID:** physics.domain.geology
 - **Family:** geology
 - **Category / LOD:** Physical / 1
-- **Status:** proposed
-- **Priority:** normal
-- **Owner slot:** TrentBest/TheSingularityWorkshop.Physics (candidate; not enrolled)
-- **Agent sign-in:** unclaimed; repository and agent identity are not yet signed in
-- **Scope:** Minerals, rocks, strata, tectonics, erosion, planetary formation, and geological time.
-- **Acceptance:** Clear scope, exclusions, and cross-references; Usable tabletop procedures with worked examples; Evidence-backed implementation status and limitations; Descriptor, cover, and validation tests when promoted to a published book
+- **Status:** draft; authoritative sourcebook created
+- **Owner repository:** [TrentBest/TheSingularityWorkshop.Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics)
+- **Agent sign-in:** pending SURPS review
+- **Sourcebook:** [Geology and Planetary Evolution](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geology-and-planetary-evolution.md)
+- **Descriptor:** [geology-and-planetary-evolution.book.json](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geology-and-planetary-evolution.book.json)
+- **Scope:** Planetary interiors, thermal history, mantle and lithosphere behavior, tectonic plates, crustal deformation, fault systems, earthquakes, magmatism, rock cycles, stratigraphy, and geological time.
+- **Acceptance:** Clear scope, evidence-backed status, descriptor, cover, implementation links, and validation limits.
 
 <a id="book-physics-domain-weather-atmosphere"></a>
-### Weather and Atmospheric Systems
+### Weather and Climate
 
 - **Stable ID:** physics.domain.weather-atmosphere
 - **Family:** weather-atmosphere
 - **Category / LOD:** Physical / 1
-- **Status:** proposed
-- **Priority:** normal
-- **Owner slot:** TrentBest/TheSingularityWorkshop.Physics (candidate; not enrolled)
-- **Agent sign-in:** unclaimed; repository and agent identity are not yet signed in
-- **Scope:** Atmospheric layers, pressure, temperature, wind, clouds, precipitation, storms, and climate context.
-- **Acceptance:** Clear scope, exclusions, and cross-references; Usable tabletop procedures with worked examples; Evidence-backed implementation status and limitations; Descriptor, cover, and validation tests when promoted to a published book
+- **Status:** draft; authoritative sourcebook created
+- **Owner repository:** [TrentBest/TheSingularityWorkshop.Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics)
+- **Agent sign-in:** pending SURPS review
+- **Sourcebook:** [Weather and Climate](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/weather-and-climate.md)
+- **Descriptor:** [weather-and-climate.book.json](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/weather-and-climate.book.json)
+- **Scope:** Atmospheric state, pressure, temperature, moisture, circulation, clouds, precipitation, storms, seasons, climate statistics, extremes, and weather/climate forcing for coupled surface systems.
+- **Acceptance:** Clear scope, evidence-backed status, descriptor, cover, implementation links, and validation limits.
 
 <a id="book-physics-domain-hydrology"></a>
 ### Oceans, Rivers, and Hydrology
@@ -1038,6 +1043,20 @@ The master backlog currently contains 65 proposed books. Each title below jumps 
 - **Agent sign-in:** unclaimed; repository and agent identity are not yet signed in
 - **Scope:** Materials, energy, manufacturing, communications, transport, and capability constraints by era.
 - **Acceptance:** Clear scope, exclusions, and cross-references; Usable tabletop procedures with worked examples; Evidence-backed implementation status and limitations; Descriptor, cover, and validation tests when promoted to a published book
+
+<a id="book-physics-domain-geomorphology-surface-processes"></a>
+### Geomorphology and Surface Processes
+
+- **Stable ID:** physics.domain.geomorphology-surface-processes
+- **Family:** geology
+- **Category / LOD:** Physical / 2
+- **Status:** draft; authoritative sourcebook created
+- **Owner repository:** [TrentBest/TheSingularityWorkshop.Physics](https://github.com/TrentBest/TheSingularityWorkshop.Physics)
+- **Agent sign-in:** pending SURPS review
+- **Sourcebook:** [Geomorphology and Surface Processes](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geomorphology-and-surface-processes.md)
+- **Descriptor:** [geomorphology-and-surface-processes.book.json](https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/geomorphology-and-surface-processes.book.json)
+- **Scope:** Weathering, hillslope transport, rivers, groundwater, karst, glaciers, wind, coasts, sediment budgets, soils, and landscape evolution.
+- **Acceptance:** Clear scope, evidence-backed status, descriptor, cover, implementation links, and validation limits.
 
 ## Agent sign-in and ownership claims
 
