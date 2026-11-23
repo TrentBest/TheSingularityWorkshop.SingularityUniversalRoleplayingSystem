@@ -7,6 +7,8 @@ on:
       - "src/**"
       - "tests/**"
       - "docs/books/**"
+      - "docs/rulebook-backlog/**"
+      - ".surps/rulebook-backlog.json"
       - "docs/assets/rulebook-lod-*.svg"
       - ".surps/participation.json"
       - "scripts/validate_surps_catalog.py"
