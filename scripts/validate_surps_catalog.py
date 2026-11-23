@@ -92,6 +92,9 @@ def validate_backlog(errors: list[str]) -> tuple[int, int]:
             repo_names.add(full_name)
         if entry.get("status") == "active" and (not entry.get("participationManifest") or not entry.get("catalogue")):
             fail(errors, f"{label}: active repositories must declare participationManifest and catalogue")
+        coordination_issue = entry.get("coordinationIssue")
+        if coordination_issue is not None and (not isinstance(coordination_issue, str) or not coordination_issue.startswith("https://github.com/")):
+            fail(errors, f"{label}.coordinationIssue must be an absolute GitHub HTTPS URL or null")
 
     books = backlog.get("books")
     if not isinstance(books, list) or not books:
