@@ -50,7 +50,7 @@
         "catalogueUrl": "https://github.com/TrentBest/TheSingularityWorkshop.Physics/blob/development/docs/books/index.md",
         "catalogueBlobSha": "b0baabd0ef02f607eba9de6733fc919a45f175dc",
         "verifiedAt": "2026-11-23",
-        "verifiedBy": "SURPS admission review",
+        "verifiedBy": "ChatGPT GitHub agent (SURPS admission review)",
         "registeredBookIds": [
           "physics.domain.power-and-industrial-systems",
           "physics.domain.ocean-atmosphere-maritime-phenomena",
