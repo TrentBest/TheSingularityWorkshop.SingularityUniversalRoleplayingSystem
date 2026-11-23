@@ -23,6 +23,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: surps-enrollment-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   enrollment:
     runs-on: ubuntu-latest
