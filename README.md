@@ -39,7 +39,7 @@ Repository-specific agent work is governed by the root [AgentOnboarding.md](Agen
 
 Books are modular, versionable source material rather than isolated documents. Each book declares its scope, LOD, assumptions, and relationship to CORE and other books. **LOD communicates detail; campaign selection and declared scope determine which books apply.** A higher number does not silently override another book.
 
-See the [SURPS Master Rulebook Map](docs/rulebook-backlog/index.md) for the cross-repository book inventory, ownership sign-in, and participating repository registry. Every contributor repository follows the [canonical Repository Participation Standard](docs/repository-participation.md). Also see [Source Books](books/README.md), [SURPS Rulebooks](rulebooks.md), and [Tabletop Campaign Composition](docs/Theory/tabletop-campaign-composition.md). The first executable composition is `SurpsRulebookDungeonsAndUnderground`, which wraps the authoritative FSM_Dungeon environment MicroBundle.
+See the [SURPS Master Rulebook Map](docs/rulebook-backlog/index.md) for the cross-repository book inventory, ownership sign-in, and participating repository registry. Every contributor repository follows the [canonical Repository Participation Standard](docs/repository-participation.md). See the [Repository Onboarding Tracker](docs/repository-onboarding.md) for current invitations and verified admission status. Also see [Source Books](books/README.md), [SURPS Rulebooks](rulebooks.md), and [Tabletop Campaign Composition](docs/Theory/tabletop-campaign-composition.md). The first executable composition is `SurpsRulebookDungeonsAndUnderground`, which wraps the authoritative FSM_Dungeon environment MicroBundle.
 
 ## 4. Living Documentation
 
