@@ -80,15 +80,15 @@
       "id": "singularity-city",
       "repository": "TrentBest/TheSingularityWorkshop.SingularityCity",
       "domain": "City systems and civic life",
-      "status": "referenced-not-enrolled",
-      "participationManifest": null,
-      "catalogue": null,
+      "status": "integrated-not-enrolled",
+      "participationManifest": ".surps/participation.json",
+      "catalogue": "docs/books/index.md",
       "responsibilities": [
         "City entities",
         "infrastructure",
         "services and civic rules"
       ],
-      "notes": "Referenced by SURPS docs; participation declaration not verified.",
+      "notes": "Ten City-owned draft sourcebooks are declared in a structured participation manifest, each with a stable ID, canonical .book.json descriptor, distinct cover, and shared SURPS LOD badge. A repository-local validator and development-branch GitHub Actions gate check manifest/source/descriptor/asset consistency. All ten ownership claims remain pending independent SURPS review. The local declaration does not claim a completed runtime adapter; admission remains blocked until SURPS reviews ownership/domain boundaries and verifies the final manifest/catalogue snapshot.",
       "coordinationIssue": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/issues/1"
     },
     {
@@ -2360,6 +2360,296 @@
         "agent": "ChatGPT GitHub agent (pending SURPS review)",
         "claimedAt": "2026-11-23T07:37:22Z",
         "agentRepository": "TrentBest/FSM_Dungeon"
+      }
+    },
+    {
+      "id": "singularity-city.domain.nonplayer-characters",
+      "familyId": "nonplayer-characters",
+      "title": "Nonplayer Characters",
+      "category": "Domain",
+      "lod": 1,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/nonplayer-characters.md",
+      "sourcePath": "docs/books/nonplayer-characters.md",
+      "descriptorPath": "docs/books/nonplayer-characters.book.json",
+      "contributors": [],
+      "scope": "Shared City-owned person, resident, visitor, character agency, daily life, institutions, occupations, population fidelity, and resident-place relationships. SURPS retains universal character ontology, capabilities, needs, behavior, and action resolution.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.thieves-and-shadow-work",
+      "familyId": "thieves-and-shadow-work",
+      "title": "Thieves & Shadow Work",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/thieves-and-shadow-work.md",
+      "sourcePath": "docs/books/thieves-and-shadow-work.md",
+      "descriptorPath": "docs/books/thieves-and-shadow-work.book.json",
+      "contributors": [],
+      "scope": "City-specific thief roles, motivations, relationships, routines, incidents, victims, consequences, civic response, reform, and campaign situations. It does not implement criminal behavior or override SURPS character ontology.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.urban-underworld",
+      "familyId": "urban-underworld",
+      "title": "The Urban Underworld",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/urban-underworld.md",
+      "sourcePath": "docs/books/urban-underworld.md",
+      "descriptorPath": "docs/books/urban-underworld.book.json",
+      "contributors": [],
+      "scope": "City-specific informal networks, crews, fences, disputed property, illicit markets, corruption, rumor, protection, and hidden civic power. Economy retains authoritative ledgers, currency, accounts, and transactions.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.law-enforcement-and-public-safety",
+      "familyId": "law-enforcement-and-public-safety",
+      "title": "Law Enforcement & Public Safety",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/law-enforcement-and-public-safety.md",
+      "sourcePath": "docs/books/law-enforcement-and-public-safety.md",
+      "descriptorPath": "docs/books/law-enforcement-and-public-safety.book.json",
+      "contributors": [],
+      "scope": "City public-safety institutions, jurisdiction, incident records, evidence handling, response, rights, safeguards, oversight, emergency management, and public trust. Not an operational policing or dispatch system.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.justice-courts-and-restitution",
+      "familyId": "justice-courts-and-restitution",
+      "title": "Justice, Courts & Restitution",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/justice-courts-and-restitution.md",
+      "sourcePath": "docs/books/justice-courts-and-restitution.md",
+      "descriptorPath": "docs/books/justice-courts-and-restitution.book.json",
+      "contributors": [],
+      "scope": "City-specific due process, courts and forums, evidence standards, findings, remedies, sentencing, appeals, restitution, restorative and customary justice. Not a real legal advice or adjudication service.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.governance-and-civic-administration",
+      "familyId": "governance-and-civic-administration",
+      "title": "Governance & Civic Administration",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/governance-and-civic-administration.md",
+      "sourcePath": "docs/books/governance-and-civic-administration.md",
+      "descriptorPath": "docs/books/governance-and-civic-administration.book.json",
+      "contributors": [],
+      "scope": "City governance institutions, charters, mandates, jurisdiction, public administration, service delivery, budgets, records, transparency, accountability, and institutional change.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.politics-power-and-public-will",
+      "familyId": "politics-power-and-public-will",
+      "title": "Politics, Power & Public Will",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/politics-power-and-public-will.md",
+      "sourcePath": "docs/books/politics-power-and-public-will.md",
+      "descriptorPath": "docs/books/politics-power-and-public-will.book.json",
+      "contributors": [],
+      "scope": "Fictional civic and political actors, factions, representation, elections, public opinion, dissent, protest, negotiation, legitimacy, succession, and political memory. Not a voter-profiling or persuasion system.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.elections-and-player-participation",
+      "familyId": "elections-and-player-participation",
+      "title": "Elections & Player Participation",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/elections-and-player-participation.md",
+      "sourcePath": "docs/books/elections-and-player-participation.md",
+      "descriptorPath": "docs/books/elections-and-player-participation.book.json",
+      "contributors": [],
+      "scope": "City election and player participation design: constitutions, candidates, campaigns, ballot privacy, counting, certification, disputes, appeals, and civic consequences. Does not claim an implemented election runtime or ballot custody.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.vigilantes-and-civic-justice",
+      "familyId": "vigilantes-and-civic-justice",
+      "title": "Vigilantes & Civic Justice",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/vigilantes-and-civic-justice.md",
+      "sourcePath": "docs/books/vigilantes-and-civic-justice.md",
+      "descriptorPath": "docs/books/vigilantes-and-civic-justice.book.json",
+      "contributors": [],
+      "scope": "Fictional vigilante roles, authority boundaries, community response, public legitimacy, harm, accountability, and civic consequences. Does not authorize real-world vigilantism or implement enforcement.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
+      }
+    },
+    {
+      "id": "singularity-city.domain.villains-and-antagonists",
+      "familyId": "villains-and-antagonists",
+      "title": "Villains & Antagonists",
+      "category": "Domain",
+      "lod": 2,
+      "status": "draft",
+      "ownerRepository": "singularity-city",
+      "candidateOwnerRepository": null,
+      "bookUrl": "https://github.com/TrentBest/TheSingularityWorkshop.SingularityCity/blob/development/docs/books/villains-and-antagonists.md",
+      "sourcePath": "docs/books/villains-and-antagonists.md",
+      "descriptorPath": "docs/books/villains-and-antagonists.book.json",
+      "contributors": [],
+      "scope": "Antagonist motives, capabilities, limits, relationships, organizations, resources, plans, public narratives, player agency, and consequences. Not a morality classifier or autonomous antagonist engine.",
+      "priority": "normal",
+      "acceptanceCriteria": [
+        "Canonical sourcebook, descriptor, and distinct cover are linked consistently",
+        "City civic-domain authority remains distinct from SURPS universal ontology and action resolution",
+        "Cross-domain ownership for Physics, Economy, and StoryBuilder is explicit where relevant",
+        "Implementation status, assumptions, privacy/safety boundaries, and limitations are accurately stated",
+        "Ownership claim is independently reviewed by SURPS"
+      ],
+      "ownership": {
+        "claimStatus": "pending",
+        "agent": "ChatGPT GitHub agent (pending SURPS review)",
+        "claimedAt": "2026-11-23T21:20:25Z",
+        "agentRepository": "TrentBest/TheSingularityWorkshop.SingularityCity"
       }
     }
   ]
