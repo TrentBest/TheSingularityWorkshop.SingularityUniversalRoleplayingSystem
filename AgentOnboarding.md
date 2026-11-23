@@ -35,7 +35,7 @@ Respect these ownership boundaries:
 - GrammarAi / ProtocolAi: structured terminology and communication contracts.
 - StoryBuilder: narrative construction.
 - FSM_Dungeon: underground environment and its domain-specific phenomena.
-- FSM_COS / FSM_Foundry: experience composition and runtime execution.
+- FSM_COS / FSM_Execution: experience composition and runtime execution.
 - GUI / GUI.SVG: presentation and living illustrations.
 - DataWarehouse: structured world and entity data.
 - CiAi: CI workflow contracts, exact-commit evidence observation, and deterministic evidence evaluation. CiAi is a development-governance capability, not part of the in-world behavior ontology.
