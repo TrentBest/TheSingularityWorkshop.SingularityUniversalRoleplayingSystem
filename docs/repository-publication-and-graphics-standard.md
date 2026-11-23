@@ -1,5 +1,7 @@
 # Participating Repository Publication and Graphics Standard
 
+> **Canonical policy:** The shared Workshop policy now lives in [FSM_COS `DOCUMENTATION_STANDARD.md`](https://github.com/TrentBest/TheSingularityWorkshop.FSM_COS/blob/development/DOCUMENTATION_STANDARD.md). This SURPS document is a domain-specific adoption companion, not a competing cross-repository standard. SURPS book identity remains governed by the [Rulebook Identity, Titles, and Covers standard](rulebook-identity-and-covers.md).
+
 **Status:** proposed ecosystem standard, effective for new work after domain-owner review. Existing repositories are migrated incrementally; this document does not authorize bulk moves or delete established content.
 
 ## 1. Goals and boundaries
