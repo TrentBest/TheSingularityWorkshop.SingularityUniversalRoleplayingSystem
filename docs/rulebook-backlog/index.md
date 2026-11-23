@@ -14,6 +14,10 @@ A book may live in SURPS, Physics, FSM_Dungeon, Economy, raWWar, StoryBuilder, o
 - **Family** groups related but distinct books. It does not merge them or imply that one replaces the other.
 - **Status** describes publication/work readiness. **LOD** describes declared detail, not priority or completion.
 
+## Repository onboarding and coordination
+
+See the [SURPS Repository Onboarding Tracker](../repository-onboarding.md) for each repository's current admission status, domain boundary, and coordination thread. Invitations and comments do not count as enrollment; only verified manifests/catalogues and an accepted registry update do.
+
 ## SURPS participating repositories
 
 Only repositories with a verified active SURPS participation declaration are marked **Active** here. A repository referenced by a book or integrated as a dependency is not automatically a participating repository.
