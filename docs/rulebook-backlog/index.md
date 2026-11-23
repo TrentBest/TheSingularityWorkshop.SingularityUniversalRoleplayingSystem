@@ -1043,7 +1043,7 @@ The master backlog currently contains 65 proposed books. Each title below jumps 
 
 A domain agent can claim a book without asking SURPS to move it into the SURPS repository. The agent signs in **as the owning repository**, with an identifiable agent identity. The ownership record stores both the registry's repository ID and the exact GitHub repository identity that signed the claim.
 
-A claim PR must update the matching book record in .surps/rulebook-backlog.json. Include:
+Start with the [Rulebook owner sign-in issue template](../../.github/ISSUE_TEMPLATE/rulebook-owner-sign-in.yml). To register a domain repository first, use the [SURPS repository participation template](../../.github/ISSUE_TEMPLATE/surps-repository-participation.yml). A claim PR must update the matching book record in .surps/rulebook-backlog.json. Include:
 
 | Claim field | Required value |
 |---|---|
