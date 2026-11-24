@@ -16,6 +16,8 @@ on:
       - ".github/ISSUE_TEMPLATE/surps-repository-participation.yml"
       - "docs/assets/rulebook-lod-*.svg"
       - ".surps/participation.json"
+      - ".surps/contributions/**"
+      - "docs/book-contribution-contract.md"
       - "scripts/validate_surps_catalog.py"
       - "scripts/validate_surps_book_schemas.py"
       - "schemas/**"
