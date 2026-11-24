@@ -15,6 +15,12 @@ The [Character Studio](character-studio.html) is the first interactive visitor-f
 - Review a live character summary while editing.
 - Delete a local record with an explicit confirmation.
 
+## Book-driven character creation
+
+The studio is intended to become a renderer for the selected experience's SURPS book set, not a hard-coded character form. The initial contracts now define [book contributions](book-contribution-contract.md), [book contribution schema](../schemas/book-contribution.schema.json), and [experience book selection schema](../schemas/experience-books.schema.json). Books can declare character options, traits (including advantages, disadvantages, abilities, and disabilities), capabilities, rules, creations, equipment, and resources. Experiences select the books and versions they use; SURPS composes the resulting options and provenance for the shared editor.
+
+This dynamic book-driven composition is **not implemented in the current editor yet**. The current free-form fields remain a prototype workspace until the canonical character contract and contribution resolver are validated. See the [book contribution example](examples/book-contribution.example.json) and [experience selection example](examples/experience-books.example.json).
+
 ## Ownership and data boundaries
 
 | Concern | Owner |
@@ -29,7 +35,7 @@ The portable character definition is not a campaign save file. Experience-owned 
 
 ## Prototype storage and portability
 
-The current page stores its roster in `localStorage` under a SURPS-specific key on the shared `trentbest.github.io` origin used by the GitHub Pages site. Other project Pages sites under that same origin can access the same browser storage, so they must reuse the central portal rather than create competing character stores.. This means:
+The current page stores its roster in `localStorage` under a SURPS-specific key on the shared `trentbest.github.io` origin used by the GitHub Pages site. Other project Pages sites under that same origin can access the same browser storage, so they must reuse the central portal rather than create competing character stores. This means:
 
 - Data remains in the browser profile and origin where it was created.
 - Clearing site data or using another browser/device may make the local roster unavailable.
