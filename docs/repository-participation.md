@@ -90,3 +90,14 @@ The central registry is the single cross-repository index. Local catalogues are 
 ---
 
 ![The Singularity Workshop](https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png)
+
+
+## 10. Living rulebooks and behavior adapters
+
+Every SURPS participant must adopt the [Living Rulebook and Experience Standard](living-rulebook-standard.md) and link it from its local book catalogue or participation guide. The standard is mandatory for new SURPS-facing work and is the migration target for existing books.
+
+A participant must identify its authoritative behavior owner and distinguish the tabletop adapter from the digital adapter. Tabletop dice values and procedures must be derived from the underlying behavior during authoring/workshop calibration; they must not be treated as the source of truth. Digital execution must declare its provider, live-state inputs, compiled artifacts, and implementation evidence. Where either adapter is not implemented, say so explicitly.
+
+Books must lead with the big picture, offer a concise player path and a deep Game Master/Workshop path, and teach important mechanics with living illustrations and worked outcomes. A mechanic should be shown in action. Pages-enabled participants must provide at least one meaningful playable or interactive demonstration using their actual domain data, with prototypes clearly labelled.
+
+The cache boundary is shared policy: cache immutable compiled behavior and reusable response data using content/provider/compiler/version keys; bind mutable actor, target, equipment, environment, and time state at runtime. Never reuse a final outcome after its relevant world inputs change.
