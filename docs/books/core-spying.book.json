@@ -10,5 +10,15 @@
   "publisher": "The Singularity Workshop",
   "publisherMoniker": "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg",
   "contributionPath": ".surps/contributions/core-spying.json",
-  "contributionSchema": "schemas/book-contribution.schema.json"
+  "contributionSchema": "schemas/book-contribution.schema.json",
+  "coverArtwork": "docs/books/artwork/core-spying.svg",
+  "acknowledgementsPath": "docs/books/core-spying-acknowledgements.md",
+  "contributors": [],
+  "acknowledgements": [],
+  "rights": "Draft publication asset. Rights and permissions require editorial review before public release.",
+  "provenance": {
+    "sourceRepository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+    "sourcePath": "docs/books/core-spying.md",
+    "artworkLicense": "Original repository-authored SVG artwork; confirm final licensing before publication."
+  }
 }
