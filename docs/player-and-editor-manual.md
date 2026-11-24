@@ -68,7 +68,7 @@ Map players, game master, characters, attributes, capabilities, actions, timing,
 
 ### 11. Opt-in composition
 
-Show SURPS as an experience setting: disabled means no SURPS rulebook system is required; enabled composes the master system and selected rulebooks. Explain how an experience can use FSM_API/FSM_COS/FSM_Foundry without SURPS.
+Show SURPS as an experience setting: disabled means no SURPS rulebook system is required; enabled composes the master system and selected rulebooks. Explain how an experience can use FSM_API/FSM_COS/FSM_Execution without SURPS.
 
 ### 12. Rulebook registration and provider discovery
 
