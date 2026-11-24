@@ -5,7 +5,7 @@
 
 **A roleplaying system for worlds that behave.**
 
-<badge>Development manuscript · Edition 0.1</badge>
+**Development manuscript · Edition 0.1**
 
 > One world. One underlying model of reality. Many ways to experience it.
 
@@ -73,7 +73,7 @@ A world contains entities. Entities have properties, capabilities, conditions, r
 A rule is a description of some part of that behavior. It should explain what matters, when it applies, what can change, and what follows. A number is useful when it describes something meaningful; it is not automatically the meaning itself.
 
 <figure>
-  <img src="assets/stronghold-causal-systems.svg" alt="A conceptual stronghold diagram linking geology, infrastructure, water, and districts." />
+  <img src="books/assets/stronghold-causal-systems.svg" alt="A conceptual stronghold diagram linking geology, infrastructure, water, and districts." />
   <figcaption>A settlement is not a collection of disconnected modifiers. Its parts constrain and affect one another.</figcaption>
 </figure>
 
