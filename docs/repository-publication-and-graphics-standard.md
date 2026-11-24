@@ -114,7 +114,7 @@ Every graphic must have a declared communication role:
 - Prefer SVG for diagrams, badges, covers, and scalable line art.
 - Include an accessible `<title>` and `<desc>`; give the root an appropriate accessible role and reference IDs.
 - Use meaningful contrast, legible type, and a viewBox that scales cleanly.
-- Keep SVG self-contained; avoid remote fonts, scripts, and unnecessary external dependencies.
+- Keep SVG self-contained; avoid remote fonts, scripts, and unnecessary external dependencies. The canonical animated Workshop moniker and canonical footer PNG are explicit publisher-identity exceptions and must use the exact shared URLs defined above.
 - Animation must respect `prefers-reduced-motion` or provide an equally understandable static state.
 - Do not encode essential meaning only in color, motion, or tiny text.
 - Keep text labels concise; explain complex diagrams in adjacent prose.
