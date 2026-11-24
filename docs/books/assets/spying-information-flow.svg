@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-labelledby="t d">
+<title id="t">Spying is an information journey</title><desc id="d">World facts are observed, interpreted, checked, and reported. Each step can preserve or distort information.</desc>
+<defs><linearGradient id="g" x2="1"><stop stop-color="#173e3a"/><stop offset="1" stop-color="#213b50"/></linearGradient></defs>
+<rect width="1000" height="360" rx="24" fill="#101923"/>
+<g fill="none" stroke="#85ddc6" stroke-width="4" stroke-linecap="round"><path d="M150 170 H850" stroke-dasharray="9 11"><animate attributeName="stroke-dashoffset" from="0" to="-80" dur="5s" repeatCount="indefinite"/></path></g>
+<g fill="url(#g)" stroke="#85ddc6" stroke-width="2"><rect x="40" y="105" width="170" height="130" rx="18"/><rect x="285" y="105" width="170" height="130" rx="18"/><rect x="530" y="105" width="170" height="130" rx="18"/><rect x="775" y="105" width="170" height="130" rx="18"/></g>
+<g fill="#edf4f8" font-family="system-ui" text-anchor="middle"><text x="125" y="150" font-size="19" font-weight="700">World fact</text><text x="125" y="178" font-size="13">What is true?</text><text x="370" y="150" font-size="19" font-weight="700">Observation</text><text x="370" y="178" font-size="13">What was seen?</text><text x="615" y="150" font-size="19" font-weight="700">Inference</text><text x="615" y="178" font-size="13">What might it mean?</text><text x="860" y="150" font-size="19" font-weight="700">Report</text><text x="860" y="178" font-size="13">Who now knows?</text></g>
+<g fill="#f0ca7b"><circle cx="125" cy="105" r="8"/><circle cx="370" cy="105" r="8"/><circle cx="615" cy="105" r="8"/><circle cx="860" cy="105" r="8"/></g>
+<g fill="#9fb4c1" font-family="system-ui" text-anchor="middle" font-size="14"><text x="125" y="280">Referee's ledger</text><text x="370" y="280">Character knowledge</text><text x="615" y="280">May be wrong</text><text x="860" y="280">Can be distorted</text></g>
+<text x="500" y="330" fill="#f0ca7b" font-family="system-ui" text-anchor="middle" font-size="14">Information changes hands; truth does not change merely because a report is believed.</text>
+</svg>
