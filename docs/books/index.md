@@ -2,7 +2,7 @@
 
 ![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
 
-SURPS sourcebooks are living, human-readable knowledge collections. The cross-repository [SURPS Master Rulebook Map](../rulebook-backlog/index.md) is the canonical inventory, ownership sign-in, and participating-repository directory. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
+SURPS sourcebooks are living, human-readable knowledge collections. Start with the [Living System Guide](../system-guide.html), then use the [Behavior Model and Adapters](../behavior-and-adapters.md) and [Living Rulebook Standard](../living-rulebook-standard.md) as the shared reading and authoring contract. The cross-repository [SURPS Master Rulebook Map](../rulebook-backlog/index.md) is the canonical inventory, ownership sign-in, and participating-repository directory. Each book explains a domain, links to its authoritative implementation, distinguishes rules from current capabilities, and uses accessible living illustrations where motion clarifies a relationship.
 
 ## Core concepts — LOD 0
 
@@ -28,7 +28,7 @@ Descriptor: [core-spying.book.json](core-spying.book.json)
 
 A first playable tabletop module for setting-neutral espionage. Includes a character approach record, 2d6 uncertainty procedure, evidence ledger, time and pressure clocks, counterintelligence, and a worked mission.
 
-[Read CORE Spying](core-spying.md) · [Printable play sheets](core-spying-play-sheets.md)
+[Read CORE Spying](core-spying.md) · [Play the Embassy Reception scene](core-spying-play.html) · [Printable play sheets](core-spying-play-sheets.md)
 
 ## Domain books — LOD 1
 
