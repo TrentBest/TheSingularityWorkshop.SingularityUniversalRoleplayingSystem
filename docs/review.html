@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Human acceptance checklist for the SURPS living rulebook collection.">
+<title>SURPS · Human Review</title>
+<style>
+:root{color-scheme:dark;--bg:#10151b;--panel:#18212b;--ink:#edf3f8;--muted:#a8b7c6;--line:#344453;--accent:#83d6c4;--gold:#e9c77b;--ok:#9cdbad}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#263d48 0,transparent 43%),var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}
+a{color:var(--accent)}.wrap{width:min(960px,calc(100% - 36px));margin:auto}header{padding:22px 0;border-bottom:1px solid var(--line)}.brand{color:var(--accent);letter-spacing:.15em;text-transform:uppercase;font-size:.76rem}
+main{padding:48px 0 72px}h1{font-size:clamp(2.2rem,6vw,4.1rem);line-height:1.05;letter-spacing:-.04em;margin:.2em 0}h2{font-size:1.3rem;margin:0 0 12px}.lead{font-size:1.12rem;color:var(--muted);max-width:760px}
+.note,.group{background:#17212bd9;border:1px solid var(--line);border-radius:16px;padding:22px;margin:20px 0}.note{border-left:3px solid var(--gold)}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.72rem}
+.item{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:14px 0;border-top:1px solid #344453a8}.item:first-of-type{border-top:0}.item input{width:19px;height:19px;margin:4px 0 0;accent-color:var(--accent);cursor:pointer}.item label{cursor:pointer}.item strong{display:block}.item small{display:block;color:var(--muted);font-size:.9rem;margin-top:3px}
+.item input:checked+label strong{color:var(--ok)}.item input:checked+label small{text-decoration:line-through;text-decoration-color:#668b79}
+.toolbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:24px 0}.meter{height:8px;background:#344453;border-radius:99px;overflow:hidden;flex:1;min-width:140px}.meter span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}.count{font-variant-numeric:tabular-nums;color:var(--muted)}button{background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:8px 14px;cursor:pointer}button:hover{border-color:var(--accent)}footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap brand">The Singularity Workshop · SURPS</div></header>
+<main class="wrap">
+<p class="eyebrow">Human acceptance · Development review</p>
+<h1>The living rulebook review</h1>
+<p class="lead">A practical inspection list for the SURPS collection. Each checkbox represents something a human can personally observe. Leave it unchecked until you have opened the linked experience, performed the test, and are satisfied with the result.</p>
+<div class="note"><strong>Review policy</strong><br>These checks are yours. Checking an item means “good for now,” not “finished forever.” Functionality and presentation quality are reviewed separately. Progress is saved only in this browser on this device; it does not modify GitHub files or certify a release.</div>
+<div class="toolbar"><span class="count" id="progress">0 of 12 accepted</span><div class="meter" role="progressbar" aria-label="Human review progress" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="bar"></span></div><button type="button" id="reset">Clear my checks</button></div>
+
+<section class="group"><p class="eyebrow">01 · Publication and navigation</p><h2>The collection is discoverable</h2>
+<div class="item"><input type="checkbox" id="r1"><label for="r1"><strong>Landing page opens and introduces SURPS</strong><small>Open the <a href="index.html">SURPS home page</a>. You should see the project introduction, animated world-model illustration, and working navigation links.</small></label></div>
+<div class="item"><input type="checkbox" id="r2"><label for="r2"><strong>Sourcebook catalogue opens</strong><small>Open the <a href="books/">sourcebook collection</a>. You should see book entries, LOD distinctions, covers, descriptions, and working reading links.</small></label></div>
+<div class="item"><input type="checkbox" id="r3"><label for="r3"><strong>Master rulebook map explains ownership</strong><small>Open the <a href="rulebook-backlog/">master rulebook map</a>. You should be able to identify book scope, owning repositories, and contribution status.</small></label></div>
+</section>
+
+<section class="group"><p class="eyebrow">02 · Reading experience</p><h2>Books read like books</h2>
+<div class="item"><input type="checkbox" id="r4"><label for="r4"><strong>Core manual has a coherent reader journey</strong><small>Open the <a href="game-manual.md">Living Game — Core Manual</a>. You should find an understandable progression from foundational ideas to practical play.</small></label></div>
+<div class="item"><input type="checkbox" id="r5"><label for="r5"><strong>Book identity is consistent</strong><small>Open <a href="books/core-spying.md">CORE Spying</a>. Its title, category, LOD badge, cover, and descriptor should agree.</small></label></div>
+<div class="item"><input type="checkbox" id="r6"><label for="r6"><strong>Domain book distinguishes its own scope</strong><small>Open <a href="books/dungeons-and-underground.md">Dungeons and Underground</a>. You should see domain-specific material without confusing it with the universal core.</small></label></div>
+</section>
+
+<section class="group"><p class="eyebrow">03 · Observable play</p><h2>The rules demonstrate behavior</h2>
+<div class="item"><input type="checkbox" id="r7"><label for="r7"><strong>Spying play procedure can be followed on paper</strong><small>Use the CORE Spying book and its <a href="books/core-spying-play-sheets.md">printable play sheets</a>. You should be able to record an approach, resolve uncertainty, track evidence, and advance pressure without software.</small></label></div>
+<div class="item"><input type="checkbox" id="r8"><label for="r8"><strong>Interactive Embassy Reception scene responds to play</strong><small>Open the <a href="books/core-spying-play.html">Embassy Reception scene</a>. You should be able to interact with the presented scene and observe its available state changes.</small></label></div>
+<div class="item"><input type="checkbox" id="r9"><label for="r9"><strong>Character Studio presents a usable character workflow</strong><small>Open the <a href="character-studio.html">Character Studio</a>. You should be able to inspect the character interface and determine which character details can actually be entered or changed.</small></label></div>
+</section>
+
+<section class="group"><p class="eyebrow">04 · Visual and publication quality</p><h2>The presentation earns its place</h2>
+<div class="item"><input type="checkbox" id="r10"><label for="r10"><strong>LOD badges and covers remain legible</strong><small>Inspect the book catalogue and individual covers. Titles and LOD distinctions should remain readable at normal viewing size.</small></label></div>
+<div class="item"><input type="checkbox" id="r11"><label for="r11"><strong>Living illustrations explain rather than distract</strong><small>Inspect the animated illustrations. Their motion should communicate a concept, include an accessible description, and respect reduced-motion preferences.</small></label></div>
+<div class="item"><input type="checkbox" id="r12"><label for="r12"><strong>Core book is comfortable to print</strong><small>Print or preview the core manual. You should receive readable text, coherent headings, and no essential information that depends on animation or interaction.</small></label></div>
+</section>
+<p><a href="index.html">← Return to SURPS</a> · <a href="books/">Browse source books</a></p>
+</main>
+<footer><div class="wrap">SURPS human review · Development checklist · Your checks are local to this browser.</div></footer>
+<script>
+(()=>{const boxes=[...document.querySelectorAll('.item input[type="checkbox"]')];const key='surps-human-review-v1';const bar=document.getElementById('bar'),count=document.getElementById('progress'),meter=document.querySelector('[role="progressbar"]');function render(){const n=boxes.filter(x=>x.checked).length;count.textContent=n+' of '+boxes.length+' accepted';bar.style.width=(n/boxes.length*100)+'%';meter.setAttribute('aria-valuenow',String(n));}try{const saved=JSON.parse(localStorage.getItem(key)||'{}');boxes.forEach(x=>{x.checked=saved[x.id]===true;});}catch{}boxes.forEach(x=>x.addEventListener('change',()=>{try{const saved={};boxes.forEach(b=>saved[b.id]=b.checked);localStorage.setItem(key,JSON.stringify(saved));}catch{}render();}));document.getElementById('reset').addEventListener('click',()=>{boxes.forEach(x=>x.checked=false);try{localStorage.removeItem(key);}catch{}render();});render();})();
+</script>
+</body>
+</html>
