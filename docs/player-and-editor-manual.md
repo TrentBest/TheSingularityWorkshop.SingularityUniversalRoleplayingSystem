@@ -1,8 +1,8 @@
 # SURPS Player and Editor Manual
 
-SURPS is a roleplaying system before it is a software feature. The tabletop rules must stand on their own: a group should be able to create a world, choose sourcebooks, play characters, resolve uncertainty, and record consequences with paper, pencil, dice or another agreed method, and conversation. No app, internet connection, account, registry, or digital runtime is required.
+SURPS is one underlying world and behavior model with multiple adapters. The tabletop adapter must stand on its own: a group can create a world, choose sourcebooks, play characters, resolve uncertainty, and record consequences with paper, pencil, dice or another agreed method, and conversation. No app, internet connection, account, registry, or digital runtime is required. Its dice values and procedures are derived during authoring/workshop calibration from the behavior model; they are not the source of truth.
 
-This manual has two equal responsibilities: teach people how to play SURPS at a table, and explain how a digital experience can automate the same procedures without changing their meaning.
+The digital adapter evaluates the same semantics in greater detail against live state. It may perform calculations too involved for people to track manually, using compiled and cached behavior artifacts. This manual teaches both ways to experience the same system. Start with the [Living System Guide](system-guide.html) and [Behavior Model and Adapters](behavior-and-adapters.md).
 
 ## Part I — The tabletop roleplaying system
 
