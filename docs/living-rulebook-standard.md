@@ -21,7 +21,7 @@ Every domain must preserve one underlying semantic/behavior model and expose the
 
 Not every repository must implement every adapter immediately. It must state what exists, what is illustrative, and what is planned. Never label a paper projection as a digital simulation or a conceptual digital model as implemented execution.
 
-See [Behavior Model and Adapters](behavior-and-adapters.md) for the authoritative system contract.
+See [Behavior Model and Adapters](behavior-and-adapters.md) for the authoritative system contract. Cross-repository adoption is tracked in the [SURPS Living Standard Adoption Tracker](participating-repository-adoption.md).
 
 ## Required book reading order
 
