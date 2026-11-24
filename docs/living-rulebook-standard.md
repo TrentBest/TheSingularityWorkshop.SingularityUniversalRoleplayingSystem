@@ -10,6 +10,19 @@ The book is not a linear wall of prose. It is a navigable experience with concis
 
 This standard applies to SURPS itself and every repository registered as a SURPS participant or sourcebook provider.
 
+## A book is a view into ontology
+
+The ontology is the structured source of truth. A book is a curated view over selected ontology records and microbundles—not a separate database, an ownership boundary, or the place where domain truth originates.
+
+- A microbundle is an independently identified, composable contribution of ontology, records, relationships, behavior, procedures, provider capabilities, dependencies, and/or explanatory assets.
+- A book selects and organizes microbundles for an audience, scope, LOD, and purpose. One book can aggregate many bundles; one bundle can appear in many books.
+- The same source data should support multiple projections: player, Game Master/Workshop, tabletop, digital, reference, diagrammatic, and print.
+- Generated prose, diagrams, tables, and navigation should retain links to the ontology items and microbundle provenance from which they were derived.
+- Editing a book's presentation must not silently mutate authoritative domain data. Changing domain truth belongs in its owning microbundle/repository and should flow into every relevant view.
+- A publication descriptor describes the book view and its presentation contract. It must not grow into a parallel ontology store.
+
+The book is therefore a navigable lens over the living data. Its chapter structure is an editorial arrangement of ontology concepts and relationships, not a competing taxonomy.
+
 
 ## Originality and design distance
 
