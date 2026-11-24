@@ -16,7 +16,7 @@ The Singularity Universal Roleplaying System (SURPS) is the shared foundation fo
 
 The source books are human-readable expressions of that system. They should explain the underlying concepts while demonstrating them through living diagrams, interactive examples, and simulations.
 
-Start with the [Player and Editor Manual](docs/player-and-editor-manual.md), [Theory: tabletop campaign composition](docs/Theory/tabletop-campaign-composition.md), and [Theory: roleplaying history](docs/Theory/history-of-roleplaying-games.md).
+Start with the **[SURPS: The Living Game — Core Manual](docs/game-manual.md)**. It is the primary reader-facing game book. The [Player and Editor Manual](docs/player-and-editor-manual.md) is its technical companion; [Theory: tabletop campaign composition](docs/Theory/tabletop-campaign-composition.md) and [Theory: roleplaying history](docs/Theory/history-of-roleplaying-games.md) provide deeper context.
 
 ## 2. Architecture
 
