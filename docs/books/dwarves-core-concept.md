@@ -8,6 +8,10 @@
 
 ## Concept
 
+![Living concept map: existence can be known while details remain undefined](assets/dwarves-existence-scope.svg)
+
+This illustration shows the LOD 0 boundary: existence is a world fact; population, culture, stronghold, and individual detail may remain undisclosed until an experience selects or authors them.
+
 Dwarves are a people known to exist in some worlds. A setting may place a dwarven population beneath a mountain, within a distant range, across a neighboring territory, or among other communities. Their existence can be part of the world's truth without making them present in every scene—or even encountered during a particular experience.
 
 At LOD 0, the world may record only that a dwarven people and one or more dwarven communities exist. Their exact population, internal organization, customs, stronghold layout, and individual inhabitants may remain undefined or deliberately undisclosed.
