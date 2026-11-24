@@ -10,6 +10,30 @@
 
 **CORE sourcebook module · LOD 0 · Status: first tabletop playtest draft**
 
+## How to use this book
+
+- **Players:** read the big-picture overview, your character approaches, and the player-facing procedure. You do not need the referee's hidden fact ledger.
+- **Game Masters:** use the full information ledger, opposition model, pressure clocks, consequences, and worked mission. The GM view in the [playable scene](core-spying-play.html) exposes the example's hidden facts.
+- **Play now:** open the [interactive Embassy Reception scene](core-spying-play.html), or print the [play sheets](core-spying-play-sheets.md) for an offline session.
+- **Understand the system:** read the [SURPS Living System Guide](../system-guide.html) and [Behavior Model and Adapters](../behavior-and-adapters.md).
+
+### The big picture: information moves; truth does not
+
+![Living information flow: world fact, observation, inference, and report](assets/spying-information-flow.svg)
+
+Spying is a contest over access to information and the consequences of acting on it. The referee tracks what is true; characters track what they have observed, inferred, claimed, verified, and reported. These are different records.
+
+### Pressure is visible and causal
+
+![Living opportunity, suspicion, and response clocks](assets/spying-pressure-clocks.svg)
+
+Opportunity, suspicion, and response are separate pressures. They advance only when the fiction justifies it; they are not automatic penalties for rolling dice.
+
+### Adapter status and honesty
+
+This book currently supplies a **playtest tabletop adapter**: its 2d6 procedure is usable at a table and in the browser scene. The target range and outcome bands are provisional playtest values; they have **not yet been derived from a calibrated digital spying behavior model**. No automated digital spying evaluator is claimed. The long-term rule is that a domain's tabletop procedure is generated and validated from its underlying behavior model during workshop preparation. Until that pipeline exists for spying, this book labels the paper procedure as provisional rather than pretending the derivation has happened.
+
+
 > Information is not the same as truth. Access is not the same as control. A successful spy does not necessarily get away unseen.
 
 This module is a first playable tabletop slice of the setting-neutral SURPS CORE spying domain. It is designed to run with paper, pencil, two six-sided dice, and a referee. It does not require an application, internet connection, registry, or digital runtime.
