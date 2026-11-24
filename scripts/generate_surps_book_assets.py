@@ -10,6 +10,7 @@ import argparse
 import html
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 MONIKER = "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg"
@@ -35,11 +36,11 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
     art_path = ROOT / book["coverArtwork"]
     if not art_path.is_file():
         raise FileNotFoundError(f"{descriptor_path}: coverArtwork does not exist: {book['coverArtwork']}")
-    art_href = html.escape(relative_asset(art_path, cover_path), quote=True)
+    art_href = html.escape("data:image/svg+xml," + quote(art_path.read_text(encoding="utf-8"), safe=""), quote=True)
     badge_path = ROOT / book["lodBadge"]
     if not badge_path.is_file():
         raise FileNotFoundError("Missing LOD badge: " + book["lodBadge"])
-    badge_href = html.escape(relative_asset(badge_path, cover_path), quote=True)
+    badge_href = html.escape("data:image/svg+xml," + quote(badge_path.read_text(encoding="utf-8"), safe=""), quote=True)
     title = html.escape(book["title"])
     category = html.escape(book["category"].upper())
     publisher = html.escape(book["publisher"])
