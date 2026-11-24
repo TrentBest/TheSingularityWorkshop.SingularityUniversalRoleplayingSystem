@@ -8,21 +8,44 @@ A SURPS rulebook is a discoverable, composable description of a domain's rules, 
 
 The initial `ISurpsRulebook` contract is deliberately minimal over `IMicroBundle`. It identifies a composable capability as a SURPS rulebook without prematurely fixing the full ontology, rule serialization, or source-book metadata schema. It must be validated against multiple domain rulebooks before the contract grows.
 
-## Composition pattern
+## Ontology-first composition
+
+Ontology is the source of structured meaning. It identifies what exists, how things relate, what they can do, what constrains them, and how behavior changes state. Those records and contracts are owned at the appropriate shared or domain level; they do not become true because a paragraph or book says so.
+
+A **microbundle** is the composable unit. It has a stable identity and explicit contents, dependencies, ownership, scope, and provenance. Depending on its purpose, it may contribute:
+- ontology concepts, types, attributes, relationships, and constraints;
+- entity/instance data and domain-owned records;
+- behavior definitions, procedures, and interaction contracts;
+- provider capabilities, executable implementations, and dependencies;
+- explanatory material, examples, diagrams, and media.
+
+A **rulebook is a view**: a curated collection of microbundles and ontology selections, arranged for a declared audience, scope, LOD, and purpose. It can present one microbundle in several contexts or combine many microbundles from different domains. The same source data can feed a player view, GM/Workshop inspector, tabletop adapter, digital reference, interactive diagram, or printable edition. Those are projections of shared data, not independently authored competing rule systems.
 
 ```text
-Experience / campaign
-    ├── SURPS enabled? (per-experience opt-in)
-    ├── CORE rulebook (LOD 0)
-    └── explicitly selected rulebooks for declared scopes
-            ├── subject/domain
-            ├── setting / era
-            ├── optional detail / fidelity
-            └── tabletop procedures + digital mappings
-                    └── domain-owned capabilities where needed
+Authoritative ontology + domain-owned microbundles
+        |                 |                 |
+        +------ selected by scope / applicability ------+
+                                                         |
+                                              Rulebook view definition
+                                              - selected microbundles
+                                              - ontology queries / filters
+                                              - order and navigation
+                                              - audience and LOD
+                                              - presentation adapters
+                                                         |
+                                       +-----------------+-----------------+
+                                       |                 |                 |
+                                  Player view       Workshop view     Tabletop view
+                                       |                 |                 |
+                                       +---------- Digital view -----------+
+                                                         |
+                                             Experience composition
+                                               FSM_COS -> FSM_Execution
 ```
 
-A domain microbundle may be wrapped by a SURPS-enabled container and presented as a rulebook such as `SurpsRulebookPhysics`. The container adapts and presents domain knowledge; it must not fork or duplicate the domain implementation.
+A book descriptor identifies the view and its publication contract; it must not become a second ontology database. A microbundle may appear in multiple books, and a book may aggregate bundles owned by multiple repositories. Domain repositories remain authoritative for their own records and capabilities. SURPS owns shared ontology semantics, cross-domain relationships, selection/composition conventions, and view contracts.
+
+The existing `ISurpsRulebook` marker and current descriptors are only an initial packaging/publication surface. They do not yet implement the complete ontology query, microbundle selection, or projection model. Do not claim those capabilities until the contracts and runtime paths exist.
 
 ## LOD, scope, and selection
 
