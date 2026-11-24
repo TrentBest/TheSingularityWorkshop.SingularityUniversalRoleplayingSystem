@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.example.fireball.behavior",
+  "title": "Fireball — illustrative behavior profile",
+  "status": "teaching-prototype-not-canonical",
+  "description": "A deliberately small, transparent example used to teach the distinction between an authored behavior model and its paper and digital adapters. It is not a validated Physics provider or a canonical spell rule.",
+  "model": {
+    "energyAtTarget": "castEnergy * exp(-rangeAttenuation * distance)",
+    "deliveredEnergy": "energyAtTarget * alignment",
+    "absorbedEnergy": "min(deliveredEnergy, targetResistance)",
+    "impactEnergy": "max(0, deliveredEnergy - targetResistance)",
+    "energyContinuing": "max(0, energyAtTarget - deliveredEnergy) + max(0, deliveredEnergy - targetResistance) * passThrough",
+    "parameters": {
+      "rangeAttenuation": 0.008,
+      "passThrough": 0.18,
+      "sampleEnergyVariation": 0.08,
+      "sampleDistanceVariation": 0.04
+    },
+    "impactBands": [
+      {
+        "id": "negligible",
+        "label": "Negligible",
+        "minimum": 0,
+        "maximum": 8,
+        "description": "A trace, flare, or momentary disturbance."
+      },
+      {
+        "id": "light",
+        "label": "Light",
+        "minimum": 8,
+        "maximum": 22,
+        "description": "Noticeable but limited harm or disruption."
+      },
+      {
+        "id": "moderate",
+        "label": "Moderate",
+        "minimum": 22,
+        "maximum": 42,
+        "description": "Meaningful harm; the target or scene is changed."
+      },
+      {
+        "id": "heavy",
+        "label": "Heavy",
+        "minimum": 42,
+        "maximum": 68,
+        "description": "Severe harm or substantial structural/environmental effect."
+      },
+      {
+        "id": "devastating",
+        "label": "Devastating",
+        "minimum": 68,
+        "maximum": 100000,
+        "description": "Overwhelming local effect; consequences extend beyond the immediate target."
+      }
+    ]
+  },
+  "paperAdapter": {
+    "method": "2d6-plus-focus-versus-derived-target",
+    "meaningfulEffectThreshold": 22,
+    "note": "The target number is selected by comparing the workshop-sampled probability of reaching the meaningful-effect threshold with the 2d6 distribution. The harm bands are a compact human-readable projection of the same samples."
+  },
+  "examples": [
+    {
+      "id": "miss",
+      "label": "Miss — energy carries on",
+      "castEnergy": 82,
+      "distance": 24,
+      "alignment": 0.08,
+      "targetResistance": 0,
+      "focus": 1,
+      "narrative": "The casting line misses the intended target. Most of the energy continues into the space beyond; the miss is not a declaration that the effect vanished."
+    },
+    {
+      "id": "hit",
+      "label": "Hit — target takes the effect",
+      "castEnergy": 82,
+      "distance": 24,
+      "alignment": 0.92,
+      "targetResistance": 18,
+      "focus": 2,
+      "narrative": "The target intersects the casting path. Resistance absorbs part of the delivered energy; the remainder produces a meaningful impact."
+    },
+    {
+      "id": "critical",
+      "label": "Critical — exceptional alignment",
+      "castEnergy": 96,
+      "distance": 16,
+      "alignment": 1,
+      "targetResistance": 8,
+      "focus": 4,
+      "narrative": "The casting conditions align unusually well. More energy reaches the target, less is lost to resistance, and the surrounding scene receives a stronger secondary effect."
+    }
+  ],
+  "provenance": {
+    "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+    "source": "docs/system-guide.html",
+    "classification": "authored illustrative teaching data"
+  }
+}
