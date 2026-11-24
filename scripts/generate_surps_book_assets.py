@@ -18,7 +18,7 @@ MONIKER = "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Vi
 def read_descriptor(path: Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
     required = ("id", "category", "lod", "title", "version", "publisher", "coverArtwork", "cover", "lodBadge", "acknowledgementsPath")
-    missing = [key for key in required if not value.get(key)]
+    missing = [key for key in required if key not in value or value[key] is None or (isinstance(value[key], str) and not value[key].strip())]
     if missing:
         raise ValueError(f"{path}: missing required descriptor fields: {', '.join(missing)}")
     if not isinstance(value["lod"], int) or isinstance(value["lod"], bool) or value["lod"] < 0:
