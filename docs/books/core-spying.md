@@ -6,7 +6,7 @@
 
 ![CORE Spying cover](covers/core-spying.svg)
 
-[Book identity descriptor](core-spying.book.json) · [Identity and cover standard](../rulebook-identity-and-covers.md)
+[Book identity descriptor](core-spying.book.json) · [Acknowledgements and provenance](core-spying-acknowledgements.md) · [Identity and cover standard](../rulebook-identity-and-covers.md)
 
 **CORE sourcebook module · LOD 0 · Status: first tabletop playtest draft**
 
