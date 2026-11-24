@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="cover-title cover-desc">
 <title id="cover-title">Singularity Universal Roleplaying System - Core - LOD 0 - Spying</title>
 <desc id="cover-desc">The Singularity Workshop publication cover for Spying, CORE category, Level of Detail 0, edition 0.1.0. Subject artwork is shown in the central panel.</desc>
+<metadata>Asset role: book-cover; Provenance: sourceRepository: TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem; sourcePath: docs/books/core-spying.md; artworkLicense: Original repository-authored SVG artwork; confirm final licensing before publication.</metadata>
 <defs>
  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101b2b"/><stop offset=".55" stop-color="#1d3449"/><stop offset="1" stop-color="#090f19"/></linearGradient>
  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d6a0"/><stop offset=".5" stop-color="#bd9862"/><stop offset="1" stop-color="#806746"/></linearGradient>
