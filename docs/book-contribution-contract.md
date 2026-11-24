@@ -25,7 +25,7 @@ The book remains the authored source of truth. SURPS owns the common contributio
 3. **Select** — an experience declares which registered books and versions it uses. Registration makes content discoverable; it does not automatically activate every rule in every world.
 4. **Compose** — SURPS combines selected contributions into the experience's character options, creation catalogue, rule set, and capability index. The shared Character Studio renders the resulting options.
 
-A book's existing `.book.json` descriptor remains its bibliographic identity (ID, title, LOD, version, cover, and related metadata). It is not itself the full game-content payload. A descriptor or repository participation record should point to a versioned contribution document. This separation keeps book registration lightweight while allowing the content contract to evolve independently.
+A book's existing `.book.json` descriptor remains its bibliographic identity (ID, title, LOD, version, cover, and related metadata). It is not itself the full game-content payload. When a book has structured contributions, its `.book.json` descriptor declares the repository-relative `contributionPath` and the SURPS contribution schema version/URI. The repository participation manifest mirrors that path for discovery and validation. A book without a machine-readable payload may omit `contributionPath` until one is authored; it is then bibliographically registered but contributes no selectable structured content yet. See the [book descriptor example](examples/book-descriptor.example.json). This separation keeps book registration lightweight while allowing the content contract to evolve independently.
 
 ## Canonical contribution document
 
