@@ -91,7 +91,7 @@ The same content can also be presented as a tabletop quick-start and a digital i
 
 ## Worked teaching example: a fireball
 
-The [living system guide](system-guide.html) loads an authored [behavior profile](examples/fireball-behavior.json), validated against the [behavior profile schema](../schemas/behavior-profile.schema.json), from this repository. It lets a reader compare a miss, hit, and critical casting, inspect energy continuing beyond the target, run deterministic workshop samples, and see an illustrative 2d6 target derived from the sample probability.
+The [living system guide](system-guide.html) loads an authored [behavior profile](examples/fireball-behavior.json), validated against the [behavior profile schema](schemas/behavior-profile.schema.json), from this repository. It lets a reader compare a miss, hit, and critical casting, inspect energy continuing beyond the target, run deterministic workshop samples, and see an illustrative 2d6 target derived from the sample probability.
 
 **Honesty boundary:** the fireball profile is an executable teaching prototype, not a canonical SURPS spell, not a validated Physics provider, and not the production workshop compiler. It proves the presentation pattern and exposes the data/calibration boundary; it does not claim that the production behavior engine already exists.
 
