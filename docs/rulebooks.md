@@ -4,7 +4,7 @@
 
 A SURPS rulebook is a discoverable, composable description of a domain's rules, concepts, constraints, supported interactions, and setting assumptions. It is not required to own the domain implementation. The domain repository remains authoritative for its simulation, experiments, data, or services.
 
-**A SURPS rulebook must be a real, usable tabletop sourcebook first.** Players and referees must be able to use it with paper, pencil, character sheets, dice or another agreed resolution method, and conversation. Digital registration, lookup, visualization, and execution are optional ways to organize or automate the same rules; they are not prerequisites for playing.
+**A SURPS rulebook describes one underlying domain model and publishes multiple views of it.** The tabletop adapter must be independently playable with paper, pencil, character sheets, dice or another agreed resolution method, and conversation. Its dice values and human-scale procedures are derived during authoring/workshop calibration from the underlying behavior. The digital adapter evaluates the same semantics in greater detail against live state. They are not separate rulesets: the behavior model is authoritative, while tabletop and digital are adapters. No app or internet connection is required to use a published tabletop adapter. See [Behavior Model and Adapters](behavior-and-adapters.md) and the interactive [Living System Guide](system-guide.html).
 
 The initial `ISurpsRulebook` contract is deliberately minimal over `IMicroBundle`. It identifies a composable capability as a SURPS rulebook without prematurely fixing the full ontology, rule serialization, or source-book metadata schema. It must be validated against multiple domain rulebooks before the contract grows.
 
