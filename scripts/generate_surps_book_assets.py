@@ -78,6 +78,11 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
     publisher = html.escape(book["publisher"])
     version = html.escape(book["version"])
     canonical = html.escape(canonical_title(book))
+    moniker = book["publisherMoniker"]
+    if not isinstance(moniker, str) or not moniker.startswith("https://"):
+        raise ValueError(f"{descriptor_path}: publisherMoniker must be an HTTPS URL")
+    moniker = html.escape(moniker, quote=True)
+    footer_mark = "https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png"
     provenance = book["provenance"]
     provenance_text = html.escape(
         "; ".join(
@@ -101,17 +106,18 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
 <path d="M36 36H864V1164H36Z" fill="none" stroke="url(#metal)" stroke-width="2"/>
 <path d="M58 58H842V1142H58Z" fill="none" stroke="#d8c39e" stroke-opacity=".22"/>
 <path d="M74 238H826" stroke="url(#metal)" stroke-width="3"/>
-<text x="450" y="112" fill="#f1d8a7" font-family="Georgia,serif" font-size="19" letter-spacing="6" text-anchor="middle">{publisher.upper()}</text>
-<text x="450" y="165" fill="#ffffff" font-family="Georgia,serif" font-size="30" letter-spacing="3" text-anchor="middle">SINGULARITY UNIVERSAL</text>
-<text x="450" y="205" fill="#ffffff" font-family="Georgia,serif" font-size="30" letter-spacing="3" text-anchor="middle">ROLEPLAYING SYSTEM</text>
-<text x="450" y="278" fill="#e8c994" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="5" text-anchor="middle">{category}  ·  LEVEL OF DETAIL {book["lod"]}</text>
-<rect x="70" y="306" width="760" height="618" rx="12" fill="#050b12" stroke="url(#metal)" stroke-width="2"/>
-<g clip-path="url(#art-clip)"><image x="74" y="310" width="752" height="610" preserveAspectRatio="xMidYMid slice" href="{art_href}" xlink:href="{art_href}"/></g>
-<path d="M74 950H826" stroke="url(#metal)" stroke-width="3"/>
-<image x="330" y="960" width="240" height="72" href="{badge_href}" xlink:href="{badge_href}"/>
-<text x="450" y="1060" fill="#ffffff" font-family="Georgia,serif" font-size="54" font-weight="bold" text-anchor="middle" textLength="720" lengthAdjust="spacingAndGlyphs">{title}</text>
-<text x="450" y="1104" fill="#c4d0db" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">A LIVING {category} BOOK</text>
-<text x="450" y="1138" fill="#e8c994" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" text-anchor="middle">EDITION {version}</text>
+<image x="300" y="48" width="300" height="92" preserveAspectRatio="xMidYMid meet" href="{moniker}" xlink:href="{moniker}"/>
+<text x="450" y="190" fill="#ffffff" font-family="Georgia,serif" font-size="30" letter-spacing="3" text-anchor="middle">SINGULARITY UNIVERSAL</text>
+<text x="450" y="230" fill="#ffffff" font-family="Georgia,serif" font-size="30" letter-spacing="3" text-anchor="middle">ROLEPLAYING SYSTEM</text>
+<text x="450" y="290" fill="#e8c994" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="5" text-anchor="middle">{category}  ·  LEVEL OF DETAIL {book["lod"]}</text>
+<rect x="70" y="318" width="760" height="600" rx="12" fill="#050b12" stroke="url(#metal)" stroke-width="2"/>
+<g clip-path="url(#art-clip)"><image x="74" y="322" width="752" height="592" preserveAspectRatio="xMidYMid slice" href="{art_href}" xlink:href="{art_href}"/></g>
+<path d="M74 940H826" stroke="url(#metal)" stroke-width="3"/>
+<image x="330" y="950" width="240" height="72" href="{badge_href}" xlink:href="{badge_href}"/>
+<text x="450" y="1052" fill="#ffffff" font-family="Georgia,serif" font-size="54" font-weight="bold" text-anchor="middle" textLength="720" lengthAdjust="spacingAndGlyphs">{title}</text>
+<text x="450" y="1092" fill="#c4d0db" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">A LIVING {category} BOOK</text>
+<text x="450" y="1122" fill="#e8c994" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" text-anchor="middle">EDITION {version}</text>
+<image x="395" y="1138" width="110" height="28" preserveAspectRatio="xMidYMid meet" href="{footer_mark}" xlink:href="{footer_mark}"/>
 </svg>
 '''
 
