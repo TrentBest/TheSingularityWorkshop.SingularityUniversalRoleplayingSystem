@@ -13,6 +13,7 @@ SCHEMA_PATH = "schemas/book-contribution.schema.json"
 CASES = (
     (SCHEMA_PATH, "docs/examples/book-contribution.example.json"),
     ("schemas/experience-books.schema.json", "docs/examples/experience-books.example.json"),
+    ("schemas/behavior-profile.schema.json", "docs/examples/fireball-behavior.json"),
 )
 
 
