@@ -70,6 +70,19 @@ The SURPS validator checks that active external records contain this evidence, t
 7. Validate through the owning repository's CI. Cross-repository composition must not imply a dependency the owner has not declared.
 8. Do not publish NuGet packages or perform a release without explicit release authorization.
 
+
+## 8. Central SURPS participation entry
+
+Every repository that publishes a visitor-facing Pages site and participates in SURPS should expose a consistently named **SURPS** tab or primary navigation link. The tab is an entry point into the central SURPS character and participation portal; it is not a repository-specific character creator.
+
+The shared portal owns character creation/import/export and active-character selection. The repository owns its own campaign, quest, encounter, activity, and experience catalogue. A repository tab should pass only a stable public repository identifier/context (never credentials, account tokens, or private session state) and provide a return path to the repository's own offerings.
+
+Participation manifests and campaign catalogues must describe only content that actually exists. A repository may show a useful empty state while its first campaign is being authored; it must not invent campaigns or claim runtime entry is implemented when it is not.
+
+The first browser implementation may use first-party SURPS-origin local browser storage plus explicit character JSON export/import. Do not rely on third-party iframe storage being shared across sites, and do not imply cloud or cross-device synchronization until a host service provides it. Character definition, repository-owned progress, and transient host session state remain separate.
+
+The central implementation and phased rollout are tracked in [Build the centralized SURPS character and participation portal](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/8). The canonical character wire contract is tracked in [portable character identity and serialization](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/7).
+
 ## 7. Avoid reinvention
 
 The central registry is the single cross-repository index. Local catalogues are useful navigation surfaces, not competing authorities. Reuse existing IDs, descriptors, LOD semantics, validation, badges, and documentation patterns. Link to the owner; do not fork its domain truth into a consumer repository.
