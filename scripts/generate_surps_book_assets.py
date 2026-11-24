@@ -13,24 +13,63 @@ from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
+def resolve_repo_path(value: object, context: str) -> Path:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{context}: expected a non-empty repository-relative path")
+    candidate = Path(value)
+    if candidate.is_absolute():
+        raise ValueError(f"{context}: absolute paths are not allowed: {value}")
+    resolved = (ROOT / candidate).resolve()
+    try:
+        resolved.relative_to(ROOT.resolve())
+    except ValueError as exc:
+        raise ValueError(f"{context}: path escapes the repository: {value}") from exc
+    return resolved
+
+
+def canonical_title(book: dict) -> str:
+    return f"Singularity Universal Roleplaying System - {book['category']} - LOD {book['lod']} - {book['title']}"
+
+
 def read_descriptor(path: Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
-    required = ("id", "category", "lod", "title", "version", "publisher", "coverArtwork", "cover", "lodBadge", "acknowledgementsPath")
+    if not isinstance(value, dict):
+        raise ValueError(f"{path}: descriptor root must be a JSON object")
+    required = ("schemaVersion", "id", "category", "lod", "title", "version", "publisher", "publisherMoniker", "coverArtwork", "cover", "lodBadge", "acknowledgementsPath", "provenance")
     missing = [key for key in required if key not in value or value[key] is None or (isinstance(value[key], str) and not value[key].strip())]
     if missing:
         raise ValueError(f"{path}: missing required descriptor fields: {', '.join(missing)}")
+    if value["schemaVersion"] != 1:
+        raise ValueError(f"{path}: unsupported schemaVersion (expected 1)")
+    if value["category"] not in {"Core", "Domain", "Setting", "Campaign", "Supplement"}:
+        raise ValueError(f"{path}: unsupported category: {value['category']!r}")
     if not isinstance(value["lod"], int) or isinstance(value["lod"], bool) or value["lod"] < 0:
         raise ValueError(f"{path}: lod must be a non-negative integer")
+    for field in ("id", "title", "version", "publisher", "publisherMoniker"):
+        if not isinstance(value[field], str) or not value[field].strip():
+            raise ValueError(f"{path}: {field} must be a non-empty string")
+    for field in ("coverArtwork", "cover", "lodBadge", "acknowledgementsPath"):
+        resolve_repo_path(value[field], f"{path}: {field}")
+    provenance = value["provenance"]
+    if not isinstance(provenance, dict) or not isinstance(provenance.get("sourcePath"), str):
+        raise ValueError(f"{path}: provenance.sourcePath must identify the sourcebook")
+    source_path = resolve_repo_path(provenance["sourcePath"], f"{path}: provenance.sourcePath")
+    if not source_path.is_file():
+        raise FileNotFoundError(f"{path}: sourcebook does not exist: {provenance['sourcePath']}")
+    first_heading = next((line[2:].strip() for line in source_path.read_text(encoding="utf-8").splitlines() if line.startswith("# ")), None)
+    expected_heading = canonical_title(value)
+    if first_heading != expected_heading:
+        raise ValueError(f"{path}: sourcebook first H1 must equal {expected_heading!r}; found {first_heading!r}")
     return value
 
 
 def render_cover(book: dict, descriptor_path: Path) -> str:
-    cover_path = ROOT / book["cover"]
-    art_path = ROOT / book["coverArtwork"]
+    cover_path = resolve_repo_path(book["cover"], f"{descriptor_path}: cover")
+    art_path = resolve_repo_path(book["coverArtwork"], f"{descriptor_path}: coverArtwork")
     if not art_path.is_file():
         raise FileNotFoundError(f"{descriptor_path}: coverArtwork does not exist: {book['coverArtwork']}")
     art_href = html.escape("data:image/svg+xml," + quote(art_path.read_text(encoding="utf-8"), safe=""), quote=True)
-    badge_path = ROOT / book["lodBadge"]
+    badge_path = resolve_repo_path(book["lodBadge"], f"{descriptor_path}: lodBadge")
     if not badge_path.is_file():
         raise FileNotFoundError("Missing LOD badge: " + book["lodBadge"])
     badge_href = html.escape("data:image/svg+xml," + quote(badge_path.read_text(encoding="utf-8"), safe=""), quote=True)
@@ -38,7 +77,7 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
     category = html.escape(book["category"].upper())
     publisher = html.escape(book["publisher"])
     version = html.escape(book["version"])
-    canonical = html.escape(f"Singularity Universal Roleplaying System - {book['category']} - LOD {book['lod']} - {book['title']}")
+    canonical = html.escape(canonical_title(book))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="cover-title cover-desc">
 <title id="cover-title">{canonical}</title>
 <desc id="cover-desc">{publisher} publication cover for {title}, {category} category, Level of Detail {book["lod"]}, edition {version}. Subject artwork is shown in the central panel.</desc>
@@ -114,17 +153,24 @@ def main() -> int:
     args = parser.parse_args()
     manifest_path = ROOT / ".surps" / "participation.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    paths = args.descriptor or [entry["descriptorPath"] for entry in manifest.get("books", []) if entry.get("publication", {}).get("generate", False)]
+    if not isinstance(manifest, dict) or not isinstance(manifest.get("books"), list):
+        raise ValueError(f"{manifest_path}: books must be an array")
+    paths = args.descriptor or [entry["descriptorPath"] for entry in manifest["books"] if isinstance(entry, dict) and entry.get("publication", {}).get("generate", False)]
     if not paths:
         print("No books have opted in to generated publication assets.")
         return 0
     stale = []
     for relative in sorted(paths):
-        descriptor_path = ROOT / relative
+        descriptor_path = resolve_repo_path(relative, "descriptorPath")
         book = read_descriptor(descriptor_path)
+        source_path = resolve_repo_path(book["provenance"]["sourcePath"], f"{descriptor_path}: provenance.sourcePath")
+        cover_path = resolve_repo_path(book["cover"], f"{descriptor_path}: cover")
+        acknowledgements_path = resolve_repo_path(book["acknowledgementsPath"], f"{descriptor_path}: acknowledgementsPath")
+        if len({cover_path, acknowledgements_path, descriptor_path, source_path}) != 4:
+            raise ValueError(f"{descriptor_path}: generated outputs must not overwrite source or descriptor files")
         outputs = {
-            ROOT / book["cover"]: render_cover(book, descriptor_path),
-            ROOT / book["acknowledgementsPath"]: render_acknowledgements(book),
+            cover_path: render_cover(book, descriptor_path),
+            acknowledgements_path: render_acknowledgements(book),
         }
         for path, expected in outputs.items():
             if args.check:
