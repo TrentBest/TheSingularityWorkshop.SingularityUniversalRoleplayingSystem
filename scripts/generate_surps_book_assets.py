@@ -78,9 +78,18 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
     publisher = html.escape(book["publisher"])
     version = html.escape(book["version"])
     canonical = html.escape(canonical_title(book))
+    provenance = book["provenance"]
+    provenance_text = html.escape(
+        "; ".join(
+            f"{key}: {provenance[key]}"
+            for key in ("sourceRepository", "sourcePath", "sourceCommit", "artworkLicense")
+            if provenance.get(key)
+        )
+    )
     return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-labelledby="cover-title cover-desc">
 <title id="cover-title">{canonical}</title>
 <desc id="cover-desc">{publisher} publication cover for {title}, {category} category, Level of Detail {book["lod"]}, edition {version}. Subject artwork is shown in the central panel.</desc>
+<metadata>Asset role: book-cover; Provenance: {provenance_text}</metadata>
 <defs>
  <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101b2b"/><stop offset=".55" stop-color="#1d3449"/><stop offset="1" stop-color="#090f19"/></linearGradient>
  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d6a0"/><stop offset=".5" stop-color="#bd9862"/><stop offset="1" stop-color="#806746"/></linearGradient>
