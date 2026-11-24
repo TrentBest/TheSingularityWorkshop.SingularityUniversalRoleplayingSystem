@@ -37,6 +37,34 @@ jobs:
           ref: development
           path: dependencies/GUI
           token: ${{ github.token }}
+      - name: Checkout Visualize development source
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/TheSingularityWorkshop.Visualize
+          ref: development
+          path: dependencies/Visualize
+          token: ${{ github.token }}
+      - name: Checkout Visualize FSM_API development dependency
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/FSM_API
+          ref: development
+          path: dependencies/Visualize/FSM_API
+          token: ${{ github.token }}
+      - name: Checkout Visualize ProtocolAi development dependency
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/TheSingularityWorkshop.ProtocolAi
+          ref: development
+          path: dependencies/Visualize/TheSingularityWorkshop.ProtocolAi
+          token: ${{ github.token }}
+      - name: Checkout Visualize MicroBundleDomain development dependency
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/TheSingularityWorkshop.MicroBundleDomain
+          ref: development
+          path: dependencies/Visualize/TheSingularityWorkshop.MicroBundleDomain
+          token: ${{ github.token }}
       - name: Set up Python for publication generation
         uses: actions/setup-python@v5
         with:
@@ -49,6 +77,15 @@ jobs:
         run: python scripts/generate_surps_book_assets.py
       - name: Generate SURPS living diagram through GUI.Core and GUI.SVG
         run: dotnet run --project samples/SurpsGuiSvg/SurpsGuiSvg.csproj --configuration Release
+      - name: Generate SURPS tactical map through Visualize
+        env:
+          WorkshopUseFsmApiRepositorySource: "true"
+          WorkshopSourceRoot: ${{ github.workspace }}/dependencies/Visualize
+        run: |
+          mkdir -p docs/assets/generated
+          dotnet run --project dependencies/Visualize/samples/TacticalMapProof/TacticalMapProof.csproj --configuration Release -- docs/assets/generated/visualize-tactical-map
+          cp docs/assets/generated/visualize-tactical-map/tactical-map.svg docs/assets/generated/surps-tactical-map.svg
+          cp docs/assets/generated/visualize-tactical-map/tactical-map-manifest.json docs/assets/generated/surps-tactical-map-manifest.json
       - name: Stage public schemas for the documentation site
         run: |
           mkdir -p docs/schemas
