@@ -12,6 +12,10 @@ A Dwarven Stronghold is a higher-detail composition of the Dwarves and Dungeons 
 
 ## 1. The mountain comes first
 
+![Living causal cutaway: geology, infrastructure, and districts form one coupled system](assets/stronghold-causal-systems.svg)
+
+The mountain constrains the settlement, infrastructure mediates those constraints, and residents continually change demand and maintenance. The picture is a conceptual teaching diagram, not a generated simulation.
+
 The mountain is not a hollow prop whose interior is invented after the settlement. It has an exterior, a physical volume, geological regions, materials, water-bearing zones, and a history. Its shape constrains where a fortress can be built.
 
 Physics owns terrain generation and physical consequences. Its existing 2D height field can produce and inspect exterior relief, but it cannot represent internal caves, overhangs, vertical faces, or a 3D solid. A real cutaway fortress therefore depends on a future 3D volume capability. Until that exists, any complete mountain cutaway is an authored schematic.
@@ -65,6 +69,10 @@ Roles are contextual and plural. A dwarf may be a mason, parent, council member,
 SURPS supplies the entity and society models. The fortress environment supplies places, resources, hazards and constraints. Neither should hard-code the other.
 
 ## 5. Production and material logistics
+
+![Living material flow from deposit through extraction, processing, craft, storage, and trade](assets/stronghold-material-flow.svg)
+
+A shortage in one stage can propagate into workshops, stores, trade, and daily life. A Game Master can use the chain to author consequences instead of inventing an isolated scarcity penalty.
 
 A working fortress can be understood through chains of cause:
 
