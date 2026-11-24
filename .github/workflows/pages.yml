@@ -5,6 +5,8 @@ on:
     branches: [master, development]
     paths:
       - 'docs/**'
+      - '.surps/participation.json'
+      - 'scripts/generate_surps_book_assets.py'
       - 'schemas/**'
       - 'README.md'
       - 'AgentOnboarding.md'
@@ -27,6 +29,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Python for publication generation
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Generate opted-in SURPS publication assets
+        run: python scripts/generate_surps_book_assets.py
       - name: Stage public schemas for the documentation site
         run: |
           mkdir -p docs/schemas
