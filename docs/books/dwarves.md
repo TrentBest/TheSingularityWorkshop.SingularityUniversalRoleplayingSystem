@@ -20,6 +20,10 @@ Dwarven communities can include artisans, farmers, merchants, healers, teachers,
 
 ## 3. Culture and community
 
+![Living network of families, crafts, organizations, trade, and wider society](assets/dwarven-community-network.svg)
+
+This is a relationship map, not a universal social template. Each setting defines which connections exist and how they work.
+
 Culture is learned, shared, contested, and changed. Relevant dimensions may include language and dialect, food, clothing, music, craft traditions, storytelling, ceremony, education, law, hospitality, kinship, humor, remembrance, and attitudes toward land or ancestry. Neighboring communities may disagree sharply while still identifying as dwarves.
 
 A setting should distinguish personal belief, family custom, guild practice, civic law, religious institution, and political doctrine. No one individual should be treated as a perfect representative of an entire people.
