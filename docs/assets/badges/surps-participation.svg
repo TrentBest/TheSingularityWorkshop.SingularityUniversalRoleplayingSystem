@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 256" role="img" aria-labelledby="title desc">
 <title id="title">SURPS PARTICIPANT</title>
-<desc id="desc">Owns the shared roleplaying ontology, CORE rules, rulebook identity and composition, LOD/campaign selection, and cross-domain sourcebook contract. 6 declared book outputs.</desc>
+<desc id="desc">Owns the shared roleplaying ontology, behavior-model semantics, CORE rules, tabletop/digital adapter contracts, workshop calibration, compiled behavior package conventions, rulebook identity and composition, LOD/campaign selection, and cross-domain living publication standard. 6 declared book outputs.</desc>
 <defs><linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#182536"/><stop offset="1" stop-color="#101820"/></linearGradient><linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8bd5ca"/><stop offset="1" stop-color="#78a9d4"/></linearGradient></defs>
 <rect x="2" y="2" width="1416" height="252" rx="18" fill="url(#panel)" stroke="#577082" stroke-width="2"/>
 <rect x="18" y="18" width="8" height="220" rx="4" fill="url(#accent)"/>
