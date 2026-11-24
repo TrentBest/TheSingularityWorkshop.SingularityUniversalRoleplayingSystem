@@ -6,6 +6,8 @@
 
 ## 1. Goals and boundaries
 
+For SURPS-facing books and Pages experiences, this companion is supplemented by the normative [SURPS Living Rulebook and Experience Standard](living-rulebook-standard.md) and [Behavior Model and Adapters](behavior-and-adapters.md). Those documents define the one-behavior/two-adapter model, player and Game Master reading paths, workshop-time tabletop derivation, runtime cache boundary, and evidence-labelled living demonstrations. Participating repositories must adopt them rather than inventing competing book formats.
+
 Every SURPS-participating repository should be recognizable, navigable, accessible, and visually coherent while retaining its domain ownership and implementation needs.
 
 This standard governs:
@@ -13,7 +15,7 @@ This standard governs:
 - sourcebook/book placement and metadata;
 - theory, architecture, implementation, and evidence separation;
 - shared visual identity, badges, diagrams, covers, and image accessibility;
-- links between a domain's knowledge, its implementation, and its proof.
+- links between a domain's knowledge, its implementation, and its proof;\n- living, interactive demonstrations that make each important domain mechanic observable.
 
 It does **not** require every repository to become a SURPS repository, move source code into a common layout, or duplicate domain documentation. A participating repository may expose a domain book, but the domain owner remains authoritative for its subject.
 
