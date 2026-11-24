@@ -7,9 +7,13 @@
     "shared-ontology",
     "rulebook-composition",
     "sourcebook-publication",
-    "lod-and-campaign-composition"
+    "lod-and-campaign-composition",
+    "behavior-model",
+    "tabletop-adapter-calibration",
+    "digital-adapter-compilation",
+    "living-publication"
   ],
-  "contributionSummary": "Owns the shared roleplaying ontology, CORE rules, rulebook identity and composition, LOD/campaign selection, and cross-domain sourcebook contract.",
+  "contributionSummary": "Owns the shared roleplaying ontology, behavior-model semantics, CORE rules, tabletop/digital adapter contracts, workshop calibration, compiled behavior package conventions, rulebook identity and composition, LOD/campaign selection, and cross-domain living publication standard.",
   "cataloguePath": "docs/books/index.md",
   "books": [
     {
@@ -89,5 +93,10 @@
   },
   "rulebookBacklogPath": ".surps/rulebook-backlog.json",
   "masterRulebookMapPath": "docs/rulebook-backlog/index.md",
-  "participatingRepositoryRegistryPath": ".surps/rulebook-backlog.json"
+  "participatingRepositoryRegistryPath": ".surps/rulebook-backlog.json",
+  "standards": {
+    "behaviorModel": "docs/behavior-and-adapters.md",
+    "livingRulebook": "docs/living-rulebook-standard.md",
+    "adoptionTracker": "docs/participating-repository-adoption.md"
+  }
 }
