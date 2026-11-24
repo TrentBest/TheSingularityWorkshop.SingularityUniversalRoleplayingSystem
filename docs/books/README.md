@@ -10,7 +10,7 @@ SURPS sourcebooks are living, human-readable knowledge collections. Each book ex
 
 A setting-neutral, tabletop-playable foundation for secrecy, observation, evidence, infiltration, influence, counterintelligence, exposure, and consequences. First playtest draft; two six-sided dice and paper are sufficient.
 
-[Read CORE Spying](core-spying.md) · [Printable play sheets](core-spying-play-sheets.md) · [Book descriptor](core-spying.book.json)
+[Read CORE Spying](core-spying.md) · [Printable play sheets](core-spying-play-sheets.md) · [Book descriptor](core-spying.book.json) · [Structured book contribution](../../.surps/contributions/core-spying.json)
 
 ## Available domain books
 
