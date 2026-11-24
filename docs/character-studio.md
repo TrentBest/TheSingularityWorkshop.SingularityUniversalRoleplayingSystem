@@ -29,7 +29,7 @@ The portable character definition is not a campaign save file. Experience-owned 
 
 ## Prototype storage and portability
 
-The current page stores its roster in `localStorage` under a SURPS-specific key on the SURPS Pages origin. This means:
+The current page stores its roster in `localStorage` under a SURPS-specific key on the shared `trentbest.github.io` origin used by the GitHub Pages site. Other project Pages sites under that same origin can access the same browser storage, so they must reuse the central portal rather than create competing character stores.. This means:
 
 - Data remains in the browser profile and origin where it was created.
 - Clearing site data or using another browser/device may make the local roster unavailable.
