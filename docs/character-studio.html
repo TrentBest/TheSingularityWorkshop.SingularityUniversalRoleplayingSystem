@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Create, shape, save, and carry a SURPS character between compatible experiences.">
+<title>Character Studio · SURPS</title>
+<style>
+:root{color-scheme:dark;--bg:#09131d;--panel:#111f2c;--panel2:#172a39;--line:#2c4558;--ink:#edf5fa;--muted:#a9bdcc;--mint:#83d6c4;--gold:#e9c77b;--blue:#a9d8ff;--red:#f0a5a5;--max:1240px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -12%,#244052 0,transparent 42%),var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--blue);text-underline-offset:4px}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{border-bottom:1px solid var(--line);padding:18px 0 14px}.brand{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.moniker{width:min(330px,70%);height:auto}.nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.88rem}
+.hero{padding:34px 0 26px;display:flex;justify-content:space-between;align-items:end;gap:20px}.eyebrow{color:var(--mint);font-size:.72rem;font-weight:850;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.03;letter-spacing:-.045em;margin:8px 0 10px}.lead{color:var(--muted);max-width:690px;margin:0}.hero-mark{width:128px;flex:0 0 128px;opacity:.9}
+.notice{border:1px solid #66583a;background:#211f1a;color:#e8d7b2;border-radius:12px;padding:12px 15px;margin:0 0 20px;font-size:.88rem}.notice strong{color:#f3dfad}
+.studio{display:grid;grid-template-columns:230px minmax(0,1fr);gap:18px;align-items:start}
+.rail,.workspace,.preview{background:linear-gradient(155deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px}
+.rail{padding:15px;position:sticky;top:12px}.rail-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:12px}.rail h2,.preview h2{font-size:1rem;margin:0}.small{font-size:.78rem;color:var(--muted)}
+.character-list{display:grid;gap:7px;margin:12px 0}.character-choice{display:block;width:100%;text-align:left;padding:10px 11px;border:1px solid transparent;border-radius:10px;background:#0d1a25;color:var(--ink)}.character-choice[aria-current=true]{border-color:var(--mint);background:#183345}.character-choice strong{display:block}.character-choice small{display:block;color:var(--muted);margin-top:2px}
+.btn{border:1px solid var(--line);border-radius:999px;background:#142737;color:var(--ink);padding:9px 14px;font-weight:700}.btn:hover{border-color:var(--mint)}.btn.primary{background:var(--mint);color:#092019;border-color:var(--mint)}.btn.subtle{background:transparent}.btn.danger{color:var(--red)}.btn:disabled{opacity:.45;cursor:not-allowed}
+.rail-actions{display:grid;gap:8px}.rail-actions .btn{width:100%}
+.workspace{padding:clamp(16px,3vw,28px);min-height:620px}.workspace-top{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:15px;margin-bottom:20px}.workspace-top h2{margin:0;font-size:1.3rem}.step-label{color:var(--mint);font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.83rem;font-weight:700;color:#d8e5ed}.field small{font-size:.76rem;color:var(--muted)}input,textarea,select{width:100%;background:#0b1823;border:1px solid #385166;border-radius:9px;padding:11px 12px;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--mint);box-shadow:0 0 0 3px #83d6c422}textarea{min-height:94px;resize:vertical}
+.section{padding:20px 0;border-bottom:1px solid var(--line)}.section:first-child{padding-top:0}.section:last-child{border-bottom:0}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:13px}.section-head h3{margin:0;font-size:1.08rem}.section-head p{margin:0;color:var(--muted);font-size:.8rem}
+.preview{padding:18px;position:sticky;top:12px}.preview .portrait{height:138px;border-radius:12px;background:radial-gradient(circle at 50% 40%,#3c756f,#193547 50%,#0b1722 80%);display:grid;place-items:center;margin:14px 0;color:#b9f4e6;font-size:2.4rem;border:1px solid #41616d}.preview-name{font-size:1.35rem;font-weight:800;line-height:1.2}.preview-meta{color:var(--muted);font-size:.83rem;margin-top:4px}.preview-block{border-top:1px solid var(--line);padding:12px 0}.preview-block h3{font-size:.7rem;color:var(--mint);letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}.preview-block p{margin:0;color:#d0dce4;font-size:.86rem;white-space:pre-wrap;overflow-wrap:anywhere}.preview-empty{color:var(--muted);font-size:.88rem}
+.status{min-height:22px;color:var(--mint);font-size:.82rem;margin-top:10px}.status.error{color:var(--red)}
+.bottom-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px}
+footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text-align:center;color:var(--muted);font-size:.85rem}footer img{width:88px;display:block;margin:0 auto 8px}
+@media(min-width:1000px){.studio{grid-template-columns:220px minmax(0,1fr) 250px}}
+@media(max-width:999px){.preview{position:static;grid-column:1/-1}.studio{grid-template-columns:210px minmax(0,1fr)}}
+@media(max-width:700px){.studio{grid-template-columns:1fr}.rail{position:static}.character-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{align-items:start}.hero-mark{display:none}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.workspace{min-height:0}}
+@media(prefers-reduced-motion:no-preference){.workspace{animation:arrive .55s ease both}.character-choice,.btn{transition:background .2s,border-color .2s,transform .2s}.btn:hover{transform:translateY(-1px)}@keyframes arrive{from{opacity:0;transform:translateY(10px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}}
+</style>
+</head>
+<body>
+<header><div class="wrap brand">
+<a href="index.html" aria-label="SURPS home"><img class="moniker" src="https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg" alt="The Singularity Workshop"></a>
+<nav class="nav" aria-label="Primary navigation"><a href="index.html">SURPS home</a><a href="architecture.html">Architecture</a><a href="player-and-editor-manual.html">Player manual</a><a href="https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/7">Character contract</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">Your story starts here</div><h1>Character Studio</h1><p class="lead">Create a character with a history, a purpose, and room to grow. Keep a local roster, shape each detail, and carry a portable record toward compatible SURPS experiences.</p></div>
+<svg class="hero-mark" viewBox="0 0 140 140" role="img" aria-label="A character identity connected to many worlds"><defs><radialGradient id="g"><stop stop-color="#83d6c4" stop-opacity=".9"/><stop offset="1" stop-color="#83d6c4" stop-opacity="0"/></radialGradient></defs><circle cx="70" cy="70" r="52" fill="url(#g)"/><circle cx="70" cy="70" r="27" fill="none" stroke="#83d6c4" stroke-width="1.5"/><circle cx="70" cy="70" r="7" fill="#e9c77b"/><g fill="none" stroke="#83d6c4" stroke-opacity=".7"><path d="M70 43L30 20M97 70l23-18M70 97l-8 25M43 70L15 88"/></g><g fill="#e9c77b"><circle cx="30" cy="20" r="4"/><circle cx="120" cy="52" r="4"/><circle cx="62" cy="122" r="4"/><circle cx="15" cy="88" r="4"/></g></svg>
+</section>
+<div class="notice"><strong>Prototype status:</strong> This first studio stores characters in this browser on the SURPS site and exports a draft JSON envelope. The canonical portable character contract is still being defined in <a href="https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/7">SURPS issue #7</a>. This is not cloud sync, account storage, or a claim of cross-device compatibility.</div>
+<section class="studio" aria-label="Character creation workspace">
+<aside class="rail">
+<div class="rail-head"><h2>Your characters</h2><span class="small" id="count">0 saved</span></div>
+<div id="characterList" class="character-list"><p class="small">Your roster is waiting for its first character.</p></div>
+<div class="rail-actions"><button class="btn primary" id="newCharacter" type="button">＋ New character</button><button class="btn" id="exportCharacter" type="button" disabled>Export character JSON</button><button class="btn" id="importCharacter" type="button">Import character JSON</button><input id="importFile" type="file" accept=".json,application/json" hidden></div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</aside>
+<div class="workspace">
+<div class="workspace-top"><div><div class="step-label">Character definition · Draft 0.1</div><h2 id="formTitle">Begin a new character</h2></div><button class="btn primary" id="saveCharacter" type="button">Save character</button></div>
+<form id="characterForm">
+<section class="section"><div class="section-head"><h3>Identity</h3><p>The person behind the record</p></div><div class="form-grid">
+<div class="field"><label for="name">Character name *</label><input id="name" name="name" required maxlength="100" placeholder="What are they called?"></div>
+<div class="field"><label for="role">Role or archetype</label><input id="role" name="role" maxlength="120" placeholder="Scout, scholar, wanderer…"></div>
+<div class="field"><label for="pronouns">Pronouns (optional)</label><input id="pronouns" name="pronouns" maxlength="80" placeholder="How should others refer to them?"></div>
+<div class="field"><label for="origin">Origin or home</label><input id="origin" name="origin" maxlength="160" placeholder="Where do they come from?"></div>
+<div class="field full"><label for="concept">Character concept</label><textarea id="concept" name="concept" maxlength="1200" placeholder="A concise sense of who this character is…"></textarea></div>
+<div class="field full"><label for="appearance">Appearance and form</label><textarea id="appearance" name="appearance" maxlength="1200" placeholder="Describe visible traits, form, anatomy, or distinguishing features…"></textarea></div>
+</div></section>
+<section class="section"><div class="section-head"><h3>Attributes and capabilities</h3><p>What they are like, and what they can do</p></div><div class="form-grid">
+<div class="field"><label for="attributes">Attributes</label><textarea id="attributes" name="attributes" placeholder="One per line, e.g.&#10;Strength: 2&#10;Perception: 3"></textarea><small>Use a readable label and value per line. No universal rating scale is imposed yet.</small></div>
+<div class="field"><label for="capabilities">Capabilities</label><textarea id="capabilities" name="capabilities" placeholder="One capability per line&#10;Track a trail&#10;Negotiate a passage"></textarea></div>
+<div class="field"><label for="training">Training and experience</label><textarea id="training" name="training" placeholder="Disciplines, practiced skills, education…"></textarea></div>
+<div class="field"><label for="condition">Current condition</label><textarea id="condition" name="condition" placeholder="Health, fatigue, injuries, or other relevant condition…"></textarea></div>
+</div></section>
+<section class="section"><div class="section-head"><h3>Life and connections</h3><p>What gives the character direction</p></div><div class="form-grid">
+<div class="field"><label for="goals">Goals and motivations</label><textarea id="goals" name="goals" placeholder="What are they trying to achieve?"></textarea></div>
+<div class="field"><label for="equipment">Equipment and resources</label><textarea id="equipment" name="equipment" placeholder="Possessions, tools, resources, and limitations…"></textarea></div>
+<div class="field"><label for="relationships">Relationships</label><textarea id="relationships" name="relationships" placeholder="One person, group, or bond per line"></textarea></div>
+<div class="field"><label for="history">History</label><textarea id="history" name="history" placeholder="Important events, choices, and turning points…"></textarea></div>
+</div></section>
+<div class="bottom-actions"><button class="btn subtle danger" id="deleteCharacter" type="button" disabled>Delete character</button><button class="btn primary" type="submit">Save changes</button></div>
+</form>
+</div>
+<aside class="preview" aria-label="Character summary">
+<h2>Living record</h2><div class="portrait" aria-hidden="true">✧</div><div class="preview-name" id="previewName">Unnamed character</div><div class="preview-meta" id="previewMeta">Your character will take shape here</div>
+<div class="preview-block"><h3>Concept</h3><p id="previewConcept" class="preview-empty">A story waiting to be written.</p></div>
+<div class="preview-block"><h3>Capabilities</h3><p id="previewCapabilities" class="preview-empty">No capabilities recorded yet.</p></div>
+<div class="preview-block"><h3>Purpose</h3><p id="previewGoals" class="preview-empty">No goals recorded yet.</p></div>
+</aside>
+</section>
+</main>
+<footer><div class="wrap"><img src="https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png" alt="The Singularity Workshop"><strong>The Singularity Workshop · SURPS</strong><br>One character. Many worlds. Your story travels with you.</div></footer>
+<script>
+(() => {
+const KEY = "surps.character-studio.draft.v1";
+const $ = id => document.getElementById(id);
+const fields = ["name","role","pronouns","origin","concept","appearance","attributes","capabilities","training","condition","goals","equipment","relationships","history"];
+let roster = [], activeId = null;
+const announce = (message, error=false) => { $("status").textContent=message; $("status").classList.toggle("error",error); };
+const uid = () => (crypto && crypto.randomUUID) ? crypto.randomUUID() : "surps-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
+const readForm = () => Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));
+const fillForm = data => fields.forEach(k=>$(k).value=data?.[k] || "");
+const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
+const current = () => roster.find(x=>x.identity?.id===activeId);
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
+function updatePreview(){
+ const d=readForm(); $("previewName").textContent=d.name||"Unnamed character";
+ $("previewMeta").textContent=[d.role,d.origin,d.pronouns].filter(Boolean).join(" · ")||"Your character will take shape here";
+ $("previewConcept").textContent=d.concept||"A story waiting to be written.";
+ $("previewCapabilities").textContent=d.capabilities||"No capabilities recorded yet.";
+ $("previewGoals").textContent=d.goals||"No goals recorded yet.";
+ ["previewConcept","previewCapabilities","previewGoals"].forEach(id=>$(id).classList.toggle("preview-empty",!$(id).textContent || $(id).textContent.startsWith("No ") || $(id).textContent.startsWith("A story")));
+}
+function renderRoster(){
+ $("count").textContent=roster.length+" saved";
+ const host=$("characterList");host.replaceChildren();
+ if(!roster.length){const p=document.createElement("p");p.className="small";p.textContent="Your roster is waiting for its first character.";host.append(p)}
+ roster.forEach(c=>{
+  const b=document.createElement("button");b.type="button";b.className="character-choice";b.setAttribute("aria-current",String(c.identity.id===activeId));
+  const strong=document.createElement("strong");strong.textContent=c.name||"Unnamed character";
+  const small=document.createElement("small");small.textContent=c.role||"Unclassified";
+  b.append(strong,small);b.addEventListener("click",()=>selectCharacter(c.identity.id));host.append(b);
+ });
+ $("exportCharacter").disabled=!activeId;$("deleteCharacter").disabled=!activeId;
+}
+function selectCharacter(id){activeId=id;const c=current();fillForm(c);$("formTitle").textContent=c.name||"Unnamed character";renderRoster();updatePreview();announce("Character loaded in the editor.")}
+function newCharacter(){
+ activeId=null;fillForm({});$("formTitle").textContent="Begin a new character";renderRoster();updatePreview();announce("A blank character record is ready.");$("name").focus();
+}
+function saveCharacter(){
+ const data=readForm();if(!data.name){$("name").focus();announce("Give your character a name before saving.",true);return}
+ const existing=current();
+ if(existing){Object.assign(existing,data,{updatedAt:new Date().toISOString()})}
+ else{const c={identity:{id:uid(),createdAt:new Date().toISOString()},...data,updatedAt:new Date().toISOString()};roster.push(c);activeId=c.identity.id}
+ if(persist()){renderRoster();$("formTitle").textContent=data.name;updatePreview();announce("Saved in this browser. Export a JSON copy for safekeeping.");}
+}
+function envelope(c){return {format:"surps.character-draft",formatVersion:"0.1.0",status:"prototype-not-canonical",character:c,exportedAt:new Date().toISOString()}}
+function download(c){
+ const blob=new Blob([JSON.stringify(envelope(c),null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(c.name||"surps-character").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+".surps-character.json";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);announce("Character JSON exported. Keep this file as your portable copy.");
+}
+$("newCharacter").addEventListener("click",newCharacter);
+$("saveCharacter").addEventListener("click",saveCharacter);
+$("characterForm").addEventListener("submit",e=>{e.preventDefault();saveCharacter()});
+fields.forEach(k=>$(k).addEventListener("input",updatePreview));
+$("exportCharacter").addEventListener("click",()=>{const c=current();if(c)download(c)});
+$("deleteCharacter").addEventListener("click",()=>{const c=current();if(!c)return;if(!confirm("Delete "+(c.name||"this character")+" from this browser? Export a copy first if you want to keep it."))return;roster=roster.filter(x=>x.identity.id!==activeId);activeId=null;persist();newCharacter();renderRoster();announce("Character deleted from this browser.")});
+$("importCharacter").addEventListener("click",()=>$("importFile").click());
+$("importFile").addEventListener("change",async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  const parsed=JSON.parse(await file.text());const incoming=parsed.character||parsed;
+  if(!incoming||typeof incoming!=="object"||typeof incoming.name!=="string"||!incoming.name.trim())throw new Error("This file does not contain a recognizable character record.");
+  const c={...incoming,identity:{id:uid(),createdAt:new Date().toISOString(),...(incoming.identity||{})}};c.identity.id=uid();c.updatedAt=new Date().toISOString();
+  roster.push(c);activeId=c.identity.id;persist();selectCharacter(activeId);announce("Imported a character copy. Review it and export after any changes.");
+ }catch(err){announce(err.message||"The selected file could not be imported.",true)}
+ e.target.value="";
+});
+try{const saved=JSON.parse(localStorage.getItem(KEY)||"[]");if(Array.isArray(saved))roster=saved.filter(x=>x&&x.identity&&typeof x.identity.id==="string")}catch{roster=[]}
+renderRoster();if(roster.length)selectCharacter(roster[0].identity.id);else newCharacter();
+})();
+</script>
+</body></html>
