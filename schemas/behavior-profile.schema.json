@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/behavior-profile.schema.json",
+  "title": "SURPS Behavior Profile",
+  "description": "A versioned authored behavior description used by a SURPS domain or teaching prototype. It is not executable code and does not itself claim a production evaluator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "title",
+    "status",
+    "model",
+    "paperAdapter",
+    "examples",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "draft",
+        "playtest",
+        "illustrative",
+        "validated",
+        "published",
+        "deprecated",
+        "teaching-prototype-not-canonical"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "energyAtTarget",
+        "deliveredEnergy",
+        "absorbedEnergy",
+        "impactEnergy",
+        "energyContinuing",
+        "parameters",
+        "impactBands"
+      ],
+      "properties": {
+        "energyAtTarget": {
+          "type": "string"
+        },
+        "deliveredEnergy": {
+          "type": "string"
+        },
+        "absorbedEnergy": {
+          "type": "string"
+        },
+        "impactEnergy": {
+          "type": "string"
+        },
+        "energyContinuing": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "object",
+          "required": [
+            "rangeAttenuation",
+            "passThrough",
+            "sampleEnergyVariation",
+            "sampleDistanceVariation"
+          ],
+          "properties": {
+            "rangeAttenuation": {
+              "type": "number",
+              "minimum": 0
+            },
+            "passThrough": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sampleEnergyVariation": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sampleDistanceVariation": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "impactBands": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label",
+              "minimum",
+              "maximum",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "minimum": {
+                "type": "number"
+              },
+              "maximum": {
+                "type": "number"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "paperAdapter": {
+      "type": "object",
+      "required": [
+        "method",
+        "meaningfulEffectThreshold",
+        "note"
+      ],
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "meaningfulEffectThreshold": {
+          "type": "number"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "castEnergy",
+          "distance",
+          "alignment",
+          "targetResistance",
+          "focus",
+          "narrative"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "castEnergy": {
+            "type": "number",
+            "minimum": 0
+          },
+          "distance": {
+            "type": "number",
+            "minimum": 0
+          },
+          "alignment": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "targetResistance": {
+            "type": "number",
+            "minimum": 0
+          },
+          "focus": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "narrative": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "repository",
+        "source",
+        "classification"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "classification": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
