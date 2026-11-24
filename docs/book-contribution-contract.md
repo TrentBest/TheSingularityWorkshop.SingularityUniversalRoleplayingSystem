@@ -25,7 +25,7 @@ The book remains the authored source of truth. SURPS owns the common contributio
 3. **Select** — an experience declares which registered books and versions it uses. Registration makes content discoverable; it does not automatically activate every rule in every world.
 4. **Compose** — SURPS combines selected contributions into the experience's character options, creation catalogue, rule set, and capability index. The shared Character Studio renders the resulting options.
 
-A book's existing `.book.json` descriptor remains its bibliographic identity (ID, title, LOD, version, cover, and related metadata). It is not itself the full game-content payload. When a book has structured contributions, its `.book.json` descriptor declares the repository-relative `contributionPath` and the SURPS contribution schema version/URI. The repository participation manifest mirrors that path for discovery and validation. A book without a machine-readable payload may omit `contributionPath` until one is authored; it is then bibliographically registered but contributes no selectable structured content yet. See the [book descriptor example](examples/book-descriptor.example.json). This separation keeps book registration lightweight while allowing the content contract to evolve independently.
+A book's existing `.book.json` descriptor remains its bibliographic identity (ID, title, LOD, version, cover, and related metadata). It is not itself the full game-content payload. When a book has structured contributions, its `.book.json` descriptor declares the repository-relative `contributionPath` and `contributionSchema` path. The repository participation manifest mirrors those paths for discovery and validation. A book without a machine-readable payload may omit `contributionPath` until one is authored; it is then bibliographically registered but contributes no selectable structured content yet. See the [book descriptor example](examples/book-descriptor.example.json). This separation keeps book registration lightweight while allowing the content contract to evolve independently.
 
 ## Canonical contribution document
 
@@ -100,14 +100,15 @@ The portal can then render the same character creation flow anywhere, with the e
 
 ## Maturity and implementation gates
 
-The schema and examples in this branch are an initial contract, not a claim that all registration, dynamic UI composition, or runtime rule execution already exists. The next gates are:
+The schema and examples in this branch are an initial contract, not a claim that all registration, dynamic UI composition, or runtime rule execution already exists. CI now checks both schemas and their examples, then validates every registered contribution document against the book-contribution schema. CORE Spying is the first real sourcebook pilot: its six playtest approaches and its written uncertainty, outcome, preparation, clock, and information/evidence procedures are represented as structured declarations. The declarations preserve the sourcebook's playtest status; they do not claim an executable evaluator or universal character attributes.
 
-1. Validate the schema with JSON Schema tooling and representative book payloads.
-2. Add contribution documents to a small pilot set of real books.
-3. Define the experience profile schema and resolver precedence/compatibility behavior.
-4. Upgrade the Character Studio to render options from the selected book set.
-5. Add automated tests for registration, duplicate IDs, dependency conflicts, missing providers, compatibility, and provenance.
-6. Integrate one satellite repository only after the central contract is proven.
+The remaining gates are:
+
+1. Validate more real books and tighten the schema from actual authoring experience.
+2. Define the experience profile resolver, version ranges, dependency/conflict checks, and precedence behavior.
+3. Upgrade the Character Studio to render options and rulebook-provided fields from the selected book set.
+4. Add automated tests for registration, duplicate IDs, dependency conflicts, missing providers, compatibility, and provenance.
+5. Integrate one satellite repository only after the central contract is proven.
 
 No NuGet/API release is implied by this documentation work.
 
