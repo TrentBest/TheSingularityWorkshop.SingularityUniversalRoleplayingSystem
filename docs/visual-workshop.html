@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SURPS visual workshop: inspect living diagrams generated from the GUI semantic model and improve their source.">
+<title>SURPS · Visual Workshop</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1421;--panel:#14263a;--line:#38536b;--ink:#edf5fc;--muted:#a8bbcf;--mint:#7ee0bd;--gold:#ffcf86;--blue:#8fcaff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 0%,#1d3b48 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif}a{color:var(--mint)}main{max-width:1180px;margin:auto;padding:30px 20px 64px}.brand{color:var(--mint);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero{padding:34px 0 24px}h1{font-size:clamp(2.3rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.045em;margin:.3em 0}h2{font-size:1.25rem;margin:0 0 10px}.lead{max-width:820px;color:var(--muted);font-size:1.12rem}.stage{background:#0e1c2c;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 20px 60px #0005}.stagehead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 18px;background:#13263a;border-bottom:1px solid var(--line)}.tag{border:1px solid #42647c;border-radius:999px;padding:4px 10px;color:var(--mint);font-size:.8rem}.art{padding:10px;background:#0b1421}.art img{display:block;width:100%;height:auto}.actions{display:flex;gap:12px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--line);background:#13263a}.actions a{display:inline-block;padding:9px 13px;border:1px solid #456078;border-radius:9px;text-decoration:none}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}.card{background:var(--panel);border:1px solid #2a4055;border-radius:14px;padding:18px}.card p{color:var(--muted);margin:.4rem 0}.eyebrow{color:var(--gold);font-size:.75rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.note{margin-top:18px;padding:16px 18px;border-left:3px solid var(--gold);background:#14263a;border-radius:8px;color:var(--muted)}footer{margin-top:38px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media(max-width:780px){.grid{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">The Singularity Workshop · SURPS</div>
+<header class="hero">
+<div class="eyebrow">Living pictures · GUI + Visualize</div>
+<h1>See the system.<br>Shape the picture.</h1>
+<p class="lead">This is the first SURPS visual-authoring proof: a diagram built as a neutral GUI semantic tree, then manifested as an inspectable SVG by your GUI.SVG adapter. The book owns the meaning. GUI owns the interface description and SVG manifestation. Visualize remains the scene and visual-artifact workbench.</p>
+</header>
+<section class="stage" aria-label="Generated SURPS behavior model diagram">
+<div class="stagehead"><strong>01 · One behavior model, two adapters</strong><span class="tag">Generated · GUI.Core + GUI.SVG</span></div>
+<div class="art"><img src="assets/generated/surps-behavior-model.svg" alt="SURPS behavior model diagram. Actor, intent, target, and context enter one authoritative behavior model, which branches into tabletop and digital adapters before changing world state." /></div>
+<div class="actions">
+<a href="assets/generated/surps-behavior-model.svg">Open the SVG artifact</a>
+<a href="https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/blob/development/samples/SurpsGuiSvg/Program.cs">Inspect the semantic-tree source</a>
+<a href="https://github.com/TrentBest/TheSingularityWorkshop.GUI/tree/development/samples/demonstrations">Explore GUI.SVG recipes</a>
+<a href="https://github.com/TrentBest/TheSingularityWorkshop.Visualize/tree/development/samples/PrimitiveGallery">Explore Visualize primitive lab</a>
+</div>
+</section>
+<section class="grid" aria-label="Authoring workflow">
+<article class="card"><div class="eyebrow">01 · Meaning</div><h2>Author the model</h2><p>Start with the SURPS concept and the relationships it must communicate. The C# proof builds a recursive semantic GUI tree; it does not hand-draw the final SVG.</p></article>
+<article class="card"><div class="eyebrow">02 · Manifestation</div><h2>Inspect the artifact</h2><p>GUI.SVG renders the supported semantic tree into a self-contained SVG file. Open it, zoom in, compare it, and review the generated source-controlled result.</p></article>
+<article class="card"><div class="eyebrow">03 · Improve</div><h2>Change and regenerate</h2><p>Improve the semantic tree and layout in the proof source, then let the Pages workflow regenerate the artifact. Use Visualize's interactive labs to explore scene primitives and visual treatments before adopting them.</p></article>
+</section>
+<div class="note"><strong>Honest boundary:</strong> this first proof is a deterministic, static SVG generated by the actual GUI.Core and GUI.SVG C# projects during publication. The linked Visualize Primitive Gallery is a separate browser-side experiment, not the C# Visualizer running inside this page. Interactive in-page authoring and a live Visualize-to-SURPS bridge are later stages, not capabilities claimed here.</div>
+<p><a href="index.html">← Back to SURPS</a> · <a href="review.html">Human review checklist</a> · <a href="https://github.com/TrentBest/TheSingularityWorkshop.GUI">GUI repository</a> · <a href="https://github.com/TrentBest/TheSingularityWorkshop.Visualize">Visualize repository</a></p>
+<footer>Development visual workshop · Generated artifacts are rebuilt by the SURPS Pages workflow.</footer>
+</main>
+</body>
+</html>
