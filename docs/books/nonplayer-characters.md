@@ -6,6 +6,8 @@
 
 SURPS consumes that shared domain for tabletop play. Its responsibility is to explain how a game master and players portray, encounter, interact with, and make decisions involving NPCs—not to maintain a competing general-purpose resident/person model.
 
+![Living ownership boundary between City resident data and SURPS roleplaying presentation](assets/npc-ownership-boundary.svg)
+
 Specialist domains extend the shared model at higher LOD. [Singularity Laboratories — Laboratory NPCs, LOD 2](https://github.com/TrentBest/TheSingularityWorkshop.SingularityLaboratories/blob/development/docs/books/laboratory-npcs.md) is the first such specialization.
 
 This file remains as a compatibility pointer for existing links. It is no longer the canonical NPC sourcebook, and its previous broad domain content should be developed in the owning repositories. No SURPS runtime or character API is implied by this ownership change.
