@@ -79,7 +79,7 @@ The shared portal owns character creation/import/export and active-character sel
 
 Participation manifests and campaign catalogues must describe only content that actually exists. A repository may show a useful empty state while its first campaign is being authored; it must not invent campaigns or claim runtime entry is implemented when it is not.
 
-The first browser implementation may use first-party SURPS-origin local browser storage plus explicit character JSON export/import. Do not rely on third-party iframe storage being shared across sites, and do not imply cloud or cross-device synchronization until a host service provides it. Character definition, repository-owned progress, and transient host session state remain separate.
+The first browser implementation may use first-party browser storage on the shared GitHub Pages origin (where participating project sites share the same host origin) plus explicit character JSON export/import. Do not rely on third-party iframe storage being shared across sites, and do not imply cloud or cross-device synchronization until a host service provides it. Character definition, repository-owned progress, and transient host session state remain separate.
 
 The central implementation and phased rollout are tracked in [Build the centralized SURPS character and participation portal](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/8). The canonical character wire contract is tracked in [portable character identity and serialization](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/7).
 
