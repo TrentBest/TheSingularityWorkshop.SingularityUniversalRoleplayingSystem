@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+<title id="title">The embassy reception</title>
+<desc id="desc">An elegant reception hall in silhouette, with a central chandelier, guests in conversation, and fine lines connecting small clues across the room.</desc>
+<defs>
+ <linearGradient id="room" x2="0" y2="1"><stop stop-color="#182b43"/><stop offset="1" stop-color="#080f1b"/></linearGradient>
+ <linearGradient id="light" x2="0" y2="1"><stop stop-color="#f7d99b" stop-opacity=".9"/><stop offset="1" stop-color="#d99b58" stop-opacity="0"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#f1c987" stop-opacity=".65"/><stop offset="1" stop-color="#f1c987" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="900" height="700" fill="url(#room)"/>
+<path d="M0 0H900L760 150H140Z" fill="#243c57"/>
+<path d="M140 0V700M760 0V700M0 530H900" stroke="#8296a8" stroke-opacity=".3" stroke-width="5"/>
+<path d="M140 150H760M210 150V520M690 150V520" stroke="#d2b27b" stroke-opacity=".42" stroke-width="4" fill="none"/>
+<path d="M450 0V160M410 160H490M425 160L390 225M475 160L510 225M390 225H510" stroke="#e9c78b" stroke-width="5" fill="none"/>
+<circle cx="450" cy="250" r="170" fill="url(#halo)"/>
+<g fill="#e8c98e"><circle cx="390" cy="225" r="9"/><circle cx="450" cy="240" r="11"/><circle cx="510" cy="225" r="9"/></g>
+<path d="M0 530Q220 480 450 535T900 530V700H0Z" fill="#111d2b"/>
+<path d="M0 620Q220 580 450 625T900 620" fill="none" stroke="#a9b6c0" stroke-opacity=".25" stroke-width="3"/>
+<g fill="#0a111d" stroke="#9aa9b5" stroke-opacity=".55" stroke-width="3">
+ <circle cx="250" cy="355" r="27"/><path d="M215 390Q250 365 285 390L310 520H190Z"/>
+ <circle cx="360" cy="390" r="24"/><path d="M330 425Q360 405 390 425L410 530H310Z"/>
+ <circle cx="570" cy="375" r="26"/><path d="M535 410Q570 385 605 410L625 530H515Z"/>
+ <circle cx="680" cy="405" r="23"/><path d="M650 435Q680 415 710 435L730 535H630Z"/>
+</g>
+<g fill="none" stroke="#e9c78b" stroke-width="2.5" stroke-dasharray="5 10" opacity=".9">
+ <path d="M250 355Q390 280 450 240T680 405"/>
+ <path d="M360 390Q450 340 570 375"/>
+ <path d="M250 355L360 390L570 375L680 405"/>
+</g>
+<g fill="#f1cf8d"><circle cx="250" cy="355" r="5"/><circle cx="360" cy="390" r="5"/><circle cx="570" cy="375" r="5"/><circle cx="680" cy="405" r="5"/></g>
+<g fill="none" stroke="#76c8d1" stroke-width="2" opacity=".7"><circle cx="250" cy="355" r="42"/><circle cx="570" cy="375" r="42"/><path d="M120 565H780"/></g>
+</svg>
