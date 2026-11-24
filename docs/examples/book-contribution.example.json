@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "book": {
+    "id": "example.fantasy.frontier",
+    "version": "0.1.0",
+    "status": "draft",
+    "source": "docs/books/frontier-example.md",
+    "ownerRepository": "TrentBest/ExampleExperience"
+  },
+  "contributions": {
+    "characterOptions": [
+      {
+        "id": "example.fantasy.frontier.background.wayfinder",
+        "kind": "background",
+        "name": "Wayfinder",
+        "description": "A traveler trained to read routes and identify safe passages.",
+        "grantsTraits": [
+          {
+            "id": "example.fantasy.frontier.trait.route-sense"
+          }
+        ],
+        "grantsCapabilities": [
+          {
+            "id": "example.fantasy.frontier.capability.orient"
+          }
+        ],
+        "tags": [
+          "travel",
+          "exploration"
+        ]
+      }
+    ],
+    "traits": [
+      {
+        "id": "example.fantasy.frontier.trait.route-sense",
+        "kind": "ability",
+        "name": "Route Sense",
+        "description": "Recognize route patterns and retain useful travel observations.",
+        "effects": [
+          {
+            "kind": "grant-capability",
+            "target": "example.fantasy.frontier.capability.orient",
+            "notes": "The character can attempt orientation tasks when the required evidence is available."
+          }
+        ]
+      },
+      {
+        "id": "example.fantasy.frontier.trait.old-injury",
+        "kind": "disability",
+        "name": "Old Injury",
+        "description": "A lasting injury with individually specified functional effects; this example does not prescribe a universal penalty.",
+        "effects": [
+          {
+            "kind": "descriptive-only",
+            "target": "character.condition",
+            "notes": "A concrete scenario or provider must determine relevant limitations and accommodations."
+          }
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "example.fantasy.frontier.capability.orient",
+        "name": "Orient",
+        "description": "Determine direction or position from available environmental evidence.",
+        "requirements": [
+          "Relevant observations or tools must be available."
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "id": "example.fantasy.frontier.rule.travel-fatigue",
+        "name": "Travel Fatigue",
+        "description": "An example rule that tracks exertion during a journey.",
+        "status": "specified",
+        "scope": "travel",
+        "inputs": [
+          {
+            "id": "duration",
+            "valueType": "quantity",
+            "unit": "hour",
+            "dimension": "time",
+            "required": true
+          }
+        ],
+        "outputs": [
+          {
+            "id": "fatigue-change",
+            "valueType": "number",
+            "required": true
+          }
+        ],
+        "tags": [
+          "travel",
+          "condition"
+        ]
+      }
+    ],
+    "creations": [
+      {
+        "id": "example.fantasy.frontier.creation.waystation",
+        "kind": "location",
+        "name": "Roadside Waystation",
+        "description": "A reusable small waystation template for a frontier route.",
+        "template": {
+          "features": [
+            "shelter",
+            "water-point"
+          ]
+        }
+      }
+    ],
+    "equipment": [
+      {
+        "id": "example.fantasy.frontier.equipment.wayfinder-kit",
+        "name": "Wayfinder Kit",
+        "description": "Maps, markers, and simple navigation tools.",
+        "kind": "tool"
+      }
+    ],
+    "resources": [
+      {
+        "id": "example.fantasy.frontier.resource.provisions",
+        "name": "Travel Provisions",
+        "description": "Food and supplies tracked by the selected experience.",
+        "kind": "consumable"
+      }
+    ]
+  },
+  "compatibility": {
+    "surpsCharacterContract": "0.x",
+    "requiresBooks": [],
+    "conflictsWithBooks": []
+  },
+  "provenance": {
+    "repository": "TrentBest/ExampleExperience"
+  }
+}
