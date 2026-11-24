@@ -16,16 +16,16 @@ A book may contribute:
 - Equipment and resources.
 - References to domain-owned evaluators/providers that supply actual execution.
 
-The book remains the authored source of truth. SURPS owns the common contribution vocabulary, validation, registration, composition, compatibility, and presentation tooling.
+Ontology records are authoritative; their owning domain or shared ontology layer defines their meaning. A contribution document is a machine-readable declaration of records exposed by a provider, while a rulebook/book is a curated view that selects and presents those records. SURPS owns shared ontology semantics, contribution vocabulary, validation conventions, cross-domain composition, compatibility, and view tooling. The current book-scoped contribution file is an initial pilot format, not a claim that books own all underlying ontology data.
 
 ## The four distinct steps
 
-1. **Author** — the book owner writes its human-readable source and a machine-readable contribution document.
-2. **Register** — SURPS validates the book identity, version, contribution document, references, provenance, and compatibility, then indexes its declarations.
-3. **Select** — an experience declares which registered books and versions it uses. Registration makes content discoverable; it does not automatically activate every rule in every world.
-4. **Compose** — SURPS combines selected contributions into the experience's character options, creation catalogue, rule set, and capability index. The shared Character Studio renders the resulting options.
+1. **Contribute** — an owning domain publishes authoritative ontology records and, where useful, a machine-readable contribution document. Human-readable source material explains those records without becoming a competing authority.
+2. **Register** — the current validator checks the contribution schema, aligns the contribution's book ID/version with its descriptor and participation entry, and rejects duplicate record IDs within that contribution. Full cross-repository reference resolution and registry indexing are not implemented yet.
+3. **Select** — a book/view definition declares which contributions and ontology records it presents for an audience, scope, LOD, and purpose. The current experience manifest is a selection contract; its complete resolver is not implemented yet.
+4. **Project** — future SURPS tooling will compose selected records into player, Workshop, tabletop, digital, and print projections. The current Character Studio does not yet dynamically compose all these views.
 
-A book's existing `.book.json` descriptor remains its bibliographic identity (ID, title, LOD, version, cover, and related metadata). It is not itself the full game-content payload. When a book has structured contributions, its `.book.json` descriptor declares the repository-relative `contributionPath` and `contributionSchema` path. The repository participation manifest mirrors those paths for discovery and validation. A book without a machine-readable payload may omit `contributionPath` until one is authored; it is then bibliographically registered but contributes no selectable structured content yet. See the [book descriptor example](examples/book-descriptor.example.json). This separation keeps book registration lightweight while allowing the content contract to evolve independently.
+A book's `.book.json` descriptor identifies its curated view and publication identity (ID, title, LOD, version, cover, and related metadata); it is not an ontology database. The current pilot allows a descriptor to declare a repository-relative `contributionPath` and `contributionSchema`, mirrored by the participation manifest. This is a transitional convenience for the CORE Spying pilot. As ontology ownership and cross-repository composition mature, descriptors should select domain-owned contributions rather than imply that the book owns their truth. A book without a machine-readable payload may omit `contributionPath`; it is then bibliographically registered but has no structured contribution attached yet. See the [book descriptor example](examples/book-descriptor.example.json).
 
 ## Canonical contribution document
 
@@ -43,7 +43,7 @@ A contribution document contains:
 - `compatibility`: required/conflicting books and supported character-contract version.
 - `provenance`: repository and source commit information.
 
-Stable IDs are globally namespaced by book or owning domain, for example `surps.core.character.identity` or `physics.domain.weather.wind-exposure`. Display names are not identities.
+Stable IDs are globally namespaced by the owning ontology/domain, for example `surps.core.character.identity` or `physics.domain.weather.wind-exposure`. A view may select the same ID into multiple books without creating another identity. Display names are not identities.
 
 ## Character options are not all the same thing
 
@@ -100,14 +100,14 @@ The portal can then render the same character creation flow anywhere, with the e
 
 ## Maturity and implementation gates
 
-The schema and examples in this branch are an initial contract, not a claim that all registration, dynamic UI composition, or runtime rule execution already exists. CI now checks both schemas and their examples, then validates every registered contribution document against the book-contribution schema. CORE Spying is the first real sourcebook pilot: its six playtest approaches and its written uncertainty, outcome, preparation, clock, and information/evidence procedures are represented as structured declarations. The declarations preserve the sourcebook's playtest status; they do not claim an executable evaluator or universal character attributes.
+The schema and examples in this branch are an initial contract, not a claim that all registration, dynamic UI composition, or runtime rule execution already exists. CI checks both schemas and their examples, then validates every registered contribution document against the book-contribution schema. It also verifies that the contribution's book ID/version agree with its descriptor and participation entry, and that record IDs are unique across all record collections within each contribution document. This is document-local integrity, not global ontology identity resolution: cross-repository duplicate detection, reference resolution, and ontology query/projection remain future work. CORE Spying is the first real sourcebook pilot: its six playtest approaches and its written uncertainty, outcome, preparation, clock, and information/evidence procedures are represented as structured declarations. The declarations preserve the sourcebook's playtest status; they do not claim an executable evaluator or universal character attributes.
 
 The remaining gates are:
 
 1. Validate more real books and tighten the schema from actual authoring experience.
 2. Define the experience profile resolver, version ranges, dependency/conflict checks, and precedence behavior.
 3. Upgrade the Character Studio to render options and rulebook-provided fields from the selected book set.
-4. Add automated tests for registration, duplicate IDs, dependency conflicts, missing providers, compatibility, and provenance.
+4. Extend integrity tests to cross-repository identity collisions, unresolved references, dependency conflicts, missing providers, compatibility, and provenance.
 5. Integrate one satellite repository only after the central contract is proven.
 
 No NuGet/API release is implied by this documentation work.
