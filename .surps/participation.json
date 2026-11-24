@@ -33,7 +33,9 @@
       "maturity": "tabletop-playtest-draft",
       "bookPath": "docs/books/core-spying.md",
       "descriptorPath": "docs/books/core-spying.book.json",
-      "coverPath": "docs/books/covers/core-spying.svg"
+      "coverPath": "docs/books/covers/core-spying.svg",
+      "contributionPath": ".surps/contributions/core-spying.json",
+      "contributionSchema": "schemas/book-contribution.schema.json"
     },
     {
       "id": "surps.domain.dungeons-and-underground",
