@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/experience-books.schema.json",
+  "title": "SURPS Experience Book Selection",
+  "description": "Declares the SURPS book set and contribution documents selected by one experience.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "experience",
+    "surps",
+    "books"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "experience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "repository",
+        "title",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "surps": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "characterContract"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "characterContract": {
+          "type": "string"
+        }
+      }
+    },
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "versionRange",
+          "required"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "versionRange": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "lod": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "precedence": {
+            "type": "integer"
+          },
+          "purpose": {
+            "type": "string"
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "contributions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bookId",
+          "path",
+          "required"
+        ],
+        "properties": {
+          "bookId": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "unresolvedRequiredBook": {
+          "enum": [
+            "block-entry",
+            "allow-with-error"
+          ]
+        },
+        "unresolvedOptionalBook": {
+          "enum": [
+            "warn",
+            "ignore"
+          ]
+        },
+        "conflictResolution": {
+          "enum": [
+            "explicit-selection-only",
+            "declared-precedence"
+          ]
+        }
+      }
+    }
+  }
+}
