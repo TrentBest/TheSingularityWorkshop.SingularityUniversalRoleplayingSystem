@@ -12,7 +12,7 @@
 
 The Singularity Universal Roleplaying System (SURPS) is the shared foundation for describing and experiencing worlds. It is not tied to one genre, game, ruleset, setting, or medium. It aims to make entities, attributes, capabilities, behavior, interactions, environments, and narrative consequences composable and reusable.
 
-**SURPS is fully playable as a tabletop roleplaying system.** Its sourcebooks must explain complete human procedures that work with paper, pencil, character sheets, dice or another agreed resolution method, and conversation. No application, internet connection, registry, or digital runtime is required. Digital experiences may automate and visualize those same rules, but the tabletop rules remain understandable and usable on their own.
+**SURPS has one underlying behavior model and multiple adapters.** The tabletop adapter is a complete human-usable game, but its dice values, target numbers, and qualitative outcome bands are derived during authoring/workshop calibration from the underlying behavior. The digital adapter evaluates the same semantics in greater detail against live state. Neither adapter is a separate ruleset or a competing source of truth. No application or internet connection is required to use a published tabletop adapter.
 
 The source books are human-readable expressions of that system. They should explain the underlying concepts while demonstrating them through living diagrams, interactive examples, and simulations.
 
