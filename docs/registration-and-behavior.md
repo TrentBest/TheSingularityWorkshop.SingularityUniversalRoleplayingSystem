@@ -173,3 +173,36 @@ The manual must define enough information to play without any digital service, a
 ## Next vertical slice
 
 The first behavior-provider demonstration should be ladder approach/climb, followed by trained versus untrained sword interaction and injury transition. These cases test provider ownership, capability matching, failure alternatives, time, and LOD more effectively than a generic animation demo.
+
+
+## Behavior compilation, workshop calibration, and runtime caching
+
+The registry describes which rules and capabilities exist; it does not make them executable. A behavior source belongs to its authoritative domain. SURPS resolves the selected source and provider versions, preserves their provenance, and coordinates the adapters.
+
+The shared lifecycle is:
+
+1. Author the domain behavior and its operating envelope.
+2. Validate identities, typed inputs, units, assumptions, constraints, and provider references.
+3. Run representative and boundary scenarios in the authoring/workshop environment.
+4. Derive the tabletop adapter from those results: dice targets, probability bands, qualitative effect tiers, tables, and printable aids.
+5. Compile the digital adapter into reusable behavior artifacts, provider-binding plans, and response data.
+6. At experience load, resolve versions and warm the immutable compiled artifacts.
+7. During play, bind current actor, target, equipment, environment, and time state; evaluate only what has changed and record provenance.
+
+### Cache policy
+
+Cache immutable compiled behavior, validated rule graphs, provider binding plans, compiled expressions, static reference data, and reusable response curves. The cache key must include the behavior content hash, book/version identity, schema and unit versions, compiler version, provider version, and relevant compile settings.
+
+Do not cache a final interaction outcome across changes to mutable world state. A moving target, changing weather, injury, equipment loss, closed door, or elapsed time may change the answer. The runtime must bind current state even when the compiled behavior is warm.
+
+The [Behavior Model and Adapters contract](behavior-and-adapters.md) defines this boundary. The [Living System Guide](system-guide.html) includes an explicitly illustrative fireball profile that demonstrates workshop sampling and a derived tabletop target. It is a teaching prototype, not a validated Physics evaluator or production compiler.
+
+### Required evidence before calling the pipeline implemented
+
+- reproducible workshop samples with a fixed seed and recorded calibration envelope;
+- held-out scenario validation showing the tabletop projection preserves the intended outcome distribution;
+- versioned compiled artifacts and cache-key tests;
+- invalidation tests when source, provider, compiler, schema, units, or settings change;
+- warm-cache and cold-cache benchmarks;
+- tests proving live-state changes are not hidden by cached final outcomes;
+- provenance traces connecting a result to its source book, rule, provider, versions, and bound inputs.
