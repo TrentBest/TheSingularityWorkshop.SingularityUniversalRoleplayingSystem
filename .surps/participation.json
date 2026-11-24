@@ -39,7 +39,14 @@
       "descriptorPath": "docs/books/core-spying.book.json",
       "coverPath": "docs/books/covers/core-spying.svg",
       "contributionPath": ".surps/contributions/core-spying.json",
-      "contributionSchema": "schemas/book-contribution.schema.json"
+      "contributionSchema": "schemas/book-contribution.schema.json",
+      "publication": {
+        "generate": true,
+        "outputs": [
+          "cover",
+          "acknowledgements"
+        ]
+      }
     },
     {
       "id": "surps.domain.dungeons-and-underground",
