@@ -34,7 +34,7 @@ Each book has a machine-readable descriptor beside its sourcebook:
 
 The descriptor contains stable identity, publisher identity and moniker reference, category, numeric LOD, human-facing rulebook title, version, cover path, and LOD badge path. The canonical title is derived from category, LOD, and rulebook title using the exact pattern above. Do not store a separately editable canonical-title string.
 
-The Markdown sourcebook's first H1 must match the descriptor's canonical title. The catalogue must use the same descriptor values. A future build/authoring tool should render the title and cover page directly from the descriptor rather than ask authors to re-enter them.
+The Markdown sourcebook's first H1 must match the descriptor's canonical title. The catalogue must use the same descriptor values. The first descriptor-driven publishing generator now exists at `scripts/generate_surps_book_assets.py`. It renders the cover SVG and acknowledgements page from an opted-in descriptor. This is an initial pilot, not yet the complete publication pipeline; generated outputs are checked for staleness in CI.
 
 ## Required cover
 
@@ -47,7 +47,7 @@ Every published or CI-admissible rulebook must have a cover image. A title page 
 - The cover page presents, in order: the Workshop's canonical animated moniker/creator identity, canonical rulebook title, LOD badge, and cover artwork. The moniker reference is recorded in the descriptor so the presentation does not depend on authors finding or retyping an asset URL. The moniker is the publisher identity, not an extra title segment.
 - The cover artwork is distinct from the small LOD badge. The badge communicates classification and level; the cover image communicates the book's subject and visual identity.
 
-## LOD badge
+## Descriptor-driven publication opt-in\n\nA book opts into the first automated asset pass by setting `publication.generate: true` in its entry in `.surps/participation.json`. The descriptor declares `coverArtwork`, `cover`, `lodBadge`, and `acknowledgementsPath`. The generator reads only opted-in entries by default and supports `--check` for deterministic CI verification.\n\nThe initial pilot is CORE Spying. Its subject artwork is separate from the generated cover frame; the generated cover combines that artwork with canonical publisher text, category, LOD badge, title, and edition. The generated acknowledgements page records only descriptor-supplied contributor, rights, and provenance data. An empty contributor list is reported honestly; no author or permission is inferred.\n\nThe animated Workshop moniker remains the publisher identity at the top of the Markdown book presentation. The SVG cover uses a static publisher wordmark so the artwork remains a portable image; the title-page composition and SVG are separate presentation layers.\n\nTracking and next stages: [SURPS automated book publishing issue #14](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/14).\n\n## LOD badge
 
 Use the shared SVG badge family at `docs/assets/rulebook-lod-{N}.svg`. The numeric LOD in the descriptor must match the badge filename and visible badge text. Extend the family as needed; do not substitute a badge from another level.
 
@@ -91,4 +91,4 @@ Dungeons and Underground is the first descriptor-backed sourcebook:
 
 Its cover is `docs/books/covers/dungeons-and-underground.svg`, and its badge is `docs/assets/rulebook-lod-1.svg`.
 
-This establishes the editorial and metadata contract. The automated fail-closed checks are a follow-on implementation task and must be proven in CI before the repository claims enforcement.
+Dungeons and Underground remains the first descriptor-backed sourcebook. CORE Spying is the first pilot for descriptor-driven cover and acknowledgements generation. The remaining book family (chapter openers, dividers, diagrams, callouts, credits/colophon, print/PDF layouts) is still being designed and must be reviewed before the system is called publication-ready.
