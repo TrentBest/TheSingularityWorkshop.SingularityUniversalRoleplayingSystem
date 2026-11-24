@@ -29,7 +29,7 @@ A book's existing `.book.json` descriptor remains its bibliographic identity (ID
 
 ## Canonical contribution document
 
-The initial JSON Schema is [book-contribution.schema.json](../schemas/book-contribution.schema.json). It is a development contract and will be validated against real sourcebooks before being treated as a frozen public API.
+The initial JSON Schema is [book-contribution.schema.json](schemas/book-contribution.schema.json). It is a development contract and will be validated against real sourcebooks before being treated as a frozen public API.
 
 A contribution document contains:
 
