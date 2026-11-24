@@ -17,7 +17,7 @@ MONIKER = "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Vi
 
 def read_descriptor(path: Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
-    required = ("id", "category", "lod", "title", "version", "publisher", "coverArtwork", "cover", "acknowledgementsPath")
+    required = ("id", "category", "lod", "title", "version", "publisher", "coverArtwork", "cover", "lodBadge", "acknowledgementsPath")
     missing = [key for key in required if not value.get(key)]
     if missing:
         raise ValueError(f"{path}: missing required descriptor fields: {', '.join(missing)}")
@@ -36,6 +36,10 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
     if not art_path.is_file():
         raise FileNotFoundError(f"{descriptor_path}: coverArtwork does not exist: {book['coverArtwork']}")
     art_href = html.escape(relative_asset(art_path, cover_path), quote=True)
+    badge_path = ROOT / book["lodBadge"]
+    if not badge_path.is_file():
+        raise FileNotFoundError("Missing LOD badge: " + book["lodBadge"])
+    badge_href = html.escape(relative_asset(badge_path, cover_path), quote=True)
     title = html.escape(book["title"])
     category = html.escape(book["category"].upper())
     publisher = html.escape(book["publisher"])
@@ -62,6 +66,7 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
 <rect x="70" y="306" width="760" height="618" rx="12" fill="#050b12" stroke="url(#metal)" stroke-width="2"/>
 <g clip-path="url(#art-clip)"><image x="74" y="310" width="752" height="610" preserveAspectRatio="xMidYMid slice" href="{art_href}" xlink:href="{art_href}"/></g>
 <path d="M74 950H826" stroke="url(#metal)" stroke-width="3"/>
+<image x="330" y="960" width="240" height="72" href="{badge_href}" xlink:href="{badge_href}"/>
 <text x="450" y="1025" fill="#ffffff" font-family="Georgia,serif" font-size="58" font-weight="bold" text-anchor="middle">{title}</text>
 <text x="450" y="1076" fill="#c4d0db" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">A LIVING {category} BOOK</text>
 <text x="450" y="1120" fill="#e8c994" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" text-anchor="middle">EDITION {version}</text>
