@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "example.fantasy.frontier",
+  "category": "Setting",
+  "lod": 1,
+  "title": "Frontier Campaign Book",
+  "version": "0.1.0",
+  "cover": "docs/books/covers/frontier-example.svg",
+  "publisher": "Example Experience",
+  "contributionPath": "docs/examples/book-contribution.example.json",
+  "contributionSchema": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/book-contribution.schema.json"
+}
