@@ -33,6 +33,57 @@ def safe_repo_path(value: object, context: str) -> str:
     return value
 
 
+def validate_contribution_integrity(
+    contribution: dict,
+    descriptor: dict,
+    manifest_book: dict,
+    contribution_path: str,
+    errors: list[str],
+) -> None:
+    """Check identity alignment and uniqueness before a contribution becomes selectable."""
+    book = contribution.get("book")
+    if not isinstance(book, dict):
+        return
+
+    for field in ("id", "version"):
+        expected = manifest_book.get(field)
+        descriptor_value = descriptor.get(field)
+        contribution_value = book.get(field)
+        if expected is not None and descriptor_value != expected:
+            errors.append(
+                f"{contribution_path}: descriptor {field} {descriptor_value!r} "
+                f"does not match participation manifest {expected!r}"
+            )
+        if descriptor_value is not None and contribution_value != descriptor_value:
+            errors.append(
+                f"{contribution_path}: contribution book.{field} {contribution_value!r} "
+                f"does not match descriptor {descriptor_value!r}"
+            )
+
+    seen: dict[str, str] = {}
+    collections = contribution.get("contributions", {})
+    if not isinstance(collections, dict):
+        return
+    for collection_name, records in collections.items():
+        if not isinstance(records, list):
+            continue
+        for index, record in enumerate(records):
+            if not isinstance(record, dict):
+                continue
+            identifier = record.get("id")
+            if not isinstance(identifier, str) or not identifier.strip():
+                continue  # JSON Schema reports the missing/invalid identifier.
+            location = f"contributions.{collection_name}[{index}]"
+            previous = seen.get(identifier)
+            if previous is not None:
+                errors.append(
+                    f"{contribution_path}: duplicate contribution id {identifier!r} "
+                    f"at {location}; first declared at {previous}"
+                )
+            else:
+                seen[identifier] = location
+
+
 def validate_document(validator: Draft202012Validator, document_path: str, errors: list[str]) -> None:
     try:
         document = load(document_path)
@@ -87,6 +138,7 @@ def main() -> int:
                 errors.append(str(exc))
                 continue
             descriptor_path = book.get("descriptorPath")
+            descriptor = {}
             if isinstance(descriptor_path, str):
                 try:
                     descriptor_path = safe_repo_path(descriptor_path, "descriptorPath")
@@ -99,9 +151,24 @@ def main() -> int:
                         errors.append(
                             f"{descriptor_path}: contributionSchema must be {SCHEMA_PATH}"
                         )
+                    if descriptor.get("id") != book.get("id"):
+                        errors.append(
+                            f"{descriptor_path}: descriptor id does not match participation manifest"
+                        )
+                    if descriptor.get("version") != book.get("version"):
+                        errors.append(
+                            f"{descriptor_path}: descriptor version does not match participation manifest"
+                        )
                 except (ValueError, AttributeError) as exc:
                     errors.append(str(exc))
             validate_document(contribution_validator, contribution_path, errors)
+            try:
+                contribution = load(contribution_path)
+                validate_contribution_integrity(
+                    contribution, descriptor, book, contribution_path, errors
+                )
+            except ValueError as exc:
+                errors.append(str(exc))
             registered += 1
     except ValueError as exc:
         errors.append(str(exc))
