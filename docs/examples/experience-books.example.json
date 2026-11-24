@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "experience": {
+    "id": "example.frontier-campaign",
+    "repository": "TrentBest/ExampleExperience",
+    "title": "Frontier Campaign",
+    "version": "0.1.0"
+  },
+  "surps": {
+    "enabled": true,
+    "characterContract": "0.x"
+  },
+  "books": [
+    {
+      "id": "surps.core.character",
+      "versionRange": "0.x",
+      "required": true
+    },
+    {
+      "id": "example.fantasy.frontier",
+      "versionRange": "^0.1.0",
+      "required": true
+    }
+  ],
+  "contributions": [
+    {
+      "bookId": "example.fantasy.frontier",
+      "path": ".surps/contributions/frontier.json",
+      "required": true
+    }
+  ],
+  "policy": {
+    "unresolvedRequiredBook": "block-entry",
+    "unresolvedOptionalBook": "warn",
+    "conflictResolution": "explicit-selection-only"
+  }
+}
