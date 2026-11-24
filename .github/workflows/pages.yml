@@ -5,6 +5,7 @@ on:
     branches: [master, development]
     paths:
       - 'docs/**'
+      - 'samples/SurpsGuiSvg/**'
       - '.surps/participation.json'
       - 'scripts/generate_surps_book_assets.py'
       - 'schemas/**'
@@ -27,14 +28,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout SURPS
         uses: actions/checkout@v4
+      - name: Checkout GUI development source
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/TheSingularityWorkshop.GUI
+          ref: development
+          path: dependencies/GUI
+          token: ${{ github.token }}
       - name: Set up Python for publication generation
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Set up .NET for GUI.SVG publication
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
       - name: Generate opted-in SURPS publication assets
         run: python scripts/generate_surps_book_assets.py
+      - name: Generate SURPS living diagram through GUI.Core and GUI.SVG
+        run: dotnet run --project samples/SurpsGuiSvg/SurpsGuiSvg.csproj --configuration Release
       - name: Stage public schemas for the documentation site
         run: |
           mkdir -p docs/schemas
