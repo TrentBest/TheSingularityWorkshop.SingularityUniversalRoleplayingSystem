@@ -39,9 +39,15 @@ SURPS consumes and composes these capabilities. It must not become a second phys
 
 SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Execution remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
 
-## Rulebook composition
+## Ontology, microbundles, and books
 
-SURPS exposes domain knowledge through a common `ISurpsRulebook` contract. Domain microbundles are wrapped by SURPS-enabled containers and presented as rulebooks such as `SurpsRulebookPhysics` and `SurpsRulebookLaboratories`. The domain repository remains authoritative for its implementation and execution; SURPS owns the shared contract and composition conventions. See [SURPS Rulebooks and Domain Microbundles](rulebooks.html).
+Ontology is the organizing authority: concepts, entities, attributes, capabilities, relationships, constraints, behaviors, events, and consequences are identified and related as structured knowledge. A rulebook is not the authority that creates those facts. It is a curated view over them.
+
+A **microbundle** is a composable, independently identified unit of knowledge and/or capability. It may contribute ontology terms, typed records, relationships, behavior definitions, procedures, media, provider contracts, executable capabilities, or dependencies. Ownership stays with the domain that knows the truth. A microbundle may be reused by many books and experiences.
+
+A **rulebook** is a collection and presentation of selected microbundles. Its descriptor declares identity, scope, selection criteria, ordering/grouping, applicability, composition relationships, LOD, and publication metadata. The book view can render the same underlying data as player guidance, GM/Workshop inspection, tabletop procedures, digital reference, diagrams, and navigable prose. Those are projections/adapters, not duplicate truths.
+
+Consequently, one ontology item may appear in several books, and one book may draw from many repositories. A book does not own, copy, or redefine a domain merely because it presents that domain. SURPS owns shared ontology semantics and composition conventions; each domain repository remains authoritative for its domain data and implementation. FSM_COS composes selected microbundles into an experience; FSM_Execution executes that experience. See [SURPS Rulebooks and Domain Microbundles](rulebooks.html).
 
 ## First integration case: dungeon inhabitants
 
