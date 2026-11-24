@@ -1,8 +1,15 @@
-# SURPS Player and Editor Manual
+# SURPS Player and Editor Technical Companion
+
+> This is the technical companion for configuring, extending, and implementing SURPS. It is not the primary game manual. Start with [SURPS: The Living Game — Core Manual](game-manual.md) for the introduction, concepts, player experience, Game Master guidance, and book-reading paths.
+
 
 SURPS is one underlying world and behavior model with multiple adapters. The tabletop adapter must stand on its own: a group can create a world, choose sourcebooks, play characters, resolve uncertainty, and record consequences with paper, pencil, dice or another agreed method, and conversation. No app, internet connection, account, registry, or digital runtime is required. Its dice values and procedures are derived during authoring/workshop calibration from the behavior model; they are not the source of truth.
 
 The digital adapter evaluates the same semantics in greater detail against live state. It may perform calculations too involved for people to track manually, using compiled and cached behavior artifacts. This manual teaches both ways to experience the same system. Start with the [Living System Guide](system-guide.html) and [Behavior Model and Adapters](behavior-and-adapters.md).
+
+## Part I — Implementation and editor reference
+
+The following material is a working technical outline. Sections that still contain editorial instructions are planned content, not completed rules. The primary game manual is maintained separately.
 
 ## Part I — The tabletop roleplaying system
 
