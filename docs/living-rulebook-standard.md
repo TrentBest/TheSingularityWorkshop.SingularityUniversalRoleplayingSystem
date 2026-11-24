@@ -10,6 +10,17 @@ The book is not a linear wall of prose. It is a navigable experience with concis
 
 This standard applies to SURPS itself and every repository registered as a SURPS participant or sourcebook provider.
 
+
+## Originality and design distance
+
+SURPS must be independently designed. Do not copy GURPS text, tables, distinctive terminology, procedures, character construction formulas, resolution mechanics, damage structures, or book organization. Familiar broad ideas such as characters, skills, conflict, travel, and consequences are not proprietary; the implementation and expression must be authored from SURPS's own behavior model and play goals.
+
+Do not assume a universal attribute/skill/point-buy formula. A character's properties and capabilities should arise from the shared ontology and the selected domain books. The current CORE Spying 2d6 approach procedure is a scoped playtest adapter, not the universal SURPS resolution mechanic. It must not become the default merely by repetition.
+
+Harm and consequences should communicate what happens in the world—negligible, limited, substantial, severe, or otherwise domain-authored effects—rather than forcing every domain into one generic damage number. Numeric quantities remain available when the owning domain needs them, with units, assumptions, and provenance.
+
+Track the [SURPS originality audit](https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/issues/11). The purpose is not to avoid every familiar game concept; it is to ensure SURPS mechanics are independently derived, testable, and expressive of its own model.
+
 ## One behavior model, multiple adapters
 
 Every domain must preserve one underlying semantic/behavior model and expose the views it supports:
