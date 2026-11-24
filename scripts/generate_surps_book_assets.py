@@ -13,9 +13,6 @@ from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
-MONIKER = "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg"
-
-
 def read_descriptor(path: Path) -> dict:
     value = json.loads(path.read_text(encoding="utf-8"))
     required = ("id", "category", "lod", "title", "version", "publisher", "coverArtwork", "cover", "lodBadge", "acknowledgementsPath")
@@ -25,10 +22,6 @@ def read_descriptor(path: Path) -> dict:
     if not isinstance(value["lod"], int) or isinstance(value["lod"], bool) or value["lod"] < 0:
         raise ValueError(f"{path}: lod must be a non-negative integer")
     return value
-
-
-def relative_asset(source: Path, target: Path) -> str:
-    return Path(__import__("os").path.relpath(source, target.parent)).as_posix()
 
 
 def render_cover(book: dict, descriptor_path: Path) -> str:
