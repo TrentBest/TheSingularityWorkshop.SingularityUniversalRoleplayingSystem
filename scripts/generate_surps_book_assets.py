@@ -67,9 +67,9 @@ def render_cover(book: dict, descriptor_path: Path) -> str:
 <g clip-path="url(#art-clip)"><image x="74" y="310" width="752" height="610" preserveAspectRatio="xMidYMid slice" href="{art_href}" xlink:href="{art_href}"/></g>
 <path d="M74 950H826" stroke="url(#metal)" stroke-width="3"/>
 <image x="330" y="960" width="240" height="72" href="{badge_href}" xlink:href="{badge_href}"/>
-<text x="450" y="1025" fill="#ffffff" font-family="Georgia,serif" font-size="58" font-weight="bold" text-anchor="middle">{title}</text>
-<text x="450" y="1076" fill="#c4d0db" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">A LIVING {category} BOOK</text>
-<text x="450" y="1120" fill="#e8c994" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" text-anchor="middle">EDITION {version}</text>
+<text x="450" y="1060" fill="#ffffff" font-family="Georgia,serif" font-size="54" font-weight="bold" text-anchor="middle" textLength="720" lengthAdjust="spacingAndGlyphs">{title}</text>
+<text x="450" y="1104" fill="#c4d0db" font-family="Arial,sans-serif" font-size="18" letter-spacing="4" text-anchor="middle">A LIVING {category} BOOK</text>
+<text x="450" y="1138" fill="#e8c994" font-family="Arial,sans-serif" font-size="15" letter-spacing="2" text-anchor="middle">EDITION {version}</text>
 </svg>
 '''
 
