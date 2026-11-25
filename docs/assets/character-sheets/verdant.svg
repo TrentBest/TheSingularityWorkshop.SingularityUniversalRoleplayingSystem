@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="1500" viewBox="0 0 1100 1500" role="img" aria-labelledby="title desc">
+<svg data-surps-contract="surps.character-sheet" data-surps-contract-version="1.0.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1100" height="1500" viewBox="0 0 1100 1500" role="img" aria-labelledby="title desc">
 <title id="title">Verdant blank character sheet</title><desc id="desc">An empty, themed, animated-capable SVG character sheet. All fields are intentionally blank and designed for data binding by a digital environment.</desc>
 <defs><style>
 text{font-family:Georgia,'Times New Roman',serif;fill:#284638} .title{font-size:34px;letter-spacing:4px;font-weight:bold}.subtitle{font-size:13px;letter-spacing:3px}.section{font-size:17px;font-weight:bold;letter-spacing:2px}.label{font:12px Arial,sans-serif;letter-spacing:1px;fill:#284638;opacity:.85}.small{font:10px Arial,sans-serif;letter-spacing:1.5px}
@@ -25,4 +25,21 @@ text{font-family:Georgia,'Times New Roman',serif;fill:#284638} .title{font-size:
 <path d="M66 1238H1034" stroke="#9bb68a" stroke-dasharray="2 5"/><path d="M66 1265H1034" stroke="#9bb68a" stroke-dasharray="2 5"/><path d="M66 1292H1034" stroke="#9bb68a" stroke-dasharray="2 5"/><path d="M66 1319H1034" stroke="#9bb68a" stroke-dasharray="2 5"/><path d="M66 1346H1034" stroke="#9bb68a" stroke-dasharray="2 5"/><path d="M66 1373H1034" stroke="#9bb68a" stroke-dasharray="2 5"/>
 <text x="550" y="1440" text-anchor="middle" class="small">A LIVING RECORD · DATA-BOUND BY THE WORLD · VERDANT THEME</text>
 <text x="550" y="1458" text-anchor="middle" class="small" opacity=".65">EMPTY TEMPLATE · NO CHARACTER DATA EMBEDDED</text>
+
+<g id="surps-character-bindings" aria-label="Character data projection" font-family="Arial, sans-serif" font-size="13" fill="currentColor" opacity=".94">
+<text data-surps-bind="name" x="214" y="174" data-max-chars="76" data-max-lines="1" font-size="18" font-weight="bold"/>
+<text data-surps-bind="pronouns" x="644" y="224" data-max-chars="32" data-max-lines="1"/>
+<text data-surps-bind="role" x="214" y="272" data-max-chars="34" data-max-lines="1"/>
+<text data-surps-bind="origin" x="644" y="272" data-max-chars="34" data-max-lines="1"/>
+<text data-surps-bind="attributes" x="700" y="410" data-max-chars="40" data-max-lines="3" data-line-height="15" font-size="11"/>
+<text data-surps-bind="capabilities" x="36" y="534" data-max-chars="88" data-max-lines="3" data-line-height="15" font-size="11"/>
+<text data-surps-bind="training" x="700" y="534" data-max-chars="40" data-max-lines="3" data-line-height="15" font-size="11"/>
+<text data-surps-bind="condition" x="36" y="669" data-max-chars="88" data-max-lines="3" data-line-height="15" font-size="11"/>
+<text data-surps-bind="goals" x="700" y="804" data-max-chars="40" data-max-lines="3" data-line-height="15" font-size="11"/>
+<text data-surps-bind="equipment" x="66" y="982" data-max-chars="132" data-max-lines="5" data-line-height="19" font-size="12"/>
+<text data-surps-bind="concept" x="66" y="1238" data-max-chars="62" data-max-lines="3" data-line-height="16" font-size="11"/>
+<text data-surps-bind="relationships" x="550" y="1238" data-max-chars="62" data-max-lines="3" data-line-height="16" font-size="11"/>
+<text data-surps-bind="history" x="66" y="1310" data-max-chars="132" data-max-lines="2" data-line-height="16" font-size="11"/>
+<text data-surps-bind="appearance" x="66" y="1360" data-max-chars="132" data-max-lines="2" data-line-height="16" font-size="11"/>
+</g>
 </svg>
