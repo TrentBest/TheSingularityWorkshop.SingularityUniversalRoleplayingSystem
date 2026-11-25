@@ -19,6 +19,6 @@
     "sourcePath": "docs/books/core-spying.md",
     "notes": "Canonical MicroBundle-owned records, book-facing assets, and proposed action preview composition. Views select and arrange these resources; books do not fork them."
   },
-  "previewsPath": ".surps/previews/lock-picking.preview.json",
-  "previewsSchema": "schemas/action-preview.schema.json"
+  "previewsPath": ".surps/previews/core-spying.previews.json",
+  "previewsSchema": "schemas/action-preview-manifest.schema.json"
 }
