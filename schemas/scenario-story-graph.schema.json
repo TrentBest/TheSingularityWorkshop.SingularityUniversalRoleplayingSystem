@@ -121,6 +121,7 @@
                   "minLength": 1
                 },
                 "resolution": {
+                  "description": "direct means the declared transition may be committed immediately. referee means the choice records pending intent only; a human referee must adjudicate and explicitly accept the transition before navigation or state effects occur.",
                   "enum": [
                     "direct",
                     "referee"
@@ -134,6 +135,7 @@
                   "uniqueItems": true
                 },
                 "setsAll": {
+                  "description": "Scenario state effects to apply only when this choice transition is committed. For referee choices, do not apply these when the player merely selects the choice.",
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -141,6 +143,7 @@
                   "uniqueItems": true
                 },
                 "nextNodeId": {
+                  "description": "The continuation node after the transition is committed. For referee choices this is not permission to navigate immediately, and in schema version 1 it does not encode separate destinations for different adjudication outcomes.",
                   "type": "string",
                   "minLength": 1
                 }
