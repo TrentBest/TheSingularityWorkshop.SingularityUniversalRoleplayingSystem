@@ -17,9 +17,9 @@ The [Character Studio](character-studio.html) is the first interactive visitor-f
 
 ## Book-driven character creation
 
-The studio is intended to become a renderer for the selected experience's SURPS book set, not a hard-coded character form. The initial contracts now define [book contributions](book-contribution-contract.md), [book contribution schema](schemas/book-contribution.schema.json), and [experience book selection schema](schemas/experience-books.schema.json). Books can declare character options, traits (including advantages, disadvantages, abilities, and disabilities), capabilities, rules, creations, equipment, and resources. Experiences select the books and versions they use; SURPS composes the resulting options and provenance for the shared editor.
+The studio is intended to become a renderer for the selected experience's SURPS book set, not a hard-coded character form. The initial contracts now define [book contributions](book-contribution-contract.md), [book contribution schema](schemas/book-contribution.schema.json), and [experience book selection schema](schemas/experience-books.schema.json). Books can declare character options, traits, capabilities, adversities, rules, creations, equipment, and resources. The emerging character vocabulary separates **Capabilities** (improvable with character points) from **Adversities** (triggered limitations or liabilities); both are classified as conscious or subconscious. See [Character capabilities, adversities, and action previews](character-capabilities-and-previews.html) for the proposed contract. Experiences select the books and versions they use; SURPS composes the resulting options and provenance for the shared editor.
 
-This dynamic book-driven composition is **not implemented in the current editor yet**. The current free-form fields remain a prototype workspace until the canonical character contract and contribution resolver are validated. See the [book contribution example](examples/book-contribution.example.json) and [experience selection example](examples/experience-books.example.json).
+This dynamic book-driven composition is **not implemented in the current editor yet**. The current free-form fields remain a prototype workspace until the canonical character contract and contribution resolver are validated. The new capability/adversity schema and lock-picking preview descriptor are contracts and examples only; they are not yet wired into the local character roster or a running provider host. See the [book contribution example](examples/book-contribution.example.json) and [experience selection example](examples/experience-books.example.json).
 
 ## Ownership and data boundaries
 
@@ -61,10 +61,11 @@ This is an implementation fixture, not the canonical SURPS wire contract. The co
 1. Finalize the canonical identity and serialization contract in issue #7.
 2. Add schema-backed validation, migration, and round-trip fixtures.
 3. Replace the draft envelope with the canonical versioned format.
-4. Add typed attribute/capability editing only after the relevant semantics and rating scales are defined; do not invent a universal scale.
+4. Integrate the capability/adversity contract, character-point accounting, and typed editing after their semantics and rating scales are calibrated.
 5. Add repository discovery from declared SURPS participation manifests and show only verified, real offerings.
 6. Add host handoff only when a host contract exists; keep local-only operation honest and useful in the meantime.
-7. Add automated browser tests for create/edit/save/reload/export/import/delete and malformed input.
+7. Add the preview host as a separate, cancellable experience that consumes an immutable character snapshot and never mutates the saved sheet implicitly.
+8. Add automated browser tests for create/edit/save/reload/export/import/delete and malformed input.
 
 ## Design standard
 
