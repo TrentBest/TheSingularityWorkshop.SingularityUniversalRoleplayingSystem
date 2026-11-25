@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+<title id="title">Blank encounter map template</title><desc id="desc">An empty tactical encounter canvas with a light square grid and coordinate labels.</desc>
+<defs><pattern id="cells" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#a8c0d0" stroke-opacity=".28"/></pattern></defs>
+<rect width="1000" height="700" fill="#172936"/><rect x="40" y="40" width="920" height="620" fill="url(#cells)" stroke="#b4c9d5" stroke-opacity=".55"/>
+<g fill="#b4c9d5" font-family="system-ui,sans-serif" font-size="12"><text x="40" y="25">A</text><text x="80" y="25">B</text><text x="120" y="25">C</text><text x="160" y="25">D</text><text x="200" y="25">E</text><text x="20" y="64">1</text><text x="20" y="104">2</text><text x="20" y="144">3</text><text x="20" y="184">4</text><text x="20" y="224">5</text><text x="20" y="264">6</text><text x="20" y="304">7</text><text x="20" y="344">8</text><text x="20" y="384">9</text><text x="40" y="686">ENCOUNTER CANVAS · EMPTY TEMPLATE · GRID IS PRESENTATION, NOT MOVEMENT RULES</text></g>
+</svg>
