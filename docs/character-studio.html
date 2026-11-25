@@ -195,7 +195,13 @@ $("closePicker").addEventListener("click",()=>$("recordPicker").close());
 $("newCharacter").addEventListener("click",newCharacter);
 $("saveCharacter").addEventListener("click",saveCharacter);
 $("characterForm").addEventListener("submit",e=>{e.preventDefault();saveCharacter()});
-fields.forEach(k=>$(k).addEventListener("input",()=>{updatePreview();updateSheetBindings()}));
+fields.forEach(k=>$(k).addEventListener("input",()=>{
+ if(["attributes","capabilities","training","condition","goals","equipment","relationships","history"].includes(k)){
+  const lines=$(k).value.split(/\\r?\\n/).map(value=>value.trim()).filter(Boolean);
+  selectedRecords=selectedRecords.filter(record=>record.target!==k||lines.includes(record.name));
+ }
+ updatePreview();updateSheetBindings();
+}));
 $("sheetPreview").addEventListener("load",updateSheetBindings);
 $("sheetTheme").addEventListener("change",e=>{selectedTheme=e.target.value;updateSheetPreview();const c=current();if(c){c.sheetTheme=selectedTheme;c.updatedAt=new Date().toISOString();persist()}announce("Character sheet theme updated.");});
 $("exportCharacter").addEventListener("click",()=>{const c=current();if(c)download(c)});
