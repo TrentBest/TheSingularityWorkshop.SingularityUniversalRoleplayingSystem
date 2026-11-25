@@ -82,23 +82,29 @@ class OntologyViewTests(unittest.TestCase):
         ontology.validate_bundle_graph(self.bundles, errors)
         self.assertTrue(any("global local-registry ID collision" in error for error in errors))
 
-    def test_preview_descriptor_must_match_owning_microbundle(self):
+    def test_preview_manifest_resolves_multiple_owned_previews(self):
         descriptor = {"id": "surps.microbundle.sample",
-                      "previewsPath": ".surps/previews/sample.json",
-                      "previewsSchema": "schemas/action-preview.schema.json"}
+                      "previewsPath": ".surps/previews/sample-manifest.json",
+                      "previewsSchema": "schemas/action-preview-manifest.schema.json"}
+        manifest = {"microbundleId": "surps.microbundle.sample",
+                    "previews": [{"id": "surps.preview.sample",
+                                  "path": ".surps/previews/sample.json"}]}
         preview = {"id": "surps.preview.sample", "microbundleId": "surps.microbundle.sample"}
         errors = []
-        with patch.object(ontology, "validate_schema", return_value=preview):
+        with patch.object(ontology, "validate_schema", side_effect=[manifest, preview]):
             ontology.validate_preview_manifest(descriptor, errors)
         self.assertEqual([], errors)
 
     def test_preview_descriptor_rejects_foreign_microbundle_identity(self):
         descriptor = {"id": "surps.microbundle.sample",
-                      "previewsPath": ".surps/previews/sample.json",
-                      "previewsSchema": "schemas/action-preview.schema.json"}
+                      "previewsPath": ".surps/previews/sample-manifest.json",
+                      "previewsSchema": "schemas/action-preview-manifest.schema.json"}
+        manifest = {"microbundleId": "surps.microbundle.sample",
+                    "previews": [{"id": "surps.preview.sample",
+                                  "path": ".surps/previews/sample.json"}]}
         preview = {"id": "surps.preview.sample", "microbundleId": "other.microbundle"}
         errors = []
-        with patch.object(ontology, "validate_schema", return_value=preview):
+        with patch.object(ontology, "validate_schema", side_effect=[manifest, preview]):
             ontology.validate_preview_manifest(descriptor, errors)
         self.assertTrue(any("microbundleId does not match descriptor" in error for error in errors))
 
