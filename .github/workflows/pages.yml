@@ -9,6 +9,7 @@ on:
       - '.surps/participation.json'
       - '.surps/microbundles/**'
       - 'scripts/generate_surps_book_assets.py'
+      - 'scripts/generate_surps_character_catalog.py'
       - 'schemas/**'
       - 'README.md'
       - 'AgentOnboarding.md'
