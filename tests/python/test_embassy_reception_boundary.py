@@ -140,12 +140,18 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
 
     def test_story_graph_is_authoring_content_not_a_client_secret_store(self) -> None:
         semantics = self.graph["semantics"]
-        self.assertIn("does not itself prove success", semantics["transitionAuthority"])
+        self.assertIn("pending player intent only", semantics["transitionAuthority"])
+        self.assertIn("human referee records an adjudicated result", semantics["transitionAuthority"])
+        self.assertIn("not a complete map of outcome-specific consequences", semantics["transitionAuthority"])
         self.assertIn("not a secure store", semantics["presentationBoundary"])
         schema = json.loads(
             (ROOT / "schemas" / "scenario-story-graph.schema.json").read_text(encoding="utf-8")
         )
         self.assertEqual(1, schema["properties"]["schemaVersion"]["const"])
+        choice = schema["properties"]["nodes"]["items"]["properties"]["choices"]["items"]["properties"]
+        self.assertIn("pending intent only", choice["resolution"]["description"])
+        self.assertIn("only when this choice transition is committed", choice["setsAll"]["description"])
+        self.assertIn("does not encode separate destinations", choice["nextNodeId"]["description"])
 
 
 if __name__ == "__main__":
