@@ -88,10 +88,13 @@ class OntologyViewTests(unittest.TestCase):
                       "previewsSchema": "schemas/action-preview-manifest.schema.json"}
         manifest = {"microbundleId": "surps.microbundle.sample",
                     "previews": [{"id": "surps.preview.sample",
-                                  "path": ".surps/previews/sample.json"}]}
+                                  "path": ".surps/previews/sample.json"},
+                                 {"id": "surps.preview.second",
+                                  "path": ".surps/previews/second.json"}]}
         preview = {"id": "surps.preview.sample", "microbundleId": "surps.microbundle.sample"}
+        second = {"id": "surps.preview.second", "microbundleId": "surps.microbundle.sample"}
         errors = []
-        with patch.object(ontology, "validate_schema", side_effect=[manifest, preview]):
+        with patch.object(ontology, "validate_schema", side_effect=[manifest, preview, second]):
             ontology.validate_preview_manifest(descriptor, errors)
         self.assertEqual([], errors)
 
