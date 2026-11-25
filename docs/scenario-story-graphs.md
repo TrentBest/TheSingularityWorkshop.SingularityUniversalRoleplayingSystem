@@ -22,9 +22,12 @@ A choice records what the player wants to attempt. It does not automatically mea
 - `direct` choices are decisions that need no uncertain-action ruling; their transition may be committed immediately.
 - `referee` choices remain pending until a human referee uses the selected scenario procedure, records the ruling, and explicitly accepts the transition.
 - `setsAll` effects apply only when the transition is committed—not when the player selects the choice.
-- `nextNodeId` names the continuation after commitment. In schema version 1, a referee choice has one authored continuation; it does not yet map different adjudication outcomes to different destinations or consequences.
+- `nextNodeId` names the continuation after commitment for direct choices and referee choices without an outcome map.
+- A referee choice may instead declare `outcomeRuleId` and `outcomeBranches`. The rule ID points to the selected MicroBundle's outcome vocabulary; each branch key is one of that rule's stable outcome IDs and supplies its own continuation and optional state effects.
+- An outcome-mapped choice has no default `nextNodeId`. The human referee must record an outcome from the referenced rule and explicitly accept the matching branch. An unmapped or unknown outcome cannot silently fall back to another path.
+- Branch state effects are applied only when that specific branch is committed. The graph does not calculate a roll, choose an outcome, or advance pressure clocks.
 
-The graph does not define a new dice system, evaluate uncertain actions, advance clocks, or mutate authoritative world state. It describes narrative possibilities. CORE Spying remains the selected source for the current provisional tabletop procedure, including its strong success, success, mixed result, and miss bands. Those bands must not be mistaken for a complete scenario-specific consequence map.
+The graph does not define a new dice system, evaluate uncertain actions, advance clocks, or mutate authoritative world state. It describes narrative possibilities. CORE Spying remains the selected source for the current provisional tabletop procedure. Its outcome IDs are namespaced to that MicroBundle; another book may define a different vocabulary. The graph maps those source-specific results to authored scenario continuations without promoting them into universal SURPS outcome categories.
 
 ## State and knowledge
 
@@ -40,7 +43,9 @@ The graph's `playerPresentation` is suitable for the player-facing projection. A
 
 The graph deliberately allows multiple approaches and converging paths. For example, a player may identify the recipient by observation or learn about the river through a contact. Both routes can reach the landing, but they need not produce identical knowledge or evidence.
 
-The [story graph JSON Schema](../schemas/scenario-story-graph.schema.json) defines the portable authoring shape. Repository tests validate node identity, destination references, state-key references, and graph reachability. This is an authoring contract and testable fixture—not yet a general story runtime or a claim that the browser experience is graph-driven. The current single-continuation shape is an acknowledged limitation: the next graph revision must author outcome-specific branches where the fiction calls for them, using the selected book's outcome vocabulary without promoting that vocabulary into a universal SURPS rule.
+The `follow-the-contact` choice is the first outcome-mapped example. It references `surps.core.spying.resolution.outcome-bands` and defines separate continuations for that rule's strong success, success, mixed result, and miss. Strong success reaches the landing with an additional `tail_unnoticed` state effect; success reaches the landing without that extra benefit; a mixed result preserves the lead but creates a compromised-tail situation; a miss loses the contact and offers a different investigation route. The referee chooses and commits the branch. None of these results is inferred by the graph.
+
+The [story graph JSON Schema](../schemas/scenario-story-graph.schema.json) defines the portable authoring shape. Repository tests validate node identity, all branch destinations, state-key references, rule/outcome identity, and graph reachability. This is an authoring contract and testable fixture—not yet a general story runtime or a claim that the browser experience is graph-driven. Outcome branches are optional and source-specific; legacy single-continuation choices remain valid.
 
 ## Boundaries
 
