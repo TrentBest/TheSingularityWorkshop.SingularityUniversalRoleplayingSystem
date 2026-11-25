@@ -174,8 +174,12 @@ def main() -> int:
                 else:
                     if descriptor.get("id") != book_id or descriptor.get("lod") != view.get("lod"):
                         errors.append(f"{view_path}: view identity/LOD does not match book descriptor")
-                    if descriptor.get("viewPath") != view_path or participation.get("viewPath") != view_path:
-                        errors.append(f"{view_path}: book descriptor/participation viewPath mismatch")
+                    primary_view = descriptor.get("viewPath")
+                    if participation.get("viewPath") != primary_view:
+                        errors.append(f"{view_path}: book descriptor/participation primary viewPath mismatch")
+                    registered_view_paths = {item.get("path") for item in view_registry.get("views", [])}
+                    if primary_view not in registered_view_paths:
+                        errors.append(f"{view_path}: book descriptor primary view is not registered")
                     registry_paths = {item["path"] for item in load(REGISTRY_PATH)["microbundles"]}
                     if participation.get("microbundlePath") not in registry_paths:
                         errors.append(f"{view_path}: participation MicroBundle path is not in local registry")
