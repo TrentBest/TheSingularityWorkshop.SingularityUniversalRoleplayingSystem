@@ -45,11 +45,29 @@ class CharacterSheetAssetTests(unittest.TestCase):
                 self.assertIn("CHARACTER RECORD", text_content)
                 self.assertIn("EMPTY TEMPLATE", text_content)
                 self.assertTrue(theme["animatedDetails"] is (theme_id == "aether"))
+                self.assertEqual("surps.character-sheet", root.attrib.get("data-surps-contract"))
+                self.assertEqual("1.0.0", root.attrib.get("data-surps-contract-version"))
+                bindings = {
+                    node.attrib["data-surps-bind"]
+                    for node in root.findall(f".//*[@data-surps-bind]")
+                }
+                self.assertEqual(
+                    {
+                        "name", "pronouns", "role", "origin", "attributes",
+                        "capabilities", "training", "condition", "goals",
+                        "equipment", "concept", "relationships", "history",
+                        "appearance",
+                    },
+                    bindings,
+                )
 
     def test_character_studio_exposes_only_starter_themes_for_selection(self) -> None:
         html = STUDIO.read_text(encoding="utf-8")
         self.assertIn('id="sheetTheme"', html)
-        self.assertIn('id="sheetPreview"', html)
+        self.assertIn('<object id="sheetPreview"', html)
+        self.assertIn('contentDocument', html)
+        self.assertIn('updateSheetBindings', html)
+        self.assertIn('data-surps-bind', html)
         self.assertIn('value="verdant"', html)
         self.assertIn('value="stone"', html)
         self.assertIn('value="woodwork"', html)
