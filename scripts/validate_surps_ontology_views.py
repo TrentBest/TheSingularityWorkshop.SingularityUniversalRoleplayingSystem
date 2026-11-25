@@ -17,6 +17,12 @@ def load(path: str):
         raise ValueError(f"path escapes repository: {path}")
     return json.loads(candidate.read_text(encoding="utf-8"))
 
+def collection_records(payload: dict, collection: str):
+    """Read canonical MicroBundle content, with a read-only legacy adapter."""
+    if "contributions" in payload:
+        return collection_records(payload, collection)
+    return payload.get(collection, [])
+
 def validate_schema(schema_path: str, document_path: str, errors: list[str]) -> dict | None:
     try:
         schema, document = load(schema_path), load(document_path)
@@ -56,12 +62,11 @@ def load_bundle_registry(errors: list[str]) -> dict[str, tuple[dict, dict]]:
             Draft202012Validator.check_schema(content_schema)
             for error in Draft202012Validator(content_schema, format_checker=FormatChecker()).iter_errors(payload):
                 errors.append(f"{content_path}: {error.message}")
-            source_book = payload.get("book", {})
-            for field, value in (("sourceBookId", source_book.get("id")),
-                                 ("version", source_book.get("version")),
-                                 ("ownerRepository", source_book.get("ownerRepository"))):
-                if descriptor.get(field) != value:
-                    errors.append(f"{descriptor_path}: {field} does not match transitional payload identity")
+            source_book = payload.get("book")
+            if source_book is not None and descriptor.get("sourceBookId") != source_book.get("id"):
+                errors.append(f"{descriptor_path}: sourceBookId does not match legacy compatibility payload")
+            if descriptor.get("ownerRepository") != REPOSITORY:
+                errors.append(f"{descriptor_path}: ownerRepository does not match repository identity")
             bundles[bundle_id] = (descriptor, payload)
         except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             errors.append(f"{descriptor_path}: {exc}")
@@ -96,7 +101,7 @@ def resolve_view(bundles: dict[str, tuple[dict, dict]], view: dict, errors: list
     for bundle_id, (descriptor, payload) in bundles.items():
         records = {}
         for collection in descriptor.get("recordCollections", []):
-            values = payload.get("contributions", {}).get(collection, [])
+            values = collection_records(payload, collection)
             if not isinstance(values, list):
                 errors.append(f"{bundle_id}: content collection {collection!r} is not an array")
                 continue
