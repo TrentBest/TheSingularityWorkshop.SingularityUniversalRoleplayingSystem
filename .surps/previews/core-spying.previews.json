@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "microbundleId": "surps.microbundle.core.spying",
+  "previews": [
+    {
+      "id": "surps.core.spying.preview.lock-picking",
+      "path": ".surps/previews/lock-picking.preview.json",
+      "audiences": ["player", "workshop", "reference"],
+      "locale": "en-US"
+    }
+  ]
+}
