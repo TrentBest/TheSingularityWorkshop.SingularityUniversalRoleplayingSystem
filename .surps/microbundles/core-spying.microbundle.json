@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.microbundle.core.spying",
+  "version": "0.1.0",
+  "status": "playtest",
+  "ownerRepository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+  "domain": "SURPS.Core.Spying",
+  "sourceBookId": "surps.core.spying",
+  "contentPath": ".surps/contributions/core-spying.json",
+  "contentSchema": "schemas/book-contribution.schema.json",
+  "recordCollections": ["capabilities", "rules"],
+  "dependencies": [],
+  "provenance": {
+    "sourceRepository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+    "sourcePath": "docs/books/core-spying.md",
+    "notes": "First MicroBundle ownership wrapper over the original book-scoped playtest payload. The payload is transitional; record ownership is not yet physically separated from its legacy book container."
+  }
+}
