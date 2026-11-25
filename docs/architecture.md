@@ -35,6 +35,17 @@ These are initial working definitions, not a frozen schema. We will refine them 
 
 SURPS consumes and composes these capabilities. It must not become a second physics engine, runtime, GUI framework, or dungeon implementation. CiAi is an engineering-governance capability around the repository's build and evidence lifecycle; it is not an in-world ontology provider and must not define inhabitant behavior.
 
+### Cross-repository content and Experience flow
+
+SURPS is not the sole producer of its content. **raWWar both produces SURPS content and consumes SURPS content**, while owning and delivering its own Experience. The relationship is therefore bidirectional for content and downstream for Experience consumption:
+
+- raWWar-authored SURPS material is admitted and validated against SURPS-owned identity, schema, provenance, and composition contracts before it can become canonical.
+- raWWar consumes versioned SURPS content to build and validate its Experience.
+- SURPS content changes can trigger raWWar compatibility, integration, and Experience-level CI.
+- raWWar content contributions can trigger SURPS admission and validation, followed by consumer revalidation against the accepted revision.
+
+CiAi's Autonomous Development Pipeline must coordinate this as a cross-repository dependency graph with exact revision provenance—not a simplistic one-way build order. SURPS owns canonical roleplaying content semantics; raWWar owns its Experience and its runtime/presentation. The ADP orchestrates the hand-offs and CI evidence without collapsing those ownership boundaries.
+
 ## SURPS activation
 
 SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Execution remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
