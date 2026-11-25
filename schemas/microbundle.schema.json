@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/microbundle.schema.json",
   "title": "SURPS MicroBundle Descriptor",
-  "description": "Stable identity and ownership metadata for a selectable, independently versioned content bundle.",
+  "description": "Stable identity, ownership, structured content, and book-asset metadata for an independently versioned content bundle.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -51,6 +51,13 @@
     },
     "contentSchema": {
       "const": "schemas/microbundle-content.schema.json"
+    },
+    "assetsPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assetsSchema": {
+      "const": "schemas/microbundle-assets.schema.json"
     },
     "sourceBookId": {
       "type": "string"
@@ -109,5 +116,19 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "assetsPath"
+        ]
+      },
+      "then": {
+        "required": [
+          "assetsSchema"
+        ]
+      }
+    }
+  ]
 }
