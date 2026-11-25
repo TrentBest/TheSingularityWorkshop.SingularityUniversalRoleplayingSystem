@@ -105,6 +105,29 @@ const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
 function updateSheetPreview(){const allowed=["verdant","stone","woodwork","steel","aether"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;const preview=$("sheetPreview");const source="assets/character-sheets/"+selectedTheme+".svg";if(preview.getAttribute("data")!==source)preview.setAttribute("data",source);preview.setAttribute("aria-label",selectedTheme+" character sheet preview");}
+const pickerCollections={attributes:["traits"],capabilities:["capabilities"],training:["capabilities"],condition:["traits"],goals:["characterOptions"],equipment:["equipment","resources"],relationships:["creations"],history:["creations"]};
+function updateSheetAddButtons(svgDocument){
+ Object.entries(pickerCollections).forEach(([key,collections])=>{
+  const target=svgDocument.querySelector('[data-surps-bind="'+key+'"]');if(!target)return;
+  svgDocument.querySelector('[data-surps-add="'+key+'"]')?.remove();
+  const lineCount=target.querySelectorAll("tspan").length;
+  const maxLines=Number(target.getAttribute("data-max-lines")||2);
+  if(lineCount>=maxLines)return;
+  const ns="http://www.w3.org/2000/svg";
+  const add=svgDocument.createElementNS(ns,"text");
+  add.setAttribute("data-surps-add",key);
+  add.setAttribute("x",target.getAttribute("x")||"0");
+  add.setAttribute("y",String(Number(target.getAttribute("y")||0)+lineCount*Number(target.getAttribute("data-line-height")||17)));
+  add.setAttribute("fill","#83d6c4");add.setAttribute("font-size","15");
+  add.setAttribute("font-weight","800");add.setAttribute("role","button");
+  add.setAttribute("tabindex","0");add.setAttribute("aria-label","Add "+key+" from SURPS");
+  add.setAttribute("style","cursor:pointer");
+  add.textContent="+";
+  add.addEventListener("click",()=>openRecordPicker(key,collections));
+  add.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openRecordPicker(key,collections)}});
+  target.parentNode.appendChild(add);
+ });
+}
 function updateSheetBindings(){
  const svgDocument=$("sheetPreview").contentDocument;if(!svgDocument)return;
  const data=readForm();
@@ -119,6 +142,7 @@ function updateSheetBindings(){
   target.replaceChildren();const ns="http://www.w3.org/2000/svg";const x=target.getAttribute("x")||"0";const y=Number(target.getAttribute("y")||0);const lineHeight=Number(target.getAttribute("data-line-height")||17);
   visible.forEach((text,index)=>{const span=svgDocument.createElementNS(ns,"tspan");span.setAttribute("x",x);span.setAttribute("y",String(y+index*lineHeight));span.textContent=text;target.appendChild(span)});
  });
+ updateSheetAddButtons(svgDocument);
 }
 
 async function loadCharacterCatalog(){
