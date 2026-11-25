@@ -89,3 +89,14 @@ Progression is intentional:
 - Commerce/entitlements own theme purchase and unlock authorization.
 
 This document records the intended architecture and the first SVG artifacts. It does not claim that the NPC pipeline, map engine, commerce, or simulation stages are implemented.
+
+
+## Attention, discoveries, and economic activity
+
+A living world should expose opportunities through its ordinary places and inhabitants, not only through a quest list. A player who stops to read a settlement notice board may discover a job, warning, missing-person notice, or clue. A visit to a tavern may create an opportunity through a conversation, a patron's need, or a contract offered by the keeper. These discoveries are interactions with authoritative world entities, not UI-generated quest markers.
+
+The distinction between world truth, participant knowledge, and visual presentation is essential: inspecting a posting records what the character can perceive; it does not make every claim on the posting true. A clue may be noticed, missed, misunderstood, or investigated. The presentation layer reveals affordances but does not invent facts.
+
+Economic activity belongs in the same world model. Work, wages, contracts, inventory, markets, debt, expenses, and payment should have explicit parties, terms, and transaction history. SURPS supplies shared roleplaying semantics; the Economy domain supplies monetary and market capabilities. A job accepted in a tavern should be a real obligation with a defined reward and completion condition, not a detached reward counter.
+
+See [Living World Opportunities and In-World Economy](world-opportunities-and-economy.md) for the interaction model, economic loop, ownership boundaries, and first end-to-end acceptance scenarios. The existing ambient settlement SVG remains an illustration, not a simulation of NPC activity or commerce.
