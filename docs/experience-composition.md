@@ -99,3 +99,35 @@ The portable identity and dependency contract is being defined additively in [Mi
 - [FSM_COS Runtime Manifest](https://github.com/TrentBest/TheSingularityWorkshop.FSM_COS/blob/development/docs/RUNTIME_MANIFEST.md)
 - [FSM_COS MicroBundle consumption guide](https://github.com/TrentBest/TheSingularityWorkshop.FSM_COS/blob/development/docs/CONSUMING_MICROBUNDLES.md)
 - [Portable MicroBundle identity and dependency contract](https://github.com/TrentBest/TheSingularityWorkshop.MicroBundleDomain/blob/development/docs/PORTABLE_DEPENDENCY_CONTRACT.md)
+
+
+## 6. Workshop authority, repository hosting, and variants
+
+The Singularity Workshop is the sole Experience granted creative authority over the user's canonical MicroBundle repository. This is a deliberate authority boundary, not a restriction that every MicroBundle must be stored in one repository.
+
+The Workshop composes **Experiences and MicroBundles**. It is the privileged creative environment for authoring and changing canonical material in the user's MicroBundle repository. Other repositories may independently host MicroBundles, including MicroBundles that consume or extend canonical Workshop material.
+
+A subscribing repository may:
+
+1. resolve and pull an exact canonical MicroBundle revision from the user's repository;
+2. host the pulled content in its own repository under its own storage and development workflow;
+3. make local modifications as a creator-owned derivative;
+4. validate and publish that derivative as an independently versioned variant;
+5. retain provenance to the canonical source revision from which the variant was derived.
+
+This is not a silent edit to the canonical source. A local variant has its own creator, portable identity/revision, repository ownership, and provenance. It must not masquerade as the upstream canonical artifact or overwrite it. The portable identity contract remains ontology + exact version (+ digest where required); repository paths and local storage handles remain implementation details.
+
+The distinction is **creative authority versus repository hosting**:
+
+- The Workshop alone has the granted creative authority over the user's canonical MicroBundle repository.
+- A MicroBundle may live in, be maintained by, and be published from another repository.
+- A subscribing creator may adapt content locally and publish a variant under that creator's authority.
+- The canonical source and the derivative remain distinguishable and independently versioned.
+
+### AiCi and the subscribing repository
+
+Signing in to AiCi is the intended way for a subscribing repository to receive and apply the Workshop's ADP definition. AiCi should map that definition into its native repository-level ADP/group/task model, preserving the subscribing repository's ownership and the distinction between proposed work, authorized writes, evidence, and separately gated publication actions.
+
+This is an evolving integration target. The existing read-only exact-commit evidence lane is not proof that sign-in, ADP application, delegated creative authority, or autonomous variant publication is already end-to-end operational. Authentication identifies the subscriber; it does not by itself grant every write, merge, release, or deployment permission.
+
+The Workshop's canonical authority therefore does not erase repository autonomy. It establishes the trusted source and governance path from which independently hosted, locally modified, provenance-preserving variants can grow.
