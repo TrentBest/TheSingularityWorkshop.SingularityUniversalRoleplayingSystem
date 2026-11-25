@@ -15,9 +15,14 @@ A rulebook is a view, not an owner of the records it presents. Its view descript
 
 The same MicroBundle can appear in a player handbook, a referee's expanded guide, a Workshop inspector, a digital reference, and a print edition. Each projection is a view over the same record identities. Reordering, hiding, grouping, or explaining content in a view must never mutate its source records.
 
+## MicroBundle-owned book assets
+
+A MicroBundle also owns the reusable assets that explain its records: authored prose, captions, SVGs, diagrams, and image references. Its asset manifest assigns each resource a stable ID, relative path, accessible description, usage, and optional audience/locale metadata. Views may arrange or select those assets for different books, but they do not copy the canonical source or redefine its meaning. The CORE Spying pilot now includes an SVG approach-spectrum diagram and shared introductory copy in its MicroBundle asset directory. The [asset manifest schema](../schemas/microbundle-assets.schema.json) defines this contract.
+
 ## Contracts
 
-- [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership and content-source metadata.
+- [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership, content, and optional asset-manifest metadata.
+- [CORE Spying asset manifest](../.surps/microbundles/assets/core-spying.assets.json) registers its SVG and reusable book copy.
 - [Repository-local MicroBundle registry schema](../schemas/microbundle-registry.schema.json) and [registry](../.surps/microbundles/registry.json) enumerate independently selectable bundles.
 - [Rulebook view schema](../schemas/rulebook-view.schema.json) defines a curated selection.
 - [Rulebook view registry schema](../schemas/rulebook-view-registry.schema.json) and [view registry](../.surps/views/registry.json) enumerate independently generated projections.
@@ -26,6 +31,10 @@ The same MicroBundle can appear in a player handbook, a referee's expanded guide
 - [CORE Spying player view](../.surps/views/core-spying-player.view.json) selects six approaches and six procedures.
 - [Resolver and projection validator](../scripts/validate_surps_ontology_views.py) validates schema, identity alignment, and selected-record resolution, then generates a deterministic projection.
 - The CI workflow uploads that generated projection as `surps-core-spying-player-view`; it is a build artifact, not a claim that a dynamic Character Studio or runtime rule engine exists.
+
+## Probability-first resolution direction
+
+The proposed common resolution language is probability from 0 to 100, with percentile dice as one physical interface. Capability remains distinct from final success chance: task difficulty and circumstances transform capability into an outcome probability. This is still a design proposal, not the adopted core mechanic; CORE Spying's current 2d6 playtest procedure remains unchanged pending an exact probability-distribution comparison. See [Probability-first resolution](probability-resolution.html) for the calibration plan.
 
 ## First vertical slice: CORE Spying
 
