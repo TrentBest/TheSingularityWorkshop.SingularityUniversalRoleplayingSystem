@@ -23,6 +23,7 @@ header{border-bottom:1px solid var(--line);padding:18px 0 14px}.brand{display:fl
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.83rem;font-weight:700;color:#d8e5ed}.field small{font-size:.76rem;color:var(--muted)}input,textarea,select{width:100%;background:#0b1823;border:1px solid #385166;border-radius:9px;padding:11px 12px;color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--mint);box-shadow:0 0 0 3px #83d6c422}textarea{min-height:94px;resize:vertical}
 .section{padding:20px 0;border-bottom:1px solid var(--line)}.section:first-child{padding-top:0}.section:last-child{border-bottom:0}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:13px}.section-head h3{margin:0;font-size:1.08rem}.section-head p{margin:0;color:var(--muted);font-size:.8rem}
 .preview{padding:18px;position:sticky;top:12px}.preview .portrait{height:138px;border-radius:12px;background:radial-gradient(circle at 50% 40%,#3c756f,#193547 50%,#0b1722 80%);display:grid;place-items:center;margin:14px 0;color:#b9f4e6;font-size:2.4rem;border:1px solid #41616d}.preview-name{font-size:1.35rem;font-weight:800;line-height:1.2}.preview-meta{color:var(--muted);font-size:.83rem;margin-top:4px}.preview-block{border-top:1px solid var(--line);padding:12px 0}.preview-block h3{font-size:.7rem;color:var(--mint);letter-spacing:.12em;text-transform:uppercase;margin:0 0 6px}.preview-block p{margin:0;color:#d0dce4;font-size:.86rem;white-space:pre-wrap;overflow-wrap:anywhere}.preview-empty{color:var(--muted);font-size:.88rem}
+.sheet-theme{display:grid;gap:8px;margin:12px 0}.sheet-theme label{font-size:.78rem;color:var(--muted);font-weight:700}.sheet-theme select{width:100%;background:#0b1823;border:1px solid #385166;border-radius:9px;padding:10px;color:var(--ink)}.sheet-preview{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;object-position:top center;border:1px solid var(--line);border-radius:10px;background:#0b1823;margin-top:10px}.theme-note{font-size:.72rem;color:var(--muted);margin:4px 0 0}
 .status{min-height:22px;color:var(--mint);font-size:.82rem;margin-top:10px}.status.error{color:var(--red)}
 .bottom-actions{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:22px}
 footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text-align:center;color:var(--muted);font-size:.85rem}footer img{width:88px;display:block;margin:0 auto 8px}
@@ -80,6 +81,12 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 <div class="preview-block"><h3>Concept</h3><p id="previewConcept" class="preview-empty">A story waiting to be written.</p></div>
 <div class="preview-block"><h3>Capabilities</h3><p id="previewCapabilities" class="preview-empty">No capabilities recorded yet.</p></div>
 <div class="preview-block"><h3>Purpose</h3><p id="previewGoals" class="preview-empty">No goals recorded yet.</p></div>
+<div class="preview-block"><h3>Character sheet theme</h3>
+<div class="sheet-theme"><label for="sheetTheme">Presentation theme</label><select id="sheetTheme">
+<option value="verdant">Verdant · starter</option><option value="stone">Stone · starter</option><option value="woodwork">Woodwright · starter</option><option value="steel" disabled>Aegis · premium preview</option><option value="aether" disabled>Aether · premium preview</option>
+</select><p class="theme-note">Premium themes are shown in the catalog but remain locked until an entitlement provider exists.</p></div>
+<img id="sheetPreview" class="sheet-preview" src="assets/character-sheets/verdant.svg" alt="Verdant blank character sheet preview" loading="lazy">
+</div>
 </aside>
 </section>
 </main>
@@ -89,7 +96,7 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 const KEY = "surps.character-studio.draft.v1";
 const $ = id => document.getElementById(id);
 const fields = ["name","role","pronouns","origin","concept","appearance","attributes","capabilities","training","condition","goals","equipment","relationships","history"];
-let roster = [], activeId = null;
+let roster = [], activeId = null, selectedTheme = "verdant";
 const announce = (message, error=false) => { $("status").textContent=message; $("status").classList.toggle("error",error); };
 const uid = () => (crypto && crypto.randomUUID) ? crypto.randomUUID() : "surps-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
 const readForm = () => Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));
@@ -97,6 +104,7 @@ const fillForm = data => fields.forEach(k=>$(k).value=data?.[k] || "");
 const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
+function updateSheetPreview(){const allowed=["verdant","stone","woodwork"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;$("sheetPreview").src="assets/character-sheets/"+selectedTheme+".svg";$("sheetPreview").alt=selectedTheme+" blank character sheet preview";}
 function updatePreview(){
  const d=readForm(); $("previewName").textContent=d.name||"Unnamed character";
  $("previewMeta").textContent=[d.role,d.origin,d.pronouns].filter(Boolean).join(" · ")||"Your character will take shape here";
@@ -124,8 +132,8 @@ function newCharacter(){
 function saveCharacter(){
  const data=readForm();if(!data.name){$("name").focus();announce("Give your character a name before saving.",true);return}
  const existing=current();
- if(existing){Object.assign(existing,data,{updatedAt:new Date().toISOString()})}
- else{const c={identity:{id:uid(),createdAt:new Date().toISOString()},...data,updatedAt:new Date().toISOString()};roster.push(c);activeId=c.identity.id}
+ if(existing){Object.assign(existing,data,{sheetTheme:selectedTheme,updatedAt:new Date().toISOString()})}
+ else{const c={identity:{id:uid(),createdAt:new Date().toISOString()},...data,sheetTheme:selectedTheme,updatedAt:new Date().toISOString()};roster.push(c);activeId=c.identity.id}
  if(persist()){renderRoster();$("formTitle").textContent=data.name;updatePreview();announce("Saved in this browser. Export a JSON copy for safekeeping.");}
 }
 function envelope(c){return {format:"surps.character-draft",formatVersion:"0.1.0",status:"prototype-not-canonical",character:c,exportedAt:new Date().toISOString()}}
@@ -137,6 +145,7 @@ $("newCharacter").addEventListener("click",newCharacter);
 $("saveCharacter").addEventListener("click",saveCharacter);
 $("characterForm").addEventListener("submit",e=>{e.preventDefault();saveCharacter()});
 fields.forEach(k=>$(k).addEventListener("input",updatePreview));
+$("sheetTheme").addEventListener("change",e=>{selectedTheme=e.target.value;updateSheetPreview();const c=current();if(c){c.sheetTheme=selectedTheme;c.updatedAt=new Date().toISOString();persist()}announce("Character sheet theme updated.");});
 $("exportCharacter").addEventListener("click",()=>{const c=current();if(c)download(c)});
 $("deleteCharacter").addEventListener("click",()=>{const c=current();if(!c)return;if(!confirm("Delete "+(c.name||"this character")+" from this browser? Export a copy first if you want to keep it."))return;roster=roster.filter(x=>x.identity.id!==activeId);activeId=null;persist();newCharacter();renderRoster();announce("Character deleted from this browser.")});
 $("importCharacter").addEventListener("click",()=>$("importFile").click());
