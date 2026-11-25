@@ -51,10 +51,15 @@ class LivingSurfaceAssetTests(unittest.TestCase):
     def test_surface_contract_is_discoverable_from_site_and_readme(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         index = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        studio = (ROOT / "docs/map-studio.html").read_text(encoding="utf-8")
         contract = ROOT / "docs/surface-assets-and-tiles.md"
         self.assertTrue(contract.is_file())
         self.assertIn("surface-assets-and-tiles.md", readme)
         self.assertIn("surface-assets-and-tiles.md", index)
+        self.assertIn("map-studio.html", index)
+        self.assertIn("assets/maps/catalog.json", studio)
+        self.assertIn("assets/tiles/catalog.json", studio)
+        self.assertIn("surps.map-draft", studio)
 
 
 if __name__ == "__main__":
