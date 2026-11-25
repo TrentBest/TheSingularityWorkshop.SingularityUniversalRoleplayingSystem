@@ -75,7 +75,7 @@ SURPS supplies the shared ontology through which inhabitants can be described. T
 
 ## Development evidence and CiAi
 
-GitHub Actions remains the authoritative build and documentation execution environment. CiAi observes exact-commit workflow runs and normalizes their evidence; it does not execute the build, authorize repository writes, or replace human approval. SURPS onboarding must be evaluated from the exact target commit using the root `AgentOnboarding.md`. A successful admission result is only one prerequisite for bounded agent work, not a grant of authority. The first CiAi integration is the read-only [exact-commit evidence workflow](../.github/workflows/ciai-evidence.yml). It observes the Pages workflow and reports completeness, terminality, and success separately.
+GitHub Actions remains the authoritative build and documentation execution environment. SURPS is developed through one grouped [Autonomous Development Pipeline](surps-adp.md), with CiAi coordinating related content tasks, shared context, dependency ordering, and validation across the SURPS content graph. SURPS remains the domain authority; CiAi supplies orchestration and exact-commit evidence. The read-only [exact-commit evidence workflow](../.github/workflows/ciai-evidence.yml) is only the CI evidence lane, not the whole ADP. Bounded ADP write operations require task-scoped host authorization; successful onboarding or green CI is not permission to mutate, merge, publish, release, or deploy.
 
 
 ## Gauntlet integration
