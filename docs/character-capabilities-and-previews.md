@@ -37,13 +37,15 @@ The lock-picking preview is the first proposed vertical slice:
 
 1. **Character visualization** presents the selected character in a stable, character-local frame.
 2. **Environment preview provider** creates the immediate scene around that character: the lock, its mounting, nearby surfaces, light, and other relevant conditions. The environment fades into the character's frame rather than replacing the character sheet or teleporting the character into an unrelated scene.
-3. **Gestures provider** supplies the character's lock-picking movement, adapted to the character's available body/rig and the action context.
-4. **SURPS resolution** combines the selected capability, task difficulty, relevant circumstances, and only those adversities whose triggers apply. It presents the final probability and resolves the outcome.
+3. **Gestures provider** filters offered procedures against actor requirements and available environment anchors, then supplies the character's lock-picking movement, adapted to the character's available body/rig and the action context. The existing Gestures contracts already separate `GestureOfferSelector` (eligibility and rejection reasons), `GesturePlayback` (caller-driven lifecycle), and `GestureEvaluator` (deterministic evaluated pose). These are useful existing building blocks, not a lock-picking provider or proof of a successful physical interaction.
+4. **SURPS resolution** first calculates and displays the chance from a frozen character/action/environment snapshot. After the gesture is presented, the authoritative action/domain integration supplies the evidence used to resolve the outcome. An evaluated pose is not evidence that the lock opened.
 5. **Presentation** shows the attempt and its consequences in the same frame, then returns control to the character sheet.
 
-The environment provider owns environmental composition and environment facts. Gestures owns movement/gesture semantics and execution. Character visualization owns the character representation. SURPS owns the action meaning, capability/adversity semantics, probability contract, and outcome interpretation. A preview descriptor composes them without copying their records.
+The environment provider owns environmental composition, semantic anchors, and environment facts. Gestures owns movement/gesture definitions, offer eligibility, deterministic pose evaluation, and playback primitives. Character visualization owns the character representation. SURPS owns the action meaning, capability/adversity semantics, probability contract, and outcome interpretation. The host/domain integration owns authoritative interaction evidence and persistent effects. A preview descriptor composes them without copying their records.
 
 ## Provider contract boundaries
+
+Gesture eligibility is not the same thing as rated competence. The Gestures selector uses actor capability *requirements* and environment anchor availability to decide whether a procedure is compatible. SURPS then uses the character's rated capability, difficulty, circumstances, and triggered adversities to calculate success probability. A character can be eligible to attempt a gesture without being highly competent at the action; a highly rated capability does not make an incompatible rig or missing anchor valid.
 
 A provider should declare:
 - stable provider ID, owner repository, and version;
@@ -68,4 +70,5 @@ Current status:
 - Character-point economy: not calibrated or implemented.
 - Preview descriptor contract: specified.
 - Character visualization, environment, Gestures, and resolution provider runtime: not wired together by this descriptor.
+- Gestures repository: existing deterministic evaluator, offer selector, and playback contracts are available; no lock-picking-specific Gesture offer or live SURPS integration has been confirmed.
 - Lock-picking preview: proposed, not executable.
