@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.core.spying.preview.lock-picking",
+  "microbundleId": "surps.microbundle.core.spying",
+  "actionId": "surps.core.spying.action.lock-picking",
+  "status": "proposed",
+  "providers": {
+    "characterVisualization": {
+      "id": "workshop.character.visualization",
+      "role": "Keep the selected character visible in its own presentation frame."
+    },
+    "environment": {
+      "id": "workshop.preview.environment",
+      "role": "Create the local environment and lock interaction context around the character."
+    },
+    "gestures": {
+      "id": "workshop.gestures",
+      "repository": "TrentBest/TheSingularityWorkshop.Gestures",
+      "role": "Resolve and present the character's lock-picking body and hand motion."
+    },
+    "resolution": {
+      "id": "surps.probability.resolution",
+      "role": "Calculate the final success probability and resolve the attempt."
+    }
+  },
+  "sequence": [
+    {"stage": "character", "provider": "characterVisualization", "purpose": "Present the selected character and retain its identity and frame."},
+    {"stage": "environment", "provider": "environment", "purpose": "Fade the lock and its immediate surroundings into the character's frame.", "waitFor": ["character"]},
+    {"stage": "gesture", "provider": "gestures", "purpose": "Show the character manipulating the lock using the selected gesture.", "waitFor": ["environment"]},
+    {"stage": "resolution", "provider": "resolution", "purpose": "Expose the final chance, resolve the attempt, and present consequences.", "waitFor": ["gesture"]}
+  ],
+  "resolution": {
+    "capabilityIds": ["surps.core.spying.capability.lock-picking"],
+    "adversityPolicy": "Apply relevant conscious and subconscious adversities only when their defined trigger conditions are met; never apply a generic penalty merely because an adversity exists.",
+    "difficultySource": "The environment provider supplies lock properties and task circumstances; SURPS rules map them to difficulty.",
+    "probabilityScale": "0-100",
+    "outcomeModel": "Show success probability and resolve quality/degree using the selected action's outcome model."
+  },
+  "presentation": {
+    "frame": "character-local-box",
+    "transition": "fade-environment-into-frame",
+    "showCalculation": true,
+    "showOutcome": true
+  }
+}
