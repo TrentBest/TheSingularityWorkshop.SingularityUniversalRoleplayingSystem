@@ -7,6 +7,7 @@ on:
       - 'docs/**'
       - 'samples/SurpsGuiSvg/**'
       - '.surps/participation.json'
+      - '.surps/microbundles/**'
       - 'scripts/generate_surps_book_assets.py'
       - 'schemas/**'
       - 'README.md'
@@ -69,6 +70,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Generate SURPS character picker catalog from registered MicroBundles
+        run: python scripts/generate_surps_character_catalog.py
       - name: Validate character sheet SVG catalog and studio integration
         run: python tests/python/test_character_sheet_assets.py
       - name: Set up .NET for GUI.SVG publication
