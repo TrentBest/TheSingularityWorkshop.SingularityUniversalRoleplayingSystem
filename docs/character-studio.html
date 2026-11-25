@@ -104,7 +104,7 @@ const fillForm = data => { fields.forEach(k=>$(k).value=data?.[k] || ""); select
 const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
-function updateSheetPreview(){const allowed=["verdant","stone","woodwork"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;$("sheetPreview").src="assets/character-sheets/"+selectedTheme+".svg";$("sheetPreview").alt=selectedTheme+" blank character sheet preview";}
+function updateSheetPreview(){const allowed=["verdant","stone","woodwork","steel","aether"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;$("sheetPreview").src="assets/character-sheets/"+selectedTheme+".svg";$("sheetPreview").alt=selectedTheme+" blank character sheet preview";}
 function updatePreview(){
  const d=readForm(); $("previewName").textContent=d.name||"Unnamed character";
  $("previewMeta").textContent=[d.role,d.origin,d.pronouns].filter(Boolean).join(" · ")||"Your character will take shape here";
