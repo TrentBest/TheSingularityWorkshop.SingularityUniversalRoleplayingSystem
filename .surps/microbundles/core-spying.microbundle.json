@@ -7,6 +7,8 @@
   "domain": "SURPS.Core.Spying",
   "contentPath": ".surps/microbundles/content/core-spying.content.json",
   "contentSchema": "schemas/microbundle-content.schema.json",
+  "assetsPath": ".surps/microbundles/assets/core-spying.assets.json",
+  "assetsSchema": "schemas/microbundle-assets.schema.json",
   "recordCollections": [
     "capabilities",
     "rules"
@@ -15,6 +17,6 @@
   "provenance": {
     "sourceRepository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
     "sourcePath": "docs/books/core-spying.md",
-    "notes": "Canonical MicroBundle-owned record payload. Book and audience identity are declared only by views; the legacy book contribution remains a compatibility source during migration."
+    "notes": "Canonical MicroBundle-owned records and book-facing assets. Views select and arrange these resources; books do not fork them."
   }
 }
