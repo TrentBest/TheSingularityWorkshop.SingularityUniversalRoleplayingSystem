@@ -55,8 +55,23 @@ def validate_asset_manifest(descriptor: dict, errors: list[str]) -> None:
                 source = candidate.read_text(encoding="utf-8")
                 if "<svg" not in source or "<title" not in source or "<desc" not in source:
                     errors.append(f"{manifest_path}: SVG asset {asset_id!r} requires svg, title, and desc elements")
-        except (OSError, UnicodeError, ValueError) as exc:
+        except (OSError, UnicodeError, ValueError, TypeError) as exc:
             errors.append(f"{manifest_path}: invalid asset {asset_id!r}: {exc}")
+
+def validate_preview_manifest(descriptor: dict, errors: list[str]) -> None:
+    """Validate an optional MicroBundle-owned action preview descriptor."""
+    preview_path = descriptor.get("previewsPath")
+    if not preview_path:
+        return
+    schema_path = descriptor.get("previewsSchema")
+    if not schema_path:
+        errors.append(f"{descriptor.get('id')}: previewsPath requires previewsSchema")
+        return
+    preview = validate_schema(schema_path, preview_path, errors)
+    if preview is None:
+        return
+    if preview.get("microbundleId") != descriptor.get("id"):
+        errors.append(f"{preview_path}: microbundleId does not match descriptor")
 
 def validate_schema(schema_path: str, document_path: str, errors: list[str]) -> dict | None:
     try:
@@ -103,6 +118,7 @@ def load_bundle_registry(errors: list[str]) -> dict[str, tuple[dict, dict]]:
             if descriptor.get("ownerRepository") != REPOSITORY:
                 errors.append(f"{descriptor_path}: ownerRepository does not match repository identity")
             validate_asset_manifest(descriptor, errors)
+            validate_preview_manifest(descriptor, errors)
             bundles[bundle_id] = (descriptor, payload)
         except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             errors.append(f"{descriptor_path}: {exc}")
