@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "experience": {
+    "id": "surps.demo.missing-ledger",
+    "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+    "title": "The Missing Ledger",
+    "version": "0.1.0"
+  },
+  "surps": {
+    "enabled": true,
+    "characterContract": "0.x"
+  },
+  "books": [
+    {
+      "id": "surps.core.spying",
+      "versionRange": "^0.1.0",
+      "required": true,
+      "lod": 0,
+      "purpose": "The canonical CORE Spying playtest rules, information states, and scene procedures."
+    }
+  ],
+  "policy": {
+    "unresolvedRequiredBook": "block-entry",
+    "unresolvedOptionalBook": "warn",
+    "conflictResolution": "explicit-selection-only"
+  }
+}
