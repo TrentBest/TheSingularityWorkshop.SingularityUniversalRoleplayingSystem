@@ -14,7 +14,7 @@ The Singularity Universal Roleplaying System (SURPS) is the shared foundation fo
 
 **SURPS has one underlying behavior model and multiple adapters.** The tabletop adapter is a complete human-usable game, but its dice values, target numbers, and qualitative outcome bands are derived during authoring/workshop calibration from the underlying behavior. The digital adapter evaluates the same semantics in greater detail against live state. Neither adapter is a separate ruleset or a competing source of truth. No application or internet connection is required to use a published tabletop adapter.
 
-The source books are human-readable expressions of that system. They should explain the underlying concepts while demonstrating them through living diagrams, interactive examples, and simulations.
+The source books are human-readable views over shared ontology and independently owned MicroBundles. A book selects canonical records for an audience, scope, and LOD; it does not create a competing source of truth. SURPS now validates and resolves the first CORE Spying MicroBundle/player-view slice into a provenance-bearing JSON projection. See the [MicroBundle and Rulebook View contract](docs/microbundles-and-views.md) for the implemented boundary and remaining federation/runtime work.
 
 Start with the **[SURPS: The Living Game — Core Manual](docs/game-manual.md)**. It is the primary reader-facing game book. The [Player and Editor Manual](docs/player-and-editor-manual.md) is its technical companion; [Theory: tabletop campaign composition](docs/Theory/tabletop-campaign-composition.md) and [Theory: roleplaying history](docs/Theory/history-of-roleplaying-games.md) provide deeper context.
 
