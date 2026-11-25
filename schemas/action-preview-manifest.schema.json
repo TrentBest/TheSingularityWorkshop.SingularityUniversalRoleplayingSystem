@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/action-preview-manifest.schema.json",
+  "title": "SURPS MicroBundle Action Preview Manifest",
+  "description": "Lists the playable preview compositions offered by one MicroBundle.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "microbundleId", "previews"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "microbundleId": {"type": "string"},
+    "previews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"},
+          "path": {"type": "string", "minLength": 1},
+          "audiences": {"type": "array", "items": {"enum": ["player", "game-master", "workshop", "reference", "all"]}, "uniqueItems": true},
+          "locale": {"type": "string"}
+        }
+      }
+    }
+  }
+}
