@@ -65,22 +65,31 @@ def load_bundle_registry(errors: list[str]) -> dict[str, tuple[dict, dict]]:
             bundles[bundle_id] = (descriptor, payload)
         except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             errors.append(f"{descriptor_path}: {exc}")
+    validate_bundle_graph(bundles, errors)
+    return bundles
+
+def validate_bundle_graph(bundles: dict[str, tuple[dict, dict]], errors: list[str]) -> None:
+    """Check required local dependencies and ID uniqueness across every registered bundle."""
     known_ids = set(bundles)
     for bundle_id, (descriptor, _) in bundles.items():
         for dependency in descriptor.get("dependencies", []):
             if not dependency.get("optional", False) and dependency.get("id") not in known_ids:
                 errors.append(f"{bundle_id}: unresolved required MicroBundle dependency {dependency.get('id')!r}")
-    global_ids = {}
+    record_owners: dict[str, str] = {}
     for bundle_id, (descriptor, payload) in bundles.items():
         for collection in descriptor.get("recordCollections", []):
-            for record in payload.get("contributions", {}).get(collection, []):
-                if isinstance(record, dict) and isinstance(record.get("id"), str):
-                    identifier = record["id"]
-                    previous = global_ids.get(identifier)
-                    if previous is not None and previous != bundle_id:
+            for index, record in enumerate(payload.get("contributions", {}).get(collection, [])):
+                if not isinstance(record, dict) or not isinstance(record.get("id"), str):
+                    continue
+                identifier = record["id"]
+                previous = record_owners.get(identifier)
+                if previous is not None:
+                    if previous == bundle_id:
+                        errors.append(f"{bundle_id}: duplicate record id {identifier!r} across declared collections")
+                    else:
                         errors.append(f"global local-registry ID collision {identifier!r}: {previous} and {bundle_id}")
-                    global_ids[identifier] = bundle_id
-    return bundles
+                else:
+                    record_owners[identifier] = bundle_id
 
 def resolve_view(bundles: dict[str, tuple[dict, dict]], view: dict, errors: list[str]) -> dict:
     resolved, selected_ids, used_bundles, records_by_bundle = [], set(), {}, {}
