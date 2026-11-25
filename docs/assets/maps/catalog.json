@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "description": "Empty SVG map surfaces. Templates define presentation space only; they contain no authoritative geography or game state.",
+  "templates": [
+    {
+      "id": "surps.map.world.blank",
+      "name": "Blank World",
+      "role": "world",
+      "asset": "docs/assets/maps/templates/blank-world.svg",
+      "viewBox": "0 0 1600 1000",
+      "coordinateSpace": "world-local",
+      "grid": false
+    },
+    {
+      "id": "surps.map.region.blank",
+      "name": "Blank Region",
+      "role": "region",
+      "asset": "docs/assets/maps/templates/blank-region.svg",
+      "viewBox": "0 0 1200 900",
+      "coordinateSpace": "region-local",
+      "grid": true
+    },
+    {
+      "id": "surps.map.encounter.blank",
+      "name": "Blank Encounter",
+      "role": "encounter",
+      "asset": "docs/assets/maps/templates/blank-encounter.svg",
+      "viewBox": "0 0 1000 700",
+      "coordinateSpace": "encounter-local",
+      "grid": true
+    }
+  ]
+}
