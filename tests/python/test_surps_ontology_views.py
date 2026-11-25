@@ -1,6 +1,7 @@
 """Tests for multi-MicroBundle selection, identity, and view resolution."""
 from __future__ import annotations
 import copy, sys, unittest
+from unittest.mock import patch
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 import validate_surps_ontology_views as ontology
@@ -80,6 +81,33 @@ class OntologyViewTests(unittest.TestCase):
         errors = []
         ontology.validate_bundle_graph(self.bundles, errors)
         self.assertTrue(any("global local-registry ID collision" in error for error in errors))
+
+    def test_preview_descriptor_must_match_owning_microbundle(self):
+        descriptor = {"id": "surps.microbundle.sample",
+                      "previewsPath": ".surps/previews/sample.json",
+                      "previewsSchema": "schemas/action-preview.schema.json"}
+        preview = {"id": "surps.preview.sample", "microbundleId": "surps.microbundle.sample"}
+        errors = []
+        with patch.object(ontology, "validate_schema", return_value=preview):
+            ontology.validate_preview_manifest(descriptor, errors)
+        self.assertEqual([], errors)
+
+    def test_preview_descriptor_rejects_foreign_microbundle_identity(self):
+        descriptor = {"id": "surps.microbundle.sample",
+                      "previewsPath": ".surps/previews/sample.json",
+                      "previewsSchema": "schemas/action-preview.schema.json"}
+        preview = {"id": "surps.preview.sample", "microbundleId": "other.microbundle"}
+        errors = []
+        with patch.object(ontology, "validate_schema", return_value=preview):
+            ontology.validate_preview_manifest(descriptor, errors)
+        self.assertTrue(any("microbundleId does not match descriptor" in error for error in errors))
+
+    def test_preview_path_requires_schema(self):
+        errors = []
+        ontology.validate_preview_manifest(
+            {"id": "surps.microbundle.sample", "previewsPath": ".surps/previews/sample.json"},
+            errors)
+        self.assertTrue(any("previewsPath requires previewsSchema" in error for error in errors))
 
     def test_missing_required_dependency_is_rejected(self):
         self.bundles["surps.microbundle.sample"][0]["dependencies"] = [{"id": "missing.dependency"}]
