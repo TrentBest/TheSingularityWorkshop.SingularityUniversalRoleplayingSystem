@@ -127,6 +127,32 @@
         "outcomes",
         "2d6",
         "playtest"
+      ],
+      "outcomes": [
+        {
+          "id": "surps.core.spying.outcome.strong-success",
+          "name": "Strong success",
+          "condition": "total >= target + 3",
+          "description": "Achieve the intent and gain a useful extra benefit or reduce exposure."
+        },
+        {
+          "id": "surps.core.spying.outcome.success",
+          "name": "Success",
+          "condition": "total >= target",
+          "description": "Achieve the stated intent."
+        },
+        {
+          "id": "surps.core.spying.outcome.mixed-result",
+          "name": "Mixed result",
+          "condition": "total is target - 1 or target - 2",
+          "description": "Make progress, but accept a cost, delay, complication, or increased exposure."
+        },
+        {
+          "id": "surps.core.spying.outcome.miss",
+          "name": "Miss",
+          "condition": "total <= target - 3",
+          "description": "The intent is not achieved; the situation changes and the referee advances a relevant pressure."
+        }
       ]
     },
     {
