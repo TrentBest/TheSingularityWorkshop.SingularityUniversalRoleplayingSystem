@@ -33,7 +33,7 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 
 See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
 
-Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). CiAi is used as a read-only CI evidence and admission capability; it does not own SURPS ontology or authorize changes. The [CiAi evidence workflow](.github/workflows/ciai-evidence.yml) observes exact-commit Pages evidence.
+Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). SURPS is organized as one **grouped Autonomous Development Pipeline (ADP)**: CiAi coordinates related content-definition work across books, canonical records, MicroBundles, characters, maps, tiles, SVG surfaces, and validation, with shared context and explicit dependencies. SURPS remains the authority for its domain contracts; CiAi supplies orchestration and evidence. See the [SURPS ADP domain contract](docs/surps-adp.md). The [CiAi evidence workflow](.github/workflows/ciai-evidence.yml) is a separate read-only lane observing exact-commit Pages evidence; ADP write operations require task-scoped host authorization, and merge/publication/release/deployment remain separately gated.
 
 ## 3. Source Books
 
