@@ -77,6 +77,8 @@ class CharacterSheetAssetTests(unittest.TestCase):
         self.assertIn("prefers-reduced-motion", html)
         self.assertIn('id="recordPicker"', html)
         self.assertIn("loadCharacterCatalog", html)
+        self.assertIn("updateSheetAddButtons", html)
+        self.assertIn("data-surps-add", html)
         self.assertIn("contentSelections", html)
         self.assertIn("source:record.source", html)
         for collection in ("attributes", "capabilities", "training", "condition", "goals", "equipment", "relationships", "history"):
