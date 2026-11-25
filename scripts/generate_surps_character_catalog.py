@@ -77,9 +77,10 @@ def build_catalog(root: Path = ROOT) -> dict[str, Any]:
                 f"{bundle_id}: unsupported record collection(s): {sorted(unknown_collections)}"
             )
 
-        for collection in COLLECTIONS:
-            if collection not in declared_collections:
-                continue
+        # Validate every declared canonical record collection, including rules and
+        # extensions. Only the Character Studio collections are projected to the
+        # picker; the others still participate in global identity integrity.
+        for collection in declared_collections:
             values = content.get(collection, [])
             if not isinstance(values, list):
                 raise ValueError(f"{bundle_id}: content collection {collection!r} must be an array")
@@ -96,15 +97,16 @@ def build_catalog(root: Path = ROOT) -> dict[str, Any]:
                         f"duplicate canonical record ID {record_id!r}: {previous} and {location}"
                     )
                 seen_record_ids[record_id] = location
-                records[collection].append({
-                    **record,
-                    "source": {
-                        "microbundleId": bundle_id,
-                        "microbundleVersion": version,
-                        "ownerRepository": repository,
-                        "contentPath": content_path,
-                    },
-                })
+                if collection in records:
+                    records[collection].append({
+                        **record,
+                        "source": {
+                            "microbundleId": bundle_id,
+                            "microbundleVersion": version,
+                            "ownerRepository": repository,
+                            "contentPath": content_path,
+                        },
+                    })
 
     return {
         "schemaVersion": 1,
