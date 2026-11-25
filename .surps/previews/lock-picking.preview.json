@@ -14,9 +14,9 @@
       "role": "Create the local environment and lock interaction context around the character."
     },
     "gestures": {
-      "id": "workshop.gestures",
+      "id": "gestures.gesture-offer-selection-and-playback",
       "repository": "TrentBest/TheSingularityWorkshop.Gestures",
-      "role": "Resolve and present the character's lock-picking body and hand motion."
+      "role": "Use GestureOfferSelector to filter the environment's offered procedures against actor capabilities and available semantic anchors; use GesturePlayback and GestureEvaluator to produce deterministic evaluated poses. Pose output is not proof of lock success."
     },
     "resolution": {
       "id": "surps.probability.resolution",
@@ -24,13 +24,48 @@
     }
   },
   "sequence": [
-    {"stage": "character", "provider": "characterVisualization", "purpose": "Present the selected character and retain its identity and frame."},
-    {"stage": "environment", "provider": "environment", "purpose": "Fade the lock and its immediate surroundings into the character's frame.", "waitFor": ["character"]},
-    {"stage": "gesture", "provider": "gestures", "purpose": "Show the character manipulating the lock using the selected gesture.", "waitFor": ["environment"]},
-    {"stage": "resolution", "provider": "resolution", "purpose": "Expose the final chance, resolve the attempt, and present consequences.", "waitFor": ["gesture"]}
+    {
+      "stage": "character",
+      "provider": "characterVisualization",
+      "purpose": "Present the selected character and retain its identity and frame."
+    },
+    {
+      "stage": "environment",
+      "provider": "environment",
+      "purpose": "Fade the lock, its mounting, nearby surfaces, light, and interaction anchors into the character's frame.",
+      "waitFor": [
+        "character"
+      ]
+    },
+    {
+      "stage": "chance",
+      "provider": "resolution",
+      "purpose": "Calculate and display the chance from a frozen character/action/environment snapshot before the attempt.",
+      "waitFor": [
+        "environment"
+      ]
+    },
+    {
+      "stage": "gesture",
+      "provider": "gestures",
+      "purpose": "Filter available lock-picking gestures against actor capability requirements and environment anchors, then play the selected procedure.",
+      "waitFor": [
+        "chance"
+      ]
+    },
+    {
+      "stage": "outcome",
+      "provider": "resolution",
+      "purpose": "Accept authoritative lock/domain evidence, resolve the outcome, and present consequences. Never infer success from an evaluated pose.",
+      "waitFor": [
+        "gesture"
+      ]
+    }
   ],
   "resolution": {
-    "capabilityIds": ["surps.core.spying.capability.lock-picking"],
+    "capabilityIds": [
+      "surps.core.spying.capability.lock-picking"
+    ],
     "adversityPolicy": "Apply relevant conscious and subconscious adversities only when their defined trigger conditions are met; never apply a generic penalty merely because an adversity exists.",
     "difficultySource": "The environment provider supplies lock properties and task circumstances; SURPS rules map them to difficulty.",
     "probabilityScale": "0-100",
