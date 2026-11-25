@@ -20,7 +20,7 @@ def load(path: str):
 def collection_records(payload: dict, collection: str):
     """Read canonical MicroBundle content, with a read-only legacy adapter."""
     if "contributions" in payload:
-        return collection_records(payload, collection)
+        return payload.get("contributions", {}).get(collection, [])
     return payload.get(collection, [])
 
 def validate_schema(schema_path: str, document_path: str, errors: list[str]) -> dict | None:
@@ -83,7 +83,7 @@ def validate_bundle_graph(bundles: dict[str, tuple[dict, dict]], errors: list[st
     record_owners: dict[str, str] = {}
     for bundle_id, (descriptor, payload) in bundles.items():
         for collection in descriptor.get("recordCollections", []):
-            for index, record in enumerate(payload.get("contributions", {}).get(collection, [])):
+            for index, record in enumerate(collection_records(payload, collection)):
                 if not isinstance(record, dict) or not isinstance(record.get("id"), str):
                     continue
                 identifier = record["id"]
