@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/character-capability.schema.json",
+  "title": "SURPS Character Capability or Adversity",
+  "description": "A character-facing capability or adversity. Consciousness describes awareness/agency, not whether the trait is beneficial or harmful.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "kind", "awareness", "name", "description"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"},
+    "kind": {"enum": ["capability", "adversity"]},
+    "awareness": {"enum": ["conscious", "subconscious"]},
+    "name": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "rating": {"type": "integer", "minimum": 0, "maximum": 100},
+    "characterPointCost": {"type": "number", "minimum": 0},
+    "characterPointValue": {"type": "number", "minimum": 0},
+    "triggers": {"type": "array", "items": {"type": "string"}},
+    "effects": {"type": "array", "items": {"type": "string"}},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"kind": {"const": "capability"}}, "required": ["kind"]},
+      "then": {"required": ["rating", "characterPointCost"]}
+    },
+    {
+      "if": {"properties": {"kind": {"const": "adversity"}}, "required": ["kind"]},
+      "then": {"required": ["triggers", "effects"]}
+    }
+  ]
+}
