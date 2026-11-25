@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "repository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
+  "microbundles": [
+    {
+      "id": "surps.microbundle.core.spying",
+      "path": ".surps/microbundles/core-spying.microbundle.json"
+    }
+  ]
+}
