@@ -75,6 +75,23 @@ class CharacterSheetAssetTests(unittest.TestCase):
         self.assertIn('value="aether" disabled', html)
         self.assertIn('sheetTheme:selectedTheme', html)
         self.assertIn("prefers-reduced-motion", html)
+        self.assertIn('id="recordPicker"', html)
+        self.assertIn("loadCharacterCatalog", html)
+        self.assertIn("contentSelections", html)
+        self.assertIn("source:record.source", html)
+        for collection in ("attributes", "capabilities", "training", "condition", "goals", "equipment", "relationships", "history"):
+            self.assertIn(f'data-add-record="{collection}"', html)
+
+    def test_character_picker_catalog_is_generated_from_registered_microbundles(self) -> None:
+        generator = ROOT / "scripts" / "generate_surps_character_catalog.py"
+        self.assertTrue(generator.is_file())
+        source = generator.read_text(encoding="utf-8")
+        self.assertIn("microbundles", source)
+        self.assertIn("microbundleVersion", source)
+        self.assertIn("ownerRepository", source)
+        workflow = (ROOT / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
+        self.assertIn("python scripts/generate_surps_character_catalog.py", workflow)
+        self.assertIn(".surps/microbundles/**", workflow)
 
 
 if __name__ == "__main__":
