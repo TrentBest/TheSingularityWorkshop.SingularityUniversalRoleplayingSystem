@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "entryNodeId": "briefing",
   "semantics": {
-    "purpose": "Authoring map for the complete player-choice structure of the first Missing Ledger story slice.",
-    "transitionAuthority": "Selecting a choice records pending player intent only. It never changes scenario state or advances the current node by itself. A direct choice may commit its declared transition immediately; a referee choice remains pending until a human referee records an adjudicated result and accepts the transition. State effects apply only when that transition is committed. The single nextNodeId is the authored continuation after acceptance, not a complete map of outcome-specific consequences.",
+    "purpose": "Authoring map for the complete player-choice structure of the first Missing Ledger story slice. The follow-the-contact choice demonstrates four CORE Spying outcome-specific continuations.",
+    "transitionAuthority": "Selecting a choice records pending player intent only. It never changes scenario state or advances the current node by itself. A direct choice may commit its declared transition immediately; a referee choice remains pending until a human referee records an adjudicated result and accepts the transition. State effects apply only when that transition is committed. The single nextNodeId is the authored continuation after acceptance, not a complete map of outcome-specific consequences. When a referee choice declares outcomeRuleId and outcomeBranches, the human referee selects the applicable outcome from that referenced rule and explicitly accepts its matching branch; only that branch's destination and state effects may then be committed. No default nextNodeId is permitted for an outcome-mapped choice.",
     "presentationBoundary": "Node presentation is the player-facing projection. Authoring metadata and state flags are not player knowledge. This file is an authoring artifact, not a secure store for referee secrets."
   },
   "stateKeys": [
@@ -18,7 +18,9 @@
     "ledger_copy_secured",
     "corroboration_found",
     "watch_alerted",
-    "mara_exposed"
+    "mara_exposed",
+    "tail_unnoticed",
+    "tail_compromised"
   ],
   "nodes": [
     {
@@ -75,11 +77,40 @@
           "label": "Follow the person who leaves after meeting Mara",
           "intent": "Discover where the contact goes and whether the meeting matters.",
           "resolution": "referee",
-          "setsAll": [
-            "office_observed",
-            "recipient_identified"
-          ],
-          "nextNodeId": "follow-recipient"
+          "outcomeRuleId": "surps.core.spying.resolution.outcome-bands",
+          "outcomeBranches": {
+            "surps.core.spying.outcome.strong-success": {
+              "nextNodeId": "ferry-landing",
+              "setsAll": [
+                "office_observed",
+                "recipient_identified",
+                "handoff_location_known",
+                "tail_unnoticed"
+              ]
+            },
+            "surps.core.spying.outcome.success": {
+              "nextNodeId": "ferry-landing",
+              "setsAll": [
+                "office_observed",
+                "recipient_identified",
+                "handoff_location_known"
+              ]
+            },
+            "surps.core.spying.outcome.mixed-result": {
+              "nextNodeId": "follow-recipient-compromised",
+              "setsAll": [
+                "office_observed",
+                "recipient_identified",
+                "tail_compromised"
+              ]
+            },
+            "surps.core.spying.outcome.miss": {
+              "nextNodeId": "contact-lost",
+              "setsAll": [
+                "office_observed"
+              ]
+            }
+          }
         },
         {
           "id": "return-to-mara",
@@ -370,6 +401,53 @@
       "title": "The Trail Goes Cold",
       "playerPresentation": "You leave before the operation can be completed. The diversion remains unresolved, and the town continues toward dawn with unanswered questions.",
       "choices": []
+    },
+    {
+      "id": "follow-recipient-compromised",
+      "kind": "scene",
+      "title": "A Narrowing Distance",
+      "playerPresentation": "You keep the millwright in sight, but the route changes and the distance narrows. Continuing may draw attention; you can press on or preserve what you have learned.",
+      "choices": [
+        {
+          "id": "continue-compromised-tail",
+          "label": "Continue toward the river despite the increased exposure",
+          "intent": "Keep the millwright in sight and identify the destination, accepting the risk of being noticed.",
+          "resolution": "referee",
+          "setsAll": [
+            "handoff_location_known"
+          ],
+          "nextNodeId": "ferry-landing"
+        },
+        {
+          "id": "break-compromised-tail",
+          "label": "Break contact and preserve the lead",
+          "intent": "Stop before the compromised tail exposes you further.",
+          "resolution": "direct",
+          "nextNodeId": "evidence-review"
+        }
+      ]
+    },
+    {
+      "id": "contact-lost",
+      "kind": "scene",
+      "title": "The Contact Lost",
+      "playerPresentation": "The contact disappears into the town's ordinary traffic before you can confirm the destination. The trail has gone cold for now, but other ways to investigate remain.",
+      "choices": [
+        {
+          "id": "re-establish-contact",
+          "label": "Return to the area and try to pick up the trail again",
+          "intent": "Attempt to reacquire the contact using what you observed.",
+          "resolution": "referee",
+          "nextNodeId": "follow-recipient"
+        },
+        {
+          "id": "switch-to-records",
+          "label": "Set the tail aside and investigate the storehouse records",
+          "intent": "Pursue an independent route to corroborating evidence.",
+          "resolution": "direct",
+          "nextNodeId": "storehouse-search"
+        }
+      ]
     }
   ]
 }
