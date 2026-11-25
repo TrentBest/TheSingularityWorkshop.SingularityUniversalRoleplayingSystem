@@ -120,11 +120,11 @@ When an action has a meaningful uncertain outcome, use this procedure:
 | Result | Outcome |
 |---|---|
 | Total is target + 3 or more | Strong success: achieve the intent and gain a useful extra benefit or reduce exposure |
-| Total meets or exceeds target | Success: achieve the stated intent |
+| Total is at least the target and less than target + 3 | Success: achieve the stated intent |
 | Total is target - 1 or -2 | Mixed result: make progress, but accept a cost, delay, complication, or increased exposure |
 | Total is target - 3 or less | Miss: the intent is not achieved; the situation changes and the referee advances a relevant pressure |
 
-A natural 2 or 12 is not an automatic failure or success. The total and the fictional circumstances determine the result.
+Read the outcome bands from highest to lowest; the first matching band applies. This makes the bands mutually exclusive: strong success takes precedence over the ordinary success range. A natural 2 or 12 is not an automatic failure or success. The total and the fictional circumstances determine the result.
 
 **Do not roll when the outcome is already certain.** If the character has time, access, and no meaningful opposition, simply establish the result. A roll is for uncertainty with consequences, not for every sentence or movement.
 
