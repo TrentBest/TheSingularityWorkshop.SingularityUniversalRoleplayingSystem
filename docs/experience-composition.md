@@ -68,7 +68,7 @@ A quest, mission, or campaign is content structure within an Experience, not aut
 | FSM_COS | Resolves dependencies and assembles the requested MicroBundles |
 | Host / renderer / executor | Presents and runs the assembled Experience |
 
-The existing `.surps/experiences/experience-books` authoring contract (currently represented by `schemas/experience-books.schema.json`) is a **book-selection document**, not the portable FSM_COS composition manifest. It answers which books and contribution documents an Experience selects. It must remain separate from the portable manifest that requests MicroBundle artifacts.
+The existing experience book-selection contract (represented by `schemas/experience-books.schema.json` and `docs/examples/experience-books.example.json`) is a **book-selection document**, not the portable FSM_COS composition manifest. It answers which books and contribution documents an Experience selects. It must remain separate from the portable manifest that requests MicroBundle artifacts.
 
 Likewise, LOD is editorial detail, not a dependency resolver or an automatic precedence rule. A scenario selects applicable books and records explicit scope/overrides; the composition layer resolves declared MicroBundle dependencies.
 
