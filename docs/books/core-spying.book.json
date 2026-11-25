@@ -11,6 +11,7 @@
   "publisherMoniker": "https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg",
   "contributionPath": ".surps/contributions/core-spying.json",
   "contributionSchema": "schemas/book-contribution.schema.json",
+  "viewPath": ".surps/views/core-spying-player.view.json",
   "coverArtwork": "docs/books/artwork/core-spying.svg",
   "acknowledgementsPath": "docs/books/core-spying-acknowledgements.md",
   "contributors": [],
