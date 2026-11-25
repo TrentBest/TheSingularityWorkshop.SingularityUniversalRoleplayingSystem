@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/rulebook-view-registry.schema.json",
+  "title": "SURPS Rulebook View Registry",
+  "description": "Enumerates independently generated audience and publication projections.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "views"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "views": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "path", "output"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"},
+          "path": {"type": "string", "minLength": 1},
+          "output": {"type": "string", "minLength": 1},
+          "bookDescriptor": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
