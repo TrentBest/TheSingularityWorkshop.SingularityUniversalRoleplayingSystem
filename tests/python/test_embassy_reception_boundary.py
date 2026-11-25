@@ -118,10 +118,20 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
             choice_ids = [choice["id"] for choice in node["choices"]]
             self.assertEqual(len(choice_ids), len(set(choice_ids)), node["id"])
             for choice in node["choices"]:
-                self.assertIn(choice["nextNodeId"], nodes, choice["id"])
                 self.assertIn(choice["resolution"], ("direct", "referee"))
+                if "nextNodeId" in choice:
+                    self.assertIn(choice["nextNodeId"], nodes, choice["id"])
                 for key in choice.get("requiresAll", []) + choice.get("setsAll", []):
                     self.assertIn(key, state_keys, (node["id"], choice["id"], key))
+                for outcome_id, branch in choice.get("outcomeBranches", {}).items():
+                    self.assertIn(branch["nextNodeId"], nodes, (choice["id"], outcome_id))
+                    for key in branch.get("setsAll", []):
+                        self.assertIn(key, state_keys, (choice["id"], outcome_id, key))
+                    self.assertEqual("referee", choice["resolution"], choice["id"])
+                    self.assertIn("outcomeRuleId", choice, choice["id"])
+                self.assertEqual("outcomeBranches" in choice, "outcomeRuleId" in choice, choice["id"])
+                self.assertFalse("nextNodeId" in choice and "outcomeBranches" in choice, choice["id"])
+
 
     def test_all_story_nodes_are_reachable_and_endings_are_terminal(self) -> None:
         nodes = {node["id"]: node for node in self.graph["nodes"]}
@@ -132,7 +142,10 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
             if current in reached:
                 continue
             reached.add(current)
-            pending.extend(choice["nextNodeId"] for choice in nodes[current]["choices"])
+            for choice in nodes[current]["choices"]:
+                if "nextNodeId" in choice:
+                    pending.append(choice["nextNodeId"])
+                pending.extend(branch["nextNodeId"] for branch in choice.get("outcomeBranches", {}).values())
         self.assertEqual(set(nodes), reached)
         for node in nodes.values():
             if node["kind"] == "ending":
@@ -142,7 +155,7 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
         semantics = self.graph["semantics"]
         self.assertIn("pending player intent only", semantics["transitionAuthority"])
         self.assertIn("human referee records an adjudicated result", semantics["transitionAuthority"])
-        self.assertIn("not a complete map of outcome-specific consequences", semantics["transitionAuthority"])
+        self.assertIn("matching branch", semantics["transitionAuthority"])
         self.assertIn("not a secure store", semantics["presentationBoundary"])
         schema = json.loads(
             (ROOT / "schemas" / "scenario-story-graph.schema.json").read_text(encoding="utf-8")
@@ -151,7 +164,27 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
         choice = schema["properties"]["nodes"]["items"]["properties"]["choices"]["items"]["properties"]
         self.assertIn("pending intent only", choice["resolution"]["description"])
         self.assertIn("only when this choice transition is committed", choice["setsAll"]["description"])
-        self.assertIn("does not encode separate destinations", choice["nextNodeId"]["description"])
+        self.assertIn("outcomeBranches", choice["nextNodeId"]["description"])
+        self.assertIn("outcomeBranches", choice)
+        self.assertIn("outcomeRuleId", choice)
+
+    def test_follow_the_contact_maps_the_selected_books_four_outcomes(self) -> None:
+        choice = next(
+            choice for node in self.graph["nodes"] for choice in node["choices"]
+            if choice["id"] == "follow-the-contact"
+        )
+        content = json.loads(
+            (ROOT / ".surps" / "microbundles" / "content" / "core-spying.content.json").read_text(encoding="utf-8")
+        )
+        outcome_rule = next(rule for rule in content["rules"] if rule["id"] == choice["outcomeRuleId"])
+        declared_outcomes = {outcome["id"] for outcome in outcome_rule["outcomes"]}
+        self.assertEqual(declared_outcomes, set(choice["outcomeBranches"]))
+        self.assertEqual("surps.core.spying.resolution.outcome-bands", choice["outcomeRuleId"])
+        self.assertEqual("ferry-landing", choice["outcomeBranches"]["surps.core.spying.outcome.strong-success"]["nextNodeId"])
+        self.assertIn("tail_unnoticed", choice["outcomeBranches"]["surps.core.spying.outcome.strong-success"]["setsAll"])
+        self.assertEqual("ferry-landing", choice["outcomeBranches"]["surps.core.spying.outcome.success"]["nextNodeId"])
+        self.assertEqual("follow-recipient-compromised", choice["outcomeBranches"]["surps.core.spying.outcome.mixed-result"]["nextNodeId"])
+        self.assertEqual("contact-lost", choice["outcomeBranches"]["surps.core.spying.outcome.miss"]["nextNodeId"])
 
 
 if __name__ == "__main__":
