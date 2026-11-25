@@ -38,6 +38,23 @@ These are related workstreams, not separate ADPs:
 
 The ADP may run independent tasks in parallel, but shared-record changes and dependent outputs must respect declared dependencies and versioned inputs.
 
+## Cross-repository production and consumption
+
+SURPS content does not originate in only one repository. **raWWar is both a producer of SURPS content and a consumer of SURPS content**, while also being the purveyor of a playable/presented Experience. This is a first-class pipeline relationship, not an exception to the ownership model.
+
+That creates a deliberately more complicated CI graph:
+
+- SURPS authors and validates canonical roleplaying content and its reusable contracts.
+- raWWar can contribute authored content back into the SURPS content ecosystem, subject to SURPS identity, schema, provenance, and validation rules.
+- raWWar also consumes versioned SURPS content to construct and deliver its Experience.
+- A SURPS change can therefore trigger raWWar compatibility and experience validation.
+- A raWWar content contribution can trigger SURPS admission, canonicalization, cross-reference checks, and validation, then flow back to raWWar as an updated consumable content revision.
+- The graph must distinguish a repository's **content-production edge**, **content-consumption edge**, and **experience-delivery edge**. These are separate relationships even when they connect the same two repositories.
+
+The ADP must model this as a dependency graph across repositories and revisions, not as a one-way build chain and not as an assumption that every producer owns the consumer's runtime. Each task records the exact upstream content revisions it consumed and the exact downstream artifacts it produced. CI should test both directions where applicable: contribution admission into SURPS and consumer compatibility in raWWar.
+
+**Ownership remains explicit:** SURPS decides whether contributed material becomes canonical SURPS content; raWWar owns its Experience, its presentation, and its runtime behavior. Neither repository silently assumes ownership of the other's domain. Shared content contracts and versioned artifacts are the boundary between them.
+
 ## Authority and execution boundaries
 
 - **SURPS** owns the roleplaying ontology, canonical IDs, schemas, sourcebook identity, content catalogs, and composition semantics.
