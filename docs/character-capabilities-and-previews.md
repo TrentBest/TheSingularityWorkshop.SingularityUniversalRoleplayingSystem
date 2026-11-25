@@ -2,6 +2,10 @@
 
 ![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Renderer/development/docs/assets/moniker.svg)
 
+## Living character sheets and world surfaces
+
+The first five empty, data-bindable SVG sheet themes and an ambient settlement illustration are now available as visual scaffolds. The [Character Studio](character-studio.html) can select and preview the three starter themes; premium themes are catalogued as preview-only until a real entitlement provider exists. See [Living Character Sheets and World Surfaces](living-world-and-character-studio.md) for the architecture and fidelity progression. The SVG actors and motion are illustrative, not authoritative simulation.
+
 ## Character construction
 
 SURPS character construction should be expressed in terms of **Capabilities** and **Adversities**.
