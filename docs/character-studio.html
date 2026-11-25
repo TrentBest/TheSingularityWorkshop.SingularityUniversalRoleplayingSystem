@@ -31,7 +31,7 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 @media(max-width:999px){.preview{position:static;grid-column:1/-1}.studio{grid-template-columns:210px minmax(0,1fr)}}
 @media(max-width:700px){.studio{grid-template-columns:1fr}.rail{position:static}.character-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{align-items:start}.hero-mark{display:none}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.workspace{min-height:0}}
 @media(prefers-reduced-motion:no-preference){.workspace{animation:arrive .55s ease both}.character-choice,.btn{transition:background .2s,border-color .2s,transform .2s}.btn:hover{transform:translateY(-1px)}@keyframes arrive{from{opacity:0;transform:translateY(10px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}}
-</style>
+.picker{width:min(680px,calc(100% - 28px));max-height:min(80vh,760px);padding:0;border:1px solid var(--line);border-radius:16px;background:#102131;color:var(--ink);box-shadow:0 24px 80px #0009}.picker::backdrop{background:#02070ccc;backdrop-filter:blur(3px)}.picker-head{display:flex;justify-content:space-between;align-items:start;gap:16px;padding:20px;border-bottom:1px solid var(--line)}.picker-head h2{margin:0;font-size:1.2rem}.picker-body{padding:16px 20px 20px;overflow:auto}.picker-note{color:var(--muted);font-size:.82rem;margin:0 0 14px}.picker-list{display:grid;gap:8px}.picker-option{display:grid;gap:4px;width:100%;text-align:left;padding:12px;border:1px solid var(--line);border-radius:10px;background:#0b1823;color:var(--ink)}.picker-option:hover{border-color:var(--mint);background:#173244}.picker-option strong{font-size:.95rem}.picker-option span,.picker-empty{font-size:.8rem;color:var(--muted)}.collection-add{margin-top:7px;padding:5px 10px;border:1px dashed #5c8a88;border-radius:8px;background:transparent;color:var(--mint);font-weight:800}.collection-add:hover{background:#83d6c411}</style>
 </head>
 <body>
 <header><div class="wrap brand">
@@ -62,16 +62,16 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 <div class="field full"><label for="appearance">Appearance and form</label><textarea id="appearance" name="appearance" maxlength="1200" placeholder="Describe visible traits, form, anatomy, or distinguishing features…"></textarea></div>
 </div></section>
 <section class="section"><div class="section-head"><h3>Attributes and capabilities</h3><p>What they are like, and what they can do</p></div><div class="form-grid">
-<div class="field"><label for="attributes">Attributes</label><textarea id="attributes" name="attributes" placeholder="One per line, e.g.&#10;Strength: 2&#10;Perception: 3"></textarea><small>Use a readable label and value per line. No universal rating scale is imposed yet.</small></div>
-<div class="field"><label for="capabilities">Capabilities</label><textarea id="capabilities" name="capabilities" placeholder="One capability per line&#10;Track a trail&#10;Negotiate a passage"></textarea></div>
-<div class="field"><label for="training">Training and experience</label><textarea id="training" name="training" placeholder="Disciplines, practiced skills, education…"></textarea></div>
-<div class="field"><label for="condition">Current condition</label><textarea id="condition" name="condition" placeholder="Health, fatigue, injuries, or other relevant condition…"></textarea></div>
+<div class="field"><label for="attributes">Attributes</label><textarea id="attributes" name="attributes" placeholder="One per line"></textarea><button class="collection-add" type="button" data-add-record="attributes" data-collections="traits">＋ Add from SURPS</button><small>Use a readable label and value per line. No universal rating scale is imposed yet.</small></div>
+<div class="field"><label for="capabilities">Capabilities</label><textarea id="capabilities" name="capabilities" placeholder="Selected capabilities appear here"></textarea><button class="collection-add" type="button" data-add-record="capabilities" data-collections="capabilities">＋ Add from SURPS</button></div>
+<div class="field"><label for="training">Training and experience</label><textarea id="training" name="training" placeholder="Selected training appears here"></textarea><button class="collection-add" type="button" data-add-record="training" data-collections="capabilities">＋ Add from SURPS</button></div>
+<div class="field"><label for="condition">Current condition</label><textarea id="condition" name="condition" placeholder="Conditions and traits"></textarea><button class="collection-add" type="button" data-add-record="condition" data-collections="traits">＋ Add from SURPS</button></div>
 </div></section>
 <section class="section"><div class="section-head"><h3>Life and connections</h3><p>What gives the character direction</p></div><div class="form-grid">
-<div class="field"><label for="goals">Goals and motivations</label><textarea id="goals" name="goals" placeholder="What are they trying to achieve?"></textarea></div>
-<div class="field"><label for="equipment">Equipment and resources</label><textarea id="equipment" name="equipment" placeholder="Possessions, tools, resources, and limitations…"></textarea></div>
-<div class="field"><label for="relationships">Relationships</label><textarea id="relationships" name="relationships" placeholder="One person, group, or bond per line"></textarea></div>
-<div class="field"><label for="history">History</label><textarea id="history" name="history" placeholder="Important events, choices, and turning points…"></textarea></div>
+<div class="field"><label for="goals">Goals and motivations</label><textarea id="goals" name="goals" placeholder="Character options and goals"></textarea><button class="collection-add" type="button" data-add-record="goals" data-collections="characterOptions">＋ Add from SURPS</button></div>
+<div class="field"><label for="equipment">Equipment and resources</label><textarea id="equipment" name="equipment" placeholder="Equipment and resources"></textarea><button class="collection-add" type="button" data-add-record="equipment" data-collections="equipment,resources">＋ Add from SURPS</button></div>
+<div class="field"><label for="relationships">Relationships</label><textarea id="relationships" name="relationships" placeholder="Relationships and creations"></textarea><button class="collection-add" type="button" data-add-record="relationships" data-collections="creations">＋ Add from SURPS</button></div>
+<div class="field"><label for="history">History</label><textarea id="history" name="history" placeholder="History, creations, and notable events"></textarea><button class="collection-add" type="button" data-add-record="history" data-collections="creations">＋ Add from SURPS</button></div>
 </div></section>
 <div class="bottom-actions"><button class="btn subtle danger" id="deleteCharacter" type="button" disabled>Delete character</button><button class="btn primary" type="submit">Save changes</button></div>
 </form>
@@ -89,18 +89,18 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 </div>
 </aside>
 </section>
-</main>
+<dialog class="picker" id="recordPicker" aria-labelledby="pickerTitle"><div class="picker-head"><div><div class="step-label">SURPS content catalog</div><h2 id="pickerTitle">Select a record</h2></div><button class="btn subtle" id="closePicker" type="button" aria-label="Close selector">✕</button></div><div class="picker-body"><p class="picker-note">Choices are loaded from registered SURPS MicroBundles and retain their source identity and version. Only content currently present in the catalog is offered; no placeholder or invented options are added.</p><div class="picker-list" id="pickerList"></div></div></dialog></main>
 <footer><div class="wrap"><img src="https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png" alt="The Singularity Workshop"><strong>The Singularity Workshop · SURPS</strong><br>One character. Many worlds. Your story travels with you.</div></footer>
 <script>
 (() => {
 const KEY = "surps.character-studio.draft.v1";
 const $ = id => document.getElementById(id);
 const fields = ["name","role","pronouns","origin","concept","appearance","attributes","capabilities","training","condition","goals","equipment","relationships","history"];
-let roster = [], activeId = null, selectedTheme = "verdant";
+let roster = [], activeId = null, selectedTheme = "verdant", selectedRecords = [], characterCatalog = null, pickerTarget = null;
 const announce = (message, error=false) => { $("status").textContent=message; $("status").classList.toggle("error",error); };
 const uid = () => (crypto && crypto.randomUUID) ? crypto.randomUUID() : "surps-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
-const readForm = () => Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));
-const fillForm = data => { fields.forEach(k=>$(k).value=data?.[k] || ""); selectedTheme=data?.sheetTheme||"verdant"; updateSheetPreview(); updateSheetBindings(); };
+const readForm = () => ({...Object.fromEntries(fields.map(k=>[k,$(k).value.trim()])),contentSelections:selectedRecords.slice()});
+const fillForm = data => { fields.forEach(k=>$(k).value=data?.[k] || ""); selectedRecords=Array.isArray(data?.contentSelections)?data.contentSelections.slice():[]; selectedTheme=data?.sheetTheme||"verdant"; updateSheetPreview(); updateSheetBindings(); };
 const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
@@ -119,6 +119,40 @@ function updateSheetBindings(){
   target.replaceChildren();const ns="http://www.w3.org/2000/svg";const x=target.getAttribute("x")||"0";const y=Number(target.getAttribute("y")||0);const lineHeight=Number(target.getAttribute("data-line-height")||17);
   visible.forEach((text,index)=>{const span=svgDocument.createElementNS(ns,"tspan");span.setAttribute("x",x);span.setAttribute("y",String(y+index*lineHeight));span.textContent=text;target.appendChild(span)});
  });
+}
+
+async function loadCharacterCatalog(){
+ if(characterCatalog)return characterCatalog;
+ const response=await fetch("assets/character-catalog.json",{cache:"no-cache"});
+ if(!response.ok)throw new Error("The SURPS content catalog is not available yet.");
+ const payload=await response.json();
+ if(payload.schemaVersion!==1||!payload.collections||typeof payload.collections!=="object")throw new Error("The SURPS content catalog has an unsupported contract.");
+ characterCatalog=payload;return payload;
+}
+async function openRecordPicker(targetId,collectionNames){
+ pickerTarget=targetId;const list=$("pickerList");list.replaceChildren();
+ $("pickerTitle").textContent="Add to "+targetId.charAt(0).toUpperCase()+targetId.slice(1);
+ try{
+  const catalog=await loadCharacterCatalog();
+  const records=collectionNames.flatMap(name=>(catalog.collections[name]||[]).map(record=>({...record,_collection:name})));
+  const available=records.filter(record=>!selectedRecords.some(selected=>selected.id===record.id&&selected.source?.microbundleId===record.source?.microbundleId));
+  if(!available.length){const empty=document.createElement("p");empty.className="picker-empty";empty.textContent="No unused records are currently published for this collection in the registered SURPS MicroBundles.";list.append(empty)}
+  available.forEach(record=>{
+   const button=document.createElement("button");button.type="button";button.className="picker-option";
+   const name=document.createElement("strong");name.textContent=record.name||record.title||record.id;
+   const description=document.createElement("span");description.textContent=record.description||record.summary||record.id;
+   const source=document.createElement("span");source.textContent=record.source.microbundleId+" · v"+record.source.microbundleVersion;
+   button.append(name,description,source);
+   button.addEventListener("click",()=>{
+    selectedRecords.push({id:record.id,kind:record._collection,name:record.name||record.title||record.id,target:pickerTarget,source:record.source});
+    const area=$(pickerTarget);const lines=area.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+    if(!lines.includes(record.name||record.title||record.id)){lines.push(record.name||record.title||record.id);area.value=lines.join("\n")}
+    updatePreview();updateSheetBindings();$("recordPicker").close();announce("Added "+(record.name||record.id)+" with SURPS source provenance.");
+   });
+   list.append(button);
+  });
+  $("recordPicker").showModal();
+ }catch(error){announce(error.message||"Could not load the SURPS content catalog.",true)}
 }
 function updatePreview(){
  const d=readForm(); $("previewName").textContent=d.name||"Unnamed character";
@@ -156,6 +190,8 @@ function download(c){
  const blob=new Blob([JSON.stringify(envelope(c),null,2)],{type:"application/json"});
  const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(c.name||"surps-character").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")+".surps-character.json";document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);announce("Character JSON exported. Keep this file as your portable copy.");
 }
+document.querySelectorAll("[data-add-record]").forEach(button=>button.addEventListener("click",()=>openRecordPicker(button.dataset.addRecord,button.dataset.collections.split(","))));
+$("closePicker").addEventListener("click",()=>$("recordPicker").close());
 $("newCharacter").addEventListener("click",newCharacter);
 $("saveCharacter").addEventListener("click",saveCharacter);
 $("characterForm").addEventListener("submit",e=>{e.preventDefault();saveCharacter()});
