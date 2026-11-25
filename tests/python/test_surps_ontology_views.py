@@ -32,6 +32,15 @@ class OntologyViewTests(unittest.TestCase):
         self.assertEqual(2, len(result["sources"]))
         self.assertEqual("physics.microbundle.sample", result["records"][1]["sourceMicrobundle"])
 
+    def test_resolves_book_independent_microbundle_content(self):
+        self.bundles["surps.microbundle.sample"] = (
+            self.bundles["surps.microbundle.sample"][0],
+            {"schemaVersion": 1, "capabilities": [{"id": "sample.capability.observe", "name": "Observe"}]})
+        errors = []
+        result = ontology.resolve_view(self.bundles, self.view, errors)
+        self.assertEqual([], errors)
+        self.assertEqual(2, len(result["records"]))
+
     def test_same_canonical_records_can_back_distinct_audience_views(self):
         player = copy.deepcopy(self.view)
         player["audience"] = "player"
