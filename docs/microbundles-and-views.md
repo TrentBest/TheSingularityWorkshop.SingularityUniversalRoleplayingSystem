@@ -44,7 +44,18 @@ This is real local selection and projection, not just a diagram or a design docu
 
 The first MicroBundle descriptor wraps the existing `.surps/contributions/core-spying.json` payload. That payload still carries its original book-scoped identity for backward compatibility. The MicroBundle wrapper establishes the new independently selectable bundle identity and explicitly records the transitional relationship. It does **not** yet mean the records have been physically moved into an independently owned ontology store.
 
-The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. The current resolver supports multiple bundles from one repository-local registry, but the checked-in pilot registry has only one real bundle. Cross-repository registry discovery, federated global identity collision detection, semantic dependency/version-range resolution, typed reference resolution across bundles, conflict policy, and runtime execution remain separate gates.
+The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. The current resolver supports multiple bundles from one repository-local registry, but the checked-in pilot registry has only one real bundle. Cross-repository content-record federation, federated global record-ID collision detection, semantic dependency/version-range resolution, typed reference resolution across bundles, conflict policy, and runtime execution remain separate gates. A separate pinned external-provider discovery path now reads actual Physics-owned provider manifests without copying their domain records into SURPS.
+
+## First cross-repository provider discovery
+
+SURPS now pins the Physics repository at commit `0e707e1add24a4009ec5380372f2c8f670e1a7a2` and validates two owner-maintained manifests:
+
+- Physics bundle 5202 — Normal Impulse Response, provider `physics.contact.normal-impulse.v1`.
+- Physics bundle 5203 — Prescribed Kinematic Motion, provider `physics.kinematics.prescribed-motion.v1`.
+
+The [external provider registry](../.surps/external-providers/registry.json) records the exact source commit, manifest paths, bundle identities, and provider IDs. The validator checks the owner-repository manifests against those pinned identities and emits a provenance-preserving discovery catalog. CI uploads it as `surps-external-provider-catalog`.
+
+This is a real cross-repository discovery integration: the source manifests remain owned by Physics, and SURPS consumes them at a pinned commit. It is deliberately **not** yet cross-repository rulebook record composition, a runtime provider loader, or a claim that the provider implementation is automatically available to an experience. Provider metadata and authored ontology records remain distinct contracts.
 
 ## Ownership and maturity rules
 
@@ -64,6 +75,8 @@ Run locally:
 ```bash
 python -m pip install "jsonschema>=4.23,<5"
 python3 scripts/validate_surps_ontology_views.py
+# With the pinned Physics checkout at _dependencies/Physics:
+python3 scripts/validate_surps_external_providers.py --source-root _dependencies/Physics
 python3 -m unittest discover -s tests/python -v
 ```
 
