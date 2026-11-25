@@ -6,7 +6,7 @@
   "entryNodeId": "briefing",
   "semantics": {
     "purpose": "Authoring map for the complete player-choice structure of the first Missing Ledger story slice.",
-    "transitionAuthority": "A selected choice records player intent. It does not itself prove success, reveal hidden facts, or commit world-state changes; uncertain actions still require the scenario's declared referee procedure.",
+    "transitionAuthority": "Selecting a choice records pending player intent only. It never changes scenario state or advances the current node by itself. A direct choice may commit its declared transition immediately; a referee choice remains pending until a human referee records an adjudicated result and accepts the transition. State effects apply only when that transition is committed. The single nextNodeId is the authored continuation after acceptance, not a complete map of outcome-specific consequences.",
     "presentationBoundary": "Node presentation is the player-facing projection. Authoring metadata and state flags are not player knowledge. This file is an authoring artifact, not a secure store for referee secrets."
   },
   "stateKeys": [
