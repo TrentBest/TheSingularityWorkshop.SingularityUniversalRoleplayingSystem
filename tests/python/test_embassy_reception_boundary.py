@@ -97,5 +97,56 @@ class MissingLedgerExperienceTests(unittest.TestCase):
         self.assertIn("no clock advances automatically", page)
 
 
+
+
+class MissingLedgerStoryGraphTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.graph = json.loads(
+            (ROOT / "experiences" / "missing-ledger" / "story-graph.json").read_text(encoding="utf-8")
+        )
+
+    def test_graph_has_unique_nodes_and_resolvable_entry(self) -> None:
+        nodes = self.graph["nodes"]
+        ids = [node["id"] for node in nodes]
+        self.assertEqual(len(ids), len(set(ids)))
+        self.assertIn(self.graph["entryNodeId"], ids)
+
+    def test_every_choice_target_and_state_reference_is_declared(self) -> None:
+        nodes = {node["id"]: node for node in self.graph["nodes"]}
+        state_keys = set(self.graph["stateKeys"])
+        for node in nodes.values():
+            choice_ids = [choice["id"] for choice in node["choices"]]
+            self.assertEqual(len(choice_ids), len(set(choice_ids)), node["id"])
+            for choice in node["choices"]:
+                self.assertIn(choice["nextNodeId"], nodes, choice["id"])
+                self.assertIn(choice["resolution"], ("direct", "referee"))
+                for key in choice.get("requiresAll", []) + choice.get("setsAll", []):
+                    self.assertIn(key, state_keys, (node["id"], choice["id"], key))
+
+    def test_all_story_nodes_are_reachable_and_endings_are_terminal(self) -> None:
+        nodes = {node["id"]: node for node in self.graph["nodes"]}
+        reached = set()
+        pending = [self.graph["entryNodeId"]]
+        while pending:
+            current = pending.pop()
+            if current in reached:
+                continue
+            reached.add(current)
+            pending.extend(choice["nextNodeId"] for choice in nodes[current]["choices"])
+        self.assertEqual(set(nodes), reached)
+        for node in nodes.values():
+            if node["kind"] == "ending":
+                self.assertEqual([], node["choices"], node["id"])
+
+    def test_story_graph_is_authoring_content_not_a_client_secret_store(self) -> None:
+        semantics = self.graph["semantics"]
+        self.assertIn("does not itself prove success", semantics["transitionAuthority"])
+        self.assertIn("not a secure store", semantics["presentationBoundary"])
+        schema = json.loads(
+            (ROOT / "schemas" / "scenario-story-graph.schema.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(1, schema["properties"]["schemaVersion"]["const"])
+
+
 if __name__ == "__main__":
     unittest.main()
