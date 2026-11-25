@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">CORE Spying approach spectrum</title>
+  <desc id="desc">Six reusable approaches feed an uncertain action whose chance is calculated from capability and circumstances.</desc>
+  <rect x="12" y="12" width="936" height="396" rx="24" fill="#111827"/>
+  <text x="480" y="58" fill="#f9fafb" font-family="sans-serif" font-size="28" text-anchor="middle">CORE SPYING · APPROACHES</text>
+  <g font-family="sans-serif" font-size="22" text-anchor="middle">
+    <g fill="#1f2937" stroke="#60a5fa" stroke-width="2">
+      <rect x="54" y="105" width="240" height="70" rx="14"/><rect x="360" y="105" width="240" height="70" rx="14"/><rect x="666" y="105" width="240" height="70" rx="14"/>
+      <rect x="54" y="215" width="240" height="70" rx="14"/><rect x="360" y="215" width="240" height="70" rx="14"/><rect x="666" y="215" width="240" height="70" rx="14"/>
+    </g>
+    <g fill="#f9fafb"><text x="174" y="149">Observe</text><text x="480" y="149">Deceive</text><text x="786" y="149">Infiltrate</text><text x="174" y="259">Analyze</text><text x="480" y="259">Influence</text><text x="786" y="259">Operate</text></g>
+  </g>
+  <path d="M174 175 V320 H480 M480 175 V320 M786 175 V320 H480 M174 285 V320 M786 285 V320" fill="none" stroke="#93c5fd" stroke-width="3"/>
+  <rect x="260" y="320" width="440" height="62" rx="16" fill="#1d4ed8"/>
+  <text x="480" y="359" fill="white" font-family="sans-serif" font-size="22" text-anchor="middle">Capability + Circumstances → Chance</text>
+</svg>
