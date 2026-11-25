@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/microbundle-assets.schema.json",
+  "title": "SURPS MicroBundle Book Assets",
+  "description": "Book-facing words and media owned by a MicroBundle; assets retain stable identity and may be projected into many books.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "microbundleId",
+    "assets"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "microbundleId": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "path",
+          "altText",
+          "usage"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"
+          },
+          "kind": {
+            "enum": [
+              "svg",
+              "image",
+              "text",
+              "caption",
+              "diagram",
+              "cover-art"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "altText": {
+            "type": "string"
+          },
+          "usage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caption": {
+            "type": "string"
+          },
+          "audiences": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "player",
+                "game-master",
+                "workshop",
+                "editor",
+                "reference",
+                "print",
+                "all"
+              ]
+            }
+          },
+          "locale": {
+            "type": "string"
+          },
+          "mediaType": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
