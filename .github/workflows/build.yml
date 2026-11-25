@@ -11,15 +11,18 @@ on:
       - "docs/repository-participation.md"
       - "docs/repository-onboarding.md"
       - ".surps/rulebook-backlog.json"
+      - ".surps/participation.json"
+      - ".surps/contributions/**"
+      - ".surps/microbundles/**"
+      - ".surps/views/**"
       - "README.md"
       - ".github/ISSUE_TEMPLATE/rulebook-owner-sign-in.yml"
       - ".github/ISSUE_TEMPLATE/surps-repository-participation.yml"
       - "docs/assets/rulebook-lod-*.svg"
-      - ".surps/participation.json"
-      - ".surps/contributions/**"
       - "docs/book-contribution-contract.md"
       - "scripts/validate_surps_catalog.py"
       - "scripts/validate_surps_book_schemas.py"
+      - "scripts/validate_surps_ontology_views.py"
       - "scripts/generate_surps_book_assets.py"
       - "schemas/**"
       - "docs/examples/**"
@@ -47,11 +50,13 @@ jobs:
         run: python scripts/validate_surps_book_schemas.py
       - name: Validate SURPS book catalogue and descriptors
         run: python3 scripts/validate_surps_catalog.py
+      - name: Resolve MicroBundles and validate rulebook views
+        run: python3 scripts/validate_surps_ontology_views.py --check
       - name: Verify generated SURPS publication assets
         run: python3 scripts/generate_surps_book_assets.py --check
-      - name: Verify publication generator syntax
-        run: python3 -m py_compile scripts/generate_surps_book_assets.py
-      - name: Test SURPS publication generator
+      - name: Verify Python tooling syntax
+        run: python3 -m py_compile scripts/generate_surps_book_assets.py scripts/validate_surps_ontology_views.py
+      - name: Test SURPS content tooling
         run: python3 -m unittest discover -s tests/python -v
       - name: Checkout MicroBundleDomain development dependency
         uses: actions/checkout@v4
