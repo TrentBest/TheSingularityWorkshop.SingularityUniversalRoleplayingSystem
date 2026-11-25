@@ -100,7 +100,7 @@ let roster = [], activeId = null, selectedTheme = "verdant";
 const announce = (message, error=false) => { $("status").textContent=message; $("status").classList.toggle("error",error); };
 const uid = () => (crypto && crypto.randomUUID) ? crypto.randomUUID() : "surps-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,10);
 const readForm = () => Object.fromEntries(fields.map(k=>[k,$(k).value.trim()]));
-const fillForm = data => fields.forEach(k=>$(k).value=data?.[k] || "");
+const fillForm = data => { fields.forEach(k=>$(k).value=data?.[k] || ""); selectedTheme=data?.sheetTheme||"verdant"; updateSheetPreview(); };
 const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
