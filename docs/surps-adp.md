@@ -55,6 +55,19 @@ The ADP must model this as a dependency graph across repositories and revisions,
 
 **Ownership remains explicit:** SURPS decides whether contributed material becomes canonical SURPS content; raWWar owns its Experience, its presentation, and its runtime behavior. Neither repository silently assumes ownership of the other's domain. Shared content contracts and versioned artifacts are the boundary between them.
 
+## Read-only CI evidence checkpoint
+
+The first cross-repository evidence lane is now exercised for raWWar:
+
+- raWWar source revision: `eef1974a87d78eefe2802d77d7f2451f4f2b47a7`.
+- raWWar build: [run 45549019401](https://github.com/TrentBest/raWWar/actions/runs/45549019401), successful with 406/406 contract checks.
+- CiAi exact-source observer: [run 45549019399](https://github.com/TrentBest/raWWar/actions/runs/45549019399), successful for source run 45549019401, attempt 1.
+- The observer validated provider artifact identity, workflow provenance, the pinned workflow-definition baseline, and the genuine TRX report (`CompletePass`).
+
+This is evidence-lane proof only. It does **not** mean raWWar content has been admitted into SURPS, that canonical SURPS content has been published back to raWWar, or that raWWar has passed compatibility validation against a changed SURPS content revision. Those are the next domain-level acceptance cases.
+
+Implementation details: [CiAi raWWar integration proof](https://github.com/TrentBest/TheSingularityWorkshop.CiAi/blob/development/docs/Samples/raWWar.md).
+
 ## Authority and execution boundaries
 
 - **SURPS** owns the roleplaying ontology, canonical IDs, schemas, sourcebook identity, content catalogs, and composition semantics.
