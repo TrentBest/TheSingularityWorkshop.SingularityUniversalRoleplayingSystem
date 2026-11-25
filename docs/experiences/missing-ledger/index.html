@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SURPS — The Missing Ledger</title>
+<style>
+:root{color-scheme:dark;--bg:#101820;--panel:#1a2935;--ink:#edf4f8;--muted:#a9bbc7;--line:#3b5261;--mint:#8be0c8;--gold:#f0ca7b;--red:#e99b88}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#25444a 0,transparent 42%),var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}
+.wrap{width:min(960px,calc(100% - 32px));margin:auto}header,footer{padding:24px 0;border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;margin-top:42px;color:var(--muted)}
+a{color:var(--mint)}h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.02;margin:.25em 0}h2{font-size:1.4rem;margin-top:0}.eyebrow{color:var(--gold);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}.muted,.small{color:var(--muted)}
+.panel{background:linear-gradient(145deg,#20313e,#15212b);border:1px solid var(--line);border-radius:18px;padding:20px;margin:18px 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field label{font-size:.9rem;color:var(--muted)}
+input,select,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#101a23;color:var(--ink);font:inherit}
+textarea{min-height:86px;resize:vertical}button{border:1px solid var(--mint);background:#21483e;color:#effff9;padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer}
+button.secondary{background:#101a23;border-color:var(--line);color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.result{background:#101a23;border-left:4px solid var(--gold);padding:14px;border-radius:10px;min-height:66px}.clocks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.clock{border:1px solid var(--line);border-radius:13px;padding:14px}.ticks{display:flex;gap:6px;margin:10px 0}.tick{height:24px;flex:1;border:1px solid #637987;border-radius:5px;background:#101a23}.tick.on{background:var(--gold);border-color:var(--gold)}
+.list{padding-left:22px}.note{padding:9px 0;border-bottom:1px solid var(--line)}.warning{border-color:#80664a}.warning strong{color:var(--gold)}.footimg{display:block;width:min(240px,70%);height:auto;margin-top:18px}
+@media(max-width:680px){.grid,.clocks{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a href="../../index.html">SURPS</a> / <a href="../../books/core-spying.md">CORE Spying</a>
+<div class="eyebrow">A short tabletop spy mission · Playtest 0.1.0</div>
+<h1>The Missing Ledger</h1>
+<p class="muted">A river town. A quiet betrayal. One night to find the truth without putting the wrong person in danger.</p>
+</div></header>
+<main class="wrap">
+<section class="panel">
+<div class="eyebrow">Your briefing</div>
+<h2>Before dawn, the evidence disappears.</h2>
+<p>A clerk named Mara has discovered that grain meant for the town's winter stores is being diverted. She has copied part of the records and needs to pass the evidence to someone she trusts before dawn.</p>
+<p>Your task is to identify the intended recipient, establish what the records can actually prove, and protect Mara from exposure. You have limited time. The town is small, people notice unfamiliar questions, and a careless accusation could put an innocent person at risk.</p>
+<p><strong>Your mission is not simply to steal a document.</strong> Separate what you observe from what you infer, what others claim, and what you can verify.</p>
+</section>
+<section class="panel">
+<h2>Prepare your operative</h2>
+<p class="small">Distribute eight points among the six approaches. Each rating must be between zero and three. These are this playtest book's character ratings, not a universal character schema.</p>
+<div class="grid">
+<div class="field"><label for="agent">Operative name</label><input id="agent" maxlength="60" placeholder="Your character"></div>
+<div class="field"><label for="cover">Cover / public role</label><input id="cover" maxlength="80" placeholder="A traveler, factor, courier..."></div>
+</div>
+<div class="grid" id="approaches">
+<div class="field"><label for="observe">Observe</label><input id="observe" type="number" min="0" max="3" value="2"></div>
+<div class="field"><label for="deceive">Deceive</label><input id="deceive" type="number" min="0" max="3" value="1"></div>
+<div class="field"><label for="infiltrate">Infiltrate</label><input id="infiltrate" type="number" min="0" max="3" value="2"></div>
+<div class="field"><label for="analyze">Analyze</label><input id="analyze" type="number" min="0" max="3" value="1"></div>
+<div class="field"><label for="influence">Influence</label><input id="influence" type="number" min="0" max="3" value="1"></div>
+<div class="field"><label for="operate">Operate</label><input id="operate" type="number" min="0" max="3" value="1"></div>
+</div>
+<p id="pointStatus" class="small" aria-live="polite">Allocated: 8 / 8</p>
+</section>
+<section class="panel">
+<h2>Take an action</h2>
+<p class="small">State your intent, method, and risk to the referee. The referee sets the target number. Roll only when the outcome is uncertain and consequential.</p>
+<div class="grid">
+<div class="field"><label for="intent">Intent</label><select id="intent"><option>Identify who Mara trusts</option><option>Learn where the handoff will happen</option><option>Find corroborating storehouse evidence</option><option>Protect Mara from exposure</option><option>Verify what the copied records prove</option><option>Get the evidence to safety</option></select></div>
+<div class="field"><label for="approach">Approach used</label><select id="approach"><option value="observe">Observe</option><option value="deceive">Deceive</option><option value="infiltrate">Infiltrate</option><option value="analyze">Analyze</option><option value="influence">Influence</option><option value="operate">Operate</option></select></div>
+<div class="field"><label for="target">Referee's target (7–13)</label><input id="target" type="number" min="7" max="13" value="9"></div>
+<div class="field"><label for="dice">Physical 2d6 total (optional)</label><input id="dice" type="number" min="2" max="12" placeholder="Enter 2–12"></div>
+</div>
+<div class="actions"><button id="roll">Roll 2d6</button><button class="secondary" id="resolve">Resolve physical dice</button></div>
+<div class="result" id="result" aria-live="polite">Your result will appear here. The referee remains the adjudicator.</div>
+<p class="small" id="math"></p>
+</section>
+<section class="panel">
+<h2>Track the night</h2>
+<p class="small">Choose the consequence for each clock with the referee before play. Advance clocks only when the fiction warrants it; no result automatically advances a clock.</p>
+<div class="clocks">
+<div class="clock" data-clock="Opportunity"><strong>Opportunity</strong><p class="small">The window to make the handoff closes.</p><div class="ticks"></div><button class="secondary advance">Advance</button></div>
+<div class="clock" data-clock="Suspicion"><strong>Suspicion</strong><p class="small">Observers begin asking questions.</p><div class="ticks"></div><button class="secondary advance">Advance</button></div>
+<div class="clock" data-clock="Response"><strong>Response</strong><p class="small">The people diverting the grain react.</p><div class="ticks"></div><button class="secondary advance">Advance</button></div>
+</div>
+<p class="small" id="clockStatus" aria-live="polite">All clocks are clear.</p>
+</section>
+<section class="panel">
+<h2>Your information ledger</h2>
+<p class="small">Record information with its correct status. A sincere claim can still be false; an inference is not proof.</p>
+<div class="grid">
+<div class="field"><label for="kind">Information state</label><select id="kind"><option>Observed</option><option>Inferred</option><option>Claimed</option><option>Verified</option><option>Reported</option></select></div>
+<div class="field"><label for="source">Source / evidence</label><input id="source" maxlength="120" placeholder="Who or what supports this?"></div>
+</div>
+<div class="field"><label for="entry">What did you learn?</label><textarea id="entry" maxlength="500" placeholder="Write the information without overstating what it proves."></textarea></div>
+<div class="actions"><button id="record">Record information</button><button class="secondary" id="export">Copy session notes</button></div>
+<ul class="list" id="entries" aria-live="polite"></ul>
+</section>
+<section class="panel warning">
+<strong>Referee boundary</strong>
+<p class="small">This public page contains only the player briefing and play aids. It does not contain the referee's hidden fact ledger or a client-side Game Master switch. The referee must keep private facts and adjudication notes outside this public site. A human referee sets difficulties, interprets outcomes, and decides what evidence is sufficient.</p>
+</section>
+<section class="panel">
+<h2>When the mission ends</h2>
+<p>Compare the evidence you secured with the objective you chose. Did you identify the recipient? Protect Mara? Establish the diversion? Preserve proof that another person can verify? These are separate achievements, not one pass/fail result.</p>
+<p class="small">For the complete tabletop procedure, see the <a href="../../books/core-spying.md">CORE Spying sourcebook</a>. This mission uses its current provisional 2d6 playtest adapter; no automated digital spying evaluator is claimed.</p>
+</section>
+</main>
+<footer class="wrap">
+<p>SURPS · The Missing Ledger · Scenario Experience 0.1.0</p>
+<p class="small">Player-facing play aid. No persistent session storage; copy your notes before closing the page.</p>
+<img class="footimg" src="https://raw.githubusercontent.com/TrentBest/FSM_API/master/Documentation/Branding/TheSingularityWorkshop.png" alt="The Singularity Workshop">
+</footer>
+<script>
+const $=id=>document.getElementById(id),names=["observe","deceive","infiltrate","analyze","influence","operate"],clocks={Opportunity:0,Suspicion:0,Response:0},notes=[];
+function allocation(){const values=names.map(n=>Math.max(0,Math.min(3,Number($(n).value)||0))),sum=values.reduce((a,b)=>a+b,0);$("pointStatus").textContent="Allocated: "+sum+" / 8"+(sum===8?" — ready": " — adjust ratings to total exactly eight");return {values,sum}}
+names.forEach(n=>$(n).addEventListener("input",allocation));allocation();
+function renderClocks(){document.querySelectorAll(".clock").forEach(el=>{const key=el.dataset.clock,wrap=el.querySelector(".ticks");wrap.replaceChildren();for(let i=0;i<4;i++){const node=document.createElement("span");node.className="tick"+(i<clocks[key]?" on":"");node.setAttribute("aria-label","Box "+(i+1)+(i<clocks[key]?" marked":" empty"));wrap.append(node)}});const full=Object.entries(clocks).filter(([,v])=>v===4).map(([k])=>k);$("clockStatus").textContent=full.length?"Clock complete: "+full.join(", ")+". Resolve its pre-agreed consequence with the referee.":"Opportunity "+clocks.Opportunity+"/4 · Suspicion "+clocks.Suspicion+"/4 · Response "+clocks.Response+"/4";}
+document.querySelectorAll(".clock").forEach(el=>el.querySelector("button").addEventListener("click",()=>{const key=el.dataset.clock;clocks[key]=Math.min(4,clocks[key]+1);renderClocks()}));
+function resolve(total){const allocationState=allocation();if(allocationState.sum!==8||allocationState.values.some(v=>v<0||v>3)){$("result").textContent="Adjust the six approaches to exactly eight points, with no rating above three, before resolving an action.";return}const target=Math.max(7,Math.min(13,Number($("target").value)||9)),approach=$("approach").value,rating=Number($(approach).value),score=total+rating,diff=score-target;let outcome,explain;if(diff>=3){outcome="Strong success";explain="Achieve the intent and gain a useful extra benefit or reduce exposure."}else if(diff>=0){outcome="Success";explain="Achieve the stated intent. Describe exactly what the character learns or changes."}else if(diff>=-2){outcome="Mixed result";explain="Make progress, but accept a cost, delay, complication, or increased exposure."}else{outcome="Miss";explain="The intent is not achieved. The situation changes; the referee determines a plausible consequence."}$("result").textContent=outcome+" — "+explain;$("math").textContent="2d6 "+total+" + "+rating+" ("+approach+") = "+score+" against target "+target+". Intent: "+$("intent").value+". No clock advances automatically."}
+$("roll").addEventListener("click",()=>{const total=1+Math.floor(Math.random()*6)+1+Math.floor(Math.random()*6);$("dice").value=total;resolve(total)});$("resolve").addEventListener("click",()=>{const total=Number($("dice").value);if(!Number.isInteger(total)||total<2||total>12){$("result").textContent="Enter a valid physical dice total from 2 to 12.";return}resolve(total)});
+function renderNotes(){$("entries").replaceChildren();notes.forEach(n=>{const li=document.createElement("li");li.className="note";li.textContent=n.kind+": "+n.text+(n.source?" — Source: "+n.source:"");$("entries").append(li)})}
+$("record").addEventListener("click",()=>{const text=$("entry").value.trim();if(!text)return;notes.push({kind:$("kind").value,text,source:$("source").value.trim()});renderNotes();$("entry").value="";$("source").value=""});
+$("export").addEventListener("click",()=>{const lines=["The Missing Ledger — session notes","Operative: "+$("agent").value,"Cover: "+$("cover").value,"Approaches: "+names.map(n=>n[0].toUpperCase()+n.slice(1)+" "+$(n).value).join(", "),"Clocks: "+Object.entries(clocks).map(([k,v])=>k+" "+v+"/4").join("; "),...notes.map(n=>n.kind+": "+n.text+(n.source?" (Source: "+n.source+")":""))];const text=lines.join("\n");if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>$("math").textContent="Session notes copied.").catch(()=>$("math").textContent="Clipboard unavailable; select and copy your notes manually.")}else{$("math").textContent="Clipboard unavailable in this browser context."}});
+renderClocks();
+</script>
+</body></html>
