@@ -22,7 +22,7 @@ The initial catalog contains five empty SVG sheets:
 
 Assets live in `docs/assets/character-sheets/`; `catalog.json` describes presentation metadata and the initial tier grouping. The tier values are catalog intent only. They do not implement payments, entitlements, storefronts, or unlock enforcement. A future commerce/entitlement adapter must authorize a theme without changing the character's underlying data.
 
-Every sheet is intentionally empty. Names, attributes, capabilities, conditions, equipment, relationships, and notes are blank presentation targets. The character model remains the source of truth; SVG fields are projections.
+Every sheet remains an empty template when opened directly. Each theme implements the shared versioned `surps.character-sheet@1.0.0` presentation contract through stable `data-surps-bind` targets. Character Studio projects the current draft into those targets at runtime; it does not write character data back into the SVG asset. The character model remains the source of truth; SVG fields are projections. This is the first data-bound stage, not a canonical character serialization contract.
 
 ## Living maps and nested places
 
