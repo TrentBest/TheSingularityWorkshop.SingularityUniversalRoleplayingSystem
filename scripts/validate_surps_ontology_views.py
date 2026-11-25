@@ -39,6 +39,9 @@ def validate_asset_manifest(descriptor: dict, errors: list[str]) -> None:
         errors.append(f"{manifest_path}: microbundleId does not match descriptor")
     seen = set()
     for asset in manifest.get("assets", []):
+        if not isinstance(asset, dict):
+            errors.append(f"{manifest_path}: asset entries must be objects")
+            continue
         asset_id, asset_path = asset.get("id"), asset.get("path")
         if asset_id in seen:
             errors.append(f"{manifest_path}: duplicate asset id {asset_id!r}")
@@ -74,6 +77,9 @@ def validate_preview_manifest(descriptor: dict, errors: list[str]) -> None:
         errors.append(f"{manifest_path}: microbundleId does not match descriptor")
     seen_ids, seen_paths = set(), set()
     for entry in manifest.get("previews", []):
+        if not isinstance(entry, dict):
+            errors.append(f"{manifest_path}: preview entries must be objects")
+            continue
         preview_id, preview_path = entry.get("id"), entry.get("path")
         if preview_id in seen_ids:
             errors.append(f"{manifest_path}: duplicate preview id {preview_id!r}")
