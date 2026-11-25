@@ -61,7 +61,9 @@ Provider discovery is not runtime availability. A descriptor marked `proposed` i
 ## Contracts and status
 
 - [Character capability/adversity schema](../schemas/character-capability.schema.json) defines the common character-facing shape.
+- [Action preview manifest schema](../schemas/action-preview-manifest.schema.json) lets each MicroBundle offer multiple previews.
 - [Action preview schema](../schemas/action-preview.schema.json) defines provider composition and staged preview semantics.
+- [CORE Spying preview manifest](../.surps/previews/core-spying.previews.json) registers the bundle's available previews.
 - [Lock-picking preview descriptor](../.surps/previews/lock-picking.preview.json) is a proposed composition example.
 - [Probability-first resolution proposal](probability-resolution.html) remains provisional.
 
