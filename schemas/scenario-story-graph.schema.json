@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/scenario-story-graph.schema.json",
   "title": "SURPS Scenario Story Graph",
-  "description": "A versioned authoring graph for player choices and narrative scene transitions. This schema does not define a runtime, adjudicator, or secure referee-data store.",
+  "description": "A versioned authoring graph for player choices and narrative scene transitions. Optional outcomeBranches map a selected MicroBundle rule's source-specific outcome identifiers to authored continuations. This schema does not define a runtime, adjudicator, or secure referee-data store.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -104,8 +104,7 @@
                 "id",
                 "label",
                 "intent",
-                "resolution",
-                "nextNodeId"
+                "resolution"
               ],
               "properties": {
                 "id": {
@@ -143,11 +142,122 @@
                   "uniqueItems": true
                 },
                 "nextNodeId": {
-                  "description": "The continuation node after the transition is committed. For referee choices this is not permission to navigate immediately, and in schema version 1 it does not encode separate destinations for different adjudication outcomes.",
+                  "description": "The single continuation after commitment for a direct choice or a referee choice without outcomeBranches. When outcomeBranches is present, each accepted source-specific outcome selects its own nextNodeId instead; this field must not be used as a fallback.",
                   "type": "string",
                   "minLength": 1
+                },
+                "outcomeRuleId": {
+                  "description": "Stable identifier of the selected MicroBundle rule that defines the outcome vocabulary for this choice. It is required when outcomeBranches is present; outcome names are source-specific, not universal SURPS bands.",
+                  "type": "string",
+                  "minLength": 1
+                },
+                "outcomeBranches": {
+                  "description": "Complete mapping from the selected rule's stable outcome IDs to committed continuations. A referee must adjudicate and explicitly accept one mapped outcome before its destination or state effects may be committed. These keys belong to the referenced rulebook/MicroBundle and do not define universal SURPS outcomes.",
+                  "type": "object",
+                  "minProperties": 1,
+                  "patternProperties": {
+                    "^surps\\.[a-z0-9.-]+\\.outcome\\.[a-z0-9-]+$": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "nextNodeId"
+                      ],
+                      "properties": {
+                        "nextNodeId": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "setsAll": {
+                          "description": "Scenario state effects applied only when the human referee commits this specific outcome branch.",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "uniqueItems": true
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false
                 }
-              }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "resolution": {
+                        "const": "direct"
+                      }
+                    },
+                    "required": [
+                      "resolution"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "nextNodeId"
+                    ],
+                    "not": {
+                      "required": [
+                        "outcomeBranches"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "resolution": {
+                        "const": "referee"
+                      },
+                      "outcomeBranches": {
+                        "type": "object"
+                      }
+                    },
+                    "required": [
+                      "resolution",
+                      "outcomeBranches"
+                    ]
+                  },
+                  "then": {
+                    "required": [
+                      "outcomeRuleId"
+                    ],
+                    "not": {
+                      "required": [
+                        "nextNodeId"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "resolution": {
+                        "const": "referee"
+                      }
+                    },
+                    "required": [
+                      "resolution"
+                    ],
+                    "not": {
+                      "required": [
+                        "outcomeBranches"
+                      ]
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "nextNodeId"
+                    ],
+                    "not": {
+                      "required": [
+                        "outcomeRuleId"
+                      ]
+                    }
+                  }
+                }
+              ]
             }
           }
         }
