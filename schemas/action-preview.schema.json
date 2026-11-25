@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/action-preview.schema.json",
+  "title": "SURPS Action Preview",
+  "description": "A MicroBundle-owned composition contract for a playable preview; provider metadata is not proof of runtime execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "microbundleId", "actionId", "status", "providers", "sequence", "resolution"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"},
+    "microbundleId": {"type": "string"},
+    "actionId": {"type": "string"},
+    "status": {"enum": ["proposed", "specified", "implemented", "experimental"]},
+    "providers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["characterVisualization", "environment", "gestures", "resolution"],
+      "properties": {
+        "characterVisualization": {"$ref": "#/$defs/provider"},
+        "environment": {"$ref": "#/$defs/provider"},
+        "gestures": {"$ref": "#/$defs/provider"},
+        "resolution": {"$ref": "#/$defs/provider"}
+      }
+    },
+    "sequence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "provider", "purpose"],
+        "properties": {
+          "stage": {"type": "string"},
+          "provider": {"enum": ["characterVisualization", "environment", "gestures", "resolution"]},
+          "purpose": {"type": "string", "minLength": 1},
+          "waitFor": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["capabilityIds", "adversityPolicy", "difficultySource", "probabilityScale"],
+      "properties": {
+        "capabilityIds": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "adversityPolicy": {"type": "string"},
+        "difficultySource": {"type": "string"},
+        "probabilityScale": {"const": "0-100"},
+        "outcomeModel": {"type": "string"}
+      }
+    },
+    "presentation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "frame": {"type": "string"},
+        "transition": {"type": "string"},
+        "showCalculation": {"type": "boolean"},
+        "showOutcome": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "repository": {"type": "string"},
+        "version": {"type": "string"},
+        "required": {"type": "boolean", "default": true}
+      }
+    }
+  }
+}
