@@ -23,6 +23,41 @@ def collection_records(payload: dict, collection: str):
         return payload.get("contributions", {}).get(collection, [])
     return payload.get(collection, [])
 
+def validate_asset_manifest(descriptor: dict, errors: list[str]) -> None:
+    """Validate MicroBundle-owned book assets and keep paths inside the repository."""
+    manifest_path = descriptor.get("assetsPath")
+    if not manifest_path:
+        return
+    schema_path = descriptor.get("assetsSchema")
+    if not schema_path:
+        errors.append(f"{descriptor.get('id')}: assetsPath requires assetsSchema")
+        return
+    manifest = validate_schema(schema_path, manifest_path, errors)
+    if manifest is None:
+        return
+    if manifest.get("microbundleId") != descriptor.get("id"):
+        errors.append(f"{manifest_path}: microbundleId does not match descriptor")
+    seen = set()
+    for asset in manifest.get("assets", []):
+        asset_id, asset_path = asset.get("id"), asset.get("path")
+        if asset_id in seen:
+            errors.append(f"{manifest_path}: duplicate asset id {asset_id!r}")
+            continue
+        seen.add(asset_id)
+        try:
+            candidate = (ROOT / asset_path).resolve()
+            if ROOT.resolve() not in candidate.parents:
+                raise ValueError(f"path escapes repository: {asset_path}")
+            if not candidate.is_file():
+                errors.append(f"{manifest_path}: missing asset file {asset_path!r}")
+                continue
+            if asset.get("kind") == "svg":
+                source = candidate.read_text(encoding="utf-8")
+                if "<svg" not in source or "<title" not in source or "<desc" not in source:
+                    errors.append(f"{manifest_path}: SVG asset {asset_id!r} requires svg, title, and desc elements")
+        except (OSError, UnicodeError, ValueError) as exc:
+            errors.append(f"{manifest_path}: invalid asset {asset_id!r}: {exc}")
+
 def validate_schema(schema_path: str, document_path: str, errors: list[str]) -> dict | None:
     try:
         schema, document = load(schema_path), load(document_path)
@@ -67,6 +102,7 @@ def load_bundle_registry(errors: list[str]) -> dict[str, tuple[dict, dict]]:
                 errors.append(f"{descriptor_path}: sourceBookId does not match legacy compatibility payload")
             if descriptor.get("ownerRepository") != REPOSITORY:
                 errors.append(f"{descriptor_path}: ownerRepository does not match repository identity")
+            validate_asset_manifest(descriptor, errors)
             bundles[bundle_id] = (descriptor, payload)
         except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             errors.append(f"{descriptor_path}: {exc}")
