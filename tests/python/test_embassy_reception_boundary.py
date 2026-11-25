@@ -180,6 +180,8 @@ class MissingLedgerStoryGraphTests(unittest.TestCase):
         declared_outcomes = {outcome["id"] for outcome in outcome_rule["outcomes"]}
         self.assertEqual(declared_outcomes, set(choice["outcomeBranches"]))
         self.assertEqual("surps.core.spying.resolution.outcome-bands", choice["outcomeRuleId"])
+        self.assertIn("first matching band applies", outcome_rule["description"])
+        self.assertEqual("target <= total < target + 3", next(outcome["condition"] for outcome in outcome_rule["outcomes"] if outcome["id"] == "surps.core.spying.outcome.success"))
         self.assertEqual("ferry-landing", choice["outcomeBranches"]["surps.core.spying.outcome.strong-success"]["nextNodeId"])
         self.assertIn("tail_unnoticed", choice["outcomeBranches"]["surps.core.spying.outcome.strong-success"]["setsAll"])
         self.assertEqual("ferry-landing", choice["outcomeBranches"]["surps.core.spying.outcome.success"]["nextNodeId"])
