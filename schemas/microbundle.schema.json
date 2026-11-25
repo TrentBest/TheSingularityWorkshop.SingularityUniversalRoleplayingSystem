@@ -121,7 +121,7 @@
       "minLength": 1
     },
     "previewsSchema": {
-      "const": "schemas/action-preview.schema.json"
+      "const": "schemas/action-preview-manifest.schema.json"
     }
   },
   "allOf": [
