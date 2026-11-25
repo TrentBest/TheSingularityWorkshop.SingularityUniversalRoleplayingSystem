@@ -1,6 +1,6 @@
 """Tests for multi-MicroBundle selection, identity, and view resolution."""
 from __future__ import annotations
-import sys, unittest
+import copy, sys, unittest
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 import validate_surps_ontology_views as ontology
@@ -31,6 +31,22 @@ class OntologyViewTests(unittest.TestCase):
         self.assertEqual(2, len(result["records"]))
         self.assertEqual(2, len(result["sources"]))
         self.assertEqual("physics.microbundle.sample", result["records"][1]["sourceMicrobundle"])
+
+    def test_same_canonical_records_can_back_distinct_audience_views(self):
+        player = copy.deepcopy(self.view)
+        player["audience"] = "player"
+        referee = copy.deepcopy(self.view)
+        referee["id"] = "surps.view.sample.game-master"
+        referee["audience"] = "game-master"
+        errors = []
+        player_projection = ontology.resolve_view(self.bundles, player, errors)
+        referee_projection = ontology.resolve_view(self.bundles, referee, errors)
+        self.assertEqual([], errors)
+        self.assertEqual(
+            [item["record"]["id"] for item in player_projection["records"]],
+            [item["record"]["id"] for item in referee_projection["records"]])
+        self.assertEqual("player", player_projection["view"]["audience"])
+        self.assertEqual("game-master", referee_projection["view"]["audience"])
 
     def test_unresolved_record_fails_closed(self):
         self.view["selections"][0]["records"].append("missing.record")
