@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "description": "Presentation themes only. Unlock state and entitlements are evaluated outside character data.",
+  "starterThemes": [
+    "verdant",
+    "stone",
+    "woodwork"
+  ],
+  "premiumThemes": [
+    "steel",
+    "aether"
+  ],
+  "themes": [
+    {
+      "id": "verdant",
+      "name": "Verdant",
+      "description": "Vines & living leaves",
+      "asset": "docs/assets/character-sheets/verdant.svg",
+      "tier": "starter",
+      "animatedDetails": true
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "description": "Carved stone & mineral",
+      "asset": "docs/assets/character-sheets/stone.svg",
+      "tier": "starter",
+      "animatedDetails": true
+    },
+    {
+      "id": "woodwork",
+      "name": "Woodwright",
+      "description": "Crafted wood & joinery",
+      "asset": "docs/assets/character-sheets/woodwork.svg",
+      "tier": "starter",
+      "animatedDetails": true
+    },
+    {
+      "id": "steel",
+      "name": "Aegis",
+      "description": "Forged steel & precision",
+      "asset": "docs/assets/character-sheets/steel.svg",
+      "tier": "premium",
+      "animatedDetails": true
+    },
+    {
+      "id": "aether",
+      "name": "Aether",
+      "description": "Luminous energy field",
+      "asset": "docs/assets/character-sheets/aether.svg",
+      "tier": "premium",
+      "animatedDetails": true
+    }
+  ]
+}
