@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "surps.view.core.spying.player",
+  "version": "0.1.0",
+  "bookId": "surps.core.spying",
+  "audience": "player",
+  "scope": "setting-neutral espionage tabletop playtest",
+  "lod": 0,
+  "selections": [
+    {
+      "microbundle": "surps.microbundle.core.spying",
+      "records": [
+        "surps.core.spying.approach.observe",
+        "surps.core.spying.approach.deceive",
+        "surps.core.spying.approach.infiltrate",
+        "surps.core.spying.approach.analyze",
+        "surps.core.spying.approach.influence",
+        "surps.core.spying.approach.operate",
+        "surps.core.spying.character.approach-allocation",
+        "surps.core.spying.resolution.uncertain-action",
+        "surps.core.spying.resolution.outcome-bands",
+        "surps.core.spying.preparation.assets",
+        "surps.core.spying.scene-clocks",
+        "surps.core.spying.information-evidence-states"
+      ]
+    }
+  ],
+  "presentation": {
+    "title": "CORE Spying — Player View",
+    "description": "The player-facing selection of the CORE Spying playtest capabilities and procedures.",
+    "order": ["capabilities", "rules"]
+  }
+}
