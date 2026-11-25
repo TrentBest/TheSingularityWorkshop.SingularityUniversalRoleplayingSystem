@@ -103,3 +103,16 @@ An ADP group can remain active as SURPS evolves. New content joins the existing 
 ## CiAi integration note
 
 This document defines the SURPS-side domain contract for its ADP group. CiAi should map it into CiAi's native ADP/group/task model rather than inventing a parallel SURPS-only orchestration schema. If CiAi's current model cannot express shared group context, dependency relationships, and the distinct evidence/write/approval lanes, that is a capability gap to address in CiAi itself.
+
+
+## Workshop authority and participating-repository autonomy
+
+The Singularity Workshop is the sole Experience granted creative authority over the user's canonical MicroBundle repository. The Workshop assembles both Experiences and MicroBundles; it is not merely a runtime consumer or a passive catalogue.
+
+This authority is specific to the user's canonical repository. It does not require every MicroBundle to be hosted there and does not transfer ownership of participating repositories to the Workshop.
+
+A participating repository may pull an exact canonical MicroBundle revision, host that content locally, modify it under its own ownership, and publish a separately versioned variant. The variant must preserve upstream provenance and use its own portable identity/revision. It must never overwrite or impersonate the canonical artifact. The canonical source remains under Workshop authority; the local derivative remains under its publishing creator's authority.
+
+AiCi is the intended governance bridge for subscribers: after sign-in, it should apply the Workshop's ADP definition to the subscribing repository using CiAi's native ADP/group/task model. The repository keeps its own source ownership and local development authority. ADP application is not blanket authorization: task-scoped writes, evidence collection, merge, publication, release, deployment, and permission changes remain distinct capabilities and gates.
+
+The current read-only evidence checkpoint demonstrates exact-commit observation only. It does not yet prove subscriber sign-in, ADP provisioning, delegated writes, canonical pull/variant publication, or a complete bidirectional content lifecycle. Those must be implemented and evidenced as separate acceptance cases.
