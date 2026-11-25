@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "capabilities": [
+    {
+      "id": "surps.core.spying.approach.observe",
+      "name": "Observe",
+      "description": "Notice details, watch routines, and detect inconsistencies. Playtest rating range 0–3."
+    },
+    {
+      "id": "surps.core.spying.approach.deceive",
+      "name": "Deceive",
+      "description": "Maintain a cover, misdirect, and conceal intent. Playtest rating range 0–3."
+    },
+    {
+      "id": "surps.core.spying.approach.infiltrate",
+      "name": "Infiltrate",
+      "description": "Gain access, move unnoticed, and bypass ordinary barriers. Playtest rating range 0–3."
+    },
+    {
+      "id": "surps.core.spying.approach.analyze",
+      "name": "Analyze",
+      "description": "Interpret evidence, connect facts, and test a hypothesis. Playtest rating range 0–3."
+    },
+    {
+      "id": "surps.core.spying.approach.influence",
+      "name": "Influence",
+      "description": "Recruit, persuade, negotiate, and build trust. Playtest rating range 0–3."
+    },
+    {
+      "id": "surps.core.spying.approach.operate",
+      "name": "Operate",
+      "description": "Use tools, communications, codes, and technical systems. Playtest rating range 0–3."
+    }
+  ],
+  "rules": [
+    {
+      "id": "surps.core.spying.character.approach-allocation",
+      "name": "Approach allocation",
+      "description": "A new spy distributes 8 points among Observe, Deceive, Infiltrate, Analyze, Influence, and Operate. No approach may begin above 3. A rating of 0 means no particular training, not inability to attempt an action.",
+      "status": "specified",
+      "scope": "character-creation",
+      "inputs": [
+        {
+          "id": "approach-count",
+          "valueType": "integer"
+        },
+        {
+          "id": "allocation-points",
+          "valueType": "integer"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "approach-ratings",
+          "valueType": "entity-reference"
+        }
+      ],
+      "tags": [
+        "character",
+        "playtest",
+        "approaches"
+      ]
+    },
+    {
+      "id": "surps.core.spying.resolution.uncertain-action",
+      "name": "Uncertain action resolution",
+      "description": "For meaningful uncertainty with consequences: establish intent, method, risk, approach, and a target number from 7 to 13; roll 2d6 and add the chosen approach rating. Do not roll when the outcome is already certain or for every routine movement.",
+      "status": "specified",
+      "scope": "action-resolution",
+      "inputs": [
+        {
+          "id": "die-count",
+          "valueType": "integer"
+        },
+        {
+          "id": "die-sides",
+          "valueType": "integer"
+        },
+        {
+          "id": "approach-rating",
+          "valueType": "integer"
+        },
+        {
+          "id": "target-number",
+          "valueType": "integer"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "total",
+          "valueType": "integer"
+        },
+        {
+          "id": "outcome-band",
+          "valueType": "enum"
+        }
+      ],
+      "tags": [
+        "2d6",
+        "uncertainty",
+        "playtest"
+      ]
+    },
+    {
+      "id": "surps.core.spying.resolution.outcome-bands",
+      "name": "Uncertainty outcome bands",
+      "description": "Strong success: total is target +3 or more. Success: total meets or exceeds target. Mixed result: total is target -1 or -2. Miss: total is target -3 or less. Natural 2 and natural 12 are not automatic failure or success.",
+      "status": "specified",
+      "scope": "action-resolution",
+      "inputs": [
+        {
+          "id": "total",
+          "valueType": "integer"
+        },
+        {
+          "id": "target-number",
+          "valueType": "integer"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "outcome-band",
+          "valueType": "enum"
+        }
+      ],
+      "tags": [
+        "outcomes",
+        "2d6",
+        "playtest"
+      ]
+    },
+    {
+      "id": "surps.core.spying.preparation.assets",
+      "name": "Preparation and assets",
+      "description": "A justified asset may lower the target by 2, remove one specific obstacle, provide access, protect against one named consequence, or create a credible alternative route. A single action receives at most one target reduction from preparation or assets.",
+      "status": "specified",
+      "scope": "action-resolution",
+      "inputs": [
+        {
+          "id": "asset-fictional-justification",
+          "valueType": "boolean"
+        },
+        {
+          "id": "base-target",
+          "valueType": "integer"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "adjusted-target",
+          "valueType": "integer"
+        }
+      ],
+      "tags": [
+        "preparation",
+        "equipment",
+        "assistance"
+      ]
+    },
+    {
+      "id": "surps.core.spying.scene-clocks",
+      "name": "Opportunity, suspicion, and response clocks",
+      "description": "A scene may track three optional four-box clocks: Opportunity, Suspicion, and Response. Mark boxes only when fiction warrants it. Mixed results may mark one relevant box; misses may mark one or two; strong successes may prevent a mark or clear one when justified. At four boxes, resolve the clock's stated consequence.",
+      "status": "specified",
+      "scope": "scene-time-and-consequences",
+      "inputs": [
+        {
+          "id": "clock-boxes",
+          "valueType": "integer"
+        },
+        {
+          "id": "triggering-event",
+          "valueType": "string"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "clock-state",
+          "valueType": "entity-reference"
+        },
+        {
+          "id": "clock-consequence",
+          "valueType": "string"
+        }
+      ],
+      "tags": [
+        "time",
+        "exposure",
+        "pressure",
+        "playtest"
+      ]
+    },
+    {
+      "id": "surps.core.spying.information-evidence-states",
+      "name": "Information and evidence distinctions",
+      "description": "Track world facts separately from player knowledge. Character information is classified as Observed, Inferred, Claimed, Verified, or Reported. An observation is not automatically proof; a report is not necessarily true.",
+      "status": "specified",
+      "scope": "information-and-evidence",
+      "inputs": [
+        {
+          "id": "information-item",
+          "valueType": "entity-reference"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "information-state",
+          "valueType": "enum"
+        }
+      ],
+      "tags": [
+        "knowledge",
+        "evidence",
+        "provenance"
+      ]
+    }
+  ]
+}
