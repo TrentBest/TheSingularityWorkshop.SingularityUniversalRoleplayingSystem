@@ -104,7 +104,7 @@
     {
       "id": "surps.core.spying.resolution.outcome-bands",
       "name": "Uncertainty outcome bands",
-      "description": "Strong success: total is target +3 or more. Success: total meets or exceeds target. Mixed result: total is target -1 or -2. Miss: total is target -3 or less. Natural 2 and natural 12 are not automatic failure or success.",
+      "description": "Strong success: total is target +3 or more. Success: total meets or exceeds target but is less than target +3. Mixed result: total is target -1 or -2. Miss: total is target -3 or less. Read the bands from highest to lowest; the first matching band applies. Natural 2 and natural 12 are not automatic failure or success.",
       "status": "specified",
       "scope": "action-resolution",
       "inputs": [
@@ -138,7 +138,7 @@
         {
           "id": "surps.core.spying.outcome.success",
           "name": "Success",
-          "condition": "total >= target",
+          "condition": "target <= total < target + 3",
           "description": "Achieve the stated intent."
         },
         {
