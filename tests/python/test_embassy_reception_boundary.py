@@ -55,7 +55,7 @@ class EmbassyReceptionBoundaryTests(unittest.TestCase):
         readme = EXPERIENCE_README.read_text(encoding="utf-8").lower()
         self.assertIn("tabletop playtest scene", readme)
         self.assertIn("not yet a live hermit-connected session", readme)
-        self.assertIn("not a persistent campaign runtime", readme)
+        self.assertIn("not yet a live hermit-connected session, a persistent campaign runtime", readme)
         self.assertIn("human referee remains responsible", readme)
         self.assertIn("portable fsm_cos composition manifest", readme)
 
