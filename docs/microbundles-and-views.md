@@ -23,8 +23,8 @@ A MicroBundle also owns the reusable assets that explain its records: authored p
 
 - [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership, content, and optional asset/preview metadata.
 - [Character capabilities and adversities](character-capabilities-and-previews.html) defines the conscious/subconscious axis, character-point direction, and action-preview ownership boundaries.
-- [Action preview schema](../schemas/action-preview.schema.json) defines staged provider composition.
-- [CORE Spying lock-picking preview](../.surps/previews/lock-picking.preview.json) is a proposed example, attached to the MicroBundle descriptor.
+- [Action preview manifest schema](../schemas/action-preview-manifest.schema.json) lets a MicroBundle offer multiple previews; [action preview schema](../schemas/action-preview.schema.json) defines each staged provider composition.
+- [CORE Spying preview manifest](../.surps/previews/core-spying.previews.json) registers its [lock-picking preview](../.surps/previews/lock-picking.preview.json), which remains proposed rather than executable.
 - [CORE Spying asset manifest](../.surps/microbundles/assets/core-spying.assets.json) registers its SVG and reusable book copy.
 - [Repository-local MicroBundle registry schema](../schemas/microbundle-registry.schema.json) and [registry](../.surps/microbundles/registry.json) enumerate independently selectable bundles.
 - [Rulebook view schema](../schemas/rulebook-view.schema.json) defines a curated selection.
