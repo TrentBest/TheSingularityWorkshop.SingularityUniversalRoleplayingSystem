@@ -52,7 +52,7 @@ jobs:
         run: python scripts/validate_surps_book_schemas.py
       - name: Validate SURPS book catalogue and descriptors
         run: python3 scripts/validate_surps_catalog.py
-      - name: Resolve MicroBundles and generate the player projection
+      - name: Resolve MicroBundles and generate registered audience projections
         run: python3 scripts/validate_surps_ontology_views.py
       - name: Checkout pinned Physics provider manifests
         uses: actions/checkout@v4
@@ -102,6 +102,12 @@ jobs:
         with:
           name: surps-core-spying-player-view
           path: docs/generated/core-spying-player-view.json
+          if-no-files-found: error
+      - name: Upload resolved CORE Spying game-master view
+        uses: actions/upload-artifact@v4
+        with:
+          name: surps-core-spying-game-master-view
+          path: docs/generated/core-spying-game-master-view.json
           if-no-files-found: error
       - name: Upload external provider discovery catalog
         uses: actions/upload-artifact@v4
