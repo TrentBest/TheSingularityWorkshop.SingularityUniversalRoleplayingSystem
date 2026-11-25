@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "experienceId": "surps.demo.missing-ledger",
+  "graphId": "surps.demo.missing-ledger.story",
+  "version": "0.1.0",
+  "entryNodeId": "briefing",
+  "semantics": {
+    "purpose": "Authoring map for the complete player-choice structure of the first Missing Ledger story slice.",
+    "transitionAuthority": "A selected choice records player intent. It does not itself prove success, reveal hidden facts, or commit world-state changes; uncertain actions still require the scenario's declared referee procedure.",
+    "presentationBoundary": "Node presentation is the player-facing projection. Authoring metadata and state flags are not player knowledge. This file is an authoring artifact, not a secure store for referee secrets."
+  },
+  "stateKeys": [
+    "office_observed",
+    "mara_trust_established",
+    "boatwright_lead",
+    "recipient_identified",
+    "handoff_location_known",
+    "ledger_copy_secured",
+    "corroboration_found",
+    "watch_alerted",
+    "mara_exposed"
+  ],
+  "nodes": [
+    {
+      "id": "briefing",
+      "kind": "scene",
+      "title": "A Quiet Request",
+      "playerPresentation": "Mara has discovered that grain intended for the town's winter stores is being diverted. She has copied part of the records and needs help getting the evidence to someone she trusts before dawn. You have one night, limited time, and no guarantee that the people around you are telling the truth.",
+      "choices": [
+        {
+          "id": "watch-the-office",
+          "label": "Watch the clerk's office from the public market",
+          "intent": "Learn who approaches Mara without drawing attention.",
+          "resolution": "referee",
+          "nextNodeId": "office-watch"
+        },
+        {
+          "id": "speak-with-mara",
+          "label": "Speak with Mara directly",
+          "intent": "Establish what Mara is willing to tell you.",
+          "resolution": "referee",
+          "nextNodeId": "mara-conversation"
+        },
+        {
+          "id": "ask-around",
+          "label": "Ask discreet questions around the market",
+          "intent": "Find a source who knows the town's delivery routines.",
+          "resolution": "referee",
+          "nextNodeId": "market-contact"
+        },
+        {
+          "id": "inspect-storehouse",
+          "label": "Look for independent evidence at the storehouse",
+          "intent": "Find records or physical signs that corroborate the diversion.",
+          "resolution": "referee",
+          "nextNodeId": "storehouse-search"
+        },
+        {
+          "id": "withdraw",
+          "label": "Decline the operation",
+          "intent": "Leave the matter unresolved rather than expose anyone.",
+          "resolution": "direct",
+          "nextNodeId": "ending-unresolved"
+        }
+      ]
+    },
+    {
+      "id": "office-watch",
+      "kind": "scene",
+      "title": "The Clerk's Office",
+      "playerPresentation": "From the market, you can observe the office without entering it. People come and go on ordinary business, and the challenge is deciding which details matter without making yourself memorable.",
+      "choices": [
+        {
+          "id": "follow-the-contact",
+          "label": "Follow the person who leaves after meeting Mara",
+          "intent": "Discover where the contact goes and whether the meeting matters.",
+          "resolution": "referee",
+          "setsAll": [
+            "office_observed",
+            "recipient_identified"
+          ],
+          "nextNodeId": "follow-recipient"
+        },
+        {
+          "id": "return-to-mara",
+          "label": "Approach Mara after the office quiets",
+          "intent": "Use what you observed to open a careful conversation.",
+          "resolution": "referee",
+          "setsAll": [
+            "office_observed"
+          ],
+          "nextNodeId": "mara-conversation"
+        },
+        {
+          "id": "compare-routine",
+          "label": "Record the office routine and compare it with delivery activity",
+          "intent": "Build a timeline without approaching anyone.",
+          "resolution": "referee",
+          "setsAll": [
+            "office_observed"
+          ],
+          "nextNodeId": "storehouse-search"
+        }
+      ]
+    },
+    {
+      "id": "mara-conversation",
+      "kind": "scene",
+      "title": "A Careful Conversation",
+      "playerPresentation": "Mara is cautious. She wants the diversion stopped, but she is frightened that a careless question could identify her as the source of the copied records. She watches how you approach the subject before deciding how much to say.",
+      "choices": [
+        {
+          "id": "earn-trust",
+          "label": "Explain how you can protect her and let her set the pace",
+          "intent": "Establish trust without demanding names or details.",
+          "resolution": "referee",
+          "setsAll": [
+            "mara_trust_established"
+          ],
+          "nextNodeId": "market-contact"
+        },
+        {
+          "id": "press-for-details",
+          "label": "Press for the recipient and meeting place",
+          "intent": "Get actionable details quickly, accepting the risk of alarming Mara.",
+          "resolution": "referee",
+          "setsAll": [
+            "mara_exposed"
+          ],
+          "nextNodeId": "market-contact"
+        },
+        {
+          "id": "offer-to-withdraw",
+          "label": "Offer to stop if continuing would endanger her",
+          "intent": "Give Mara control over whether the operation continues.",
+          "resolution": "direct",
+          "nextNodeId": "ending-mara-safe"
+        }
+      ]
+    },
+    {
+      "id": "market-contact",
+      "kind": "scene",
+      "title": "The Market's Quiet Channels",
+      "playerPresentation": "The market is full of ordinary conversation, but people notice who asks unusual questions. A useful contact may know delivery routines or local relationships; the way you ask matters as much as the question.",
+      "choices": [
+        {
+          "id": "approach-repairer",
+          "label": "Ask a boat repairer about late-night traffic",
+          "intent": "Learn whether anyone uses the river landing after dark.",
+          "resolution": "referee",
+          "setsAll": [
+            "boatwright_lead"
+          ],
+          "nextNodeId": "boatwright-contact"
+        },
+        {
+          "id": "ask-in-public",
+          "label": "Ask openly about missing grain deliveries",
+          "intent": "Test whether the diversion is common knowledge.",
+          "resolution": "referee",
+          "setsAll": [
+            "watch_alerted"
+          ],
+          "nextNodeId": "storehouse-search"
+        },
+        {
+          "id": "return-to-office",
+          "label": "Return to the office and observe again",
+          "intent": "Use the market conversation to guide another observation.",
+          "resolution": "direct",
+          "nextNodeId": "office-watch"
+        }
+      ]
+    },
+    {
+      "id": "boatwright-contact",
+      "kind": "scene",
+      "title": "A Favor at the River",
+      "playerPresentation": "A boat repairer knows the river traffic and is willing to talk, but not for nothing. You must decide whether to trade a favor, verify the information independently, or walk away before an obligation grows.",
+      "choices": [
+        {
+          "id": "trade-a-favor",
+          "label": "Trade a reasonable favor for the river schedule",
+          "intent": "Learn when and where a discreet handoff could happen.",
+          "resolution": "referee",
+          "setsAll": [
+            "handoff_location_known"
+          ],
+          "nextNodeId": "ferry-landing"
+        },
+        {
+          "id": "verify-the-routine",
+          "label": "Verify the account against storehouse records",
+          "intent": "Seek independent corroboration before acting on a claim.",
+          "resolution": "referee",
+          "nextNodeId": "storehouse-search"
+        },
+        {
+          "id": "decline-the-deal",
+          "label": "Decline the favor and preserve your independence",
+          "intent": "Avoid creating an obligation that could compromise the operation.",
+          "resolution": "direct",
+          "nextNodeId": "ending-unresolved"
+        }
+      ]
+    },
+    {
+      "id": "follow-recipient",
+      "kind": "scene",
+      "title": "Across the Town",
+      "playerPresentation": "The person you observed moves through familiar streets. Keeping a useful distance may reveal a destination; getting too close may turn a quiet observation into a confrontation.",
+      "choices": [
+        {
+          "id": "continue-the-tail",
+          "label": "Continue at a distance toward the river",
+          "intent": "Identify the destination without revealing your interest.",
+          "resolution": "referee",
+          "setsAll": [
+            "handoff_location_known"
+          ],
+          "nextNodeId": "ferry-landing"
+        },
+        {
+          "id": "break-contact",
+          "label": "Break off and preserve what you observed",
+          "intent": "Keep the information already gained without increasing exposure.",
+          "resolution": "direct",
+          "nextNodeId": "evidence-review"
+        }
+      ]
+    },
+    {
+      "id": "storehouse-search",
+      "kind": "scene",
+      "title": "The Storehouse Records",
+      "playerPresentation": "The storehouse offers a different kind of lead: delivery records, inventory marks, and the people responsible for keeping them. A discrepancy may support the story, but a suspicious search could alert someone.",
+      "choices": [
+        {
+          "id": "compare-the-records",
+          "label": "Compare delivery records with the reported shortages",
+          "intent": "Find independent evidence that the grain is being diverted.",
+          "resolution": "referee",
+          "setsAll": [
+            "corroboration_found"
+          ],
+          "nextNodeId": "evidence-review"
+        },
+        {
+          "id": "search-for-the-copy",
+          "label": "Look for the copied record or its trail",
+          "intent": "Secure evidence that can be checked by another person.",
+          "resolution": "referee",
+          "setsAll": [
+            "ledger_copy_secured"
+          ],
+          "nextNodeId": "evidence-review"
+        },
+        {
+          "id": "leave-the-storehouse",
+          "label": "Leave before your presence attracts attention",
+          "intent": "Preserve your cover and work with what you already know.",
+          "resolution": "direct",
+          "nextNodeId": "evidence-review"
+        }
+      ]
+    },
+    {
+      "id": "ferry-landing",
+      "kind": "scene",
+      "title": "The River Landing",
+      "playerPresentation": "The river landing is quiet enough that every arrival matters. You may be close to the handoff, but seeing two people exchange an object does not prove what the object contains or what either person intends.",
+      "choices": [
+        {
+          "id": "observe-the-handoff",
+          "label": "Observe the meeting without intervening",
+          "intent": "Establish who meets whom and what can actually be observed.",
+          "resolution": "referee",
+          "setsAll": [
+            "recipient_identified"
+          ],
+          "nextNodeId": "evidence-review"
+        },
+        {
+          "id": "intervene-carefully",
+          "label": "Create a safe opportunity to inspect the evidence",
+          "intent": "Protect the people involved while seeking verifiable proof.",
+          "resolution": "referee",
+          "setsAll": [
+            "ledger_copy_secured"
+          ],
+          "nextNodeId": "evidence-review"
+        },
+        {
+          "id": "protect-mara-now",
+          "label": "Leave the meeting and move Mara to safety",
+          "intent": "Prioritize Mara's safety over completing the evidence trail.",
+          "resolution": "referee",
+          "nextNodeId": "ending-mara-safe"
+        }
+      ]
+    },
+    {
+      "id": "evidence-review",
+      "kind": "scene",
+      "title": "What Can You Prove?",
+      "playerPresentation": "You have gathered information, but not every observation is proof. Separate what you directly witnessed, what someone claimed, what you inferred, and what another source can independently verify. Decide what outcome matters most before dawn.",
+      "choices": [
+        {
+          "id": "preserve-strong-evidence",
+          "label": "Preserve the records and corroboration for independent review",
+          "intent": "Secure evidence that can survive scrutiny.",
+          "resolution": "referee",
+          "requiresAll": [
+            "ledger_copy_secured",
+            "corroboration_found"
+          ],
+          "nextNodeId": "ending-evidence-secured"
+        },
+        {
+          "id": "identify-and-report",
+          "label": "Report the recipient and the observed handoff",
+          "intent": "Pass on what you can support without claiming more than you know.",
+          "resolution": "referee",
+          "requiresAll": [
+            "recipient_identified"
+          ],
+          "nextNodeId": "ending-partial"
+        },
+        {
+          "id": "protect-and-withdraw",
+          "label": "Protect Mara and end the operation",
+          "intent": "Prevent further exposure even if the diversion remains unproven.",
+          "resolution": "referee",
+          "nextNodeId": "ending-mara-safe"
+        },
+        {
+          "id": "seek-more-proof",
+          "label": "Return for one more independent source",
+          "intent": "Close the gap between suspicion and verification.",
+          "resolution": "direct",
+          "nextNodeId": "storehouse-search"
+        }
+      ]
+    },
+    {
+      "id": "ending-evidence-secured",
+      "kind": "ending",
+      "title": "Evidence Preserved",
+      "playerPresentation": "The copied record and independent corroboration are preserved for review. The diversion can now be investigated without relying on a single person's word. What happens next depends on who receives the evidence and what authority they possess.",
+      "choices": []
+    },
+    {
+      "id": "ending-partial",
+      "kind": "ending",
+      "title": "A Lead, Not a Verdict",
+      "playerPresentation": "You identify a meaningful connection and report what you actually observed. The evidence is useful, but it does not yet establish the full diversion. The next operation begins with a lead rather than a conclusion.",
+      "choices": []
+    },
+    {
+      "id": "ending-mara-safe",
+      "kind": "ending",
+      "title": "The Source Protected",
+      "playerPresentation": "Mara is moved out of immediate danger. The operation ends before the evidence is complete, but a person who might otherwise have been exposed is safe for now.",
+      "choices": []
+    },
+    {
+      "id": "ending-unresolved",
+      "kind": "ending",
+      "title": "The Trail Goes Cold",
+      "playerPresentation": "You leave before the operation can be completed. The diversion remains unresolved, and the town continues toward dawn with unanswered questions.",
+      "choices": []
+    }
+  ]
+}
