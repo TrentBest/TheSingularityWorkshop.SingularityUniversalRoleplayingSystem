@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "views": [
+    {
+      "id": "surps.view.core.spying.player",
+      "path": ".surps/views/core-spying-player.view.json",
+      "output": "docs/generated/core-spying-player-view.json",
+      "bookDescriptor": "docs/books/core-spying.book.json"
+    },
+    {
+      "id": "surps.view.core.spying.game-master",
+      "path": ".surps/views/core-spying-game-master.view.json",
+      "output": "docs/generated/core-spying-game-master-view.json",
+      "bookDescriptor": "docs/books/core-spying.book.json"
+    }
+  ]
+}
