@@ -13,6 +13,14 @@ This page is a guided tabletop play aid. Players can declare intent and approach
 
 The published player page deliberately contains no referee-only facts. Keep the referee ledger off the public Pages site and share it only through an appropriate private channel at the table.
 
+## Story structure
+
+- [Complete choice-driven story graph](story-graph.json)
+- [Scenario story graph contract](../../docs/scenario-story-graphs.md)
+- [Story graph JSON Schema](../../schemas/scenario-story-graph.schema.json)
+
+The graph maps the opening investigation, alternate approaches, converging scenes, evidence review, and distinct endings. It is authoring content; the current Pages prototype does not yet execute it. A selected choice records intent, and uncertain actions still require the human referee. The graph is not a secure store for referee-only facts.
+
 ## Composition
 
 - [Experience book selection](experience-books.json)
