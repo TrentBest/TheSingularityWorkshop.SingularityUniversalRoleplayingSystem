@@ -14,6 +14,7 @@ on:
       - ".surps/participation.json"
       - ".surps/contributions/**"
       - ".surps/microbundles/**"
+      - ".surps/external-providers/**"
       - ".surps/views/**"
       - "README.md"
       - ".github/ISSUE_TEMPLATE/rulebook-owner-sign-in.yml"
@@ -23,6 +24,7 @@ on:
       - "scripts/validate_surps_catalog.py"
       - "scripts/validate_surps_book_schemas.py"
       - "scripts/validate_surps_ontology_views.py"
+      - "scripts/validate_surps_external_providers.py"
       - "scripts/generate_surps_book_assets.py"
       - "schemas/**"
       - "docs/examples/**"
@@ -52,6 +54,14 @@ jobs:
         run: python3 scripts/validate_surps_catalog.py
       - name: Resolve MicroBundles and generate the player projection
         run: python3 scripts/validate_surps_ontology_views.py
+      - name: Checkout pinned Physics provider manifests
+        uses: actions/checkout@v4
+        with:
+          repository: TrentBest/TheSingularityWorkshop.Physics
+          ref: 0e707e1add24a4009ec5380372f2c8f670e1a7a2
+          path: _dependencies/Physics
+      - name: Validate external provider manifests and generate catalog
+        run: python3 scripts/validate_surps_external_providers.py --source-root _dependencies/Physics
       - name: Verify generated SURPS publication assets
         run: python3 scripts/generate_surps_book_assets.py --check
       - name: Verify Python tooling syntax
@@ -92,4 +102,10 @@ jobs:
         with:
           name: surps-core-spying-player-view
           path: docs/generated/core-spying-player-view.json
+          if-no-files-found: error
+      - name: Upload external provider discovery catalog
+        uses: actions/upload-artifact@v4
+        with:
+          name: surps-external-provider-catalog
+          path: docs/generated/external-provider-catalog.json
           if-no-files-found: error
