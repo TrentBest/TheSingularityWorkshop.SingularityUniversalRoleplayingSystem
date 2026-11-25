@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "repository": "TrentBest/TheSingularityWorkshop.Physics",
+      "commit": "0e707e1add24a4009ec5380372f2c8f670e1a7a2",
+      "bundles": [
+        {
+          "path": "microbundles/NormalImpulseResponse/microbundle.json",
+          "bundleId": 5202,
+          "providerIds": [
+            "physics.contact.normal-impulse.v1"
+          ]
+        },
+        {
+          "path": "microbundles/PrescribedKinematicMotion/microbundle.json",
+          "bundleId": 5203,
+          "providerIds": [
+            "physics.kinematics.prescribed-motion.v1"
+          ]
+        }
+      ]
+    }
+  ]
+}
