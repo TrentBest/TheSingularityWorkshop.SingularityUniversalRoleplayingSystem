@@ -90,5 +90,24 @@ class CharacterCatalogTests(unittest.TestCase):
                 catalog.build_catalog(root)
 
 
+    def test_collection_declarations_must_be_non_empty_strings(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root, descriptor_overrides={
+                "recordCollections": ["capabilities", {"unexpected": "object"}]
+            })
+            with self.assertRaisesRegex(ValueError, "entries must be non-empty strings"):
+                catalog.build_catalog(root)
+
+    def test_duplicate_collection_declarations_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_repository(root, descriptor_overrides={
+                "recordCollections": ["capabilities", "capabilities"]
+            })
+            with self.assertRaisesRegex(ValueError, "must not contain duplicates"):
+                catalog.build_catalog(root)
+
+
 if __name__ == "__main__":
     unittest.main()
