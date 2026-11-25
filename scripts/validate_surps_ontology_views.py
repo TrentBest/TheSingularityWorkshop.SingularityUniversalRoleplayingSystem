@@ -140,45 +140,65 @@ def resolve_view(bundles: dict[str, tuple[dict, dict]], view: dict, errors: list
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="fail if the checked-in projection is stale")
+    parser.add_argument("--check", action="store_true", help="fail if any checked-in projection is stale")
     args = parser.parse_args()
     errors, bundles = [], {}
     bundles = load_bundle_registry(errors)
-    view = validate_schema("schemas/rulebook-view.schema.json", VIEW_PATH, errors)
-    if view is None or not bundles:
+    view_registry = validate_schema("schemas/rulebook-view-registry.schema.json",
+                                    ".surps/views/registry.json", errors)
+    if view_registry is None or not bundles:
         return report(errors)
-    try:
-        descriptor, manifest = load("docs/books/core-spying.book.json"), load(".surps/participation.json")
-        entry = next((item for item in manifest.get("books", []) if item.get("id") == view.get("bookId")), None)
-        if entry is None:
-            errors.append("view bookId is not registered in participation manifest")
-        else:
-            if descriptor.get("viewPath") != VIEW_PATH:
-                errors.append("book descriptor viewPath does not identify the player view")
-            if entry.get("viewPath") != descriptor.get("viewPath"):
-                errors.append("participation manifest viewPath does not match book descriptor")
-            registry_paths = {item["path"] for item in load(REGISTRY_PATH)["microbundles"]}
-            if entry.get("microbundlePath") not in registry_paths:
-                errors.append("participation manifest MicroBundle path is not present in the local registry")
-        if descriptor.get("id") != view.get("bookId") or descriptor.get("lod") != view.get("lod"):
-            errors.append("view identity/LOD does not match the book descriptor")
-        projection = resolve_view(bundles, view, errors)
-    except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
-        errors.append(str(exc))
-        projection = {}
+    generated = []
+    seen_ids, seen_paths, seen_outputs = set(), set(), set()
+    for entry in view_registry.get("views", []):
+        view_id, view_path, output_path = entry.get("id"), entry.get("path"), entry.get("output")
+        if view_id in seen_ids or view_path in seen_paths or output_path in seen_outputs:
+            errors.append(f".surps/views/registry.json: duplicate view identity/path/output: {view_id!r}")
+            continue
+        seen_ids.add(view_id); seen_paths.add(view_path); seen_outputs.add(output_path)
+        view = validate_schema("schemas/rulebook-view.schema.json", view_path, errors)
+        if view is None:
+            continue
+        if view.get("id") != view_id:
+            errors.append(f"{view_path}: id does not match view registry")
+        try:
+            descriptor_path = entry.get("bookDescriptor")
+            if descriptor_path:
+                descriptor = load(descriptor_path)
+                manifest = load(".surps/participation.json")
+                book_id = view.get("bookId")
+                participation = next((item for item in manifest.get("books", [])
+                                      if item.get("id") == book_id), None)
+                if participation is None:
+                    errors.append(f"{view_path}: bookId is not registered in participation manifest")
+                else:
+                    if descriptor.get("id") != book_id or descriptor.get("lod") != view.get("lod"):
+                        errors.append(f"{view_path}: view identity/LOD does not match book descriptor")
+                    if descriptor.get("viewPath") != view_path or participation.get("viewPath") != view_path:
+                        errors.append(f"{view_path}: book descriptor/participation viewPath mismatch")
+                    registry_paths = {item["path"] for item in load(REGISTRY_PATH)["microbundles"]}
+                    if participation.get("microbundlePath") not in registry_paths:
+                        errors.append(f"{view_path}: participation MicroBundle path is not in local registry")
+            projection = resolve_view(bundles, view, errors)
+            rendered = json.dumps(projection, indent=2, ensure_ascii=False) + "\\n"
+            generated.append((output_path, rendered, len(projection["records"])))
+        except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
+            errors.append(f"{view_path}: {exc}")
     if errors:
         return report(errors)
-    rendered = json.dumps(projection, indent=2, ensure_ascii=False) + "\n"
-    output = ROOT / OUTPUT
-    if args.check:
-        if not output.is_file() or output.read_text(encoding="utf-8") != rendered:
-            errors.append(f"{OUTPUT} is missing or stale; run python3 scripts/validate_surps_ontology_views.py")
-            return report(errors)
-    else:
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(rendered, encoding="utf-8")
-    print(f"SURPS ontology/view validation passed: {len(bundles)} registered MicroBundle(s), 1 view, {len(projection['records'])} resolved records.")
-    print(f"Deterministic projection {'verified' if args.check else 'generated'}: {OUTPUT}")
+    for output_path, rendered, _ in generated:
+        output = ROOT / output_path
+        if args.check:
+            if not output.is_file() or output.read_text(encoding="utf-8") != rendered:
+                errors.append(f"{output_path} is missing or stale; run python3 scripts/validate_surps_ontology_views.py")
+        else:
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(rendered, encoding="utf-8")
+    if errors:
+        return report(errors)
+    total_records = sum(count for _, _, count in generated)
+    print(f"SURPS ontology/view validation passed: {len(bundles)} registered MicroBundle(s), {len(generated)} view(s), {total_records} projected record selections.")
+    print(f"Deterministic projections {'verified' if args.check else 'generated'}: {len(generated)}")
     return 0
 
 def report(errors: list[str]) -> int:
