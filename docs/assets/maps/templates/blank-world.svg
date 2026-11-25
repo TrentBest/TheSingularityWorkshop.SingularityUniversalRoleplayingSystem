@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+<title id="title">Blank world map template</title><desc id="desc">An empty world canvas with subtle latitude and longitude guides and open placement space.</desc>
+<defs><pattern id="world-grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#8aa6b7" stroke-opacity=".16"/></pattern><radialGradient id="ocean"><stop stop-color="#29495c"/><stop offset="1" stop-color="#102331"/></radialGradient></defs>
+<rect width="1600" height="1000" fill="url(#ocean)"/><rect width="1600" height="1000" fill="url(#world-grid)"/>
+<g fill="none" stroke="#c5d8df" stroke-opacity=".22"><ellipse cx="800" cy="500" rx="680" ry="420"/><ellipse cx="800" cy="500" rx="480" ry="420"/><ellipse cx="800" cy="500" rx="240" ry="420"/><path d="M120 500H1480M800 80V920"/></g>
+<g fill="#dce9ed" fill-opacity=".55" font-family="system-ui,sans-serif" font-size="18"><text x="40" y="48">WORLD CANVAS · EMPTY TEMPLATE</text><text x="40" y="976" font-size="13">Place regions as child maps; preserve stable IDs and coordinate transforms.</text></g>
+</svg>
