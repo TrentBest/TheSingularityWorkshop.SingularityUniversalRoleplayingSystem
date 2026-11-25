@@ -85,7 +85,7 @@ footer{border-top:1px solid var(--line);margin-top:42px;padding:24px 0 36px;text
 <div class="sheet-theme"><label for="sheetTheme">Presentation theme</label><select id="sheetTheme">
 <option value="verdant">Verdant · starter</option><option value="stone">Stone · starter</option><option value="woodwork">Woodwright · starter</option><option value="steel" disabled>Aegis · premium preview</option><option value="aether" disabled>Aether · premium preview</option>
 </select><p class="theme-note">Premium themes are shown in the catalog but remain locked until an entitlement provider exists.</p></div>
-<img id="sheetPreview" class="sheet-preview" src="assets/character-sheets/verdant.svg" alt="Verdant blank character sheet preview" loading="lazy">
+<object id="sheetPreview" class="sheet-preview" data="assets/character-sheets/verdant.svg" type="image/svg+xml" aria-label="Verdant character sheet preview">Your browser cannot display the SVG character sheet.</object>
 </div>
 </aside>
 </section>
@@ -104,7 +104,22 @@ const fillForm = data => { fields.forEach(k=>$(k).value=data?.[k] || ""); select
 const blank = () => ({identity:{id:uid(),createdAt:new Date().toISOString()},...readForm(),updatedAt:new Date().toISOString()});
 const current = () => roster.find(x=>x.identity?.id===activeId);
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(roster));return true}catch(e){announce("This browser could not save local data. Export your character JSON to keep a copy.",true);return false}}
-function updateSheetPreview(){const allowed=["verdant","stone","woodwork","steel","aether"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;$("sheetPreview").src="assets/character-sheets/"+selectedTheme+".svg";$("sheetPreview").alt=selectedTheme+" blank character sheet preview";}
+function updateSheetPreview(){const allowed=["verdant","stone","woodwork","steel","aether"];if(!allowed.includes(selectedTheme))selectedTheme="verdant";$("sheetTheme").value=selectedTheme;const preview=$("sheetPreview");const source="assets/character-sheets/"+selectedTheme+".svg";if(preview.getAttribute("data")!==source)preview.setAttribute("data",source);preview.setAttribute("aria-label",selectedTheme+" character sheet preview");}
+function updateSheetBindings(){
+ const svgDocument=$("sheetPreview").contentDocument;if(!svgDocument)return;
+ const data=readForm();
+ const bindings={name:data.name,pronouns:data.pronouns,role:data.role,origin:data.origin,attributes:data.attributes,capabilities:data.capabilities,training:data.training,condition:data.condition,goals:data.goals,equipment:data.equipment,concept:data.concept,relationships:data.relationships,history:data.history,appearance:data.appearance};
+ Object.entries(bindings).forEach(([key,value])=>{
+  const target=svgDocument.querySelector('[data-surps-bind="'+key+'"]');if(!target)return;
+  const maxChars=Number(target.getAttribute("data-max-chars")||48),maxLines=Number(target.getAttribute("data-max-lines")||2);
+  const words=String(value||"").replace(/\r/g,"").split(/\s+/).filter(Boolean);const lines=[];let line="";
+  words.forEach(word=>{const next=line?line+" "+word:word;if(next.length>maxChars&&line){lines.push(line);line=word}else line=next});
+  if(line)lines.push(line);
+  const visible=lines.slice(0,maxLines);if(lines.length>maxLines&&visible.length){const last=visible.length-1;visible[last]=visible[last].replace(/[. …]*$/,"")+"…"}
+  target.replaceChildren();const ns="http://www.w3.org/2000/svg";const x=target.getAttribute("x")||"0";const y=Number(target.getAttribute("y")||0);const lineHeight=Number(target.getAttribute("data-line-height")||17);
+  visible.forEach((text,index)=>{const span=svgDocument.createElementNS(ns,"tspan");span.setAttribute("x",x);span.setAttribute("y",String(y+index*lineHeight));span.textContent=text;target.appendChild(span)});
+ });
+}
 function updatePreview(){
  const d=readForm(); $("previewName").textContent=d.name||"Unnamed character";
  $("previewMeta").textContent=[d.role,d.origin,d.pronouns].filter(Boolean).join(" · ")||"Your character will take shape here";
@@ -144,7 +159,8 @@ function download(c){
 $("newCharacter").addEventListener("click",newCharacter);
 $("saveCharacter").addEventListener("click",saveCharacter);
 $("characterForm").addEventListener("submit",e=>{e.preventDefault();saveCharacter()});
-fields.forEach(k=>$(k).addEventListener("input",updatePreview));
+fields.forEach(k=>$(k).addEventListener("input",()=>{updatePreview();updateSheetBindings()}));
+$("sheetPreview").addEventListener("load",updateSheetBindings);
 $("sheetTheme").addEventListener("change",e=>{selectedTheme=e.target.value;updateSheetPreview();const c=current();if(c){c.sheetTheme=selectedTheme;c.updatedAt=new Date().toISOString();persist()}announce("Character sheet theme updated.");});
 $("exportCharacter").addEventListener("click",()=>{const c=current();if(c)download(c)});
 $("deleteCharacter").addEventListener("click",()=>{const c=current();if(!c)return;if(!confirm("Delete "+(c.name||"this character")+" from this browser? Export a copy first if you want to keep it."))return;roster=roster.filter(x=>x.identity.id!==activeId);activeId=null;persist();newCharacter();renderRoster();announce("Character deleted from this browser.")});
