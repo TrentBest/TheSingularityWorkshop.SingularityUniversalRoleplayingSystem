@@ -105,12 +105,13 @@ CI now validates the legacy payload schema plus the MicroBundle and view schemas
 The remaining gates are:
 
 1. Move the canonical records out of the transitional book-scoped payload into an independently owned MicroBundle content document.
-2. Support multiple bundles and views in one resolution pass, including dependency/version-range resolution and explicit conflict policy.
+2. Extend dependency checks from local required-bundle presence to semantic version-range resolution, optional dependency policy, and cycle detection.
 3. Add a federated registry/admission process and global identity collision detection across participating repositories.
-4. Resolve references between records and bundles, including missing providers and compatibility constraints.
-5. Upgrade the Character Studio and Workshop adapters to consume projections dynamically.
-6. Integrate a second domain-owned MicroBundle (for example, Physics or FSM_Dungeon) and prove cross-repository composition.
-7. Keep tabletop procedures independently playable and calibrate executable digital behavior only where a real evaluator exists.
+4. Resolve typed references between records and bundles, including missing providers and compatibility constraints.
+5. Define explicit conflict and precedence policies without inferring precedence from LOD or load order.
+6. Upgrade the Character Studio and Workshop adapters to consume projections dynamically.
+7. Integrate a second domain-owned MicroBundle (for example, Physics or FSM_Dungeon) and prove cross-repository composition.
+8. Keep tabletop procedures independently playable and calibrate executable digital behavior only where a real evaluator exists.
 
 No NuGet/API release is implied by this documentation work.
 
