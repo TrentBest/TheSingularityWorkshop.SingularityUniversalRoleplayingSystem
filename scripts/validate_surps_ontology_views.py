@@ -180,7 +180,11 @@ def main() -> int:
                     if participation.get("microbundlePath") not in registry_paths:
                         errors.append(f"{view_path}: participation MicroBundle path is not in local registry")
             projection = resolve_view(bundles, view, errors)
-            rendered = json.dumps(projection, indent=2, ensure_ascii=False) + "\\n"
+            resolved_output = (ROOT / output_path).resolve()
+            if ROOT.resolve() not in resolved_output.parents:
+                errors.append(f"{view_path}: output path escapes repository: {output_path}")
+                continue
+            rendered = json.dumps(projection, indent=2, ensure_ascii=False) + "\n"
             generated.append((output_path, rendered, len(projection["records"])))
         except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
             errors.append(f"{view_path}: {exc}")
