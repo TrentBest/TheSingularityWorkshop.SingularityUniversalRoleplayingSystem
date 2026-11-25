@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trentbest.github.io/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem/schemas/rulebook-view.schema.json",
+  "title": "SURPS Rulebook View",
+  "description": "A curated projection selecting canonical records from one or more independently owned MicroBundles.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "id", "version", "bookId", "audience", "scope", "lod", "selections"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([+-][0-9A-Za-z.-]+)?$"},
+    "bookId": {"type": "string"},
+    "audience": {"enum": ["player", "game-master", "workshop", "editor", "reference", "print", "all"]},
+    "scope": {"type": "string", "minLength": 1},
+    "lod": {"type": "integer", "minimum": 0},
+    "selections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["microbundle", "records"],
+        "properties": {
+          "microbundle": {"type": "string"},
+          "records": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    },
+    "presentation": {"type": "object", "additionalProperties": false, "properties": {"title": {"type": "string"}, "description": {"type": "string"}, "order": {"type": "array", "items": {"type": "string"}}}}
+  }
+}
