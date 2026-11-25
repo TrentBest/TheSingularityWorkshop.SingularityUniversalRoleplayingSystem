@@ -46,9 +46,13 @@ SURPS is not the sole producer of its content. **raWWar both produces SURPS cont
 
 CiAi's Autonomous Development Pipeline must coordinate this as a cross-repository dependency graph with exact revision provenance—not a simplistic one-way build order. SURPS owns canonical roleplaying content semantics; raWWar owns its Experience and its runtime/presentation. The ADP orchestrates the hand-offs and CI evidence without collapsing those ownership boundaries.
 
-## SURPS activation
+## SURPS as a System Experience
 
-SURPS is an opt-in experience setting. When disabled, the experience runs without SURPS rulebook discovery or dependency; FSM_API, FSM_COS, and FSM_Execution remain usable independently. When enabled, the experience composes the SURPS master system and selected rulebooks/providers. The checkbox is a simple host-facing choice; editors may configure rulebook selection, precedence, and LOD separately.
+SURPS is itself a first-class Experience: a versioned composition request that selects the SURPS MicroBundles and external capabilities required by the roleplaying system. FSM_COS assembles that request through portable MicroBundle identities and exact revisions; it is not a recursive bootstrap because FSM_COS and the host are the composition machinery. See [SURPS and Lightweight Experience Composition](experience-composition.md).
+
+A quest, mission, adventure, or campaign is a lightweight scenario Experience. It consumes SURPS and selects only the books/views and additional MicroBundles it needs. It does not duplicate the SURPS system or own canonical shared roleplaying records. A book-selection document remains separate from the portable FSM_COS composition manifest.
+
+A host may make SURPS optional for a scenario. When disabled, that scenario need not discover SURPS books or rule dependencies; FSM_API, FSM_COS, and FSM_Execution remain independently usable. When enabled, the scenario declares its SURPS dependency and selected book views. This host choice does not replace the SURPS System Experience or its own manifest.
 
 ## Ontology, microbundles, and books
 
