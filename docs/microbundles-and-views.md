@@ -20,6 +20,8 @@ The same MicroBundle can appear in a player handbook, a referee's expanded guide
 - [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership and content-source metadata.
 - [Repository-local MicroBundle registry schema](../schemas/microbundle-registry.schema.json) and [registry](../.surps/microbundles/registry.json) enumerate independently selectable bundles.
 - [Rulebook view schema](../schemas/rulebook-view.schema.json) defines a curated selection.
+- [Rulebook view registry schema](../schemas/rulebook-view-registry.schema.json) and [view registry](../.surps/views/registry.json) enumerate independently generated projections.
+- [CORE Spying player view](../.surps/views/core-spying-player.view.json) and [game-master view](../.surps/views/core-spying-game-master.view.json) select the same canonical records for different audiences.
 - [CORE Spying MicroBundle](../.surps/microbundles/core-spying.microbundle.json) is the first SURPS-owned bundle descriptor.
 - [CORE Spying player view](../.surps/views/core-spying-player.view.json) selects six approaches and six procedures.
 - [Resolver and projection validator](../scripts/validate_surps_ontology_views.py) validates schema, identity alignment, and selected-record resolution, then generates a deterministic projection.
@@ -29,7 +31,7 @@ The same MicroBundle can appear in a player handbook, a referee's expanded guide
 
 The first bundle exposes six approach capabilities (Observe, Deceive, Infiltrate, Analyze, Influence, Operate) and six structured procedures (approach allocation, uncertain action resolution, outcome bands, preparation/assets, scene clocks, and information/evidence states).
 
-The player view selects each record by stable ID. The resolver:
+The player and game-master views select records by stable ID. They intentionally reuse the same canonical record identities; audience-specific ordering and descriptions belong to the view, not duplicate rules. The resolver:
 1. loads and validates the MicroBundle descriptor and the view definition;
 2. loads the referenced structured payload and checks its schema;
 3. verifies bundle ownership/version against the current transitional payload;
@@ -44,7 +46,7 @@ This is real local selection and projection, not just a diagram or a design docu
 
 The first MicroBundle descriptor wraps the existing `.surps/contributions/core-spying.json` payload. That payload still carries its original book-scoped identity for backward compatibility. The MicroBundle wrapper establishes the new independently selectable bundle identity and explicitly records the transitional relationship. It does **not** yet mean the records have been physically moved into an independently owned ontology store.
 
-The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. The current resolver supports multiple bundles from one repository-local registry, but the checked-in pilot registry has only one real bundle. Cross-repository content-record federation, federated global record-ID collision detection, semantic dependency/version-range resolution, typed reference resolution across bundles, conflict policy, and runtime execution remain separate gates. A separate pinned external-provider discovery path now reads actual Physics-owned provider manifests without copying their domain records into SURPS.
+The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. The resolver now discovers every entry in a view registry and emits one deterministic projection per entry. The checked-in pilot currently demonstrates two audience views over one real bundle. It supports multiple bundles from one repository-local registry, but the checked-in MicroBundle registry has only one real bundle. Cross-repository content-record federation, federated global record-ID collision detection, semantic dependency/version-range resolution, typed reference resolution across bundles, conflict policy, and runtime execution remain separate gates. A separate pinned external-provider discovery path now reads actual Physics-owned provider manifests without copying their domain records into SURPS.
 
 ## First cross-repository provider discovery
 
@@ -66,7 +68,7 @@ This is a real cross-repository discovery integration: the source manifests rema
 - LOD describes declared detail, not automatic precedence.
 - A record marked `specified` is not automatically `implemented`; a declared capability is not proof of an evaluator.
 - The first CORE Spying records remain playtest material. The projection preserves that status and source provenance.
-- The current resolver can compose multiple entries from one local registry into a view. The checked-in registry currently contains one real bundle and one player view; federated cross-repository discovery is not implemented.
+- The current resolver can compose multiple entries from one local registry into each view. The checked-in registries currently contain one real bundle and two audience views; federated cross-repository discovery is not implemented.
 
 ## Build and test
 
