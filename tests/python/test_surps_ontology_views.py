@@ -50,5 +50,17 @@ class OntologyViewTests(unittest.TestCase):
         ontology.resolve_view(self.bundles, self.view, errors)
         self.assertTrue(any("unresolved MicroBundle" in error for error in errors))
 
+    def test_global_record_identity_collision_is_rejected(self):
+        self.bundles["physics.microbundle.sample"][1]["contributions"]["rules"][0]["id"] = "sample.capability.observe"
+        errors = []
+        ontology.validate_bundle_graph(self.bundles, errors)
+        self.assertTrue(any("global local-registry ID collision" in error for error in errors))
+
+    def test_missing_required_dependency_is_rejected(self):
+        self.bundles["surps.microbundle.sample"][0]["dependencies"] = [{"id": "missing.dependency"}]
+        errors = []
+        ontology.validate_bundle_graph(self.bundles, errors)
+        self.assertTrue(any("unresolved required MicroBundle dependency" in error for error in errors))
+
 if __name__ == "__main__":
     unittest.main()
