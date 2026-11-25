@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "description": "Core semantic tile starter set. Connection declarations describe topology; SVG files are visual projections.",
+  "tileSize": {
+    "width": 1,
+    "height": 1,
+    "unit": "cell"
+  },
+  "tiles": [
+    {
+      "id": "surps.tile.terrain.water",
+      "name": "Water",
+      "kind": "terrain",
+      "asset": "docs/assets/tiles/water.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "flow"
+      },
+      "tags": [
+        "river",
+        "lake",
+        "ocean"
+      ]
+    },
+    {
+      "id": "surps.tile.terrain.grass",
+      "name": "Grassland",
+      "kind": "terrain",
+      "asset": "docs/assets/tiles/grass.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "terrain"
+      },
+      "tags": [
+        "plain",
+        "meadow"
+      ]
+    },
+    {
+      "id": "surps.tile.terrain.forest",
+      "name": "Forest",
+      "kind": "terrain",
+      "asset": "docs/assets/tiles/forest.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "terrain"
+      },
+      "tags": [
+        "woodland"
+      ]
+    },
+    {
+      "id": "surps.tile.terrain.mountain",
+      "name": "Mountain",
+      "kind": "terrain",
+      "asset": "docs/assets/tiles/mountain.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "terrain"
+      },
+      "tags": [
+        "ridge",
+        "peak"
+      ]
+    },
+    {
+      "id": "surps.tile.route.road",
+      "name": "Road",
+      "kind": "route",
+      "asset": "docs/assets/tiles/road.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "route"
+      },
+      "tags": [
+        "path",
+        "street"
+      ]
+    },
+    {
+      "id": "surps.tile.route.bridge",
+      "name": "Bridge",
+      "kind": "route",
+      "asset": "docs/assets/tiles/bridge.svg",
+      "connections": {
+        "edges": [
+          "east",
+          "west"
+        ],
+        "continuity": "route",
+        "crosses": [
+          "water"
+        ]
+      },
+      "tags": [
+        "crossing"
+      ]
+    },
+    {
+      "id": "surps.tile.settlement.village",
+      "name": "Village",
+      "kind": "settlement",
+      "asset": "docs/assets/tiles/village.svg",
+      "connections": {
+        "edges": [
+          "north",
+          "east",
+          "south",
+          "west"
+        ],
+        "continuity": "place"
+      },
+      "tags": [
+        "hamlet",
+        "town"
+      ]
+    },
+    {
+      "id": "surps.tile.site.landmark",
+      "name": "Landmark",
+      "kind": "site",
+      "asset": "docs/assets/tiles/landmark.svg",
+      "connections": {
+        "edges": [],
+        "continuity": "point"
+      },
+      "tags": [
+        "ruin",
+        "tower",
+        "monument"
+      ]
+    }
+  ]
+}
