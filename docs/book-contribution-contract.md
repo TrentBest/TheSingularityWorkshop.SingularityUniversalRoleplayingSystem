@@ -21,15 +21,15 @@ Ontology records are authoritative; their owning domain or shared ontology layer
 ## The four distinct steps
 
 1. **Contribute** — an owning domain publishes authoritative ontology records and, where useful, a machine-readable contribution document. Human-readable source material explains those records without becoming a competing authority.
-2. **Register** — the current validator checks the contribution schema, aligns the contribution's book ID/version with its descriptor and participation entry, and rejects duplicate record IDs within that contribution. Full cross-repository reference resolution and registry indexing are not implemented yet.
-3. **Select** — a book/view definition declares which contributions and ontology records it presents for an audience, scope, LOD, and purpose. The current experience manifest is a selection contract; its complete resolver is not implemented yet.
-4. **Project** — future SURPS tooling will compose selected records into player, Workshop, tabletop, digital, and print projections. The current Character Studio does not yet dynamically compose all these views.
+2. **Register** — the contribution validator checks the legacy payload schema, aligns its book ID/version with the descriptor and participation entry, and rejects document-local duplicate record IDs. The new MicroBundle validator checks a bundle descriptor, its owner/version, the payload link, and local record identity.
+3. **Select** — a rulebook view selects MicroBundles and stable record IDs for an audience, scope, and LOD. The first CORE Spying player view is now resolved by executable tooling; missing bundles, missing records, duplicate selections, and duplicate local record IDs fail closed.
+4. **Project** — the resolver emits a deterministic JSON projection containing the selected records and source MicroBundle/version/owner provenance. CI uploads the generated CORE Spying player projection as a build artifact. This is a local one-bundle vertical slice, not yet a federated multi-repository registry, dynamic Character Studio, or runtime rule engine.
 
-A book's `.book.json` descriptor identifies its curated view and publication identity (ID, title, LOD, version, cover, and related metadata); it is not an ontology database. The current pilot allows a descriptor to declare a repository-relative `contributionPath` and `contributionSchema`, mirrored by the participation manifest. This is a transitional convenience for the CORE Spying pilot. As ontology ownership and cross-repository composition mature, descriptors should select domain-owned contributions rather than imply that the book owns their truth. A book without a machine-readable payload may omit `contributionPath`; it is then bibliographically registered but has no structured contribution attached yet. See the [book descriptor example](examples/book-descriptor.example.json).
+A book's `.book.json` descriptor identifies its curated view and publication identity (ID, title, LOD, version, cover, and related metadata); it is not an ontology database. The first implementation adds a `viewPath` to the CORE Spying descriptor and participation entry. The separate MicroBundle descriptor declares the selectable bundle identity, owner repository, version, domain, source payload, and record collections. CORE Spying still carries legacy `contributionPath` metadata during migration; that payload remains explicitly book-scoped and is not yet the final domain-owned ontology storage shape. Other books may omit both contribution and view paths until they have structured data and a view. See the [book descriptor example](examples/book-descriptor.example.json) and [MicroBundles and Rulebook Views](microbundles-and-views.md).
 
 ## Canonical contribution document
 
-The initial JSON Schema is [book-contribution.schema.json](schemas/book-contribution.schema.json). It is a development contract and will be validated against real sourcebooks before being treated as a frozen public API.
+The legacy payload schema is [book-contribution.schema.json](schemas/book-contribution.schema.json). The independently selectable bundle and publication view contracts are [microbundle.schema.json](schemas/microbundle.schema.json) and [rulebook-view.schema.json](schemas/rulebook-view.schema.json). These remain development contracts and are not frozen public APIs.
 
 A contribution document contains:
 
@@ -100,15 +100,17 @@ The portal can then render the same character creation flow anywhere, with the e
 
 ## Maturity and implementation gates
 
-The schema and examples in this branch are an initial contract, not a claim that all registration, dynamic UI composition, or runtime rule execution already exists. CI checks both schemas and their examples, then validates every registered contribution document against the book-contribution schema. It also verifies that the contribution's book ID/version agree with its descriptor and participation entry, and that record IDs are unique across all record collections within each contribution document. This is document-local integrity, not global ontology identity resolution: cross-repository duplicate detection, reference resolution, and ontology query/projection remain future work. CORE Spying is the first real sourcebook pilot: its six playtest approaches and its written uncertainty, outcome, preparation, clock, and information/evidence procedures are represented as structured declarations. The declarations preserve the sourcebook's playtest status; they do not claim an executable evaluator or universal character attributes.
+CI now validates the legacy payload schema plus the MicroBundle and view schemas. It resolves the CORE Spying player view against the bundle's declared record collections, rejects unresolved local record references and duplicate selections, and emits a deterministic projection with source provenance. Unit tests exercise successful resolution and fail-closed cases. The six approach capabilities and six written procedures remain playtest declarations; they are not an executable evaluator or universal character attributes.
 
 The remaining gates are:
 
-1. Validate more real books and tighten the schema from actual authoring experience.
-2. Define the experience profile resolver, version ranges, dependency/conflict checks, and precedence behavior.
-3. Upgrade the Character Studio to render options and rulebook-provided fields from the selected book set.
-4. Extend integrity tests to cross-repository identity collisions, unresolved references, dependency conflicts, missing providers, compatibility, and provenance.
-5. Integrate one satellite repository only after the central contract is proven.
+1. Move the canonical records out of the transitional book-scoped payload into an independently owned MicroBundle content document.
+2. Support multiple bundles and views in one resolution pass, including dependency/version-range resolution and explicit conflict policy.
+3. Add a federated registry/admission process and global identity collision detection across participating repositories.
+4. Resolve references between records and bundles, including missing providers and compatibility constraints.
+5. Upgrade the Character Studio and Workshop adapters to consume projections dynamically.
+6. Integrate a second domain-owned MicroBundle (for example, Physics or FSM_Dungeon) and prove cross-repository composition.
+7. Keep tabletop procedures independently playable and calibrate executable digital behavior only where a real evaluator exists.
 
 No NuGet/API release is implied by this documentation work.
 
