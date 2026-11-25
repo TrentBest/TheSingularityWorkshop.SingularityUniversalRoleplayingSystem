@@ -17,11 +17,14 @@ The same MicroBundle can appear in a player handbook, a referee's expanded guide
 
 ## MicroBundle-owned book assets
 
-A MicroBundle also owns the reusable assets that explain its records: authored prose, captions, SVGs, diagrams, and image references. Its asset manifest assigns each resource a stable ID, relative path, accessible description, usage, and optional audience/locale metadata. Views may arrange or select those assets for different books, but they do not copy the canonical source or redefine its meaning. The CORE Spying pilot now includes an SVG approach-spectrum diagram and shared introductory copy in its MicroBundle asset directory. The [asset manifest schema](../schemas/microbundle-assets.schema.json) defines this contract.
+A MicroBundle also owns the reusable assets that explain its records: authored prose, captions, SVGs, diagrams, and image references. It may additionally declare action previews: provider compositions that let a player explore an action through character visualization, a contextual environment, gestures, and resolution without moving ownership of those behaviors into the rulebook. Its asset manifest assigns each resource a stable ID, relative path, accessible description, usage, and optional audience/locale metadata. Views may arrange or select those assets for different books, but they do not copy the canonical source or redefine its meaning. The CORE Spying pilot now includes an SVG approach-spectrum diagram and shared introductory copy in its MicroBundle asset directory. The [asset manifest schema](../schemas/microbundle-assets.schema.json) defines this contract.
 
 ## Contracts
 
-- [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership, content, and optional asset-manifest metadata.
+- [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership, content, and optional asset/preview metadata.
+- [Character capabilities and adversities](character-capabilities-and-previews.html) defines the conscious/subconscious axis, character-point direction, and action-preview ownership boundaries.
+- [Action preview schema](../schemas/action-preview.schema.json) defines staged provider composition.
+- [CORE Spying lock-picking preview](../.surps/previews/lock-picking.preview.json) is a proposed example, attached to the MicroBundle descriptor.
 - [CORE Spying asset manifest](../.surps/microbundles/assets/core-spying.assets.json) registers its SVG and reusable book copy.
 - [Repository-local MicroBundle registry schema](../schemas/microbundle-registry.schema.json) and [registry](../.surps/microbundles/registry.json) enumerate independently selectable bundles.
 - [Rulebook view schema](../schemas/rulebook-view.schema.json) defines a curated selection.
@@ -30,7 +33,7 @@ A MicroBundle also owns the reusable assets that explain its records: authored p
 - [CORE Spying MicroBundle](../.surps/microbundles/core-spying.microbundle.json) is the first SURPS-owned bundle descriptor; its canonical records live in [book-independent MicroBundle content](../.surps/microbundles/content/core-spying.content.json) validated by the [MicroBundle content schema](../schemas/microbundle-content.schema.json).
 - [CORE Spying player view](../.surps/views/core-spying-player.view.json) selects six approaches and six procedures.
 - [Resolver and projection validator](../scripts/validate_surps_ontology_views.py) validates schema, identity alignment, and selected-record resolution, then generates a deterministic projection.
-- The CI workflow uploads that generated projection as `surps-core-spying-player-view`; it is a build artifact, not a claim that a dynamic Character Studio or runtime rule engine exists.
+- The CI workflow uploads that generated projection as `surps-core-spying-player-view`; it is a build artifact, not a claim that a dynamic Character Studio, action-preview host, or runtime rule engine exists.
 
 ## Probability-first resolution direction
 
