@@ -26,6 +26,8 @@ Every sheet is intentionally empty. Names, attributes, capabilities, conditions,
 
 ## Living maps and nested places
 
+The initial [map and tile catalogues](surface-assets-and-tiles.md) and the interactive [Map Workshop](map-studio.html) provide three blank map surfaces and a semantic tile starter set. The workshop exports a local draft referencing stable tile IDs; it is not yet a canonical map editor or simulation engine.
+
 The map model should compose from broad to fine detail:
 
 1. World
