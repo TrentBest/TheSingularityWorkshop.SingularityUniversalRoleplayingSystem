@@ -122,10 +122,17 @@ def main() -> int:
         entry = next((item for item in manifest.get("books", []) if item.get("id") == view.get("bookId")), None)
         if entry is None:
             errors.append("view bookId is not registered in participation manifest")
-        elif descriptor.get("viewPath") != ".surps/views/core-spying-player.view.json":
-            errors.append("book descriptor viewPath does not identify the player view")
+        else:
+            if descriptor.get("viewPath") != ".surps/views/core-spying-player.view.json":
+                errors.append("book descriptor viewPath does not identify the player view")
+            if entry.get("viewPath") != descriptor.get("viewPath"):
+                errors.append("participation manifest viewPath does not match book descriptor")
+            if entry.get("microbundlePath") != ".surps/microbundles/core-spying.microbundle.json":
+                errors.append("participation manifest microbundlePath does not identify the registered MicroBundle")
         if descriptor.get("id") != view.get("bookId") or descriptor.get("lod") != view.get("lod"):
             errors.append("view identity/LOD does not match the book descriptor")
+        if descriptor.get("viewPath") != ".surps/views/core-spying-player.view.json":
+            errors.append("book descriptor viewPath does not identify the player view")
         projection = resolve_view(bundle, payload, view, errors)
     except (OSError, UnicodeError, json.JSONDecodeError, KeyError, TypeError, ValueError) as exc:
         errors.append(str(exc))
