@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "microbundleId": "surps.microbundle.core.spying",
+  "assets": [
+    {
+      "id": "surps.core.spying.asset.approach-spectrum",
+      "kind": "svg",
+      "path": ".surps/microbundles/assets/core-spying-approach-spectrum.svg",
+      "altText": "Six CORE Spying approaches arranged around a central probability-based resolution concept.",
+      "usage": "Player and game-master explanation of the bundle's capability vocabulary.",
+      "caption": "Approaches describe what a character brings to an uncertain action; circumstances determine the final chance.",
+      "audiences": [
+        "player",
+        "game-master",
+        "workshop",
+        "reference"
+      ],
+      "mediaType": "image/svg+xml"
+    },
+    {
+      "id": "surps.core.spying.text.approach-introduction",
+      "kind": "text",
+      "path": ".surps/microbundles/assets/core-spying-approach-introduction.md",
+      "altText": "Introductory prose for the six CORE Spying approaches.",
+      "usage": "Canonical explanatory copy reusable by every book view.",
+      "audiences": [
+        "player",
+        "game-master",
+        "workshop",
+        "reference"
+      ],
+      "locale": "en-US"
+    }
+  ]
+}
