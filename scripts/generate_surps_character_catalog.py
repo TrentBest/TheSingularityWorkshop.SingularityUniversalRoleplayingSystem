@@ -67,6 +67,10 @@ def build_catalog(root: Path = ROOT) -> dict[str, Any]:
         declared_collections = descriptor.get("recordCollections")
         if not isinstance(declared_collections, list) or not declared_collections:
             raise ValueError(f"{bundle_id}: recordCollections must be a non-empty array")
+        if any(not isinstance(name, str) or not name.strip() for name in declared_collections):
+            raise ValueError(f"{bundle_id}: recordCollections entries must be non-empty strings")
+        if len(set(declared_collections)) != len(declared_collections):
+            raise ValueError(f"{bundle_id}: recordCollections must not contain duplicates")
         unknown_collections = set(declared_collections) - set(COLLECTIONS) - {"extensions", "rules"}
         if unknown_collections:
             raise ValueError(
