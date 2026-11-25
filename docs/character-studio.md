@@ -44,6 +44,10 @@ The current page stores its roster in `localStorage` under a SURPS-specific key 
 
 Visitors should export important characters. Participating repositories should link to the central SURPS page rather than embedding another copy of the editor.
 
+## Living SVG projection
+
+The five character-sheet themes share the versioned SVG contract `surps.character-sheet@1.0.0`. Each asset declares stable `data-surps-bind` targets for the current Character Studio fields. The Studio embeds the same-origin SVG with an `object` so it can update the SVG document without rewriting the source asset or placing character data into the SVG file. Text is inserted as text nodes (never markup), wrapped to each target's declared line budget, and truncated visually when a field exceeds the available space. The canonical character record remains in the browser roster/export; the SVG is only a live presentation projection. This is a prototype binding contract, not yet the canonical portable character schema.
+
 ## Draft JSON envelope
 
 The first prototype exports a clearly marked draft envelope:
