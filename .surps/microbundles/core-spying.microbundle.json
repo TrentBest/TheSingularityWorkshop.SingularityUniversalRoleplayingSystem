@@ -17,6 +17,8 @@
   "provenance": {
     "sourceRepository": "TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem",
     "sourcePath": "docs/books/core-spying.md",
-    "notes": "Canonical MicroBundle-owned records and book-facing assets. Views select and arrange these resources; books do not fork them."
-  }
+    "notes": "Canonical MicroBundle-owned records, book-facing assets, and proposed action preview composition. Views select and arrange these resources; books do not fork them."
+  },
+  "previewsPath": ".surps/previews/lock-picking.preview.json",
+  "previewsSchema": "schemas/action-preview.schema.json"
 }
