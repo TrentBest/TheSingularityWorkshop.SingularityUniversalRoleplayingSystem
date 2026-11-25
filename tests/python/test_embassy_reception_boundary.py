@@ -60,5 +60,42 @@ class EmbassyReceptionBoundaryTests(unittest.TestCase):
         self.assertIn("portable fsm_cos composition manifest", readme)
 
 
+
+class MissingLedgerExperienceTests(unittest.TestCase):
+    def test_manifest_selects_canonical_core_spying_book(self) -> None:
+        manifest_path = ROOT / "experiences" / "missing-ledger" / "experience-books.json"
+        selection = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual("surps.demo.missing-ledger", selection["experience"]["id"])
+        self.assertEqual("0.1.0", selection["experience"]["version"])
+        self.assertEqual(
+            [{"id": "surps.core.spying", "versionRange": "^0.1.0", "required": True,
+              "lod": 0,
+              "purpose": "The canonical CORE Spying playtest rules, information states, and scene procedures."}],
+            selection["books"],
+        )
+        self.assertNotIn("contributions", selection)
+
+    def test_public_mission_page_does_not_ship_referee_only_facts(self) -> None:
+        page = (ROOT / "docs" / "experiences" / "missing-ledger" / "index.html").read_text(encoding="utf-8").lower()
+        for secret in (
+            "blue oilcloth folder",
+            "millwright",
+            "old ferry landing",
+            "corrupt clerk",
+            "watch sergeant",
+        ):
+            with self.subTest(secret=secret):
+                self.assertNotIn(secret, page)
+        self.assertIn("keep private facts and adjudication notes outside this public site", page)
+        self.assertNotIn("game master view", page)
+        self.assertNotIn("gm-on", page)
+
+    def test_mission_labels_human_adjudication_and_no_digital_evaluator(self) -> None:
+        page = (ROOT / "docs" / "experiences" / "missing-ledger" / "index.html").read_text(encoding="utf-8").lower()
+        self.assertIn("human referee remains the adjudicator", page)
+        self.assertIn("no automated digital spying evaluator is claimed", page)
+        self.assertIn("no clock advances automatically", page)
+
+
 if __name__ == "__main__":
     unittest.main()
