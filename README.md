@@ -31,7 +31,7 @@ SURPS owns the roleplaying ontology: what entities are, what properties and capa
 - **FSM_COS / FSM_Execution** — composition and execution of experiences.
 - **Gauntlet** — integrated adversarial proving ground and evidence-producing campaign harness for MicroBundles and SURPS-enabled experiences.
 
-See [Architecture](docs/architecture.md) for the initial responsibility boundaries.
+See [Architecture](docs/architecture.md) for the initial responsibility boundaries. SURPS itself is also a first-class, self-assembled [System Experience](docs/experience-composition.md); quests, missions, adventures, and campaigns remain lightweight scenario Experiences that consume it.
 
 Repository-specific agent work is governed by the root [AgentOnboarding.md](AgentOnboarding.md). SURPS is organized as one **grouped Autonomous Development Pipeline (ADP)**: CiAi coordinates related content-definition work across books, canonical records, MicroBundles, characters, maps, tiles, SVG surfaces, and validation, with shared context and explicit dependencies. SURPS remains the authority for its domain contracts; CiAi supplies orchestration and evidence. See the [SURPS ADP domain contract](docs/surps-adp.md). The [CiAi evidence workflow](.github/workflows/ciai-evidence.yml) is a separate read-only lane observing exact-commit Pages evidence; ADP write operations require task-scoped host authorization, and merge/publication/release/deployment remain separately gated.
 
