@@ -18,6 +18,7 @@ The same MicroBundle can appear in a player handbook, a referee's expanded guide
 ## Contracts
 
 - [MicroBundle descriptor schema](../schemas/microbundle.schema.json) defines ownership and content-source metadata.
+- [Repository-local MicroBundle registry schema](../schemas/microbundle-registry.schema.json) and [registry](../.surps/microbundles/registry.json) enumerate independently selectable bundles.
 - [Rulebook view schema](../schemas/rulebook-view.schema.json) defines a curated selection.
 - [CORE Spying MicroBundle](../.surps/microbundles/core-spying.microbundle.json) is the first SURPS-owned bundle descriptor.
 - [CORE Spying player view](../.surps/views/core-spying-player.view.json) selects six approaches and six procedures.
@@ -43,7 +44,7 @@ This is real local selection and projection, not just a diagram or a design docu
 
 The first MicroBundle descriptor wraps the existing `.surps/contributions/core-spying.json` payload. That payload still carries its original book-scoped identity for backward compatibility. The MicroBundle wrapper establishes the new independently selectable bundle identity and explicitly records the transitional relationship. It does **not** yet mean the records have been physically moved into an independently owned ontology store.
 
-The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. Cross-repository registry discovery, global identity collision detection, dependency/version-range resolution, reference resolution across bundles, conflict policy, and runtime execution remain separate gates.
+The next migration is to make the domain-owned MicroBundle payload itself authoritative, remove book identity from its content envelope, and let any number of views select it. The current resolver supports multiple bundles from one repository-local registry, but the checked-in pilot registry has only one real bundle. Cross-repository registry discovery, federated global identity collision detection, semantic dependency/version-range resolution, typed reference resolution across bundles, conflict policy, and runtime execution remain separate gates.
 
 ## Ownership and maturity rules
 
@@ -54,7 +55,7 @@ The next migration is to make the domain-owned MicroBundle payload itself author
 - LOD describes declared detail, not automatic precedence.
 - A record marked `specified` is not automatically `implemented`; a declared capability is not proof of an evaluator.
 - The first CORE Spying records remain playtest material. The projection preserves that status and source provenance.
-- The current resolver handles one local MicroBundle and one local view. It is not yet a global federated registry.
+- The current resolver can compose multiple entries from one local registry into a view. The checked-in registry currently contains one real bundle and one player view; federated cross-repository discovery is not implemented.
 
 ## Build and test
 
