@@ -59,19 +59,38 @@ def validate_asset_manifest(descriptor: dict, errors: list[str]) -> None:
             errors.append(f"{manifest_path}: invalid asset {asset_id!r}: {exc}")
 
 def validate_preview_manifest(descriptor: dict, errors: list[str]) -> None:
-    """Validate an optional MicroBundle-owned action preview descriptor."""
-    preview_path = descriptor.get("previewsPath")
-    if not preview_path:
+    """Validate every action preview offered by a MicroBundle manifest."""
+    manifest_path = descriptor.get("previewsPath")
+    if not manifest_path:
         return
     schema_path = descriptor.get("previewsSchema")
     if not schema_path:
         errors.append(f"{descriptor.get('id')}: previewsPath requires previewsSchema")
         return
-    preview = validate_schema(schema_path, preview_path, errors)
-    if preview is None:
+    manifest = validate_schema(schema_path, manifest_path, errors)
+    if manifest is None:
         return
-    if preview.get("microbundleId") != descriptor.get("id"):
-        errors.append(f"{preview_path}: microbundleId does not match descriptor")
+    if manifest.get("microbundleId") != descriptor.get("id"):
+        errors.append(f"{manifest_path}: microbundleId does not match descriptor")
+    seen_ids, seen_paths = set(), set()
+    for entry in manifest.get("previews", []):
+        preview_id, preview_path = entry.get("id"), entry.get("path")
+        if preview_id in seen_ids:
+            errors.append(f"{manifest_path}: duplicate preview id {preview_id!r}")
+            continue
+        if preview_path in seen_paths:
+            errors.append(f"{manifest_path}: duplicate preview path {preview_path!r}")
+            continue
+        seen_ids.add(preview_id)
+        seen_paths.add(preview_path)
+        preview = validate_schema("schemas/action-preview.schema.json", preview_path, errors)
+        if preview is None:
+            continue
+        if preview.get("id") != preview_id:
+            errors.append(f"{preview_path}: id does not match preview manifest")
+        if preview.get("microbundleId") != descriptor.get("id"):
+            errors.append(f"{preview_path}: microbundleId does not match descriptor")
+
 
 def validate_schema(schema_path: str, document_path: str, errors: list[str]) -> dict | None:
     try:
