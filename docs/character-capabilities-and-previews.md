@@ -1,6 +1,6 @@
 # Character capabilities, adversities, and action previews
 
-![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Visualize/development/docs/assets/moniker.svg)
+![The Singularity Workshop animated moniker](https://raw.githubusercontent.com/TrentBest/TheSingularityWorkshop.Renderer/development/docs/assets/moniker.svg)
 
 ## Character construction
 
@@ -37,7 +37,7 @@ The lock-picking preview is the first proposed vertical slice:
 
 1. **Character visualization** presents the selected character in a stable, character-local frame.
 2. **Environment preview provider** creates the immediate scene around that character: the lock, its mounting, nearby surfaces, light, and other relevant conditions. The environment fades into the character's frame rather than replacing the character sheet or teleporting the character into an unrelated scene.
-3. **Gestures provider** filters offered procedures against actor requirements and available environment anchors, then supplies the character's lock-picking movement, adapted to the character's available body/rig and the action context. The existing Gestures contracts already separate `GestureOfferSelector` (eligibility and rejection reasons), `GesturePlayback` (caller-driven lifecycle), and `GestureEvaluator` (deterministic evaluated pose). These are useful existing building blocks, not a lock-picking provider or proof of a successful physical interaction.
+3. **Gestures provider** filters offered procedures against actor requirements and available environment anchors, then supplies the character's lock-picking movement, adapted to the character's available body/rig and the action context. The existing Gestures contracts already separate `GestureOfferSelector` (eligibility and rejection reasons), `GesturePlayback` (caller-driven lifecycle), and `GestureEvaluator` (deterministic evaluated pose). These are useful existing building blocks. Gestures now includes a test-backed SURPS lock-picking offer fixture (`surps.core.spying.lock-picking.insert-and-turn.v1`) that requires `manual-dexterity`, `lock-tool-use`, and the live `lock-cylinder` anchor; it proves offer eligibility and playback composition, not a completed lock-picking animation or successful physical interaction.
 4. **SURPS resolution** first calculates and displays the chance from a frozen character/action/environment snapshot. After the gesture is presented, the authoritative action/domain integration supplies the evidence used to resolve the outcome. An evaluated pose is not evidence that the lock opened.
 5. **Presentation** shows the attempt and its consequences in the same frame, then returns control to the character sheet.
 
@@ -72,5 +72,5 @@ Current status:
 - Character-point economy: not calibrated or implemented.
 - Preview descriptor contract: specified.
 - Character visualization, environment, Gestures, and resolution provider runtime: not wired together by this descriptor.
-- Gestures repository: existing deterministic evaluator, offer selector, and playback contracts are available; no lock-picking-specific Gesture offer or live SURPS integration has been confirmed.
-- Lock-picking preview: proposed, not executable.
+- Gestures repository: deterministic evaluator, offer selector, and playback contracts are available; a lock-picking-specific offer fixture is now implemented and test-backed in [Gestures](https://github.com/TrentBest/TheSingularityWorkshop.Gestures/blob/development/docs/SURPS_LOCK_PICKING_GESTURE_OFFER.md). It is not yet a runtime provider loaded by the SURPS preview host.
+- Lock-picking preview: still proposed as an end-to-end experience; the Gestures offer-selection/playback substep now has an executable test fixture.
