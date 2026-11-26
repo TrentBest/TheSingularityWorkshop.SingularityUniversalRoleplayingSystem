@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import unittest
 from pathlib import Path
 
@@ -25,11 +26,14 @@ class SovietFacilityOpeningTests(unittest.TestCase):
 
     def test_name_challenge_has_twenty_choices_and_handler_reveal(self) -> None:
         html = PAGE.read_text(encoding="utf-8")
-        self.assertEqual(20, html.count('button.className="name"') * 20 if False else 20)
-        self.assertIn('const names=[', html)
+        match = re.search(r"const names=\[(.*?)\];\s*const correct=", html, re.S)
+        self.assertIsNotNone(match, "The authored identity list must be present.")
+        names = re.findall(r'"([^"]+)"', match.group(1))
+        self.assertEqual(20, len(names))
+        self.assertEqual(20, len(set(names)))
         self.assertIn('const correct="Alexei Morozov"', html)
         self.assertIn("deliverWhisper", html)
-        self.assertIn("classList.add(\"highlight\")", html)
+        self.assertIn('classList.add("highlight")', html)
 
     def test_page_does_not_claim_runtime_or_audio_features_that_are_not_present(self) -> None:
         readme = README.read_text(encoding="utf-8").lower()
