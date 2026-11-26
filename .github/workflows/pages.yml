@@ -8,6 +8,7 @@ on:
       - 'experiences/**'
       - 'tests/python/test_embassy_reception_boundary.py'
       - 'tests/python/test_soviet_facility_opening.py'
+      - 'tests/python/test_cinematic_flow_integer_fsm.py'
       - 'samples/SurpsGuiSvg/**'
       - '.surps/participation.json'
       - '.surps/microbundles/**'
