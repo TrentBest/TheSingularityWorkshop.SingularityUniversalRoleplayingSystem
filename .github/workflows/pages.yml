@@ -10,6 +10,7 @@ on:
       - 'tests/python/test_soviet_facility_opening.py'
       - 'tests/python/test_cinematic_flow_integer_fsm.py'
       - 'samples/SurpsGuiSvg/**'
+      - 'samples/SurpsCinematicFlow/**'
       - '.surps/participation.json'
       - '.surps/microbundles/**'
       - 'scripts/generate_surps_book_assets.py'
