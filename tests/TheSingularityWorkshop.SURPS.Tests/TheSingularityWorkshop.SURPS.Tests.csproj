@@ -16,5 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/TheSingularityWorkshop.SURPS.Rulebook.DungeonsAndUnderground/TheSingularityWorkshop.SURPS.Rulebook.DungeonsAndUnderground.csproj" />
+    <ProjectReference Include="../../src/TheSingularityWorkshop.SURPS.Core/TheSingularityWorkshop.SURPS.Core.csproj" />
   </ItemGroup>
 </Project>
