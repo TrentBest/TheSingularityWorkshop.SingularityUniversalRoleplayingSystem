@@ -195,3 +195,26 @@ The first vertical slice should prove one complete loop rather than attempt to b
 9. Reach a later shared scene whose dialogue or available interactions differ because of that response.
 
 The existing CORE Spying material remains the selected rules source for its current playtest. The immersive presentation model must consume canonical rules/content rather than fork them. The first implementation must label simulated, human-operated, and implemented behavior honestly; it must not claim a digital evaluator or secure client-side referee mode that does not exist.
+
+
+## 11. First cinematic opening prototype — Site K-17
+
+The first cinematic presentation proof is [Site K-17](experiences/soviet-facility-opening/), a fictional 1981 Soviet-era opening. Its first three moments are deliberately ordered:
+
+1. A period-inspired, schematic USSR map establishes the northern Ural region and marks the facility as an **alleged fictional location**.
+2. The map hands off to an illustrated first-person approach across the grounds, revealing the estate and its security.
+3. The player reaches the admission desk, receives a twenty-name identity challenge, and can request the first handler instruction. The instruction reveals and highlights the correct response; the player still commits the answer.
+
+The current page is an authored presentation prototype. It does not yet provide a live 3D camera, production-quality rendered assets, recorded voice, a trusted session, or secure player/referee separation. In particular, a static public page cannot conceal the answer from someone inspecting its delivered source. A production host must keep the expected identity and handler knowledge server-side and send only the authorized player projection.
+
+### FSM_API 2.0 integration rule
+
+The prototype's HTML scene IDs are presentation selectors, not FSM_API state identities. Do not treat JavaScript strings, DOM IDs, or `GetHashCode()` values as persistent runtime identity. When the scene is connected to the authoritative session runtime:
+
+- register the scene flow through the FSM_API 2.0 integer-backed runtime;
+- use deterministic, versioned integer identities for executable states and transitions;
+- keep readable names as authoring/diagnostic labels, with explicit forward/reverse mapping;
+- keep player intent separate from committed transition; and
+- let the host validate and commit accepted transitions before GUI/Renderer project the next moment.
+
+The SURPS Pages pipeline already checks out the FSM_API `development` source through the Visualize publication dependency. That dependency does not make this static HTML prototype itself an FSM_API runtime. The integer-backed runtime integration is a distinct next step and must be demonstrated by executable code and parity tests before being described as complete.
