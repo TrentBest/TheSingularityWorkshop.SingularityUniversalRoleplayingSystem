@@ -1,6 +1,7 @@
 using System.Text.Json;
 using TheSingularityWorkshop.FSM_API;
 using TheSingularityWorkshop.FSM_API.IntegerBacked;
+using IntegerFsmApi = TheSingularityWorkshop.FSM_API.IntegerBacked.FsmApi;
 
 const int fsmId = 6100;
 const int processingGroupId = 61;
@@ -16,7 +17,7 @@ var outputDirectory = args.Length > 0
     : Path.GetFullPath("docs/assets/generated/surps-cinematic-flow");
 Directory.CreateDirectory(outputDirectory);
 
-var definition = FsmApi.Create.CreateFiniteStateMachine(
+var definition = IntegerFsmApi.Create.CreateFiniteStateMachine(
         fsmId,
         processRate: 0,
         processingGroupID: processingGroupId)
@@ -35,22 +36,22 @@ var definition = FsmApi.Create.CreateFiniteStateMachine(
     .Transition(challenged, handler, context => ((SceneContext)context).RetryRequested)
     .BuildDefinition();
 
-FsmApi.Create.RegisterDefinition(definition);
+IntegerFsmApi.Create.RegisterDefinition(definition);
 
 var successContext = new SceneContext("site-k17-success");
-var successHandle = FsmApi.Create.CreateInstance(fsmId, successContext);
+var successHandle = IntegerFsmApi.Create.CreateInstance(fsmId, successContext);
 var successTrace = RunSuccess(successHandle, successContext);
 if (successHandle.CurrentStateID != admitted)
     throw new InvalidOperationException("The expected identity path did not reach the admitted state.");
-FsmApi.Interaction.DestroyInstance(successHandle);
+IntegerFsmApi.Interaction.DestroyInstance(successHandle);
 
 var challengeContext = new SceneContext("site-k17-challenge");
-var challengeHandle = FsmApi.Create.CreateInstance(fsmId, challengeContext);
+var challengeHandle = IntegerFsmApi.Create.CreateInstance(fsmId, challengeContext);
 var challengeTrace = RunChallengeThenRecover(challengeHandle, challengeContext);
 if (challengeHandle.CurrentStateID != admitted)
     throw new InvalidOperationException("The challenged identity path did not recover to admission.");
-FsmApi.Interaction.DestroyInstance(challengeHandle);
-FsmApi.Interaction.Unregister(fsmId);
+IntegerFsmApi.Interaction.DestroyInstance(challengeHandle);
+IntegerFsmApi.Interaction.Unregister(fsmId);
 
 var svgPath = Path.Combine(outputDirectory, "surps-cinematic-flow.svg");
 var manifestPath = Path.Combine(outputDirectory, "surps-cinematic-flow.json");
