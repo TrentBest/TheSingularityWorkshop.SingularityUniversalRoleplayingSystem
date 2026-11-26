@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><LangVersion>latest</LangVersion>
+    <IsPackable>true</IsPackable><PackageId>TheSingularityWorkshop.SURPS.Core</PackageId><Version>0.1.0-alpha.1</Version>
+    <Authors>Trent Best</Authors><Company>The Singularity Workshop</Company>
+    <Description>Authoritative, revisioned SURPS scene state and adjudicated interaction contracts.</Description>
+    <PackageTags>SURPS;Roleplaying;WorldState;Scene;Interaction;TheSingularityWorkshop</PackageTags>
+    <PackageProjectUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TrentBest/TheSingularityWorkshop.SingularityUniversalRoleplayingSystem</RepositoryUrl><RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile><NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+</Project>
