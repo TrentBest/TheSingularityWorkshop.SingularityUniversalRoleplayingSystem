@@ -3,7 +3,7 @@ using TheSingularityWorkshop.FSM_API;
 using TheSingularityWorkshop.FSM_API.IntegerBacked;
 using IntegerFsmApi = TheSingularityWorkshop.FSM_API.IntegerBacked.FsmApi;
 
-const int fsmId = 6100;
+const int fsmId = 1;
 const int processingGroupId = 61;
 const int map = 0;
 const int grounds = 1;
