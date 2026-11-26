@@ -173,7 +173,8 @@ static string CreateSvg()
     markup.Append($"<text x=\"810\" y=\"352\" text-anchor=\"middle\" fill=\"{gold}\" font-family=\"Arial\" font-size=\"10\">retry / recovery</text>");
     foreach (var node in nodes)
     {
-        markup.Append($"<rect x=\"{node.X}\" y=\"{node.Y-30}\" width=\"120\" height=\"60\" rx=\"10\" fill=\"{node.Fill}\" stroke=\"{node.Id==4?mint:node.Id==5?red:line}\" stroke-width=\"2\"/>");
+        var stroke = node.Id == 4 ? mint : node.Id == 5 ? red : line;
+        markup.Append($"<rect x=\"{node.X}\" y=\"{node.Y-30}\" width=\"120\" height=\"60\" rx=\"10\" fill=\"{node.Fill}\" stroke=\"{stroke}\" stroke-width=\"2\"/>");
         markup.Append($"<text x=\"{node.X+60}\" y=\"{node.Y-3}\" text-anchor=\"middle\" fill=\"{ink}\" font-family=\"Arial\" font-size=\"11\" font-weight=\"700\">{node.Label}</text>");
         markup.Append($"<text x=\"{node.X+60}\" y=\"{node.Y+17}\" text-anchor=\"middle\" fill=\"{gold}\" font-family=\"Arial\" font-size=\"11\">STATE {node.Id}</text>");
     }
