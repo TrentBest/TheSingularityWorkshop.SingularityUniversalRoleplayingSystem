@@ -217,4 +217,4 @@ The prototype's HTML scene IDs are presentation selectors, not FSM_API state ide
 - keep player intent separate from committed transition; and
 - let the host validate and commit accepted transitions before GUI/Renderer project the next moment.
 
-The SURPS Pages pipeline already checks out the FSM_API `development` source through the Visualize publication dependency. That dependency does not make this static HTML prototype itself an FSM_API runtime. The integer-backed runtime integration is a distinct next step and must be demonstrated by executable code and parity tests before being described as complete.
+The SURPS Pages pipeline checks out the FSM_API `development` source and runs [an executable native integer-backed cinematic-flow proof](../samples/SurpsCinematicFlow/Program.cs). It exercises the success and recoverable challenge paths and generates the state-flow SVG/manifest. That dependency does not make this static HTML prototype itself an FSM_API runtime: the proof and browser presentation are deliberately separate until a trusted session host connects them.
