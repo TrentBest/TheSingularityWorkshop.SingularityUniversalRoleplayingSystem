@@ -122,6 +122,7 @@ static List<int> RunChallengeThenRecover(FSMHandleInt handle, SceneContext conte
     context.WrongIdentitySelected = true;
     handle.Update(); // Handler -> challenged.
     handle.Update(); // Enter challenged.
+    context.WrongIdentitySelected = false;
     context.RetryRequested = true;
     handle.Update(); // Challenged -> handler.
     handle.Update(); // Re-enter handler.
