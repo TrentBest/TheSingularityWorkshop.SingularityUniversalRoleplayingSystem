@@ -17,7 +17,7 @@ class CinematicFlowIntegerFsmTests(unittest.TestCase):
     def test_runtime_uses_native_integer_backed_api_and_integer_state_ids(self) -> None:
         source = PROGRAM.read_text(encoding="utf-8")
         self.assertIn("using TheSingularityWorkshop.FSM_API.IntegerBacked;", source)
-        self.assertIn("FsmApi.Create.CreateFiniteStateMachine(", source)
+        self.assertIn("IntegerFsmApi.Create.CreateFiniteStateMachine(", source)
         self.assertIn("CurrentStateID", source)
         self.assertNotIn("GetHashCode()", source)
 
