@@ -25,6 +25,12 @@ This is a visual/interaction prototype. It does not claim a live 3D renderer, sp
 
 The page is a static GitHub Pages artifact, so its local scene-navigation code is deliberately a presentation prototype. It does not pretend that browser JavaScript is FSM_API. When the experience is connected to an authoritative runtime, scene and interaction transitions must be represented with FSM_API 2.0's integer-backed state identity and executed through the owning runtime; GUI/Renderer remain projections. The SURPS Pages build already checks out FSM_API development as a source dependency through the Visualize publication pipeline.
 
+## Executable FSM_API 2.0 proof
+
+The Pages build also runs [SurpsCinematicFlow](../../samples/SurpsCinematicFlow/Program.cs), which uses the native `TheSingularityWorkshop.FSM_API.IntegerBacked.FsmApi` API. It exercises integer state IDs for map, grounds, admission, handler, admitted, and identity-challenged states. It verifies both the clean identity path and a wrong-answer/retry path, then generates an SVG state-flow diagram and JSON trace manifest for the site.
+
+This is an executable state-machine proof, not a claim that the browser prototype is already wired to a trusted live session. The HTML still owns only its local presentation interactions; a production host must own authoritative session state and player-authorized projections.
+
 ## Next vertical slice
 
 - Replace the schematic orientation graphic with a properly sourced, period-appropriate map asset and explicit projection/geographic provenance.
